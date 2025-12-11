@@ -1,0 +1,44 @@
+// src/services/AuthService.ts
+import api from './api';
+import { User } from '../App'; // Import kiểu User
+
+// Dữ liệu đăng ký (thường không cần ID vì server tự tạo)
+interface RegisterData {
+    email: string;
+    username: string;
+    password?: string;
+}
+
+// === ĐĂNG KÝ ===
+export const registerUser = async (userData: RegisterData): Promise<User> => {
+    // 1. Kiểm tra email trùng
+    const exist = await api.get(`/users?email=${encodeURIComponent(userData.email)}`);
+    
+    if (exist.data.length > 0) {
+        throw new Error("Email đã tồn tại!");
+    }
+
+    // 2. Tạo mới
+    const response = await api.post('/users', userData);
+    return response.data;
+};
+
+// === ĐĂNG NHẬP ===
+export const loginUser = async (email: string, password: string): Promise<User> => {
+    const response = await api.get(
+        `/users?email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`
+    );
+
+    if (response.data.length > 0) {
+        return response.data[0];
+    }
+    throw new Error("Email hoặc mật khẩu không chính xác.");
+};
+
+// === QUÊN MẬT KHẨU ===
+export const forgotPassword = async (email: string): Promise<boolean> => {
+    // Giả lập delay
+    await new Promise(res => setTimeout(res, 1000));
+    console.log(`[Fake API] Gửi mail reset tới: ${email}`);
+    return true;
+};
