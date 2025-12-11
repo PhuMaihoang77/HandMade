@@ -1,17 +1,7 @@
 import React from 'react';
 import { FaShoppingCart } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
-export interface Product {
-    id: number;
-    name: string;
-    price: number;
-    category: string;
-    categoryId: number;
-    imageUrl: string;
-    description: string;
-    inventory: number;
-}
-
+import { Product } from '../types/model';
 interface ProductCardProps {
     product: Product;
 }

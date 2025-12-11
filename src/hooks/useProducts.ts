@@ -1,7 +1,7 @@
 // src/hooks/useProducts.ts
 import { useState, useEffect } from 'react';
 import { getProducts } from '../services/ProductService';
-import { Product } from '../Pages/ProductCard';
+import { Product } from '../types/model';
 
 // Hook này chịu trách nhiệm: Gọi API, Quản lý Loading, Quản lý Lỗi
 export const useProducts = () => {

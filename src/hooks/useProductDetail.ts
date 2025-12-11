@@ -1,6 +1,6 @@
 // src/hooks/useProductDetail.ts
 import { useState, useEffect } from 'react';
-import { Product } from '../Pages/ProductCard';
+import { Product } from '../types/model';
 import { getProductById } from '../services/ProductService'; // Import hàm mới
 
 export const useProductDetail = (id: string | undefined) => {

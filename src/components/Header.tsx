@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { User } from '../App';
-
+import { User } from '../types/model';
 interface HeaderProps {
     currentUser: User | null;
     onLogout: () => void;

@@ -1,9 +1,6 @@
-
-
 // src/services/ProductService.ts
 import api from './api';
-import { Product } from '../Pages/ProductCard';
-
+import { Product } from '../types/model';
 // 1. Lấy tất cả sản phẩm
 export const getProducts = async (): Promise<Product[]> => {
     try {
