@@ -45,3 +45,6 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
+##Update Scripts in package.json can use continue scripts
+
+npm install react-scripts --save-dev

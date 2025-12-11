@@ -42,8 +42,8 @@ const ForgotPassword: React.FC<ForgotPasswordProps> = ({ onSwitchToLogin,onClose
             <form onSubmit={handleSubmit} className="auth-form">
                 {error && <p className="auth-error">{error}</p>}
                 {message && <p className="auth-message">{message}</p>}
-
                 <input type="email" placeholder="Email của bạn" value={email} onChange={(e) => setEmail(e.target.value)} required className="auth-input" />
+
                 <button type="submit" className="auth-button">Gửi Yêu Cầu</button>
             </form>
 

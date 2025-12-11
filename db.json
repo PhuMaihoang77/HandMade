@@ -8,7 +8,7 @@
     },
     {
       "id": "cbc1",
-      "email": "thuan@gmail.com",
+      "email": "thuan11111@gmail.com",
       "password": "123456",
       "username": "Thuan"
     },
@@ -18,5 +18,13 @@
       "password": "123456",
       "username": "thoai"
     }
-  ]
+  ],
+  "products": [],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Category 1"
+    }
+  ],
+  "orders": []
 }
