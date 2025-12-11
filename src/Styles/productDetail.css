@@ -1,0 +1,89 @@
+/* src/Styles/product-detail.css */
+
+/* Container tổng thể */
+.product-detail {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Ảnh sản phẩm */
+.product-detail-image {
+    flex: 1 1 300px;
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* Thông tin sản phẩm */
+.product-detail-info {
+    flex: 1 1 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 15px;
+}
+
+/* Tên sản phẩm */
+.product-detail-info h2 {
+    font-size: 2em;
+    color: var(--color-text-dark);
+    margin-bottom: 10px;
+}
+
+/* Giá sản phẩm */
+.product-detail-info .product-price {
+    font-size: 1.5em;
+    color: var(--color-secondary);
+    font-weight: 700;
+}
+
+/* Thông tin inventory, category, mô tả */
+.product-detail-info p {
+    font-size: 1em;
+    color: var(--color-text-light);
+    margin: 5px 0;
+}
+
+/* Button mua ngay */
+.product-detail-info button {
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 150px;
+    transition: background-color 0.3s;
+}
+
+.product-detail-info button:hover {
+    background-color: var(--color-secondary);
+}
+
+/* Responsive mobile */
+@media screen and (max-width: 768px) {
+    .product-detail {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-detail-image,
+    .product-detail-info {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .product-detail-info button {
+        width: 100%;
+    }
+}

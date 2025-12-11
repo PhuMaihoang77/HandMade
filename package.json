@@ -47,7 +47,9 @@
     "react-app-polyfill": "^3.0.0",
     "react-dev-utils": "^12.0.1",
     "react-dom": "^19.2.1",
+    "react-icons": "^5.5.0",
     "react-refresh": "^0.11.0",
+    "react-router-dom": "^7.10.1",
     "resolve": "^1.20.0",
     "resolve-url-loader": "^4.0.0",
     "sass-loader": "^12.3.0",
@@ -65,31 +67,33 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "node scripts/build.js",
-    "test": "node scripts/test.js",
-    "server": "npx json-server --watch db.json --port 5000",
-    "comment_merge": "Lệnh merge dữ liệu 1 lần",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "//--- DATA MOCKING SCRIPTS ---": "",
     "db:merge": "node scripts/merge.js",
-    "comment_watch": "Chạy merge mỗi khi dữ liệu trong mock-data thay đổi",
-    "db:watch-data": "nodemon --watch mock-data --ext json --exec \"node scripts/merge.js\"",
-    "comment_server": "Chạy json-server",
     "db:server": "json-server --watch db.json --port 5000",
-    "comment_api": "Chạy cả MERGE + WATCH + SERVER",
-    "api": "npm run db:merge && concurrently \"npm run db:watch-data\" \"npm run db:server\" \"npx open http://localhost:5000\""
+    "db:watch-data": "nodemon --watch mock-data --ext json --exec \"npm run db:merge\"",
+    "//--- API COMMAND (CHẠY RIÊNG SERVER) ---": "",
+    "api": "npm run db:merge && concurrently -n \"WATCH,SERVER,OPEN\" -c \"magenta,blue,green\" \"npm run db:watch-data\" \"npm run db:server\" \"npx wait-on tcp:5000 && npx open-cli http://localhost:5000\"",
+    "//--- FULL DEV COMMAND (CHẠY TẤT CẢ) ---": "",
+    "dev": "concurrently -n \"REACT,API_SYSTEM\" -c \"bgBlue.bold,bgMagenta.bold\" \"npm start\" \"npm run api\""
   },
- "eslintConfig": {
-  "extends": [
-    "react-app",
-    "react-app/jest"
-  ],
-  "parserOptions": {
-    "babelOptions": {
-      "presets": [
-        ["babel-preset-react-app", false]
-      ]
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ],
+    "parserOptions": {
+      "babelOptions": {
+        "presets": [
+          [
+            "babel-preset-react-app",
+            false
+          ]
+        ]
+      }
     }
-  }
-},
+  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -164,6 +168,7 @@
     "concurrently": "^9.2.1",
     "nodemon": "^3.1.11",
     "open-cli": "^8.0.0",
-    "react-scripts": "^5.0.1"
+    "react-scripts": "^5.0.1",
+    "wait-on": "^9.0.3"
   }
 }

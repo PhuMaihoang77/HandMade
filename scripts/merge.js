@@ -1,47 +1,61 @@
-
 const fs = require('fs');
 const path = require('path');
 
-// Đường dẫn thư mục data gốc
-const dataDir = path.join(__dirname, '../mock-data');
-const outputFile = path.join(__dirname, '../db.json');
+const mockDataDir = path.join(__dirname, '../src/mock-data');
+const dbFile = path.join(__dirname, '../db.json');
 
-// Hàm đọc file json
-const readJson = (filePath) => {
+const db = {};
+
+// Kiểm tra thư mục mock-data
+if (!fs.existsSync(mockDataDir)) {
+  console.error(`❌ Thư mục ${mockDataDir} không tồn tại!`);
+  process.exit(1);
+}
+
+// Đọc các file JSON trong mock-data
+fs.readdirSync(mockDataDir).forEach(file => {
+  if (path.extname(file) === '.json') {
+    const resourceName = path.basename(file, '.json');
+    const filePath = path.join(mockDataDir, file);
+
     try {
-        const data = fs.readFileSync(filePath, 'utf8');
-        return JSON.parse(data);
-    } catch (err) {
-        console.error(`Lỗi đọc file ${filePath}:`, err);
-        return [];
-    }
-};
+      const fileContent = fs.readFileSync(filePath, 'utf-8');
 
-// 1. Gộp Products từ nhiều file con (laptops, phones...)
-const productDir = path.join(dataDir, 'products');
-let allProducts = [];
-fs.readdirSync(productDir).forEach(file => {
-    if (file.endsWith('.json')) {
-        const products = readJson(path.join(productDir, file));
-        allProducts = [...allProducts, ...products];
+      if (!fileContent.trim()) {
+        console.warn(`⚠️  File "${file}" trống. Khởi tạo mảng rỗng cho "/${resourceName}".`);
+        db[resourceName] = [];
+        return;
+      }
+
+      db[resourceName] = JSON.parse(fileContent);
+
+    } catch (error) {
+      console.error(`❌ Lỗi cú pháp trong file "${file}". Khởi tạo mảng rỗng.`);
+      db[resourceName] = [];
     }
+  }
 });
 
-// 2. Đọc các file đơn lẻ khác
-const users = readJson(path.join(dataDir, 'users.json'));
-const categories = readJson(path.join(dataDir, 'categories.json'));
-const orders = readJson(path.join(dataDir, 'orders.json'));
+// Kiểm tra dữ liệu cũ nếu db.json tồn tại
+let oldData = null;
+if (fs.existsSync(dbFile)) {
+  try {
+    oldData = JSON.parse(fs.readFileSync(dbFile, 'utf-8'));
+  } catch (error) {
+    oldData = null;
+  }
+}
 
-// 3. Tạo object tổng
-const dbData = {
-    users: users,
-    products: allProducts, // Đã gộp tất cả sản phẩm vào 1 endpoint /products
-    categories: categories,
-    orders: orders
-};
+// So sánh dữ liệu mới và cũ
+const isDataChanged = JSON.stringify(db) !== JSON.stringify(oldData);
 
-// 4. Ghi ra file db.json
-fs.writeFileSync(outputFile, JSON.stringify(dbData, null, 2));
-
-console.log(`🎉 Đã merge dữ liệu thành công! Tổng: ${allProducts.length} sản phẩm.`);
-console.log(`📌 Truy cập API tại: http://localhost:5000`);
+if (isDataChanged) {
+  try {
+    fs.writeFileSync(dbFile, JSON.stringify(db, null, 2));
+    console.log(`✅ Merge thành công! Dữ liệu đã được cập nhật vào db.json lúc ${new Date().toLocaleTimeString()}`);
+  } catch (error) {
+    console.error('❌ Lỗi khi ghi file db.json:', error);
+  }
+} else {
+  console.log(`ℹ️ Dữ liệu không thay đổi. Không ghi lại db.json.`);
+}
