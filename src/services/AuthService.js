@@ -1,53 +1,52 @@
-// src/services/AuthService.js
 import axios from 'axios';
 
 const API_URL = 'http://localhost:5000/users';
 
-/**
- * Đăng ký người dùng mới
- * Gửi yêu cầu POST tới json-server
- */
+// === ĐĂNG KÝ ===
 export const registerUser = async (userData) => {
     try {
-        // json-server tự động tạo ID
+        // Kiểm tra email trùng
+        const exist = await axios.get(`${API_URL}?email=${encodeURIComponent(userData.email)}`);
+
+        if (exist.data.length > 0) {
+            throw new Error("Email đã tồn tại!");
+        }
+
+        // Nếu không trùng → tạo mới
         const response = await axios.post(API_URL, userData);
         return response.data;
+
     } catch (error) {
-        console.error("Đăng ký thất bại:", error);
-        // Trong môi trường fake, ta giả định lỗi do trùng lặp hoặc lỗi server
-        throw new Error('Đăng ký không thành công. Email có thể đã tồn tại.');
-    }
-};
-
-/**
- * Đăng nhập người dùng
- * Gửi yêu cầu GET với tham số lọc (email và password)
- */
-export const loginUser = async (email, password) => {
-    try {
-        // Lọc người dùng theo cả email và password
-        const response = await axios.get(`${API_URL}?email=${email}&password=${password}`);
-
-        if (response.data.length > 0) {
-            // Đăng nhập thành công, trả về thông tin người dùng đầu tiên tìm được
-            return response.data[0];
-        } else {
-            // Không tìm thấy người dùng nào khớp
-            throw new Error('Email hoặc mật khẩu không chính xác.');
+        if (error.message === "Network Error") {
+            throw new Error("Không kết nối được server. Hãy kiểm tra json-server.");
         }
-    } catch (error) {
-        console.error("Đăng nhập thất bại:", error);
         throw error;
     }
 };
 
-/**
- * Quên Mật khẩu (Chỉ mô phỏng)
- */
+// === ĐĂNG NHẬP ===
+export const loginUser = async (email, password) => {
+    try {
+        const response = await axios.get(
+            `${API_URL}?email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`
+        );
+
+        if (response.data.length > 0) {
+            return response.data[0]; // Đăng nhập thành công
+        }
+        throw new Error("Email hoặc mật khẩu không chính xác.");
+
+    } catch (error) {
+        if (error.message === "Network Error") {
+            throw new Error("Không thể kết nối server!");
+        }
+        throw error;
+    }
+};
+
+// === QUÊN MẬT KHẨU (Fake) ===
 export const forgotPassword = async (email) => {
-    // Hàm này chỉ mô phỏng thành công việc gửi email đặt lại
-    console.log(`[Mô phỏng] Đã gửi yêu cầu đặt lại mật khẩu cho email: ${email}`);
-    // Giả lập độ trễ
-    await new Promise(resolve => setTimeout(resolve, 1500));
+    console.log(`[Fake] Đã gửi email reset cho: ${email}`);
+    await new Promise(res => setTimeout(res, 1500));
     return true;
 };

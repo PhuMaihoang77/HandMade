@@ -1,10 +1,12 @@
 // src/App.tsx (Dán lại toàn bộ nội dung này)
 import React, { useState, useEffect } from 'react';
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import Login from './components/Login';
-import Register from './components/Register';
-import ForgotPassword from './components/ForgotPassword';
-import Home from './components/Home'; // Import Home
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Login from './Pages/Login';
+import Register from './Pages/Register';
+import ForgotPassword from './Pages/ForgotPassword';
+import Home from './Pages/Home'; // Import Home
 import './Styles/global.css';
 
 // 1. KHAI BÁO KIỂU USER

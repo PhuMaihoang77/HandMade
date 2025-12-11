@@ -1,6 +1,9 @@
 // src/components/ProductCard.tsx
 import React from 'react';
 
+
+
+
 // Khai báo kiểu dữ liệu cho sản phẩm
 export interface Product {
     id: number;
