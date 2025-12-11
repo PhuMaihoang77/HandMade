@@ -1,47 +1,56 @@
 // src/Pages/ProductDetail.tsx
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { Product } from './ProductCard';
-import { getProducts } from '../services/ProductService';
-import '../Styles/productDetail.css'; // Lưu ý tên file chính xác
+import React from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+import { useProductDetail } from '../hooks/useProductDetail'; // Import Hook
+import '../Styles/productDetail.css';
 
 const ProductDetail: React.FC = () => {
     const { id } = useParams<{ id: string }>();
-    const [product, setProduct] = useState<Product | null>(null);
-    const [loading, setLoading] = useState(true);
+    const navigate = useNavigate();
 
-    useEffect(() => {
-        const fetchProducts = async () => {
-            try {
-                const products = await getProducts();
-                const found = products.find(p => p.id === Number(id));
-                setProduct(found || null);
-            } catch (error) {
-                console.error("Lỗi tải sản phẩm:", error);
-            } finally {
-                setLoading(false);
-            }
-        };
-        fetchProducts();
-    }, [id]);
+    // SỬ DỤNG HOOK: 1 dòng code thay thế cho toàn bộ logic cũ
+    const { product, loading, error } = useProductDetail(id);
 
-    if (loading) return <p style={{ textAlign: 'center', marginTop: '50px' }}>Đang tải sản phẩm...</p>;
-    if (!product) return <p style={{ textAlign: 'center', marginTop: '50px' }}>Không tìm thấy sản phẩm!</p>;
+    // Xử lý các trạng thái UI
+    if (loading) return <div className="loading-spinner">Đang tải chi tiết...</div>;
+    
+    if (error || !product) return (
+        <div className="error-container" style={{ textAlign: 'center', marginTop: '50px' }}>
+            <p>{error || "Sản phẩm không tồn tại!"}</p>
+            <button onClick={() => navigate('/')}>Về trang chủ</button>
+        </div>
+    );
 
+    // Render giao diện chính
     return (
         <div className="product-detail">
-            <img 
-                className="product-detail-image"
-                src={product.imageUrl} 
-                alt={product.name} 
-            />
+            <div className="product-detail-image-wrapper">
+                 <img 
+                    className="product-detail-image"
+                    src={product.imageUrl} 
+                    alt={product.name} 
+                />
+            </div>
+           
             <div className="product-detail-info">
-                <h2>{product.name}</h2>
-                <p className="product-price">{product.price.toLocaleString('vi-VN')} VNĐ</p>
-                <p>Danh mục: {product.category}</p>
-                <p>Còn lại: {product.inventory} sản phẩm</p>
-                <p>{product.description}</p>
-                <button>Mua ngay</button>
+                <h2 className="product-title">{product.name}</h2>
+                <p className="product-price">
+                    {product.price.toLocaleString('vi-VN')} VNĐ
+                </p>
+                
+                <div className="product-meta">
+                    <p><strong>Danh mục:</strong> {product.category}</p>
+                    <p><strong>Tình trạng:</strong> {product.inventory > 0 ? 'Còn hàng' : 'Hết hàng'}</p>
+                </div>
+
+                <div className="product-description">
+                    <p>{product.description}</p>
+                </div>
+
+                <div className="product-actions">
+                    <button className="btn-buy-now">Mua ngay</button>
+                    <button className="btn-add-cart">Thêm vào giỏ</button>
+                </div>
             </div>
         </div>
     );

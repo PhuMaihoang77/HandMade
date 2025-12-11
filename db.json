@@ -1,4 +1,56 @@
 {
+  "products": [
+    {
+      "id": 1,
+      "name": "Túi Tote Vải Canvas In Chữ Vintage",
+      "price": 89000,
+      "category": "Túi & Ví",
+      "categoryId": 1,
+      "imageUrl": "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=500&q=80",
+      "description": "Túi vải canvas dày dặn màu kem, in typography tối giản. Kích thước 35x40cm, đựng vừa tài liệu A4 và laptop 13 inch. Phù hợp đi học, đi làm.",
+      "inventory": 50
+    },
+    {
+      "id": 2,
+      "name": "Ví Da Nam Bifold Cổ Điển",
+      "price": 450000,
+      "category": "Túi & Ví",
+      "categoryId": 1,
+      "imageUrl": "https://images.unsplash.com/photo-1627123424574-724758594e93?auto=format&fit=crop&w=500&q=80",
+      "description": "Ví nam dáng ngang làm từ da bò sáp nhập khẩu. Thiết kế 2 ngăn lớn đựng tiền và 6 ngăn thẻ. Càng dùng da càng bóng đẹp theo thời gian.",
+      "inventory": 24
+    },
+    {
+      "id": 3,
+      "name": "Túi Đeo Chéo Da Nữ Mini",
+      "price": 320000,
+      "category": "Túi & Ví",
+      "categoryId": 1,
+      "imageUrl": "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=500&q=80",
+      "description": "Túi đeo chéo phom hộp nhỏ xinh, chất liệu da PU cao cấp chống thấm. Dây đeo kim loại phối da sang trọng, thích hợp đi dạo phố.",
+      "inventory": 15
+    },
+    {
+      "id": 4,
+      "name": "Balo Laptop Chống Sốc Urban",
+      "price": 550000,
+      "category": "Túi & Ví",
+      "categoryId": 1,
+      "imageUrl": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=500&q=80",
+      "description": "Balo thiết kế hiện đại, có ngăn chống sốc riêng cho laptop 15.6 inch. Chất liệu vải Oxford chống thấm nước, đệm lưng thoáng khí.",
+      "inventory": 30
+    },
+    {
+      "id": 5,
+      "name": "Ví Cầm Tay Clutch Dự Tiệc",
+      "price": 680000,
+      "category": "Túi & Ví",
+      "categoryId": 1,
+      "imageUrl": "https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?auto=format&fit=crop&w=500&q=80",
+      "description": "Clutch cầm tay đính đá tinh tế, khóa cài kim loại mạ vàng. Kích thước vừa điện thoại và son phấn, điểm nhấn hoàn hảo cho trang phục dạ hội.",
+      "inventory": 10
+    }
+  ],
   "categories": [
     {
       "id": 1,
