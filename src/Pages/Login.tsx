@@ -2,7 +2,8 @@
 import React, { useState } from 'react';
 import { loginUser } from '../services/AuthService';
 
-import { User } from '../App'; // Import kiểu User
+import { User } from '../types/model';
+
 import '../Styles/auth.css';
 
 // Khai báo kiểu cho Props (Đã bỏ prop 'styles')

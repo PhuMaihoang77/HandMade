@@ -1,6 +1,6 @@
 // src/services/AuthService.ts
 import api from './api';
-import { User } from '../App'; // Import kiểu User
+import { User } from '../types/model';
 
 // Dữ liệu đăng ký (thường không cần ID vì server tự tạo)
 interface RegisterData {

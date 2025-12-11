@@ -10,15 +10,9 @@ import Register from './Pages/Register';
 import ForgotPassword from './Pages/ForgotPassword';
 import Home from './Pages/Home';
 import ProductDetail from './Pages/ProductDetail';
-import './Styles/global.css';
+import { User } from './types/model';
 
-// 1. KHAI BÁO KIỂU USER
-export interface User {
-    id: number;
-    email: string;
-    username: string;
-    password?: string;
-}
+import './Styles/global.css';
 
 // 2. LAYOUT COMPONENT (Giúp ẩn/hiện Header, Footer dễ dàng)
 // Những trang nào cần Header/Footer thì bọc trong cái này
