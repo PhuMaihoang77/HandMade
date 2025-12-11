@@ -1,14 +1,15 @@
 // src/components/Register.tsx
 import React, { useState } from 'react';
 import { registerUser } from '../services/AuthService';
-
+import '../Styles/auth.css';
 // Khai báo kiểu cho Props (Đã bỏ prop 'styles')
 interface RegisterProps {
     onSwitchToLogin: () => void;
+    onClose: () => void;
 }
 
 // Bỏ tham số 'styles'
-const Register: React.FC<RegisterProps> = ({ onSwitchToLogin }) => {
+const Register: React.FC<RegisterProps> = ({ onSwitchToLogin,onClose }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [username, setUsername] = useState('');
@@ -38,6 +39,9 @@ const Register: React.FC<RegisterProps> = ({ onSwitchToLogin }) => {
     return (
         // ⭐ Dùng className
         <div className="auth-container">
+             <button className="auth-close-button" onClick={onClose}>
+                &times; 
+            </button>
             <h2>Đăng Ký Tài Khoản</h2>
             <form onSubmit={handleSubmit} className="auth-form">
                 {error && <p className="auth-error">{error}</p>}

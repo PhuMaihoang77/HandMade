@@ -2,16 +2,18 @@
 import React, { useState } from 'react';
 import { loginUser } from '../services/AuthService';
 import { User } from '../App'; // Import kiểu User
+import '../Styles/auth.css';
 
 // Khai báo kiểu cho Props (Đã bỏ prop 'styles')
 interface LoginProps {
     onLoginSuccess: (user: User) => void;
     onSwitchToRegister: () => void;
     onSwitchToForgot: () => void;
+    onClose: () => void;
+    
 }
 
-// Bỏ tham số 'styles'
-const Login: React.FC<LoginProps> = ({ onLoginSuccess, onSwitchToRegister, onSwitchToForgot }) => {
+const Login: React.FC<LoginProps> = ({ onLoginSuccess, onSwitchToRegister, onSwitchToForgot,onClose }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
@@ -32,8 +34,10 @@ const Login: React.FC<LoginProps> = ({ onLoginSuccess, onSwitchToRegister, onSwi
     };
 
     return (
-        // ⭐ Dùng className
         <div className="auth-container">
+            <button className="auth-close-button" onClick={onClose}>
+                &times; 
+            </button>
             <h2>Đăng Nhập</h2>
             <form onSubmit={handleSubmit} className="auth-form">
                 {error && <p className="auth-error">{error}</p>}
