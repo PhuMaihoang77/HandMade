@@ -77,12 +77,19 @@
     "comment_api": "Chạy cả MERGE + WATCH + SERVER",
     "api": "npm run db:merge && concurrently \"npm run db:watch-data\" \"npm run db:server\" \"npx open http://localhost:5000\""
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
+ "eslintConfig": {
+  "extends": [
+    "react-app",
+    "react-app/jest"
+  ],
+  "parserOptions": {
+    "babelOptions": {
+      "presets": [
+        ["babel-preset-react-app", false]
+      ]
+    }
+  }
+},
   "browserslist": {
     "production": [
       ">0.2%",
