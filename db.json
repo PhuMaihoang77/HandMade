@@ -1,4 +1,39 @@
 {
+  "categories": [
+    {
+      "id": 1,
+      "name": "Túi & Ví"
+    },
+    {
+      "id": 2,
+      "name": "Trang trí nhà cửa"
+    },
+    {
+      "id": 3,
+      "name": "Phụ kiện"
+    },
+    {
+      "id": 4,
+      "name": "Trang sức"
+    },
+    {
+      "id": 5,
+      "name": "Gốm sứ"
+    },
+    {
+      "id": 6,
+      "name": "Đồ da"
+    },
+    {
+      "id": 7,
+      "name": "Mỹ phẩm"
+    },
+    {
+      "id": 8,
+      "name": "Văn phòng phẩm"
+    }
+  ],
+  "orders": [],
   "users": [
     {
       "id": "1",
@@ -18,13 +53,5 @@
       "password": "123456",
       "username": "thoai"
     }
-  ],
-  "products": [],
-  "categories": [
-    {
-      "id": 1,
-      "name": "Category 1"
-    }
-  ],
-  "orders": []
+  ]
 }

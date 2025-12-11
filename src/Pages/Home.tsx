@@ -1,52 +1,87 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import ProductCard, { Product } from './ProductCard';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { getProducts } from '../services/ProductService';
+import { useNavigate } from 'react-router-dom'; // 1. Import hook điều hướng
+import { User } from '../App';
 import '../Styles/layout.css';
 import '../Styles/product.css';
 
-const emptyProducts: Product[] = [
-    { id: 1, name: "Tên Sản Phẩm Handmade", price: 100000, imageUrl: "", description: "Mô tả ngắn gọn về sản phẩm thủ công." },
-    { id: 2, name: "Tên Sản Phẩm Handmade", price: 100000, imageUrl: "", description: "Mô tả ngắn gọn về sản phẩm thủ công." },
-    { id: 3, name: "Tên Sản Phẩm Handmade", price: 100000, imageUrl: "", description: "Mô tả ngắn gọn về sản phẩm thủ công." },
-];
-
 interface HomeProps {
-    currentUser: { username: string } | null;
-    onSwitchToLogin: () => void;
-    onSwitchToRegister: () => void;
-    onLogout: () => void;
-}
 
-const Home: React.FC<HomeProps> = ({
-    currentUser,
-    onSwitchToLogin,
-    onSwitchToRegister,
-    onLogout
-}) => {
+    currentUser: User | null;
+
+    // Đã xóa: onSwitchToLogin, onSwitchToRegister, onLogout vì không cần truyền từ App nữa
+
+}
+const Home: React.FC<HomeProps> = ({ currentUser }) => {
+    const navigate = useNavigate(); // 3. Khai báo hook
+    const [products, setProducts] = useState<Product[]>([]);
+    const [loading, setLoading] = useState<boolean>(true);
+    useEffect(() => {
+        const fetchProducts = async () => {
+            try {
+                const data = await getProducts();
+                setProducts(data);
+            } catch (error) {
+                console.error("Lỗi tải sản phẩm:", error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchProducts();
+
+    }, []);
 
     return (
-        <div className="app-layout">
+        <div className="home-container">
+            {/* Hero Section */}
+            <section className="hero-banner">
+                <div className="hero-content">
+                    <h1>Tinh Hoa Thủ Công Việt</h1>
+                    <p>Khám phá những sản phẩm handmade độc đáo, mang đậm bản sắc cá nhân.</p>
+                    {!currentUser ? (
+                        <div className="hero-buttons">
 
-            {/* ⭐ Header tách riêng */}
-            <Header
-                currentUser={currentUser}
-                onSwitchToLogin={onSwitchToLogin}
-                onLogout={onLogout}
-            />
+                            {/* 4. Sửa onClick: Dùng navigate thay vì props */}
+                            <button 
+                                className="btn-primary" 
+                                onClick={() => navigate('/login')}
+                            >
+                                Đăng Nhập Ngay
+                            </button>
+                            <button 
+                                className="btn-secondary" 
+                                onClick={() => navigate('/register')}
+                            >
+                                Đăng Ký
+                          </button>
+                        </div>
+                    ) : (
 
-            <main className="product-grid">
-                <h2>Khung Bố Cục Sản Phẩm</h2>
-
-                <div className="product-list-wrapper">
-                    {emptyProducts.map(product => (
-                        <ProductCard key={product.id} product={product} />
-                    ))}
+                        <div className="welcome-message">
+                            <h3>Xin chào, {currentUser.username}!</h3>
+                            <p>Chúc bạn một ngày mua sắm vui vẻ.</p>
+                        </div>
+                    )}
                 </div>
-            </main>
+            </section>
+            {/* Product List */}
 
-            {/* ⭐ Footer tách riêng */}
-            <Footer />
+            <section className="product-section">
+                <h2>Sản Phẩm Nổi Bật</h2>
+                {loading ? (
+                    <div className="loading">Đang tải sản phẩm...</div>
+                ) : (
+                    <div className="product-grid">
+                        {products.map(product => (
+                            <ProductCard key={product.id} product={product} />
+                        ))}
+                    </div>
+                )}
+            </section>
         </div>
     );
 };
