@@ -1,10 +1,11 @@
 // src/App.tsx (Dán lại toàn bộ nội dung này)
 import React, { useState, useEffect } from 'react';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 import Login from './components/Login';
 import Register from './components/Register';
 import ForgotPassword from './components/ForgotPassword';
 import Home from './components/Home'; // Import Home
-import './App.css';
+import './Styles/global.css';
 
 // 1. KHAI BÁO KIỂU USER
 export interface User {
@@ -53,7 +54,7 @@ function App() {
 
     const renderPage = () => {
         const isAuthPage = currentPage !== PAGE.HOME;
-
+        const handleCloseAuth = () => setCurrentPage(PAGE.HOME);
         // Nếu đang ở trang xác thực, chỉ render form đó
         if (isAuthPage) {
             return (
@@ -63,16 +64,19 @@ function App() {
                             onLoginSuccess={handleLoginSuccess}
                             onSwitchToRegister={() => setCurrentPage(PAGE.REGISTER)}
                             onSwitchToForgot={() => setCurrentPage(PAGE.FORGOT_PASSWORD)}
+                            onClose={handleCloseAuth}
                         />
                     )}
                     {currentPage === PAGE.REGISTER && (
                         <Register
                             onSwitchToLogin={() => setCurrentPage(PAGE.LOGIN)}
+                            onClose={handleCloseAuth}
                         />
                     )}
                     {currentPage === PAGE.FORGOT_PASSWORD && (
                         <ForgotPassword
                             onSwitchToLogin={() => setCurrentPage(PAGE.LOGIN)}
+                            onClose={handleCloseAuth}
                         />
                     )}
                 </div>

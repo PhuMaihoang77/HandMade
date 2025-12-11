@@ -1,14 +1,17 @@
 // src/components/ForgotPassword.tsx
 import React, { useState } from 'react';
 import { forgotPassword } from '../services/AuthService';
+import '../Styles/auth.css'; 
+
 
 // Khai báo kiểu cho Props (Đã bỏ prop 'styles')
 interface ForgotPasswordProps {
     onSwitchToLogin: () => void;
+    onClose: () => void;
 }
 
 // Bỏ tham số 'styles'
-const ForgotPassword: React.FC<ForgotPasswordProps> = ({ onSwitchToLogin }) => {
+const ForgotPassword: React.FC<ForgotPasswordProps> = ({ onSwitchToLogin,onClose }) => {
     const [email, setEmail] = useState('');
     const [error, setError] = useState('');
     const [message, setMessage] = useState('');
@@ -31,6 +34,9 @@ const ForgotPassword: React.FC<ForgotPasswordProps> = ({ onSwitchToLogin }) => {
     return (
         // ⭐ Dùng className
         <div className="auth-container">
+            <button className="auth-close-button" onClick={onClose}>
+                &times; 
+            </button>
             <h2>Quên Mật khẩu</h2>
             <p>Vui lòng nhập email của bạn để nhận liên kết đặt lại mật khẩu.</p>
             <form onSubmit={handleSubmit} className="auth-form">

@@ -1,6 +1,8 @@
 // src/components/Home.tsx
 import React from 'react';
 import ProductCard, { Product } from './ProductCard';
+import '../Styles/layout.css';  
+import '../Styles/product.css';
 
 // Dữ liệu mẫu (sử dụng 3 khung rỗng)
 const emptyProducts: Product[] = [
@@ -30,9 +32,8 @@ const Home: React.FC<HomeProps> = ({ currentUser, onSwitchToLogin, onSwitchToReg
         }
         return (
             <div className="auth-actions">
-                <a href="#" onClick={onSwitchToLogin} className="auth-link-header">Đăng Nhập</a>
-                <span style={{color: 'white', margin: '0 5px'}}>/</span>
-                <a href="#" onClick={onSwitchToRegister} className="auth-link-header">Đăng Ký</a>
+                <a href="#" onClick={onSwitchToLogin} className="auth-link-header" ><i className="fa-solid fa-user" style={{ marginRight: 6 }}></i>
+  Sign in</a>
             </div>
         );
     };
@@ -45,6 +46,7 @@ const Home: React.FC<HomeProps> = ({ currentUser, onSwitchToLogin, onSwitchToReg
                     {/* Các Tab điều hướng */}
                     <a href="#" className="nav-link active">Trang Chủ</a>
                     <a href="#" className="nav-link">Sản Phẩm</a>
+                     <a href="#" className="nav-link">Sản Phẩm</a>
                     <a href="#" className="nav-link">Giỏ Hàng (0)</a>
                 </nav>
 
