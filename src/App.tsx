@@ -13,6 +13,7 @@ import ProductDetail from './Pages/ProductDetail';
 import { User } from './types/model';
 
 import './Styles/global.css';
+import Checkout from "./Pages/Checkout";
 
 // 2. LAYOUT COMPONENT (Giúp ẩn/hiện Header, Footer dễ dàng)
 // Những trang nào cần Header/Footer thì bọc trong cái này
@@ -107,10 +108,13 @@ function App() {
                         <ProductDetail />
                     </MainLayout>
                 } />
-
+                <Route path="/checkout" element={
+                    <MainLayout currentUser={currentUser} onLogout={handleLogout}>
+                        <Checkout />
+                    </MainLayout>
+                } />
                 {/* Route 404: Nếu nhập linh tinh thì về Home */}
                 <Route path="*" element={<Navigate to="/" />} />
-
             </Routes>
         </div>
     );
