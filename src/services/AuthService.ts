@@ -42,3 +42,22 @@ export const forgotPassword = async (email: string): Promise<boolean> => {
     console.log(`[Fake API] Gửi mail reset tới: ${email}`);
     return true;
 };
+
+// === CẬP NHẬT EMAIL ===
+export const updateUserEmail = async (userId: number, email: string): Promise<User> => {
+    // Kiểm tra email trùng của user khác
+    const exist = await api.get(`/users?email=${encodeURIComponent(email)}`);
+    const duplicated = exist.data.find((u: User) => u.id !== userId);
+    if (duplicated) {
+        throw new Error("Email đã được sử dụng bởi tài khoản khác.");
+    }
+
+    const response = await api.patch(`/users/${userId}`, { email });
+    return response.data;
+};
+
+// === CẬP NHẬT MẬT KHẨU ===
+export const updateUserPassword = async (userId: number, password: string): Promise<User> => {
+    const response = await api.patch(`/users/${userId}`, { password });
+    return response.data;
+};
