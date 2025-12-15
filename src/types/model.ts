@@ -17,3 +17,11 @@ export interface User {
     username: string;
     password?: string;
 }
+export interface CartItem {
+    product: Product;
+    quantity: number;
+}
+export interface Cart{
+    items: CartItem[];
+    totalPrice: number;
+}
