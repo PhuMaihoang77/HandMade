@@ -1,14 +1,12 @@
 import React, { FC } from 'react';
 import { useCart } from '../context/CartContext';
 import { CartItem } from '../types/model';
-import '../Styles/cart.css'; // Đảm bảo tên file CSS khớp
+import '../Styles/cart.css';
 
 const Cart: FC = () => {
     const {
         cart,
-        updateQuantity,
-        isCartOpen,
-        setIsCartOpen
+        updateQuantity
     } = useCart();
 
     const handleIncrease = (item: CartItem) => {
@@ -22,18 +20,12 @@ const Cart: FC = () => {
     };
 
     return (
-        <div
-            className={`cart-sidebar ${isCartOpen ? 'open' : ''}`}
-            onClick={(e) => e.stopPropagation()}
-        >
+        <div className="cart-page-container">
             <div className="cart-header">
                 <h2>Giỏ hàng</h2>
                 <div className="cart-header-total">
                     Tổng giá: {cart.totalPrice.toLocaleString('vi-VN')} VNĐ
                 </div>
-                <button className="close-cart-btn" onClick={() => setIsCartOpen(false)}>
-                    X
-                </button>
             </div>
 
             <div className="cart-items-container">
@@ -63,8 +55,8 @@ const Cart: FC = () => {
                 )}
             </div>
 
-            <div style={{ padding: '15px', borderTop: '1px solid #000' }}>
-                <button style={{ width: '100%', padding: '10px', backgroundColor: 'green', color: 'white', border: 'none', cursor: 'pointer' }}>
+            <div className="cart-footer-actions">
+                <button className="checkout-button">
                     Thanh toán
                 </button>
             </div>
