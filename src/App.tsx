@@ -15,19 +15,25 @@ import Profile from './Pages/Profile';
 import { User } from './types/model';
 
 import './Styles/global.css';
+import Checkout from "./Pages/Checkout";
+import { CartProvider } from './context/CartContext';
+import Cart from './Pages/Cart';
 
 // 2. LAYOUT COMPONENT (Giúp ẩn/hiện Header, Footer dễ dàng)
 // Những trang nào cần Header/Footer thì bọc trong cái này
 const MainLayout = ({ children, currentUser, onLogout }: { children: React.ReactNode, currentUser: User | null, onLogout: () => void }) => {
     return (
+        <CartProvider>
         <>
             <Header currentUser={currentUser} onLogout={onLogout} />
             <main style={{ minHeight: '80vh', paddingTop: '20px' }}>
                 {children}
             </main>
             <Footer />
+            <Cart />
             <ScrollToTop />
         </>
+        </CartProvider>
     );
 };
 
@@ -60,6 +66,7 @@ function App() {
     }, [location.pathname]);
 
     return (
+
         <div className="App">
             <Routes>
                 {/* --- ROUTE CHO AUTH (KHÔNG CÓ HEADER/FOOTER) --- */}
@@ -116,12 +123,16 @@ function App() {
                         <ProductDetail />
                     </MainLayout>
                 } />
-
+                <Route path="/checkout" element={
+                    <MainLayout currentUser={currentUser} onLogout={handleLogout}>
+                        <Checkout />
+                    </MainLayout>
+                } />
                 {/* Route 404: Nếu nhập linh tinh thì về Home */}
                 <Route path="*" element={<Navigate to="/" />} />
-
             </Routes>
         </div>
+
     );
 }
 
