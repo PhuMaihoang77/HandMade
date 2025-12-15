@@ -30,7 +30,6 @@ const MainLayout = ({ children, currentUser, onLogout }: { children: React.React
                 {children}
             </main>
             <Footer />
-            <Cart />
             <ScrollToTop />
         </>
         </CartProvider>
@@ -128,6 +127,11 @@ function App() {
                         <Checkout />
                     </MainLayout>
                 } />
+                <Route path="/cart" element={
+                    <MainLayout currentUser={currentUser} onLogout={handleLogout}>
+                        <Cart />
+                    </MainLayout>
+                }/>
                 {/* Route 404: Nếu nhập linh tinh thì về Home */}
                 <Route path="*" element={<Navigate to="/" />} />
             </Routes>
