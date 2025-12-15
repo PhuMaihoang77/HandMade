@@ -1,33 +1,18 @@
-/* src/Styles/CartSidebar.css - Sidebar nổi, dưới, trắng, bo góc, cam */
+/* src/Styles/cart.css - Phong cách Trang Giỏ hàng độc lập (Page Layout) */
 
-.cart-sidebar {
-    /* Vị trí và Kích thước */
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    width: max-content;
-    min-width: 380px;
-    max-width: 90vw;
-    height: 50vh;
-
-    /* Thiết kế */
+/* === CONTAINER CHO TRANG GIỎ HÀNG (Thay thế .cart-sidebar) === */
+.cart-page-container {
+    max-width: 1100px;
+    margin: 40px auto; /* Căn giữa và tạo khoảng cách */
+    padding: 20px;
     background-color: white;
-    border-top-left-radius: 15px;
-    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.15);
-    z-index: 900;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     display: flex;
     flex-direction: column;
-
-    /* Ẩn/Hiện (Trượt từ dưới lên) */
-    transform: translateY(100%);
-    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.cart-sidebar.open {
-    transform: translateY(0);
-}
-
-/* === HEADER (Tiêu đề và Tổng tiền) === */
+/* === HEADER (Tiêu đề, Tổng tiền và Checkbox Chọn tất cả) === */
 .cart-header {
     display: flex;
     justify-content: space-between;
@@ -38,25 +23,29 @@
     color: var(--color-text-dark);
 }
 
+.cart-header label {
+    display: flex;
+    align-items: center;
+    font-size: 1em;
+    font-weight: 500;
+    cursor: pointer;
+    color: var(--color-text-dark, #333);
+}
+
+.cart-header label input[type="checkbox"] {
+    margin-right: 8px;
+    width: 18px;
+    height: 18px;
+}
+
 .cart-header h2 {
-    margin: 0;
-    font-size: 1.5em;
-    font-weight: 600;
+    display: none; /* Ẩn tiêu đề h2 nếu dùng label Chọn tất cả làm tiêu đề chính */
 }
 
 .cart-header-total {
     font-weight: 700;
     font-size: 1.1em;
     color: var(--color-primary);
-}
-
-.close-cart-btn {
-    background: none;
-    border: none;
-    font-size: 1.5em;
-    cursor: pointer;
-    font-weight: bold;
-    color: #333;
 }
 
 /* === ITEM CONTAINER (Danh sách sản phẩm) === */
@@ -68,12 +57,21 @@
 
 /* === CART ITEM (Chi tiết từng sản phẩm) === */
 .cart-item {
+    /* ĐÃ SỬA: Thêm cột 25px cho Checkbox */
     display: grid;
-    grid-template-columns: 70px 1fr auto 90px;
+    grid-template-columns: 25px 70px 1fr auto 90px;
     gap: 15px;
     align-items: center;
     padding: 12px 0;
     border-bottom: 1px solid #F0F0F0;
+}
+
+/* Định dạng Checkbox cá nhân */
+.item-selection-checkbox {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    margin: 0;
 }
 
 .item-image {
@@ -89,7 +87,14 @@
     color: var(--color-text-dark);
 }
 
-/* === KIỂM SOÁT SỐ LƯỢNG (Dùng màu cam) === */
+.item-total-price {
+    font-weight: 700;
+    text-align: right;
+    color: var(--color-primary);
+}
+
+
+/* === KIỂM SOÁT SỐ LƯỢNG (Giữ nguyên) === */
 .quantity-controls {
     display: flex;
     align-items: center;
@@ -117,15 +122,36 @@
     background-color: #ffbf00;
 }
 
-/* === FOOTER (Nút Thanh toán) === */
+/* === FOOTER (Nút Thanh toán và Tóm tắt) === */
 .cart-footer-actions {
     padding: 15px 20px;
     border-top: 1px solid #EEE;
     background-color: white;
+    display: flex; /* Bổ sung để xếp Tổng tiền và Nút thanh toán */
+    justify-content: flex-end;
+    align-items: center;
+    gap: 30px;
 }
 
+/* Định dạng khu vực Tổng kết */
+.cart-summary {
+    display: flex;
+    align-items: center;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: var(--color-text-dark, #333);
+}
+
+.cart-summary span {
+    color: var(--color-secondary, orange);
+    margin-left: 10px;
+    font-size: 1.3em;
+    font-weight: 700;
+}
+
+
 .checkout-button {
-    width: 100%;
+    width: 250px; /* Giới hạn chiều rộng nút */
     padding: 12px 0;
     background-color: var(--color-secondary);
     color: white;
@@ -137,7 +163,13 @@
     transition: background-color 0.3s, transform 0.1s;
 }
 
-.checkout-button:hover {
+.checkout-button:hover:not(:disabled) {
     background-color: #ffbf00;
     transform: translateY(-1px);
+}
+
+.checkout-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    transform: none;
 }

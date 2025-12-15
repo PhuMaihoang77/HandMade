@@ -6,7 +6,11 @@ import '../Styles/cart.css';
 const Cart: FC = () => {
     const {
         cart,
-        updateQuantity
+        updateQuantity,
+        selectedItemIds,
+        toggleItemSelected,
+        toggleSelectAll,
+        totalSelectedPrice
     } = useCart();
 
     const handleIncrease = (item: CartItem) => {
@@ -19,12 +23,23 @@ const Cart: FC = () => {
         updateQuantity(item.product.id as number, newQuantity);
     };
 
+    const isAllSelected = cart.items.length > 0 && selectedItemIds.length === cart.items.length;
+
     return (
         <div className="cart-page-container">
             <div className="cart-header">
-                <h2>Giỏ hàng</h2>
+                <label>
+                    <input
+                        type="checkbox"
+                        checked={isAllSelected}
+                        onChange={toggleSelectAll}
+                        disabled={cart.items.length === 0}
+                    />
+                    Chọn tất cả ({selectedItemIds.length}/{cart.items.length})
+                </label>
+
                 <div className="cart-header-total">
-                    Tổng giá: {cart.totalPrice.toLocaleString('vi-VN')} VNĐ
+                    Tổng giá (Tất cả): {cart.totalPrice.toLocaleString('vi-VN')} VNĐ
                 </div>
             </div>
 
@@ -34,6 +49,14 @@ const Cart: FC = () => {
                 ) : (
                     cart.items.map((item) => (
                         <div key={item.product.id} className="cart-item">
+
+                            <input
+                                type="checkbox"
+                                checked={selectedItemIds.includes(item.product.id as number)}
+                                onChange={() => toggleItemSelected(item.product.id as number)}
+                                className="item-selection-checkbox"
+                            />
+
                             <img src={item.product.imageUrl} alt={item.product.name} className="item-image" />
 
                             <div className="item-info">
@@ -46,7 +69,7 @@ const Cart: FC = () => {
                             </div>
 
                             <div className="quantity-controls">
-                                <button onClick={() => handleDecrease(item)}>-</button>
+                                <button onClick={() => handleDecrease(item)} disabled={item.quantity <= 1}>-</button>
                                 <span>{item.quantity}</span>
                                 <button onClick={() => handleIncrease(item)}>+</button>
                             </div>
@@ -56,8 +79,15 @@ const Cart: FC = () => {
             </div>
 
             <div className="cart-footer-actions">
-                <button className="checkout-button">
-                    Thanh toán
+                <div className="cart-summary">
+                    Tổng tiền hàng: <span>{totalSelectedPrice.toLocaleString('vi-VN')} VNĐ</span>
+                </div>
+
+                <button
+                    className="checkout-button"
+                    disabled={selectedItemIds.length === 0}
+                >
+                    Thanh toán ({selectedItemIds.length})
                 </button>
             </div>
         </div>
