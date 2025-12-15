@@ -88,3 +88,32 @@
         width: 100%;
     }
 }
+.product-single_policy {
+  margin: 15px 0;
+  padding: 12px;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  background: #fafafa;
+}
+
+.product-policy {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.product-policy_item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.product-policy_icon {
+  font-size: 14px;
+  color: #222;
+}
+
+.product-policy_title {
+  font-size: 14px;
+  color: #555;
+}

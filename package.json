@@ -76,7 +76,7 @@
     "//--- API COMMAND (CHẠY RIÊNG SERVER) ---": "",
     "api": "npm run db:merge && concurrently -n \"WATCH,SERVER,OPEN\" -c \"magenta,blue,green\" \"npm run db:watch-data\" \"npm run db:server\" \"npx wait-on tcp:5000 && npx open-cli http://localhost:5000\"",
     "//--- FULL DEV COMMAND (CHẠY TẤT CẢ) ---": "",
-    "dev": "concurrently -n \"REACT,API_SYSTEM\" -c \"bgBlue.bold,bgMagenta.bold\" \"npm start\" \"npm run api\""
+    "dev":" concurrently -n \"REACT,API_SYSTEM\" -c \"bgBlue.bold,bgMagenta.bold\" \"npm start\" \"npm run api\""
   },
   "eslintConfig": {
     "extends": [
@@ -166,6 +166,7 @@
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
     "concurrently": "^9.2.1",
+    "json-server": "^1.0.0-beta.3",
     "nodemon": "^3.1.11",
     "open-cli": "^8.0.0",
     "react-scripts": "^5.0.1",

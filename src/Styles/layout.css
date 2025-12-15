@@ -79,6 +79,10 @@
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
+.search-wrapper {
+    position: relative;
+    min-width: 200px;
+}
 .search-bar input {
     padding: 8px 12px;
     border: none;
@@ -102,6 +106,66 @@
 .search-bar button:hover {
     background-color: #ffbf00;
     transform: scale(1.05);
+}
+.search-suggestions {
+    position: absolute;
+    top: 110%;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    border: 1px solid var(--color-gray-border);
+    border-radius: 8px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+    overflow: hidden;
+    z-index: 1200;
+}
+.suggestion-item {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 12px;
+    border: none;
+    background: #fff;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.suggestion-item:hover {
+    background: rgba(255,138,101,0.08);
+}
+.suggestion-name {
+    text-align: left;
+    color: var(--color-text-dark);
+    font-weight: 600;
+}
+.suggestion-price {
+    color: var(--color-secondary);
+    font-weight: 600;
+    font-size: 0.95em;
+}
+
+.scroll-top-button {
+    position: fixed;
+    right: 24px;
+    bottom: 32px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--color-secondary);
+    color: white;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1em;
+    z-index: 1500;
+    transition: transform 0.2s, background-color 0.2s;
+}
+.scroll-top-button:hover {
+    background-color: #ffab91;
+    transform: translateY(-2px);
 }
 
 /* AUTH / USER ACTIONS */
@@ -129,6 +193,21 @@
     gap: 8px;
     font-weight: 600;
     font-size: 0.95em;
+}
+.profile-link-header {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.2s;
+}
+.profile-link-header:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(-1px);
 }
 .logout-button {
     padding: 8px 15px;
