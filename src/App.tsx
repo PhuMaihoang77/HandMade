@@ -5,11 +5,13 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 // Import Components
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 import Login from './Pages/Login';
 import Register from './Pages/Register';
 import ForgotPassword from './Pages/ForgotPassword';
 import Home from './Pages/Home';
 import ProductDetail from './Pages/ProductDetail';
+import Profile from './Pages/Profile';
 import { User } from './types/model';
 
 import './Styles/global.css';
@@ -24,6 +26,7 @@ const MainLayout = ({ children, currentUser, onLogout }: { children: React.React
                 {children}
             </main>
             <Footer />
+            <ScrollToTop />
         </>
     );
 };
@@ -98,6 +101,12 @@ function App() {
                 <Route path="/" element={
                     <MainLayout currentUser={currentUser} onLogout={handleLogout}>
                         <Home currentUser={currentUser} />
+                    </MainLayout>
+                } />
+
+                <Route path="/profile" element={
+                    <MainLayout currentUser={currentUser} onLogout={handleLogout}>
+                        <Profile currentUser={currentUser} />
                     </MainLayout>
                 } />
 

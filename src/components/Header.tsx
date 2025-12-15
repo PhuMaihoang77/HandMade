@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useMemo, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { User } from '../types/model';
+import { useProducts } from '../hooks/useProducts';
 interface HeaderProps {
     currentUser: User | null;
     onLogout: () => void;
@@ -8,10 +9,25 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ currentUser, onLogout }) => {
     const navigate = useNavigate();
+    const { products } = useProducts();
+    const [query, setQuery] = useState('');
+
+    const normalizedQuery = query.trim().toLowerCase();
+    const suggestions = useMemo(() => {
+        if (!normalizedQuery) return [];
+        return products
+            .filter(p => p.name.toLowerCase().includes(normalizedQuery))
+            .slice(0, 6);
+    }, [products, normalizedQuery]);
 
     const handleSearch = (e: React.FormEvent) => {
         e.preventDefault();
-        alert('Tính năng tìm kiếm đang phát triển!');
+        if (!normalizedQuery) return;
+        const target = suggestions[0] ?? products.find(p => p.name.toLowerCase().includes(normalizedQuery));
+        if (target) {
+            navigate(`/product/${target.id}`);
+            setQuery('');
+        }
     };
 
     return (
@@ -32,22 +48,51 @@ const Header: React.FC<HeaderProps> = ({ currentUser, onLogout }) => {
             </nav>
 
             {/* Search */}
-            <form className="search-bar" onSubmit={handleSearch}>
-                <input type="text" placeholder="Tìm kiếm sản phẩm..." />
-                <button type="submit"><i className="fas fa-search"></i></button>
-            </form>
+            <div className="search-wrapper">
+                <form className="search-bar" onSubmit={handleSearch}>
+                    <input
+                        type="text"
+                        placeholder="Tìm kiếm sản phẩm..."
+                        value={query}
+                        onChange={(e) => setQuery(e.target.value)}
+                    />
+                    <button type="submit"><i className="fas fa-search"></i></button>
+                </form>
+                {suggestions.length > 0 && (
+                    <div className="search-suggestions">
+                        {suggestions.map(product => (
+                            <button
+                                key={product.id}
+                                className="suggestion-item"
+                                onClick={() => {
+                                    navigate(`/product/${product.id}`);
+                                    setQuery('');
+                                }}
+                            >
+                                <span className="suggestion-name">{product.name}</span>
+                                <span className="suggestion-price">
+                                    {product.price.toLocaleString('vi-VN')} VNĐ
+                                </span>
+                            </button>
+                        ))}
+                    </div>
+                )}
+            </div>
 
             {/* User / Auth */}
             <div className="auth-actions">
                 {currentUser ? (
                     <div className="auth-status">
-                        <span><i className="fas fa-user-circle"></i> {currentUser.username}</span>
+                        <Link to="/profile" className="profile-link-header">
+                            <i className="fas fa-user-circle"></i>
+                            <span>{currentUser.username}</span>
+                        </Link>
                         <button className="logout-button" onClick={onLogout}>Đăng Xuất</button>
                     </div>
                 ) : (
                     <>
                         <Link to="/login" className="auth-link-header">Đăng Nhập</Link>
-                        <Link to="/register" className="auth-link-header">Đăng Ký</Link>
+                        <Link to="/cart" className="nav-cart"><i className="fa-solid fa-cart-shopping icon-white" ></i></Link>
                     </>
                 )}
             </div>
