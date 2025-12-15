@@ -1,6 +1,616 @@
 {
   "products": [
     {
+      "id": 41,
+      "name": "Dây Đeo Chú Lăng Nghiêm",
+      "price": 129000,
+      "category": "Phụ kiện",
+      "categoryId": 3,
+      "imageUrl": "https://antinh.vn/wp-content/uploads/2025/12/Day-Deo-Chu-Lang-Nghiem-800x800.jpg",
+      "description": "Dây Đeo Chú Lăng Nghiêm",
+      "inventory": 20
+    },
+    {
+      "id": 42,
+      "name": "Dây Chuyền Vòng Trăng Ánh Sao",
+      "price": 229000,
+      "category": "Phụ kiện",
+      "categoryId": 3,
+      "imageUrl": "https://antinh.vn/wp-content/uploads/2025/09/Day-Chuyen-Vong-Trang-Anh-Sao-800x800.jpg",
+      "description": "Dây Chuyền Vòng Trăng Ánh Sao",
+      "inventory": 20
+    },
+    {
+      "id": 43,
+      "name": "Dây Chuyền Pha Lê Ánh Trăng",
+      "price": 259000,
+      "category": "Phụ kiện",
+      "categoryId": 3,
+      "imageUrl": "https://antinh.vn/wp-content/uploads/2025/09/Day-Chuyen-Pha-Le-Anh-Trang-800x800.jpg",
+      "description": "Dây Chuyền Pha Lê Ánh Trăng",
+      "inventory": 20
+    },
+    {
+      "id": 44,
+      "name": "Dây Chuyền Đá Aquamarine",
+      "price": 279000,
+      "category": "Phụ kiện",
+      "categoryId": 3,
+      "imageUrl": "https://antinh.vn/wp-content/uploads/2025/09/Day-Chuyen-Da-Aquamarine-800x800.jpg",
+      "description": "Dây Chuyền Đá Aquamarine",
+      "inventory": 20
+    },
+    {
+      "id": 45,
+      "name": "Dây Chuyền Đá Pha Lê Chuồn Chuồn",
+      "price": 259000,
+      "category": "Phụ kiện",
+      "categoryId": 3,
+      "imageUrl": "https://antinh.vn/wp-content/uploads/2025/09/Day-Chuyen-Da-Pha-Le-Chuon-Chuon-800x800.jpg",
+      "description": "Dây Chuyền Đá Pha Lê Chuồn Chuồn",
+      "inventory": 20
+    },
+    {
+      "id": 46,
+      "name": "Dây Chuyền Đá Mã Não Đỏ",
+      "price": 289000,
+      "category": "Phụ kiện",
+      "categoryId": 3,
+      "imageUrl": "https://antinh.vn/wp-content/uploads/2025/09/Day-Chuyen-Da-Ma-Nao-Do-800x800.jpg",
+      "description": "Dây Chuyền Đá Mã Não Đỏ",
+      "inventory": 20
+    },
+    {
+      "id": 47,
+      "name": "Dây Chuyền Trái Tim Cỏ Bốn Lá May Mắn",
+      "price": 189000,
+      "category": "Phụ kiện",
+      "categoryId": 3,
+      "imageUrl": "https://antinh.vn/wp-content/uploads/2025/08/Day-Chuyen-Trai-Tim-Co-Bon-La-May-Man-800x800.jpg",
+      "description": "Dây Chuyền Trái Tim Cỏ Bốn Lá May Mắn",
+      "inventory": 20
+    },
+    {
+      "id": 48,
+      "name": "Dây Chuyền Hoa 4 Lá May Mắn",
+      "price": 219000,
+      "category": "Phụ kiện",
+      "categoryId": 3,
+      "imageUrl": "https://antinh.vn/wp-content/uploads/2025/08/Day-Chuyen-Hoa-4-La-May-Man-800x800.jpg",
+      "description": "Dây Chuyền Hoa 4 Lá May Mắn",
+      "inventory": 20
+    },
+    {
+      "id": 49,
+      "name": "Dây Chuyền Pha Lê Giọt Sương Cánh Bướm",
+      "price": 199000,
+      "category": "Phụ kiện",
+      "categoryId": 3,
+      "imageUrl": "https://antinh.vn/wp-content/uploads/2025/08/Day-Chuyen-Pha-Le-Giot-Suong-Canh-Buom-800x800.jpg",
+      "description": "Dây Chuyền Pha Lê Giọt Sương Cánh Bướm",
+      "inventory": 20
+    },
+    {
+      "id": 50,
+      "name": "Dây Chuyền Quả Cầu Chu Sa Đỏ",
+      "price": 249000,
+      "category": "Phụ kiện",
+      "categoryId": 3,
+      "imageUrl": "https://antinh.vn/wp-content/uploads/2025/08/Day-Chuyen-Qua-Cau-Chu-Sa-Do-800x800.jpg",
+      "description": "Dây Chuyền Quả Cầu Chu Sa Đỏ",
+      "inventory": 20
+    },
+    {
+      "id": 51,
+      "name": "Dây Chuyền Hạt Tròn Sáp Ong",
+      "price": 299000,
+      "category": "Phụ kiện",
+      "categoryId": 3,
+      "imageUrl": "https://antinh.vn/wp-content/uploads/2025/08/Day-Chuyen-Hat-Tron-Sap-Ong-800x800.jpg",
+      "description": "Dây Chuyền Hạt Tròn Sáp Ong",
+      "inventory": 20
+    },
+    {
+      "id": 52,
+      "name": "Dây Chuyền Pha Lê Anh Đào Đôi",
+      "price": 199000,
+      "category": "Phụ kiện",
+      "categoryId": 3,
+      "imageUrl": "https://antinh.vn/wp-content/uploads/2025/08/Day-Chuyen-Pha-Le-Anh-Dao-Doi-800x800.jpg",
+      "description": "Dây Chuyền Pha Lê Anh Đào Đôi",
+      "inventory": 20
+    },
+    {
+      "id": 53,
+      "name": "Dây Chuyền Ngọc Bích Bình An",
+      "price": 289000,
+      "category": "Phụ kiện",
+      "categoryId": 3,
+      "imageUrl": "https://antinh.vn/wp-content/uploads/2025/08/Day-Chuyen-Ngoc-Bich-Binh-An-800x800.jpg",
+      "description": "Dây Chuyền Ngọc Bích Bình An",
+      "inventory": 20
+    },
+    {
+      "id": 54,
+      "name": "Dây Chuyền Đá Hoa Nắng",
+      "price": 249000,
+      "category": "Phụ kiện",
+      "categoryId": 3,
+      "imageUrl": "https://antinh.vn/wp-content/uploads/2025/08/Day-Chuyen-Hoa-Nang-800x800.jpg",
+      "description": "Dây Chuyền Đá Hoa Nắng",
+      "inventory": 20
+    },
+    {
+      "id": 55,
+      "name": "Dây Chuyền Đá Zircon Hình Trái Tim",
+      "price": 299000,
+      "category": "Phụ kiện",
+      "categoryId": 3,
+      "imageUrl": "https://antinh.vn/wp-content/uploads/2025/08/Day-Chuyen-Da-Zircon-Hinh-Trai-Tim-800x800.jpg",
+      "description": "Dây Chuyền Đá Zircon Hình Trái Tim",
+      "inventory": 20
+    },
+    {
+      "id": 56,
+      "name": "Dây Chuyền Đồng Xu Đá Thạch Anh Tím",
+      "price": 379000,
+      "category": "Phụ kiện",
+      "categoryId": 3,
+      "imageUrl": "https://antinh.vn/wp-content/uploads/2025/08/Day-Chuyen-Dong-Xu-Da-Thach-Anh-Tim-800x800.jpg",
+      "description": "Dây Chuyền Đồng Xu Đá Thạch Anh Tím",
+      "inventory": 20
+    },
+    {
+      "id": 57,
+      "name": "Dây Chuyền Ngọc Bích Hình Mây",
+      "price": 489000,
+      "category": "Phụ kiện",
+      "categoryId": 3,
+      "imageUrl": "https://antinh.vn/wp-content/uploads/2025/08/Day-Chuyen-Ngoc-Bich-Hinh-May-800x800.jpg",
+      "description": "Dây Chuyền Ngọc Bích Hình Mây",
+      "inventory": 20
+    },
+    {
+      "id": 58,
+      "name": "Dây Chuyền Đá Thạch Anh Xanh Dương",
+      "price": 289000,
+      "category": "Phụ kiện",
+      "categoryId": 3,
+      "imageUrl": "https://antinh.vn/wp-content/uploads/2025/08/Day-Chuyen-Da-Thach-Anh-Xanh-Duong-800x800.jpg",
+      "description": "Dây Chuyền Đá Thạch Anh Xanh Dương",
+      "inventory": 20
+    },
+    {
+      "id": 59,
+      "name": "Dây Chuyền Pha Lê 12 Cung Hoàng Đạo",
+      "price": 379000,
+      "category": "Phụ kiện",
+      "categoryId": 3,
+      "imageUrl": "https://antinh.vn/wp-content/uploads/2025/08/Day-Chuyen-Pha-Le-12-Cung-Hoang-Dao-800x800.jpg",
+      "description": "Dây Chuyền Pha Lê 12 Cung Hoàng Đạo",
+      "inventory": 20
+    },
+    {
+      "id": 60,
+      "name": "Dây Chuyền Pha Lê Charm Trái Tim",
+      "price": 559000,
+      "category": "Phụ kiện",
+      "categoryId": 3,
+      "imageUrl": "https://antinh.vn/wp-content/uploads/2025/08/Day-Chuyen-Pha-Le-Charm-Trai-Tim--800x800.jpg",
+      "description": "Dây Chuyền Pha Lê Charm Trái Tim",
+      "inventory": 20
+    },
+    {
+      "id": 61,
+      "name": "Vòng tay mã não thiên nhiên 5mm quấn 2 vòng tay",
+      "price": 199000,
+      "category": "Trang sức",
+      "categoryId": 4,
+      "imageUrl": "https://cdn-images.kiotviet.vn/2025/05/09/thuycrystal/46ab88af0db442d2bedf441956e83462.png",
+      "description": "Vòng tay mã não thiên nhiên 5mm quấn 2 vòng tay",
+      "inventory": 20
+    },
+    {
+      "id": 62,
+      "name": "Vòng tay mã não thiên nhiên 4mm quấn 3 vòng tay hoa sen bạc",
+      "price": 199000,
+      "category": "Trang sức",
+      "categoryId": 4,
+      "imageUrl": "https://cdn2-retail-images.kiotviet.vn/2025/05/09/thuycrystal/5f573d1bb5b14c3fb322926e01fc36ee.png",
+      "description": "Vòng tay mã não thiên nhiên 4mm quấn 3 vòng tay hoa sen bạc",
+      "inventory": 20
+    },
+    {
+      "id": 63,
+      "name": "Vòng tay mã não thiên nhiên 7mm mix cẩm thạch",
+      "price": 199000,
+      "category": "Trang sức",
+      "categoryId": 4,
+      "imageUrl": "https://cdn-images.kiotviet.vn/2025/05/09/thuycrystal/e378cbf261424877b92bc29a7cef8c1b.png",
+      "description": "Vòng tay mã não thiên nhiên 7mm mix cẩm thạch",
+      "inventory": 20
+    },
+    {
+      "id": 64,
+      "name": "Vòng tay ngọc bích thiên nhiên 8mm mix chu sa, ngọc trai và charm bạc",
+      "price": 199000,
+      "category": "Trang sức",
+      "categoryId": 4,
+      "imageUrl": "https://cdn-images.kiotviet.vn/2025/05/06/thuycrystal/05ca6b4589e74ae4bade17d44a1da712.png",
+      "description": "Vòng tay ngọc bích thiên nhiên 8mm mix chu sa, ngọc trai và charm bạc",
+      "inventory": 20
+    },
+    {
+      "id": 65,
+      "name": "Vòng tay đá moonstone thiên nhiên 4mm quấn 3 vòng tay mix thạch anh tím, hổ phách",
+      "price": 199000,
+      "category": "Trang sức",
+      "categoryId": 4,
+      "imageUrl": "https://cdn-images.kiotviet.vn/2025/05/06/thuycrystal/94801499d5a647e8abb3a21fe3a7c76c.png",
+      "description": "Vòng tay đá moonstone thiên nhiên 4mm quấn 3 vòng tay mix thạch anh tím, hổ phách",
+      "inventory": 20
+    },
+    {
+      "id": 66,
+      "name": "Vòng tay mã não thiên nhiên quấn 2 vòng mix bánh xe và lu",
+      "price": 199000,
+      "category": "Trang sức",
+      "categoryId": 4,
+      "imageUrl": "https://cdn2-retail-images.kiotviet.vn/2025/05/09/thuycrystal/c39d60d1fd0c490e9101d0d478643df0.png",
+      "description": "Vòng tay mã não thiên nhiên quấn 2 vòng mix bánh xe và lu",
+      "inventory": 20
+    },
+    {
+      "id": 67,
+      "name": "Kiềng tay mã não thiên nhiên bánh xe 6mm charm sen",
+      "price": 199000,
+      "category": "Trang sức",
+      "categoryId": 4,
+      "imageUrl": "https://cdn-images.kiotviet.vn/2025/05/09/thuycrystal/e14a6fcfa1544774951c34ad662e7d51.png",
+      "description": "Kiềng tay mã não thiên nhiên bánh xe 6mm charm sen",
+      "inventory": 20
+    },
+    {
+      "id": 68,
+      "name": "Hoa tai Hàn Quốc 432E",
+      "price": 199000,
+      "category": "Trang sức",
+      "categoryId": 4,
+      "imageUrl": "https://cdn-images.kiotviet.vn/thuycrystal/9445a390ae4e4df7829e3ffee13b980d.jpg",
+      "description": "Hoa tai Hàn Quốc 432E",
+      "inventory": 20
+    },
+    {
+      "id": 69,
+      "name": "Hoa tai Hàn Quốc 648E",
+      "price": 199000,
+      "category": "Trang sức",
+      "categoryId": 4,
+      "imageUrl": "https://cdn-images.kiotviet.vn/thuycrystal/80254c176a9f42dcbfd801264c7206f1.jpg",
+      "description": "Hoa tai Hàn Quốc 648E",
+      "inventory": 20
+    },
+    {
+      "id": 70,
+      "name": "Hoa tai Hàn Quốc 15EC",
+      "price": 199000,
+      "category": "Trang sức",
+      "categoryId": 4,
+      "imageUrl": "https://cdn-images.kiotviet.vn/thuycrystal/612c23a8e0064337b85582237ff261df.jpg",
+      "description": "Hoa tai Hàn Quốc 15EC",
+      "inventory": 20
+    },
+    {
+      "id": 71,
+      "name": "Hoa tai Hàn Quốc 139E",
+      "price": 199000,
+      "category": "Trang sức",
+      "categoryId": 4,
+      "imageUrl": "https://cdn-images.kiotviet.vn/thuycrystal/9ef0f191577b49efabdacec5b58ed7ab.jpg",
+      "description": "Hoa tai Hàn Quốc 139E",
+      "inventory": 20
+    },
+    {
+      "id": 72,
+      "name": "Hoa tai Hàn Quốc 446E",
+      "price": 199000,
+      "category": "Trang sức",
+      "categoryId": 4,
+      "imageUrl": "https://cdn-images.kiotviet.vn/thuycrystal/852ec72a05114f27ba7ff45f83749900.jpg",
+      "description": "Hoa tai Hàn Quốc 446E",
+      "inventory": 20
+    },
+    {
+      "id": 73,
+      "name": "Hoa tai Hàn Quốc 506E",
+      "price": 199000,
+      "category": "Trang sức",
+      "categoryId": 4,
+      "imageUrl": "https://cdn-images.kiotviet.vn/thuycrystal/a97b20aafb384201bdeba0cf4a1bf3cf.jpg",
+      "description": "Hoa tai Hàn Quốc 506E",
+      "inventory": 20
+    },
+    {
+      "id": 74,
+      "name": "Hoa tai pha lê ngắn hạt tròn 5003M10",
+      "price": 199000,
+      "category": "Trang sức",
+      "categoryId": 4,
+      "imageUrl": "https://cdn-images.kiotviet.vn/2025/09/01/thuycrystal/1d76e60d16634519a1a73d8dfcbdf390.jpg",
+      "description": "Hoa tai pha lê ngắn hạt tròn 5003M10",
+      "inventory": 20
+    },
+    {
+      "id": 75,
+      "name": "Hoa tai pha lê dài mix 4470M10, pendant 5650M20",
+      "price": 199000,
+      "category": "Trang sức",
+      "categoryId": 4,
+      "imageUrl": "https://cdn-images.kiotviet.vn/2025/09/01/thuycrystal/066ba85c3735444b9096b31f9e7df62e.jpg",
+      "description": "Hoa tai pha lê dài mix 4470M10, pendant 5650M20",
+      "inventory": 20
+    },
+    {
+      "id": 76,
+      "name": "Hoa tai pha lê dài mix 4470M10, pendant 5203M18",
+      "price": 199000,
+      "category": "Trang sức",
+      "categoryId": 4,
+      "imageUrl": "https://cdn-images.kiotviet.vn/2025/09/01/thuycrystal/25d6a4a04852437598ba7908e1d2f26e.jpg",
+      "description": "Hoa tai pha lê dài mix 4470M10, pendant 5203M18",
+      "inventory": 20
+    },
+    {
+      "id": 77,
+      "name": "Hoa tai pha lê dài mix 4470M10, pendant 6465M25",
+      "price": 199000,
+      "category": "Trang sức",
+      "categoryId": 4,
+      "imageUrl": "https://cdn-images.kiotviet.vn/2025/09/01/thuycrystal/c08788f8bd2d4e16a39f015d4b74ba81.jpg",
+      "description": "Hoa tai pha lê dài mix 4470M10, pendant 6465M25",
+      "inventory": 20
+    },
+    {
+      "id": 78,
+      "name": "Hoa tai pha lê dài mix 4470M12, pendant 6026M20",
+      "price": 199000,
+      "category": "Trang sức",
+      "categoryId": 4,
+      "imageUrl": "https://cdn-images.kiotviet.vn/2025/09/01/thuycrystal/198e38abd1c34304927a02c5640fec3f.jpg",
+      "description": "Hoa tai pha lê dài mix 4470M12, pendant 6026M20",
+      "inventory": 20
+    },
+    {
+      "id": 79,
+      "name": "Hoa tai pha lê dài mix 4470M10, pendant 6791M25",
+      "price": 199000,
+      "category": "Trang sức",
+      "categoryId": 4,
+      "imageUrl": "https://cdn-images.kiotviet.vn/2025/09/01/thuycrystal/63641ac0b070496bb4eb88b85d0beab8.jpg",
+      "description": "Hoa tai pha lê dài mix 4470M10, pendant 6791M25",
+      "inventory": 20
+    },
+    {
+      "id": 80,
+      "name": "Hoa tai pha lê dài mix 4470M10, pendant 6690M27",
+      "price": 199000,
+      "category": "Trang sức",
+      "categoryId": 4,
+      "imageUrl": "https://cdn-images.kiotviet.vn/2025/09/01/thuycrystal/57dfe48ea17b4d658518335d4fe4278a.jpg",
+      "description": "Hoa tai pha lê dài mix 4470M10, pendant 6690M27",
+      "inventory": 20
+    },
+    {
+      "id": 20,
+      "name": "Đèn Bàn Hình Vầng Trăng Phản Quang Halo Bowl Độc Đáo",
+      "price": 2256000,
+      "category": "Trang trí nhà cửa",
+      "categoryId": 2,
+      "imageUrl": "https://cdn.hstatic.net/products/1000203256/o1cn01ijngm220n3aa07mps___2210171316893-0-cib_f082eb4d360348598d2e40e484765f07_1024x1024.jpg",
+      "description": "Đèn Bàn Hình Vầng Trăng Phản Quang Halo Bowl mang đến sự sang trọng và tinh tế cho không gian sống của bạn. Thiết kế hiện đại cùng ánh sáng phản quang nhẹ nhàng giúp căn phòng trở nên ấm áp, cuốn hút và nổi bật hơn. Đây là món decor hoàn hảo để làm nổi bật bàn, kệ hay bất kỳ góc nào trong phòng khách, phòng ngủ hay không gian làm việc.",
+      "inventory": 50
+    },
+    {
+      "id": 21,
+      "name": "Đồng Hồ Treo Tường Kim Loại Đa Giác Chéo",
+      "price": 599000,
+      "category": "Trang trí nhà cửa",
+      "categoryId": 2,
+      "imageUrl": "https://product.hstatic.net/1000203256/product/dong-ho-treo-tuong-kim-loai-da-giac-cheo__9__d1d96f3a397d46cba6f4533758219852_1024x1024.jpg",
+      "description": "Đồng hồ treo tường không chỉ là công cụ giúp bạn quản lý thời gian hiệu quả mà còn là món đồ trang trí quan trọng, góp phần định hình phong cách cho không gian sống. Một chiếc đồng hồ treo tường đẹp có thể biến không gian nhà bạn trở nên sang trọng, hiện đại và nghệ thuật hơn. Với thiết kế đa dạng từ cổ điển đến hiện đại, đồng hồ treo tường có thể phù hợp với mọi phong cách trang trí nội thất.",
+      "inventory": 24
+    },
+    {
+      "id": 22,
+      "name": "Tranh Thảm Treo Tường Dệt Sợi Hammock Chiếc Lá Xanh",
+      "price": 399000,
+      "category": "Trang trí nhà cửa",
+      "categoryId": 2,
+      "imageUrl": "https://product.hstatic.net/1000203256/product/o1cn01esbyc81oxkxbl7stf___3041635291-0-cib_af9e5d01ed8c4f1fbb55f8dfee537bd7_1024x1024.jpg",
+      "description": "Tranh Thảm Treo Tường Dệt Sợi Hammock Chiếc Lá Xanh là một tác phẩm decor trang trí độc đáo, kết hợp giữa vẻ đẹp tự nhiên của chiếc lá xanh tươi mát và sự tinh tế của sợi dệt thủ công. Sản phẩm này không chỉ là một vật dụng trang trí mà còn mang đến một không gian sống gần gũi với thiên nhiên, thư thái và tràn đầy sức sống.",
+      "inventory": 12
+    },
+    {
+      "id": 23,
+      "name": "Set Decor Ánh Kim Huyền Bí – Modern Luxury",
+      "price": 1599000,
+      "category": "Trang trí nhà cửa",
+      "categoryId": 2,
+      "imageUrl": "https://cdn.hstatic.net/products/1000203256/dsc07664_b1a57bcd6b4041eb8f2ed1b706107871_1024x1024.jpg",
+      "description": "Set Decor Ánh Kim Huyền Bí – Modern Luxury",
+      "inventory": 24
+    },
+    {
+      "id": 24,
+      "name": "Ghế Sofa Da Onyx Hiện Đại Tối Giản",
+      "price": 11599000,
+      "category": "Trang trí nhà cửa",
+      "categoryId": 2,
+      "imageUrl": "https://cdn.hstatic.net/products/1000203256/sofa-da-pu-cao-cap-onyx_80db2e4fcbf7441f8dae373f05cdbc90_1024x1024.jpg",
+      "description": "Sofa Onyx mang phong cách tối giản hiện đại kết hợp electric đầy sáng tạo. Với kích thước 2480 x 900 x 850mm dành cho 3 người ngồi, sản phẩm được tính toán kỹ lưỡng để đảm bảo sự cân đối trong từng đường nét. Thiết kế gọn gàng, sắc sảo nhưng vẫn mềm mại, biến sofa trở thành tâm điểm trong không gian phòng khách.",
+      "inventory": 2
+    },
+    {
+      "id": 25,
+      "name": "Ghế Ăn Lót Đệm Bo Cong Sang Trọng",
+      "price": 1599000,
+      "category": "Trang trí nhà cửa",
+      "categoryId": 2,
+      "imageUrl": "https://cdn.hstatic.net/products/1000203256/ghe-an-bo-cong-thanh-lich_d088d71e617a436ab9f852740c4b15f8_1024x1024.jpg",
+      "description": "Được chế tác từ gỗ tần bì tự nhiên, chiếc ghế sở hữu độ bền chắc, khả năng chịu lực tốt và vân gỗ nổi bật mang vẻ đẹp tự nhiên. Phần lót đệm êm ái không chỉ mang lại sự thoải mái trong từng bữa ăn mà còn nâng cao trải nghiệm sử dụng lâu dài, giúp chiếc ghế trở thành người bạn đồng hành bền vững trong ngôi nhà.",
+      "inventory": 14
+    },
+    {
+      "id": 26,
+      "name": "Đèn Sàn Cây Đứng Chân Gỗ Thân Cong Kim Loại",
+      "price": 3599000,
+      "category": "Trang trí nhà cửa",
+      "categoryId": 2,
+      "imageUrl": "https://cdn.hstatic.net/products/1000203256/o1cn0167i11d20n32blbk0a___2210171316893-0-cib_b937bc90c79c4880a9e422beaa942afc_1024x1024.jpg",
+      "description": "Tại Passion, chúng tôi không chỉ cung cấp những sản phẩm nội thất và đèn trang trí độc đáo, mà còn mang đến trải nghiệm mua sắm tiện lợi, an tâm và phong cách. Mỗi sản phẩm đều được tuyển chọn kỹ lưỡng, kết hợp giữa thẩm mỹ hiện đại và chất lượng bền bỉ, giúp bạn nâng tầm không gian sống một cách tinh tế.",
+      "inventory": 4
+    },
+    {
+      "id": 27,
+      "name": "Bình Gốm 3D Kiểu Pháp Trang Trí Xếp Ply Cong",
+      "price": 2599000,
+      "category": "Trang trí nhà cửa",
+      "categoryId": 2,
+      "imageUrl": "https://cdn.hstatic.net/products/1000203256/binh-gom-3d-don-gian-nghe-thuat_d518fe503f1e47188297fed625220243_1024x1024.jpg",
+      "description": "Hãy tưởng tượng một bình gốm 3D xếp ply cong, đặt trên bàn trà, kệ trang trí hay bàn ăn, với đường nét uốn lượn mềm mại, tinh tế và sang trọng. Bình Gốm 3D Kiểu Pháp Xếp Ply Cong không chỉ là nơi cắm hoa, mà còn là tác phẩm decor nghệ thuật, mang đến sự thanh lịch, hiện đại và độc đáo cho không gian sống. kế lấy cảm hứng từ nghệ thuật Pháp cổ điển, kết hợp kỹ thuật tráng men hiện đại, tạo cảm giác chuyển động nhẹ nhàng cho từng lớp ply, giúp bình gốm trở thành điểm nhấn tinh tế trong mọi góc phòng.",
+      "inventory": 24
+    },
+    {
+      "id": 28,
+      "name": "Bình Gốm 3D Kiểu Pháp Trang Trí Xếp Ply Cong",
+      "price": 599000,
+      "category": "Trang trí nhà cửa",
+      "categoryId": 2,
+      "imageUrl": "https://cdn.hstatic.net/products/1000203256/binh_hoa_gom_su_lon_trang_tri_phong_khach_c93321609e614f2a998d6b2b6953b4c1_1024x1024.jpg",
+      "description": "Bình Hoa Gốm Sứ Jingdezhen Cổ Điển là sản phẩm mang đậm nét nghệ thuật truyền thống Trung Hoa, kết hợp với phong cách vintage tinh tế. Sản phẩm được chế tác từ gốm sứ cao cấp, phủ men bóng và phun mực thủ công tạo họa tiết độc đáo, không chiếc nào giống chiếc nào.",
+      "inventory": 24
+    },
+    {
+      "id": 29,
+      "name": "Ghế Tựa thư giãn",
+      "price": 599000,
+      "category": "Trang trí nhà cửa",
+      "categoryId": 2,
+      "imageUrl": "https://product.hstatic.net/1000203256/product/5a_3cc6ac6595fd4f6ca5e080af4ae125ae_1024x1024.png",
+      "description": "Trong thời đại mà thiết kế nội thất không chỉ đáp ứng nhu cầu sử dụng mà còn thể hiện gu thẩm mỹ và cá tính của gia chủ, việc lựa chọn một món nội thất phù hợp là điều vô cùng quan trọng. Ghế ngồi chân gỗ Ginger không chỉ là một sản phẩm nội thất đơn thuần mà còn là điểm nhấn nghệ thuật trong không gian sống hiện đại. Với chất liệu cao cấp, kiểu dáng tinh tế và tính ứng dụng cao, mẫu ghế này đang được ưa chuộng trong các không gian sống đậm chất cá nhân. Hãy cùng Passion xem qua sản phẩm này nhé!",
+      "inventory": 24
+    },
+    {
+      "id": 30,
+      "name": "Đôn Ngồi Kiểu Nắp Rời Hiện Đại Daily Queen",
+      "price": 1599000,
+      "category": "Trang trí nhà cửa",
+      "categoryId": 2,
+      "imageUrl": "https://cdn.hstatic.net/products/1000203256/dsc03654_551076a4007042718e1a04d0fa328ad4_1024x1024.jpg",
+      "description": "Trong xu hướng nội thất hiện đại, những món đôn ngồi nhỏ gọn, đa năng và thẩm mỹ đang trở thành lựa chọn được nhiều gia đình yêu thích. Không chỉ mang chức năng ngồi tiện dụng, đôn ngồi nắp rời còn giúp bạn tận dụng không gian lưu trữ thông minh, đồng thời tạo nên nét điểm xuyết cho căn phòng. Đôn ngồi Daily Queen là một trong những sản phẩm nổi bật của Passion - thương hiệu tiên phong trong dòng nội thất decor hiện đại, mang đến sự kết hợp hoàn hảo giữa chất lượng, công năng và phong cách.",
+      "inventory": 24
+    },
+    {
+      "id": 31,
+      "name": "Bàn Trà Gỗ Mặt Kính Decor Tiện Di Chuyển ",
+      "price": 2599000,
+      "category": "Trang trí nhà cửa",
+      "categoryId": 2,
+      "imageUrl": "https://product.hstatic.net/1000203256/product/pa231020-01_88bc4f084f3c487da36ae1c964a74c2f_1024x1024.jpg",
+      "description": "Với thiết kế mộc mạc mang phong cách Bắc Âu, sản phẩm ưu tiên về tính tiện nghi cho người sử dụng. Những bộ phần được nối liền với nhau bằng ốc vặn dễ dàng cho bạn lắp đặt và tháo gỡ để di chuyển đến nhiều vị trí khác nhau. Bạn có thể sử dụng sản phẩm để trang trí trong phòng khách, phối với ghế sofa, phòng đọc sách, làm việc hoặc làm tủ táp đầu giường,... đều rất thích hợp. ",
+      "inventory": 14
+    },
+    {
+      "id": 32,
+      "name": "Thảm Lau Chân Cotton Len Thấm Hút Họa Tiết Cầu Vồng Vũ Trụ",
+      "price": 18000,
+      "category": "Trang trí nhà cửa",
+      "categoryId": 2,
+      "imageUrl": "https://product.hstatic.net/1000203256/product/p1290318_7f01c269df214ce7ba6b90adbc473732_1024x1024.jpg",
+      "description": "Chất lượng của những chiếc Thảm lau chân tại nhà Passion đã được kiểm chứng với hàng loạt feedback đến từ khách hàng. Với chất liệu Lông len Cotton, Thảm Lau Chân Cầu Vồng Vũ Trụ sở hữu khả năng thấm hút nhanh, mang lại đôi chân khô ráo. Bên cạnh đó, item cũng giúp người dùng cảm thấy êm ái, mềm mịn mỗi khi sử dụng và hơn hết là bảo vệ bạn khỏi những tai nạn té ngã mỗi khi sàn nhà trơn trượt",
+      "inventory": 4
+    },
+    {
+      "id": 33,
+      "name": "Thảm Lau Chân Cotton Len Cừu Hoạt Hình",
+      "price": 99000,
+      "category": "Trang trí nhà cửa",
+      "categoryId": 2,
+      "imageUrl": "https://product.hstatic.net/1000203256/product/p1200258_35fe261a144d4722b0823385e61d5279_1024x1024.jpg",
+      "description": "Thảm được sản xuất từ vật liệu cao cấp và phổ biến trên thị trường: Vải cotton len siêu thấm, hút sạch những giọt nước trên mọi bề mặt chân của người dùng, đem lại cảm giác khô thoáng vượt trội. Ngoài ra, chất liệu này còn sở hữu độ mềm, mịn cao, khá êm chân, cho bạn cảm giác thoải mái khi sử dụng. Đường may trên thảm cẩn thận, tỉ mỉ và thật chắc chắn giúp thảm không bị rụng lông khi được giặt với máy. Thêm vào đó, thảm có thể sử dụng được cho nhiều vị trí trong ngôi nhà của bạn: phòng bếp, trước cửa ra vào, trước cửa wc, trong phòng ngủ, phòng khách, cạnh máy giặt...",
+      "inventory": 36
+    },
+    {
+      "id": 34,
+      "name": "Tranh Vải Treo Tường Hoạt Hình Đáng Yêu",
+      "price": 69000,
+      "category": "Trang trí nhà cửa",
+      "categoryId": 2,
+      "imageUrl": "https://product.hstatic.net/1000203256/product/22044941183_1682305191.640x640_1d3154410fee4f97b7bd229c0ee5be13_1024x1024.jpg",
+      "description": "Bộ sản phẩm bao gồm 2 móc treo và tranh.Dùng 2 đinh định vị 2 bên đóng vào tường, sau đó móc tranh treo lên trang tríDễ dàng tháo gỡ chuyển đổi vị trí khác nhau trang trí trong nhà",
+      "inventory": 14
+    },
+    {
+      "id": 35,
+      "name": "Vỏ Gối Tựa Lưng Bắc Âu Nhung Nỉ In Màu 2 Mặt Đen Trắng Sang Trọng",
+      "price": 99000,
+      "category": "Trang trí nhà cửa",
+      "categoryId": 2,
+      "imageUrl": "https://cdn.hstatic.net/products/1000203256/dsc02035__1__3c0ee039366b47ba99f5c2c0d13bf07b_1024x1024.jpg",
+      "description": "Vỏ Gối Tựa Lưng Bắc Âu Nhung Nỉ In Màu 2 Mặt Đen Trắng Sang Trọng",
+      "inventory": 2
+    },
+    {
+      "id": 36,
+      "name": "Vỏ Gối Tựa Lưng Nhuộm Sợi Phong Cách Ý Gối Sọc Phối Lá Bắc Âu",
+      "price": 599000,
+      "category": "Trang trí nhà cửa",
+      "categoryId": 2,
+      "imageUrl": "https://cdn.hstatic.net/products/1000203256/a6ba256fc9304587acce2cb23491813f_0fd20b205bfc47728f7eb1ba78641f38_1024x1024.jpg",
+      "description": " Vỏ Gối Tựa Lưng Nhuộm Sợi Phong Cách Ý Gối Sọc Phối Lá Bắc Âu",
+      "inventory": 36
+    },
+    {
+      "id": 37,
+      "name": "Vỏ Gối Tựa Lưng Sofa Hoa Lụa Sọc Vàng Sang Trọng Chất Êm Ái",
+      "price": 599000,
+      "category": "Trang trí nhà cửa",
+      "categoryId": 2,
+      "imageUrl": "https://cdn.hstatic.net/products/1000203256/13278467830_1036115113_fbdb5c1fdbde4b6790120f0bd5e7b25a_1024x1024.jpg",
+      "description": "Vỏ Gối Tựa Lưng Sofa Hoa Lụa Sọc Vàng Sang Trọng Chất Êm Ái",
+      "inventory": 24
+    },
+    {
+      "id": 38,
+      "name": " Gấu Bông Búp Bê Khủng Long Gấu Bông Nhập Khẩu Mẫu Hot",
+      "price": 99000,
+      "category": "Trang trí nhà cửa",
+      "categoryId": 2,
+      "imageUrl": "https://cdn.hstatic.net/products/1000203256/730c3b4b44ee4c0b9129b9bc17fade6d_32e978449fe04074a46aab223e4c908f_1024x1024.jpg",
+      "description": "Gấu Bông Búp Bê Khủng Long Gấu Bông Nhập Khẩu Mẫu Hot",
+      "inventory": 24
+    },
+    {
+      "id": 39,
+      "name": "Thảm Bếp Set 2 Chiếc Hình Chữ L Họa Tiết Chú Chó Đáng Yêu",
+      "price": 599000,
+      "category": "Trang trí nhà cửa",
+      "categoryId": 2,
+      "imageUrl": "https://cdn.hstatic.net/products/1000203256/p1250318_7e36971694b04725b3289b9e5090cdbf_1024x1024.jpg",
+      "description": "Thảm Bếp Set 2 Chiếc Hình Chữ L Họa Tiết Chú Chó Đáng Yêu",
+      "inventory": 24
+    },
+    {
+      "id": 40,
+      "name": "Thảm Phủ Sofa Họa Tiết Tranh Vẽ Trừu Tượng Chiếc Lá Xanh",
+      "price": 599000,
+      "category": "Trang trí nhà cửa",
+      "categoryId": 2,
+      "imageUrl": "https://cdn.hstatic.net/products/1000203256/16239787491_372911429_82dd23d6750143b59c301378f73b2b9d_1024x1024.jpg",
+      "description": "Thảm Phủ Sofa Họa Tiết Tranh Vẽ Trừu Tượng Chiếc Lá Xanh",
+      "inventory": 24
+    },
+    {
       "id": 1,
       "name": "Túi Tote Vải Canvas In Chữ Vintage",
       "price": 89000,
@@ -49,6 +659,356 @@
       "imageUrl": "https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?auto=format&fit=crop&w=500&q=80",
       "description": "Clutch cầm tay đính đá tinh tế, khóa cài kim loại mạ vàng. Kích thước vừa điện thoại và son phấn, điểm nhấn hoàn hảo cho trang phục dạ hội.",
       "inventory": 10
+    },
+    {
+      "id": 6,
+      "name": "Ví Da Đen Classic",
+      "price": 299000,
+      "category": "Túi & Ví",
+      "categoryId": 1,
+      "imageUrl": "https://cdn.hstatic.net/products/200000978078/img_9694_238de6df9d724d92b75b482109442fe1_grande.jpg",
+      "description": "Ví da đen classic, bền bỉ, phù hợp cho cả nam và nữ.",
+      "inventory": 50
+    },
+    {
+      "id": 7,
+      "name": "Ví Da Màu Kem Nhẹ Nhàng",
+      "price": 299000,
+      "category": "Túi & Ví",
+      "categoryId": 1,
+      "imageUrl": "https://product.hstatic.net/200000978078/product/img_2820_0564acf96601402c9537569d754d209d_grande.jpg",
+      "description": "Ví da màu kem thanh lịch, thích hợp đi làm và dạo phố.",
+      "inventory": 50
+    },
+    {
+      "id": 8,
+      "name": "Ví Da Màu Nâu Vintage",
+      "price": 299000,
+      "category": "Túi & Ví",
+      "categoryId": 1,
+      "imageUrl": "https://cdn.hstatic.net/products/200000978078/img_2819_cf9d6177dbe24f13bc50195034bc385d_grande.jpg",
+      "description": "Ví da nâu phong cách vintage, mang vẻ đẹp cổ điển.",
+      "inventory": 50
+    },
+    {
+      "id": 9,
+      "name": "Ví Da Đen Trơn Cao Cấp",
+      "price": 299000,
+      "category": "Túi & Ví",
+      "categoryId": 1,
+      "imageUrl": "https://product.hstatic.net/200000978078/product/img_2817_0581f997fef6427da3ee1e88956c35d6_grande.jpg",
+      "description": "Ví da đen trơn, thiết kế đơn giản nhưng sang trọng.",
+      "inventory": 50
+    },
+    {
+      "id": 10,
+      "name": "Ví Dài Da Jean Phong Cách Trẻ",
+      "price": 299000,
+      "category": "Túi & Ví",
+      "categoryId": 1,
+      "imageUrl": "https://product.hstatic.net/200000978078/product/hapas_6-4-7446_39b5f76ee5f64efe8a3bd94b2370f913_grande.jpg",
+      "description": "Ví dài da jean cá tính, phù hợp học sinh sinh viên.",
+      "inventory": 50
+    },
+    {
+      "id": 11,
+      "name": "Ví Da Đen Phong Cách Hiện Đại",
+      "price": 299000,
+      "category": "Túi & Ví",
+      "categoryId": 1,
+      "imageUrl": "https://product.hstatic.net/200000978078/product/_mg_0355_3abc098ba58947e5bd7fbaf7dea97762_grande.jpg",
+      "description": "Ví da đen hiện đại, phù hợp sử dụng hằng ngày.",
+      "inventory": 50
+    },
+    {
+      "id": 12,
+      "name": "Ví Da Trắng Thanh Lịch",
+      "price": 299000,
+      "category": "Túi & Ví",
+      "categoryId": 1,
+      "imageUrl": "https://product.hstatic.net/200000978078/product/_mg_0383_cc9c089cccc34e34be5c279e1b28229a_grande.jpg",
+      "description": "Ví da trắng thanh lịch, thiết kế tinh tế.",
+      "inventory": 50
+    },
+    {
+      "id": 13,
+      "name": "Ví Da Hồng Thời Trang",
+      "price": 299000,
+      "category": "Túi & Ví",
+      "categoryId": 1,
+      "imageUrl": "https://product.hstatic.net/200000978078/product/_mg_0368_01c12bc82c584abdb21249e10d6e5d6b_grande.jpg",
+      "description": "Ví da màu hồng thời trang, phù hợp phong cách nữ tính.",
+      "inventory": 50
+    },
+    {
+      "id": 14,
+      "name": "Ví Da Bạc Ánh Kim",
+      "price": 299000,
+      "category": "Túi & Ví",
+      "categoryId": 1,
+      "imageUrl": "https://cdn.hstatic.net/products/200000978078/img_2686_28cb0380f028473d845343e3792e2204_grande.jpg",
+      "description": "Ví da màu bạc ánh kim nổi bật, phong cách hiện đại.",
+      "inventory": 50
+    },
+    {
+      "id": 15,
+      "name": "Ví Da Bạc Gương Cao Cấp",
+      "price": 299000,
+      "category": "Túi & Ví",
+      "categoryId": 1,
+      "imageUrl": "https://product.hstatic.net/200000978078/product/_mg_9421_d9d1f3c8124943d091aa5ac445c4cb5d_grande.jpg",
+      "description": "Ví da bạc gương sang trọng, tạo điểm nhấn thời trang.",
+      "inventory": 50
+    },
+    {
+      "id": 16,
+      "name": "Ví Da Đen Phom Dáng Gọn",
+      "price": 299000,
+      "category": "Túi & Ví",
+      "categoryId": 1,
+      "imageUrl": "https://cdn.hstatic.net/products/200000978078/_mg_4111_3842a7ab59fe4bd6b03957414326cb14_grande.jpg",
+      "description": "Ví da đen gọn nhẹ, tiện lợi khi mang theo.",
+      "inventory": 50
+    },
+    {
+      "id": 17,
+      "name": "Ví Da Trắng Tinh Tế",
+      "price": 299000,
+      "category": "Túi & Ví",
+      "categoryId": 1,
+      "imageUrl": "https://cdn.hstatic.net/products/200000978078/hapas110641_4bba1a7fe48a4dd7ac5967085db782cd_grande.jpg",
+      "description": "Ví da trắng tinh tế, phù hợp nhiều phong cách.",
+      "inventory": 50
+    },
+    {
+      "id": 18,
+      "name": "Ví Da Trắng Trẻ Trung",
+      "price": 299000,
+      "category": "Túi & Ví",
+      "categoryId": 1,
+      "imageUrl": "https://product.hstatic.net/200000978078/product/_mg_4134_ba76b99f08ce40abb7b648e1787b6d1d_grande.jpg",
+      "description": "Ví da trắng trẻ trung, dễ phối trang phục.",
+      "inventory": 50
+    },
+    {
+      "id": 19,
+      "name": "Ví Da Đen Basic",
+      "price": 299000,
+      "category": "Túi & Ví",
+      "categoryId": 1,
+      "imageUrl": "https://product.hstatic.net/200000978078/product/_mg_4111_1592d884e7544df18e082d7e2f40692c_grande.jpg",
+      "description": "Ví da đen basic, thiết kế đơn giản, dễ sử dụng.",
+      "inventory": 50
+    },
+    {
+      "id": 20,
+      "name": "Ví Da Hồng Nhạt Nữ Tính",
+      "price": 299000,
+      "category": "Túi & Ví",
+      "categoryId": 1,
+      "imageUrl": "https://product.hstatic.net/200000978078/product/_mg_4130_0fa83b3af79e4836b3a3115a8e26de22_grande.jpg",
+      "description": "Ví da hồng nhạt nữ tính, phù hợp làm quà tặng.",
+      "inventory": 50
+    },
+    {
+      "id": 161,
+      "name": "Sticker chủ đề Phật Giáo - (9.5cm x 21cm) - Set 02 tờ",
+      "price": 199000,
+      "category": "Văn phòng phẩm",
+      "categoryId": 8,
+      "imageUrl": "https://bizweb.dktcdn.net/thumb/compact/100/061/358/products/sticker-phat-giao-1.jpg?v=1715768642130",
+      "description": "Sticker chủ đề Phật Giáo - (9.5cm x 21cm) - Set 02 tờ",
+      "inventory": 50
+    },
+    {
+      "id": 162,
+      "name": "Dụng cụ khắc, tỉa họa tiết - Bộ 03 chiếc",
+      "price": 199000,
+      "category": "Văn phòng phẩm",
+      "categoryId": 8,
+      "imageUrl": "https://bizweb.dktcdn.net/thumb/compact/100/061/358/products/dao-tia-3chiec-hop-nhua-1.jpg?v=1713694524920",
+      "description": "Dụng cụ khắc, tỉa họa tiết - Bộ 03 chiếc",
+      "inventory": 50
+    },
+    {
+      "id": 163,
+      "name": "Kit thiệp Giáng sinh tự trang trí- Kit 10 phôi thiệp_HK37",
+      "price": 199000,
+      "category": "Văn phòng phẩm",
+      "categoryId": 8,
+      "imageUrl": "https://bizweb.dktcdn.net/thumb/compact/100/061/358/products/giang-sinh-1.jpg?v=1700728714520",
+      "description": "Kit thiệp Giáng sinh tự trang trí- Kit 10 phôi thiệp_HK37",
+      "inventory": 50
+    },
+    {
+      "id": 164,
+      "name": "Kit thiệp tặng thầy, cô ngày 20/11 tự trang trí- Kit 10 phôi thiệp_HTK36",
+      "price": 199000,
+      "category": "Văn phòng phẩm",
+      "categoryId": 8,
+      "imageUrl": "https://bizweb.dktcdn.net/thumb/compact/100/061/358/products/kit-thiep-co-ban-20-11-1.jpg?v=1698485734973",
+      "description": "Kit thiệp tặng thầy, cô ngày 20/11 tự trang trí- Kit 10 phôi thiệp_HTK36",
+      "inventory": 50
+    },
+    {
+      "id": 165,
+      "name": "Kit nguyên liệu cao su khắc, tỉa hình handmade Junesix (02 dao khắc cán gỗ)_CSK05",
+      "price": 199000,
+      "category": "Văn phòng phẩm",
+      "categoryId": 8,
+      "imageUrl": "https://bizweb.dktcdn.net/thumb/compact/100/061/358/products/cao-su-kit-5-1.jpg?v=1698305253340",
+      "description": "Kit nguyên liệu cao su khắc, tỉa hình handmade Junesix (02 dao khắc cán gỗ)_CSK05",
+      "inventory": 50
+    },
+    {
+      "id": 166,
+      "name": "Bộ dụng cụ ép hoa khô cao cấp - 01 bộ",
+      "price": 199000,
+      "category": "Văn phòng phẩm",
+      "categoryId": 8,
+      "imageUrl": "https://bizweb.dktcdn.net/thumb/compact/100/061/358/products/ep-hoa-kho-cao-cap-1.jpg?v=1693500389073",
+      "description": "Bộ dụng cụ ép hoa khô cao cấp - 01 bộ",
+      "inventory": 50
+    },
+    {
+      "id": 167,
+      "name": "Tissue paper - Giấy làm hoa PomPom, gói quà, gói hoa, phông nên chụp ảnh (50cm x 70cm) - Số lượng 10 tờ/ 1 màu",
+      "price": 199000,
+      "category": "Văn phòng phẩm",
+      "categoryId": 8,
+      "imageUrl": "https://bizweb.dktcdn.net/thumb/compact/100/061/358/products/giay-tissue-50x70-1.jpg?v=1693207548157",
+      "description": "Tissue paper - Giấy làm hoa PomPom, gói quà, gói hoa, phông nên chụp ảnh (50cm x 70cm) - Số lượng 10 tờ/ 1 màu",
+      "inventory": 50
+    },
+    {
+      "id": 168,
+      "name": "Bộ dụng cụ ép hoa khô - Sổ ép hoa khô - 01 bộ",
+      "price": 199000,
+      "category": "Văn phòng phẩm",
+      "categoryId": 8,
+      "imageUrl": "https://bizweb.dktcdn.net/thumb/compact/100/061/358/products/ep-hoa-kho-1.jpg?v=1693498469647",
+      "description": "Bộ dụng cụ ép hoa khô - Sổ ép hoa khô - 01 bộ",
+      "inventory": 50
+    },
+    {
+      "id": 169,
+      "name": "Hũ sữa chua nhựa Zin - Tiêu chuẩn chất lượng về Vệ Sinh An Toàn Thực Phẩm - (100ml hoặc 120ml)",
+      "price": 199000,
+      "category": "Văn phòng phẩm",
+      "categoryId": 8,
+      "imageUrl": "https://bizweb.dktcdn.net/thumb/compact/100/061/358/products/hu-sua-chua-1-b40640e0-6118-4e33-ba65-d6e7153f068c.jpg?v=1690904450723",
+      "description": "Hũ sữa chua nhựa Zin - Tiêu chuẩn chất lượng về Vệ Sinh An Toàn Thực Phẩm - (100ml hoặc 120ml)",
+      "inventory": 50
+    },
+    {
+      "id": 170,
+      "name": "Album, scrapbook chủ đề Thanh xuân vườn trường, couple - Set nguyên liệu tự trang trí",
+      "price": 199000,
+      "category": "Văn phòng phẩm",
+      "categoryId": 8,
+      "imageUrl": "https://bizweb.dktcdn.net/thumb/compact/100/061/358/products/z4562885701904-49b1a9514d19ebab6f08139fcae54366.jpg?v=1690796651660",
+      "description": "Album, scrapbook chủ đề Thanh xuân vườn trường, couple - Set nguyên liệu tự trang trí",
+      "inventory": 50
+    },
+    {
+      "id": 171,
+      "name": "Kit thiệp Giáng sinh tự trang trí- Kit 10 phôi thiệp_HK37",
+      "price": 199000,
+      "category": "Văn phòng phẩm",
+      "categoryId": 8,
+      "imageUrl": "https://bizweb.dktcdn.net/thumb/compact/100/061/358/products/giang-sinh-1.jpg?v=1700728714520",
+      "description": "Kit thiệp Giáng sinh tự trang trí- Kit 10 phôi thiệp_HK37",
+      "inventory": 50
+    },
+    {
+      "id": 172,
+      "name": "Kit thiệp tặng thầy, cô ngày 20/11 tự trang trí- Kit 10 phôi thiệp_HTK36",
+      "price": 199000,
+      "category": "Văn phòng phẩm",
+      "categoryId": 8,
+      "imageUrl": "https://bizweb.dktcdn.net/thumb/compact/100/061/358/products/kit-thiep-co-ban-20-11-1.jpg?v=1698485734973",
+      "description": "Kit thiệp tặng thầy, cô ngày 20/11 tự trang trí- Kit 10 phôi thiệp_HTK36",
+      "inventory": 50
+    },
+    {
+      "id": 173,
+      "name": "Bộ dụng cụ ép hoa khô cao cấp - 01 bộ",
+      "price": 199000,
+      "category": "Văn phòng phẩm",
+      "categoryId": 8,
+      "imageUrl": "https://bizweb.dktcdn.net/thumb/compact/100/061/358/products/ep-hoa-kho-cao-cap-1.jpg?v=1693500389073",
+      "description": "Bộ dụng cụ ép hoa khô cao cấp - 01 bộ",
+      "inventory": 50
+    },
+    {
+      "id": 174,
+      "name": "Túi viết xóa - Dry erase pocket - (Màu giao ngẫu nhiên)",
+      "price": 199000,
+      "category": "Văn phòng phẩm",
+      "categoryId": 8,
+      "imageUrl": "https://bizweb.dktcdn.net/thumb/compact/100/061/358/products/tui-viet-xoa-1.jpg?v=1693225885023",
+      "description": "Túi viết xóa - Dry erase pocket - (Màu giao ngẫu nhiên)",
+      "inventory": 50
+    },
+    {
+      "id": 175,
+      "name": "Bộ dụng cụ ép hoa khô - Sổ ép hoa khô - 01 bộ",
+      "price": 199000,
+      "category": "Văn phòng phẩm",
+      "categoryId": 8,
+      "imageUrl": "https://bizweb.dktcdn.net/thumb/compact/100/061/358/products/ep-hoa-kho-1.jpg?v=1693498469647",
+      "description": "Bộ dụng cụ ép hoa khô - Sổ ép hoa khô - 01 bộ",
+      "inventory": 50
+    },
+    {
+      "id": 176,
+      "name": "Kit in tranh vân tay độ tuổi 3+",
+      "price": 199000,
+      "category": "Văn phòng phẩm",
+      "categoryId": 8,
+      "imageUrl": "https://bizweb.dktcdn.net/thumb/compact/100/061/358/products/kit-tranh-mau-giao-1.jpg?v=1686039954130",
+      "description": "Kit in tranh vân tay độ tuổi 3+",
+      "inventory": 50
+    },
+    {
+      "id": 177,
+      "name": "Sticker chủ đề Phật Giáo - (9.5cm x 21cm) - Set 02 tờ",
+      "price": 199000,
+      "category": "Văn phòng phẩm",
+      "categoryId": 8,
+      "imageUrl": "https://bizweb.dktcdn.net/thumb/compact/100/061/358/products/sticker-phat-giao-1.jpg?v=1715768642130",
+      "description": "Sticker chủ đề Phật Giáo - (9.5cm x 21cm) - Set 02 tờ",
+      "inventory": 50
+    },
+    {
+      "id": 178,
+      "name": "Washi Tap Noel_S201",
+      "price": 199000,
+      "category": "Văn phòng phẩm",
+      "categoryId": 8,
+      "imageUrl": "https://bizweb.dktcdn.net/thumb/compact/100/061/358/products/washi-noel-1-1.jpg?v=1700394281710",
+      "description": "Washi Tap Noel_S201",
+      "inventory": 50
+    },
+    {
+      "id": 179,
+      "name": "Tissue paper - Giấy làm hoa PomPom, gói quà, gói hoa, phông nên chụp ảnh (50cm x 70cm) - Số lượng 10 tờ/ 1 màu",
+      "price": 199000,
+      "category": "Văn phòng phẩm",
+      "categoryId": 8,
+      "imageUrl": "https://bizweb.dktcdn.net/thumb/compact/100/061/358/products/giay-tissue-50x70-1.jpg?v=1693207548157",
+      "description": "Tissue paper - Giấy làm hoa PomPom, gói quà, gói hoa, phông nên chụp ảnh (50cm x 70cm) - Số lượng 10 tờ/ 1 màu",
+      "inventory": 50
+    },
+    {
+      "id": 180,
+      "name": "Sticker chữ Meet You - Set 04 tờ",
+      "price": 199000,
+      "category": "Văn phòng phẩm",
+      "categoryId": 8,
+      "imageUrl": "https://bizweb.dktcdn.net/thumb/compact/100/061/358/products/sticker-meet-you-1.jpg?v=1688743516060",
+      "description": "Sticker chữ Meet You - Set 04 tờ",
+      "inventory": 50
     }
   ],
   "categories": [
