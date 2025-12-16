@@ -4,8 +4,8 @@ import ProductCard from './ProductCard';
 import { useNavigate } from 'react-router-dom';
 import { User } from '../types/model';
 import { useProducts } from '../hooks/useProducts'; // 1. Import Hook vừa tạo
-import '../Styles/layout.css';
-import '../Styles/product.css';
+// import '../Styles/layout.css';
+import '../Styles/home.css';
 
 interface HomeProps {
     currentUser: User | null;
@@ -43,7 +43,6 @@ const Home: React.FC<HomeProps> = ({ currentUser }) => {
                 </div>
             </section>
 
-            {/* Product List */}
             <section className="product-section">
                 <h2>Sản Phẩm Nổi Bật</h2>
 
