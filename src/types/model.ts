@@ -25,3 +25,11 @@ export interface Cart{
     items: CartItem[];
     totalPrice: number;
 }
+export interface Category {
+    id: number;
+    name: string;
+}
+export interface PriceRange {
+    id: string;
+    label: string;
+}
