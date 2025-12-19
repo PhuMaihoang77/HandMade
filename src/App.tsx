@@ -38,9 +38,21 @@ import Cart from './Pages/Cart';
 import OrderHistory from "./Pages/OrderHistory";
 import { OrderProvider } from './context/OrderContext';
 
-// 2. LAYOUT COMPONENT (Giúp ẩn/hiện Header, Footer dễ dàng)
-// Những trang nào cần Header/Footer thì bọc trong cái này
-const MainLayout = ({ children, currentUser, onLogout }: { children: React.ReactNode, currentUser: User | null, onLogout: () => void }) => {
+import { User } from './types/model';
+import './Styles/global.css';
+
+// =======================
+// 5. MAIN LAYOUT
+// =======================
+const MainLayout = ({
+    children,
+    currentUser,
+    onLogout,
+}: {
+    children: React.ReactNode;
+    currentUser: User | null;
+    onLogout: () => void;
+}) => {
     return (
 
         <>
@@ -90,6 +102,7 @@ function App() {
     // 7. ROUTES
     // =======================
     return (
+
         <OrderProvider>
         <CartProvider currentUser={currentUser}>
         <div className="App">
@@ -146,6 +159,7 @@ function App() {
                         </MainLayout>
                     }
                 />
+
 
                 <Route path="/profile" element={
                     <MainLayout currentUser={currentUser} onLogout={handleLogout}>
