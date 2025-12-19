@@ -2,12 +2,12 @@ import React, { useMemo, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { User } from '../types/model';
 import { useProducts } from '../hooks/useProducts';
+
 interface HeaderProps {
     currentUser: User | null;
-    onLogout: () => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ currentUser, onLogout }) => {
+const Header: React.FC<HeaderProps> = ({ currentUser }) => {
     const navigate = useNavigate();
     const { products } = useProducts();
     const [query, setQuery] = useState('');
@@ -82,17 +82,14 @@ const Header: React.FC<HeaderProps> = ({ currentUser, onLogout }) => {
             {/* User / Auth */}
             <div className="auth-actions">
                 {currentUser ? (
-                    <div className="auth-status">
-                        <Link to="/profile" className="profile-link-header">
-                            <i className="fas fa-user-circle"></i>
-                            <span>{currentUser.username}</span>
-                        </Link>
-                        <button className="logout-button" onClick={onLogout}>Đăng Xuất</button>
-                    </div>
+                    <Link to="/profile" className="profile-link-header">
+                        <i className="fas fa-user-circle"></i>
+                        <span>{currentUser.username}</span>
+                    </Link>
                 ) : (
                     <>
                         <Link to="/login" className="auth-link-header">Đăng Nhập</Link>
-                        <Link to="/cart" className="nav-cart"><i className="fa-solid fa-cart-shopping icon-white" ></i></Link>
+                        
                     </>
                 )}
             </div>
