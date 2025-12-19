@@ -3,11 +3,14 @@ import { Link, useNavigate } from 'react-router-dom';
 import { User } from '../types/model';
 import { useProducts } from '../hooks/useProducts';
 
+// 1. Cập nhật Interface để nhận thêm onLogout
 interface HeaderProps {
     currentUser: User | null;
+    onLogout: () => void; // Thêm dòng này
 }
 
-const Header: React.FC<HeaderProps> = ({ currentUser }) => {
+// 2. Nhận onLogout từ props
+const Header: React.FC<HeaderProps> = ({ currentUser, onLogout }) => { 
     const navigate = useNavigate();
     const { products } = useProducts();
     const [query, setQuery] = useState('');
@@ -34,6 +37,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
         <header className="main-header">
             {/* Logo */}
             <h1>
+
                 <Link to="/Home" className="logo-link">
                     HandMade<span>Store</span>
                 </Link>
@@ -83,15 +87,22 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
             {/* User / Auth */}
             <div className="auth-actions">
                 {currentUser ? (
-                    <Link to="/profile" className="profile-link-header">
-                        <i className="fas fa-user-circle"></i>
-                        <span>{currentUser.username}</span>
-                    </Link>
+                    <div className="user-logged-in">
+                        <Link to="/profile" className="profile-link-header">
+                            <i className="fas fa-user-circle"></i>
+                            <span>{currentUser.username}</span>
+                        </Link>
+                        {/* 3. Thêm nút Đăng xuất để sử dụng onLogout */}
+                        <button 
+                            onClick={onLogout} 
+                            className="logout-btn"
+                            style={{ marginLeft: '10px', cursor: 'pointer', border: 'none', background: 'none', color: 'red' }}
+                        >
+                            <i className="fas fa-sign-out-alt"></i>
+                        </button>
+                    </div>
                 ) : (
-                    <>
-                        <Link to="/login" className="auth-link-header">Đăng Nhập</Link>
-                        
-                    </>
+                    <Link to="/login" className="auth-link-header">Đăng Nhập</Link>
                 )}
             </div>
         </header>
