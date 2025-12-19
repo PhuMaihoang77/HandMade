@@ -6,10 +6,13 @@ import '../Styles/profile.css';
 
 interface ProfileProps {
     currentUser: User | null;
+    onLogout: () => void;
 }
 
-const Profile: React.FC<ProfileProps> = ({ currentUser }) => {
+const Profile: React.FC<ProfileProps> = ({ currentUser, onLogout }) => {
     const navigate = useNavigate();
+    const [activeSection, setActiveSection] = useState<'info' | 'email' | 'password'>('info');
+
     const [emailValue, setEmailValue] = useState(currentUser?.email ?? '');
     const [emailMessage, setEmailMessage] = useState('');
     const [emailError, setEmailError] = useState('');
@@ -21,21 +24,14 @@ const Profile: React.FC<ProfileProps> = ({ currentUser }) => {
     const [passwordError, setPasswordError] = useState('');
     const [passwordLoading, setPasswordLoading] = useState(false);
 
-    const emailChanged = useMemo(
-        () => {
-            const currentEmail = currentUser?.email ?? '';
-            return emailValue.trim() !== currentEmail;
-        },
-        [emailValue, currentUser?.email]
-    );
+    const emailChanged = useMemo(() => {
+        const currentEmail = currentUser?.email ?? '';
+        return emailValue.trim() !== currentEmail;
+    }, [emailValue, currentUser?.email]);
 
-    if (!currentUser) {
-        // Nếu không có người dùng hiện tại, chuyển hướng về trang đăng nhập
-        return <Navigate to="/login" replace />;
-    }
-    
-    // Lấy chữ cái đầu tiên của username làm avatar placeholder
-    const initial = currentUser.username?.charAt(0)?.toUpperCase() || '?';
+    if (!currentUser) return <Navigate to="/login" replace />;
+
+    const initial = currentUser.username?.charAt(0).toUpperCase() || '?';
 
     const handleUpdateEmail = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -43,30 +39,19 @@ const Profile: React.FC<ProfileProps> = ({ currentUser }) => {
         setEmailError('');
 
         const trimmed = emailValue.trim();
-        if (!trimmed) {
-            setEmailError('Email không được để trống.');
-            return;
-        }
-        if (!trimmed.includes('@')) {
-            setEmailError('Email không hợp lệ.');
-            return;
-        }
-        if (!emailChanged) {
-            setEmailError('Bạn chưa thay đổi email.');
-            return;
-        }
+        if (!trimmed) { setEmailError('Email không được để trống.'); return; }
+        if (!trimmed.includes('@')) { setEmailError('Email không hợp lệ.'); return; }
+        if (!emailChanged) { setEmailError('Bạn chưa thay đổi email.'); return; }
 
         try {
             setEmailLoading(true);
             const updated = await updateUserEmail(currentUser.id, trimmed);
             localStorage.setItem('user', JSON.stringify(updated));
-            setEmailMessage('Cập nhật email thành công. Trang sẽ tải lại để đồng bộ.');
+            setEmailMessage('Cập nhật email thành công. Trang sẽ tải lại.');
             setTimeout(() => window.location.reload(), 800);
         } catch (err) {
             setEmailError((err as Error).message || 'Không thể cập nhật email.');
-        } finally {
-            setEmailLoading(false);
-        }
+        } finally { setEmailLoading(false); }
     };
 
     const handleUpdatePassword = async (e: React.FormEvent) => {
@@ -74,14 +59,8 @@ const Profile: React.FC<ProfileProps> = ({ currentUser }) => {
         setPasswordMessage('');
         setPasswordError('');
 
-        if (passwordValue.length < 6) {
-            setPasswordError('Mật khẩu phải tối thiểu 6 ký tự.');
-            return;
-        }
-        if (passwordValue !== passwordConfirm) {
-            setPasswordError('Mật khẩu nhập lại không khớp.');
-            return;
-        }
+        if (passwordValue.length < 6) { setPasswordError('Mật khẩu phải tối thiểu 6 ký tự.'); return; }
+        if (passwordValue !== passwordConfirm) { setPasswordError('Mật khẩu nhập lại không khớp.'); return; }
 
         try {
             setPasswordLoading(true);
@@ -89,12 +68,10 @@ const Profile: React.FC<ProfileProps> = ({ currentUser }) => {
             setPasswordMessage('Đổi mật khẩu thành công. Vui lòng đăng nhập lại.');
             setPasswordValue('');
             setPasswordConfirm('');
-            setTimeout(() => navigate('/login'), 800);
+            setTimeout(() => onLogout(), 800); // Logout sau khi đổi mật khẩu
         } catch (err) {
             setPasswordError((err as Error).message || 'Không thể đổi mật khẩu.');
-        } finally {
-            setPasswordLoading(false);
-        }
+        } finally { setPasswordLoading(false); }
     };
 
     return (
@@ -108,108 +85,67 @@ const Profile: React.FC<ProfileProps> = ({ currentUser }) => {
                 <div className="profile-avatar">{initial}</div>
             </div>
 
-            <div className="profile-grid">
-                {/* 1. THÔNG TIN TÀI KHOẢN (Đã có) */}
-                <section className="profile-card">
-                    <div className="profile-card-head">
-                        <h3>Thông tin tài khoản</h3>
-                        <span className="status-chip">Đã xác thực</span>
-                    </div>
-                    <div className="info-row">
-                        <span>Tên hiển thị</span>
-                        <strong>{currentUser.username}</strong>
-                    </div>
-                    <div className="info-row">
-                        <span>Email</span>
-                        <strong>{currentUser.email}</strong>
-                    </div>
-                    <div className="info-row">
-                        <span>Mã người dùng</span>
-                        <strong>#{currentUser.id}</strong>
-                    </div>
-                </section>
-                
-                {/* 2. ĐỔI EMAIL */}
-                <section className="profile-card security-card">
-                    <div className="profile-card-head">
-                        <h3>Đổi email</h3>
-                        <span className="status-chip">Bảo mật</span>
-                    </div>
-                    <form className="profile-form" onSubmit={handleUpdateEmail}>
-                        <div className="form-group">
-                            <label className="form-label">Email mới</label>
-                            <input
-                                className="form-input"
-                                type="email"
-                                value={emailValue}
-                                onChange={(e) => setEmailValue(e.target.value)}
-                                placeholder="email@domain.com"
-                            />
-                            <p className="form-helper">Email hiện tại: {currentUser.email}</p>
-                        </div>
-                        {emailError && <p className="form-error">{emailError}</p>}
-                        {emailMessage && <p className="form-success">{emailMessage}</p>}
-                        <div className="form-actions">
-                            <button
-                                className="btn-secondary"
-                                type="button"
-                                onClick={() => setEmailValue(currentUser.email)}
-                                disabled={emailLoading}
-                            >
-                                Đặt lại
-                            </button>
-                            <button className="btn-primary" type="submit" disabled={emailLoading}>
-                                {emailLoading ? 'Đang lưu...' : 'Lưu email'}
-                            </button>
-                        </div>
-                    </form>
-                </section>
+            <div className="profile-container">
+                {/* Menu trái */}
+                <div className="profile-menu">
+                    <div className={`menu-item ${activeSection==='info'?'active':''}`} onClick={() => setActiveSection('info')}>Thông tin tài khoản</div>
+                    <div className={`menu-item ${activeSection==='email'?'active':''}`} onClick={() => setActiveSection('email')}>Đổi email</div>
+                    <div className={`menu-item ${activeSection==='password'?'active':''}`} onClick={() => setActiveSection('password')}>Đổi mật khẩu</div>
+                </div>
 
-                {/* 3. ĐỔI MẬT KHẨU */}
-                <section className="profile-card security-card">
-                    <div className="profile-card-head">
-                        <h3>Đổi mật khẩu</h3>
-                        <span className="status-chip warning">Khuyến nghị</span>
-                    </div>
-                    <form className="profile-form" onSubmit={handleUpdatePassword}>
-                        <div className="form-group">
-                            <label className="form-label">Mật khẩu mới</label>
-                            <input
-                                className="form-input"
-                                type="password"
-                                value={passwordValue}
-                                onChange={(e) => setPasswordValue(e.target.value)}
-                                placeholder="Tối thiểu 6 ký tự"
-                            />
-                        </div>
-                        <div className="form-group">
-                            <label className="form-label">Nhập lại mật khẩu</label>
-                            <input
-                                className="form-input"
-                                type="password"
-                                value={passwordConfirm}
-                                onChange={(e) => setPasswordConfirm(e.target.value)}
-                                placeholder="Nhập lại để xác nhận"
-                            />
-                        </div>
-                        {passwordError && <p className="form-error">{passwordError}</p>}
-                        {passwordMessage && <p className="form-success">{passwordMessage}</p>}
-                        <div className="form-actions">
-                            <button
-                                className="btn-secondary"
-                                type="button"
-                                onClick={() => { setPasswordValue(''); setPasswordConfirm(''); }}
-                                disabled={passwordLoading}
-                            >
-                                Xóa nhập
-                            </button>
-                            <button className="btn-primary" type="submit" disabled={passwordLoading}>
-                                {passwordLoading ? 'Đang lưu...' : 'Lưu mật khẩu'}
-                            </button>
-                        </div>
-                    </form>
-                </section>
+                {/* Nội dung phải */}
+                <div className="profile-content">
+                    {activeSection==='info' && (
+                        <section className="profile-card">
+                            <div className="info-row"><span>Tên hiển thị</span><strong>{currentUser.username}</strong></div>
+                            <div className="info-row"><span>Email</span><strong>{currentUser.email}</strong></div>
+                            <div className="info-row"><span>Mã người dùng</span><strong>#{currentUser.id}</strong></div>
+                        </section>
+                    )}
 
+                    {activeSection==='email' && (
+                        <section className="profile-card">
+                            <form className="profile-form" onSubmit={handleUpdateEmail}>
+                                <div className="form-group">
+                                    <label>Email mới</label>
+                                    <input type="email" value={emailValue} onChange={e=>setEmailValue(e.target.value)} placeholder="email@domain.com" />
+                                </div>
+                                {emailError && <p className="form-error">{emailError}</p>}
+                                {emailMessage && <p className="form-success">{emailMessage}</p>}
+                                <div className="form-actions">
+                                    <button type="button" onClick={()=>setEmailValue(currentUser.email)}>Đặt lại</button>
+                                    <button type="submit">{emailLoading?'Đang lưu...':'Lưu email'}</button>
+                                </div>
+                            </form>
+                        </section>
+                    )}
+
+                    {activeSection==='password' && (
+                        <section className="profile-card">
+                            <form className="profile-form" onSubmit={handleUpdatePassword}>
+                                <div className="form-group">
+                                    <label>Mật khẩu mới</label>
+                                    <input type="password" value={passwordValue} onChange={e=>setPasswordValue(e.target.value)} placeholder="Tối thiểu 6 ký tự" />
+                                </div>
+                                <div className="form-group">
+                                    <label>Nhập lại mật khẩu</label>
+                                    <input type="password" value={passwordConfirm} onChange={e=>setPasswordConfirm(e.target.value)} placeholder="Nhập lại để xác nhận" />
+                                </div>
+                                {passwordError && <p className="form-error">{passwordError}</p>}
+                                {passwordMessage && <p className="form-success">{passwordMessage}</p>}
+                                <div className="form-actions">
+                                    <button type="button" onClick={()=>{setPasswordValue('');setPasswordConfirm('')}}>Xóa nhập</button>
+                                    <button type="submit">{passwordLoading?'Đang lưu...':'Lưu mật khẩu'}</button>
+                                </div>
+                            </form>
+                        </section>
+                    )}
+
+                    {/* Logout */}
+                    <div className="logout-section">
+                        <button className="btn-logout" onClick={onLogout}>Đăng Xuất</button>
+                    </div>
+                </div>
             </div>
         </div>
     );
