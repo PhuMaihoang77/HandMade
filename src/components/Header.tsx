@@ -34,14 +34,14 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
         <header className="main-header">
             {/* Logo */}
             <h1>
-                <Link to="/" className="logo-link">
+                <Link to="/Home" className="logo-link">
                     HandMade<span>Store</span>
                 </Link>
             </h1>
 
             {/* Navigation */}
             <nav className="main-nav">
-                <Link to="/" className="nav-link">Trang Chủ</Link>
+                <Link to="/Home" className="nav-link">Trang Chủ</Link>
                 <Link to="/products" className="nav-link">Sản Phẩm</Link>
                 <Link to="/about" className="nav-link">Giới Thiệu</Link>
                 <Link to="/contact" className="nav-link">Liên Hệ</Link>
