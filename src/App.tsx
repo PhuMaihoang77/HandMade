@@ -1,24 +1,40 @@
+// =======================
+// 1. IMPORT LIBRARIES
+// =======================
 import React, { useState, useEffect } from 'react';
 import { Routes, Route, useNavigate, useLocation, Navigate } from 'react-router-dom';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
-// Import Components
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import ScrollToTop from "./components/ScrollToTop";
+// =======================
+// 2. IMPORT COMPONENTS (LAYOUT)
+// =======================
+import Header from './components/Header';
+import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
+import Cart from './Pages/Cart';
+
+// =======================
+// 3. IMPORT PAGES
+// =======================
+import Home from './Pages/Home';
+import Product from './Pages/Product';
+import ProductDetail from './Pages/ProductDetail';
+import Profile from './Pages/Profile';
+import Checkout from './Pages/Checkout';
+
 import Login from './Pages/Login';
 import Register from './Pages/Register';
 import ForgotPassword from './Pages/ForgotPassword';
-import Home from './Pages/Home';
-import ProductDetail from './Pages/ProductDetail';
-import Profile from './Pages/Profile';
-import { User } from './types/model';
 
+// =======================
+// 4. CONTEXT / TYPES / STYLES
+// =======================
+import { CartProvider } from './context/CartContext';
+import { User } from './types/model';
 import './Styles/global.css';
 import Checkout from "./Pages/Checkout";
 import { CartProvider } from './context/CartContext';
 import Cart from './Pages/Cart';
-import About from './Pages/About';
 
 // 2. LAYOUT COMPONENT (Giúp ẩn/hiện Header, Footer dễ dàng)
 // Những trang nào cần Header/Footer thì bọc trong cái này
@@ -26,7 +42,7 @@ const MainLayout = ({ children, currentUser, onLogout }: { children: React.React
     return (
         <CartProvider>
         <>
-            <Header currentUser={currentUser}  />
+            <Header currentUser={currentUser} onLogout={onLogout} />
             <main style={{ minHeight: '80vh', paddingTop: '20px' }}>
                 {children}
             </main>
@@ -38,107 +54,133 @@ const MainLayout = ({ children, currentUser, onLogout }: { children: React.React
     );
 };
 
+// =======================
+// 6. APP COMPONENT
+// =======================
 function App() {
-    const navigate = useNavigate(); // Dùng hook điều hướng
-    const location = useLocation(); // Lấy vị trí hiện tại
+    const navigate = useNavigate();
+    const location = useLocation();
 
-    // 3. STATE USER (Giữ nguyên logic cũ của bạn)
+    // ----- USER STATE -----
     const [currentUser, setCurrentUser] = useState<User | null>(() => {
         const storedUser = localStorage.getItem('user');
-        return storedUser ? JSON.parse(storedUser) as User : null;
+        return storedUser ? JSON.parse(storedUser) : null;
     });
 
-    // 4. XỬ LÝ LOGIN / LOGOUT
+    // ----- AUTH HANDLERS -----
     const handleLoginSuccess = (user: User) => {
         setCurrentUser(user);
         localStorage.setItem('user', JSON.stringify(user));
-        navigate('/'); // Chuyển hướng về trang chủ sau khi login
+        navigate('/');
     };
 
     const handleLogout = () => {
         localStorage.removeItem('user');
         setCurrentUser(null);
-        navigate('/login'); // Chuyển hướng về login sau khi logout
+        navigate('/login');
     };
 
-    // Tự động cuộn lên đầu trang khi chuyển route
+    // ----- SCROLL TO TOP -----
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [location.pathname]);
 
+    // =======================
+    // 7. ROUTES
+    // =======================
     return (
-
         <div className="App">
             <Routes>
-                {/* --- ROUTE CHO AUTH (KHÔNG CÓ HEADER/FOOTER) --- */}
-                
-                <Route path="/login" element={
-                    // Nếu đã đăng nhập thì đá về Home, chưa thì hiện Login
-                    currentUser ? <Navigate to="/" /> : (
+                {/* ===== AUTH ROUTES ===== */}
+                <Route
+                    path="/login"
+                    element={
+                        currentUser ? (
+                            <Navigate to="/" />
+                        ) : (
+                            <div className="auth-page-wrapper">
+                                <Login
+                                    onLoginSuccess={handleLoginSuccess}
+                                    onSwitchToRegister={() => navigate('/register')}
+                                    onSwitchToForgot={() => navigate('/forgot-password')}
+                                    onClose={() => navigate('/')}
+                                />
+                            </div>
+                        )
+                    }
+                />
+
+                <Route
+                    path="/register"
+                    element={
                         <div className="auth-page-wrapper">
-                            <Login 
-                                onLoginSuccess={handleLoginSuccess}
-                                onSwitchToRegister={() => navigate('/register')}
-                                onSwitchToForgot={() => navigate('/forgot-password')}
+                            <Register
+                                onSwitchToLogin={() => navigate('/login')}
                                 onClose={() => navigate('/')}
                             />
                         </div>
-                    )
-                } />
+                    }
+                />
 
-                <Route path="/register" element={
-                    <div className="auth-page-wrapper">
-                        <Register 
-                            onSwitchToLogin={() => navigate('/login')}
-                            onClose={() => navigate('/')}
-                        />
-                    </div>
-                } />
+                <Route
+                    path="/forgot-password"
+                    element={
+                        <div className="auth-page-wrapper">
+                            <ForgotPassword
+                                onSwitchToLogin={() => navigate('/login')}
+                                onClose={() => navigate('/')}
+                            />
+                        </div>
+                    }
+                />
 
-                <Route path="/forgot-password" element={
-                    <div className="auth-page-wrapper">
-                        <ForgotPassword 
-                            onSwitchToLogin={() => navigate('/login')}
-                            onClose={() => navigate('/')}
-                        />
-                    </div>
-                } />
+                {/* ===== MAIN ROUTES ===== */}
+                <Route
+                    path="/"
+                    element={
+                        <MainLayout currentUser={currentUser} onLogout={handleLogout}>
+                            <Home currentUser={currentUser} />
+                        </MainLayout>
+                    }
+                />
 
-                {/* --- ROUTE CHÍNH (CÓ HEADER/FOOTER) --- */}
-                
-                <Route path="/" element={
+                <Route path="/profile" element={
                     <MainLayout currentUser={currentUser} onLogout={handleLogout}>
-                        <Home currentUser={currentUser} />
+                        <Profile currentUser={currentUser} />
                     </MainLayout>
                 } />
 
-                               <Route path="/profile" element={
-                    <MainLayout currentUser={currentUser} onLogout={handleLogout}>
-                        <Profile currentUser={currentUser} onLogout={handleLogout} />
-                    </MainLayout>
-                } />
-                <Route path="/about" element={
-                <MainLayout currentUser={currentUser} onLogout={handleLogout}>
-                    <About currentUser={currentUser} />
-                    </MainLayout>
-} />
+                <Route
+                    path="/product/:id"
+                    element={
+                        <MainLayout currentUser={currentUser} onLogout={handleLogout}>
+                            <ProductDetail />
+                        </MainLayout>
+                    }
+                />
 
-                {/* Route động: /product/1, /product/2 */}
-                <Route path="/product/:id" element={
-                    <MainLayout currentUser={currentUser} onLogout={handleLogout}>
-                        <ProductDetail />
-                    </MainLayout>
-                } />
-                <Route path="/checkout" element={
-                    <MainLayout currentUser={currentUser} onLogout={handleLogout}>
-                        <Checkout />
-                    </MainLayout>
-                } />
-                {/* Route 404: Nếu nhập linh tinh thì về Home */}
+                <Route
+                    path="/profile"
+                    element={
+                        <MainLayout currentUser={currentUser} onLogout={handleLogout}>
+                            <Profile currentUser={currentUser} />
+                        </MainLayout>
+                    }
+                />
+
+                <Route
+                    path="/checkout"
+                    element={
+                        <MainLayout currentUser={currentUser} onLogout={handleLogout}>
+                            <Checkout />
+                        </MainLayout>
+                    }
+                />
+
+                {/* ===== 404 ===== */}
                 <Route path="*" element={<Navigate to="/" />} />
             </Routes>
         </div>
-
     );
 }
 
