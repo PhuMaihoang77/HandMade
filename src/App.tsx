@@ -177,12 +177,12 @@ function App() {
                     path="/profile"
                     element={
                         <MainLayout currentUser={currentUser} onLogout={handleLogout}>
-                            <Profile currentUser={currentUser} />
+                            {/* Truyền thêm handleLogout vào đây để thỏa mãn yêu cầu của ProfileProps */}
+                            <Profile currentUser={currentUser} onLogout={handleLogout} /> 
                         </MainLayout>
                     }
                 />
-
-                <Route
+                                <Route
                     path="/checkout"
                     element={
                         <MainLayout currentUser={currentUser} onLogout={handleLogout}>

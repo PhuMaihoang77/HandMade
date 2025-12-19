@@ -3,11 +3,14 @@ import { Link, useNavigate } from 'react-router-dom';
 import { User } from '../types/model';
 import { useProducts } from '../hooks/useProducts';
 
+// 1. Cập nhật Interface để nhận thêm onLogout
 interface HeaderProps {
     currentUser: User | null;
+    onLogout: () => void; // Thêm dòng này
 }
 
-const Header: React.FC<HeaderProps> = ({ currentUser }) => {
+// 2. Nhận onLogout từ props
+const Header: React.FC<HeaderProps> = ({ currentUser, onLogout }) => { 
     const navigate = useNavigate();
     const { products } = useProducts();
     const [query, setQuery] = useState('');
@@ -34,14 +37,14 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
         <header className="main-header">
             {/* Logo */}
             <h1>
-                <Link to="/Home" className="logo-link">
+                <Link to="/" className="logo-link"> {/* Sửa /Home thành / cho chuẩn route của bạn */}
                     HandMade<span>Store</span>
                 </Link>
             </h1>
 
             {/* Navigation */}
             <nav className="main-nav">
-                <Link to="/Home" className="nav-link">Trang Chủ</Link>
+                <Link to="/" className="nav-link">Trang Chủ</Link>
                 <Link to="/products" className="nav-link">Sản Phẩm</Link>
                 <Link to="/about" className="nav-link">Giới Thiệu</Link>
                 <Link to="/contact" className="nav-link">Liên Hệ</Link>
@@ -82,15 +85,22 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
             {/* User / Auth */}
             <div className="auth-actions">
                 {currentUser ? (
-                    <Link to="/profile" className="profile-link-header">
-                        <i className="fas fa-user-circle"></i>
-                        <span>{currentUser.username}</span>
-                    </Link>
+                    <div className="user-logged-in">
+                        <Link to="/profile" className="profile-link-header">
+                            <i className="fas fa-user-circle"></i>
+                            <span>{currentUser.username}</span>
+                        </Link>
+                        {/* 3. Thêm nút Đăng xuất để sử dụng onLogout */}
+                        <button 
+                            onClick={onLogout} 
+                            className="logout-btn"
+                            style={{ marginLeft: '10px', cursor: 'pointer', border: 'none', background: 'none', color: 'red' }}
+                        >
+                            <i className="fas fa-sign-out-alt"></i>
+                        </button>
+                    </div>
                 ) : (
-                    <>
-                        <Link to="/login" className="auth-link-header">Đăng Nhập</Link>
-                        
-                    </>
+                    <Link to="/login" className="auth-link-header">Đăng Nhập</Link>
                 )}
             </div>
         </header>
