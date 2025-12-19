@@ -1,0 +1,150 @@
+/* About.css */
+
+/* === BODY & SECTION CHUNG === */
+.about-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--color-text-dark);
+}
+
+.about-section {
+    margin-bottom: 60px;
+}
+
+.about-section h2 {
+    font-size: 1.8em;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--color-primary);
+    border-bottom: 2px solid var(--color-secondary);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.about-section p {
+    line-height: 1.7;
+    margin-bottom: 15px;
+    font-size: 1em;
+}
+
+.about-section ul {
+    list-style: disc inside;
+    margin-left: 20px;
+}
+
+.about-section ul li {
+    margin-bottom: 10px;
+}
+
+/* === HERO SECTION === */
+.about-hero {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+    margin-bottom: 60px;
+}
+
+.about-hero h1 {
+    font-size: 2.8em;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.about-hero p {
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+/* === TEAM / NGHỆ NHÂN === */
+.about-team {
+    text-align: center;
+}
+
+.about-team .team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.team-member {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    width: 250px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.team-member img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.team-member h3 {
+    font-size: 1.2em;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.team-member p {
+    font-size: 0.95em;
+    color: var(--color-text-light);
+}
+
+/* === LIÊN HỆ === */
+.about-contact {
+    background-color: var(--color-background-light);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.about-contact p {
+    margin-bottom: 10px;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 1024px) {
+    .about-page {
+        padding: 50px 20px;
+    }
+    .about-hero h1 {
+        font-size: 2.4em;
+    }
+    .about-hero p {
+        font-size: 1.1em;
+    }
+    .team-member {
+        width: 45%;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-hero {
+        padding: 60px 15px;
+    }
+    .about-hero h1 {
+        font-size: 2em;
+    }
+    .about-hero p {
+        font-size: 1em;
+    }
+    .team-member {
+        width: 100%;
+    }
+}

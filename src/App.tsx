@@ -18,6 +18,7 @@ import './Styles/global.css';
 import Checkout from "./Pages/Checkout";
 import { CartProvider } from './context/CartContext';
 import Cart from './Pages/Cart';
+import About from './Pages/About';
 
 // 2. LAYOUT COMPONENT (Giúp ẩn/hiện Header, Footer dễ dàng)
 // Những trang nào cần Header/Footer thì bọc trong cái này
@@ -25,7 +26,7 @@ const MainLayout = ({ children, currentUser, onLogout }: { children: React.React
     return (
         <CartProvider>
         <>
-            <Header currentUser={currentUser} onLogout={onLogout} />
+            <Header currentUser={currentUser}  />
             <main style={{ minHeight: '80vh', paddingTop: '20px' }}>
                 {children}
             </main>
@@ -111,11 +112,16 @@ function App() {
                     </MainLayout>
                 } />
 
-                <Route path="/profile" element={
+                               <Route path="/profile" element={
                     <MainLayout currentUser={currentUser} onLogout={handleLogout}>
-                        <Profile currentUser={currentUser} />
+                        <Profile currentUser={currentUser} onLogout={handleLogout} />
                     </MainLayout>
                 } />
+                <Route path="/about" element={
+                <MainLayout currentUser={currentUser} onLogout={handleLogout}>
+                    <About currentUser={currentUser} />
+                    </MainLayout>
+} />
 
                 {/* Route động: /product/1, /product/2 */}
                 <Route path="/product/:id" element={
