@@ -25,19 +25,16 @@ const ProductDetail: React.FC = () => {
     const handleAddToCart = () => {
         if (product && product.inventory > 0) {
             addToCart(product);
+            alert(`Đã thêm "${product.name}" vào giỏ hàng thành công!`);
+        } else {
+            alert("Rất tiếc, sản phẩm này hiện đã hết hàng!");
         }
     };
     // Hàm Mua ngay: thêm sản phẩm vào localStorage rồi chuyển sang checkout
     const handleBuyNow = () => {
-        const buyItem = {
-            id: product.id,
-            name: product.name,
-            price: product.price,
-            imageUrl: product.imageUrl,
-            quantity: 1
-        };
-        localStorage.setItem('cart', JSON.stringify([buyItem])); // Chỉ 1 sản phẩm
-        navigate('/checkout');
+        if (product && product.inventory > 0) {
+            navigate('/checkout', { state: { buyNowItem: product } });
+        }
     };
 
     return (
