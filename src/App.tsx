@@ -21,6 +21,7 @@ import Product from './Pages/Product';
 import ProductDetail from './Pages/ProductDetail';
 import Profile from './Pages/Profile';
 import Checkout from './Pages/Checkout';
+import About from './Pages/About';
 
 import Login from './Pages/Login';
 import Register from './Pages/Register';
@@ -161,7 +162,14 @@ function App() {
                         </MainLayout>
                     }
                 />
-
+                 <Route
+                    path="/about"
+                    element={
+                        <MainLayout currentUser={currentUser} onLogout={handleLogout}>
+                            <About currentUser={currentUser} />
+                        </MainLayout>
+                    }
+                />
 
                 <Route
                     path="/product/:id"
