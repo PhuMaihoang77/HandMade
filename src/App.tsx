@@ -35,22 +35,23 @@ import './Styles/global.css';
 import Checkout from "./Pages/Checkout";
 import { CartProvider } from './context/CartContext';
 import Cart from './Pages/Cart';
+import OrderHistory from "./Pages/OrderHistory";
+import { OrderProvider } from './context/OrderContext';
 
 // 2. LAYOUT COMPONENT (Giúp ẩn/hiện Header, Footer dễ dàng)
 // Những trang nào cần Header/Footer thì bọc trong cái này
 const MainLayout = ({ children, currentUser, onLogout }: { children: React.ReactNode, currentUser: User | null, onLogout: () => void }) => {
     return (
-        <CartProvider>
+
         <>
             <Header currentUser={currentUser} onLogout={onLogout} />
             <main style={{ minHeight: '80vh', paddingTop: '20px' }}>
                 {children}
             </main>
             <Footer />
-            <Cart />
             <ScrollToTop />
         </>
-        </CartProvider>
+
     );
 };
 
@@ -89,6 +90,8 @@ function App() {
     // 7. ROUTES
     // =======================
     return (
+        <OrderProvider>
+        <CartProvider currentUser={currentUser}>
         <div className="App">
             <Routes>
                 {/* ===== AUTH ROUTES ===== */}
@@ -150,37 +153,33 @@ function App() {
                     </MainLayout>
                 } />
 
-                <Route
-                    path="/product/:id"
-                    element={
-                        <MainLayout currentUser={currentUser} onLogout={handleLogout}>
-                            <ProductDetail />
-                        </MainLayout>
-                    }
-                />
-
-                <Route
-                    path="/profile"
-                    element={
-                        <MainLayout currentUser={currentUser} onLogout={handleLogout}>
-                            <Profile currentUser={currentUser} />
-                        </MainLayout>
-                    }
-                />
-
-                <Route
-                    path="/checkout"
-                    element={
-                        <MainLayout currentUser={currentUser} onLogout={handleLogout}>
-                            <Checkout />
-                        </MainLayout>
-                    }
-                />
-
-                {/* ===== 404 ===== */}
+                {/* Route động: /product/1, /product/2 */}
+                <Route path="/product/:id" element={
+                    <MainLayout currentUser={currentUser} onLogout={handleLogout}>
+                        <ProductDetail />
+                    </MainLayout>
+                } />
+                <Route path="/checkout" element={
+                    <MainLayout currentUser={currentUser} onLogout={handleLogout}>
+                        <Checkout />
+                    </MainLayout>
+                } />
+                <Route path="/cart" element={
+                    <MainLayout currentUser={currentUser} onLogout={handleLogout}>
+                        <Cart />
+                    </MainLayout>
+                }/>
+                <Route path="/orders" element={
+                    <MainLayout currentUser={currentUser} onLogout={handleLogout}>
+                        <OrderHistory />
+                    </MainLayout>
+                } />
+                {/* Route 404: Nếu nhập linh tinh thì về Home */}
                 <Route path="*" element={<Navigate to="/" />} />
             </Routes>
         </div>
+        </CartProvider>
+        </OrderProvider>
     );
 }
 
