@@ -11,7 +11,6 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
-import Cart from './Pages/Cart';
 
 // =======================
 // 3. IMPORT PAGES
@@ -31,8 +30,12 @@ import ForgotPassword from './Pages/ForgotPassword';
 // 4. CONTEXT / TYPES / STYLES
 // =======================
 import { CartProvider } from './context/CartContext';
-
 import { User } from './types/model';
+import './Styles/global.css';
+import Cart from './Pages/Cart';
+import OrderHistory from "./Pages/OrderHistory";
+import { OrderProvider } from './context/OrderContext';
+
 import './Styles/global.css';
 
 // =======================
@@ -48,19 +51,16 @@ const MainLayout = ({
     onLogout: () => void;
 }) => {
     return (
-        <CartProvider>
 
-            <>
-                <Header currentUser={currentUser} onLogout={onLogout} />
-                <main style={{ minHeight: '80vh', paddingTop: '20px' }}>
-                    {children}
-                </main>
-                <Footer />
-                <Cart />
-                <ScrollToTop />
-            </>
+        <>
+            <Header currentUser={currentUser} onLogout={onLogout} />
+            <main style={{ minHeight: '80vh', paddingTop: '20px' }}>
+                {children}
+            </main>
+            <Footer />
+            <ScrollToTop />
+        </>
 
-        </CartProvider>
     );
 };
 
@@ -99,6 +99,9 @@ function App() {
     // 7. ROUTES
     // =======================
     return (
+
+        <OrderProvider>
+        <CartProvider currentUser={currentUser}>
         <div className="App">
             <Routes>
                 {/* ===== AUTH ROUTES ===== */}
@@ -171,38 +174,33 @@ function App() {
                     }
                 />
 
-                <Route
-                    path="/product/:id"
-                    element={
-                        <MainLayout currentUser={currentUser} onLogout={handleLogout}>
-                            <ProductDetail />
-                        </MainLayout>
-                    }
-                />
-
-
-                <Route
-                    path="/profile"
-                    element={
-                        <MainLayout currentUser={currentUser} onLogout={handleLogout}>
-                            {/* Truyền thêm handleLogout vào đây để thỏa mãn yêu cầu của ProfileProps */}
-                            <Profile currentUser={currentUser} onLogout={handleLogout} /> 
-                        </MainLayout>
-                    }
-                />
-                                <Route
-                    path="/checkout"
-                    element={
-                        <MainLayout currentUser={currentUser} onLogout={handleLogout}>
-                            <Checkout />
-                        </MainLayout>
-                    }
-                />
-
-                {/* ===== 404 ===== */}
+                {/* Route động: /product/1, /product/2 */}
+                <Route path="/product/:id" element={
+                    <MainLayout currentUser={currentUser} onLogout={handleLogout}>
+                        <ProductDetail />
+                    </MainLayout>
+                } />
+                <Route path="/checkout" element={
+                    <MainLayout currentUser={currentUser} onLogout={handleLogout}>
+                        <Checkout />
+                    </MainLayout>
+                } />
+                <Route path="/cart" element={
+                    <MainLayout currentUser={currentUser} onLogout={handleLogout}>
+                        <Cart />
+                    </MainLayout>
+                }/>
+                <Route path="/orders" element={
+                    <MainLayout currentUser={currentUser} onLogout={handleLogout}>
+                        <OrderHistory />
+                    </MainLayout>
+                } />
+                {/* Route 404: Nếu nhập linh tinh thì về Home */}
                 <Route path="*" element={<Navigate to="/" />} />
             </Routes>
         </div>
+        </CartProvider>
+        </OrderProvider>
     );
 }
 

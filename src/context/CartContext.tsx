@@ -1,106 +1,102 @@
-import React, { createContext, useContext, useState, ReactNode, useCallback } from 'react';
-// Import các Interfaces từ file model của bạn
-import { Product, Cart, CartItem } from '../types/model';
+import React, { createContext, useContext, useState, ReactNode, useCallback, useMemo, useEffect } from 'react';
+import { Product, Cart, CartItem, User } from '../types/model';
 
-// 1. Định nghĩa Kiểu dữ liệu cho Context
 interface CartContextType {
     cart: Cart;
     addToCart: (product: Product) => void;
     updateQuantity: (productId: number, newQuantity: number) => void;
-    // Thêm hàm quản lý sidebar để mở/đóng Giỏ hàng overlay
-    isCartOpen: boolean;
-    setIsCartOpen: (isOpen: boolean) => void;
+    selectedItemIds: number[];
+    toggleItemSelected: (productId: number) => void;
+    toggleSelectAll: () => void;
+    totalSelectedPrice: number;
 }
 
-// 2. Trạng thái Giỏ hàng Mặc định
-const initialCart: Cart = {
-    items: [],
-    totalPrice: 0,
-};
-
-// 3. Tạo Context
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
-// Hàm phụ trợ: Tính lại Tổng giá
-const calculateTotalPrice = (currentItems: CartItem[]): number => {
-    // Dùng reduce để tính tổng giá trị (giá * số lượng)
-    return currentItems.reduce((total, item) => total + item.product.price * item.quantity, 0);
-};
+const calculateTotalPrice = (items: CartItem[]) => items.reduce((t, i) => t + i.product.price * i.quantity, 0);
 
-// 4. Component CartProvider
-interface CartProviderProps {
-    children: ReactNode;
-}
+export const CartProvider: React.FC<{ children: ReactNode; currentUser: User | null }> = ({ children, currentUser }) => {
 
-export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
-    const [cart, setCart] = useState<Cart>(initialCart);
-    const [isCartOpen, setIsCartOpen] = useState(false); // Trạng thái mở/đóng sidebar
+    const [cart, setCart] = useState<Cart>(() => {
+        const storedUser = localStorage.getItem('user');
+        if (storedUser) {
+            const user = JSON.parse(storedUser) as User;
+            const savedCart = localStorage.getItem(`cart_user_${user.id}`);
+            return savedCart ? JSON.parse(savedCart) : { items: [], totalPrice: 0 };
+        }
+        return { items: [], totalPrice: 0 };
+    });
 
-    // Logic THÊM SẢN PHẨM VÀO GIỎ
-    const addToCart = useCallback((productToAdd: Product) => {
-        setCart(prevCart => {
-            const existingItem = prevCart.items.find(item => item.product.id === productToAdd.id);
-            let newItems: CartItem[];
+    const [selectedItemIds, setSelectedItemIds] = useState<number[]>(() => {
+        return cart.items.map(i => i.product.id as number);
+    });
 
-            if (existingItem) {
-                // Tăng số lượng nếu sản phẩm đã có
-                newItems = prevCart.items.map(item =>
-                    item.product.id === productToAdd.id
-                        ? { ...item, quantity: item.quantity + 1 }
-                        : item
-                );
+    useEffect(() => {
+        if (currentUser) {
+            const savedData = localStorage.getItem(`cart_user_${currentUser.id}`);
+            if (savedData) {
+                const parsed = JSON.parse(savedData);
+                setCart(parsed);
+                setSelectedItemIds(parsed.items.map((i: CartItem) => i.product.id));
             } else {
-                // Thêm mới nếu chưa có
-                const newItem: CartItem = { product: productToAdd, quantity: 1 };
-                newItems = [...prevCart.items, newItem];
+                setCart({ items: [], totalPrice: 0 });
+                setSelectedItemIds([]);
             }
+        }
+    }, [currentUser?.id]);
 
-            // Mở sidebar khi thêm sản phẩm
-            setIsCartOpen(true);
+    useEffect(() => {
+        if (currentUser && currentUser.id) {
+            localStorage.setItem(`cart_user_${currentUser.id}`, JSON.stringify(cart));
+        }
+    }, [cart, currentUser?.id]);
 
-            return {
-                items: newItems,
-                totalPrice: calculateTotalPrice(newItems),
-            };
+    const addToCart = useCallback((product: Product) => {
+        setCart(prev => {
+            const exist = prev.items.find(i => i.product.id === product.id);
+            let newItems;
+            if (exist) {
+                newItems = prev.items.map(i => i.product.id === product.id ? { ...i, quantity: i.quantity + 1 } : i);
+            } else {
+                newItems = [...prev.items, { product, quantity: 1 }];
+                setSelectedItemIds(ids => [...ids, product.id as number]);
+            }
+            return { items: newItems, totalPrice: calculateTotalPrice(newItems) };
         });
     }, []);
 
-    // Logic CẬP NHẬT SỐ LƯỢNG (Dùng để tăng/giảm từ CartSidebar)
-    const updateQuantity = useCallback((productId: number, newQuantity: number) => {
-        setCart(prevCart => {
-            let newItems: CartItem[];
-
-            if (newQuantity <= 0) {
-                // Xóa sản phẩm nếu số lượng <= 0
-                newItems = prevCart.items.filter(item => item.product.id !== productId);
-            } else {
-                // Cập nhật số lượng
-                newItems = prevCart.items.map(item =>
-                    item.product.id === productId
-                        ? { ...item, quantity: newQuantity }
-                        : item
-                );
-            }
-
-            return {
-                items: newItems,
-                totalPrice: calculateTotalPrice(newItems),
-            };
+    const updateQuantity = useCallback((id: number, qty: number) => {
+        setCart(prev => {
+            let newItems = qty <= 0
+                ? prev.items.filter(i => i.product.id !== id)
+                : prev.items.map(i => i.product.id === id ? { ...i, quantity: qty } : i);
+            if (qty <= 0) setSelectedItemIds(ids => ids.filter(i => i !== id));
+            return { items: newItems, totalPrice: calculateTotalPrice(newItems) };
         });
     }, []);
+
+    const toggleItemSelected = useCallback((id: number) => {
+        setSelectedItemIds(prev => prev.includes(id) ? prev.filter(i => i !== id) : [...prev, id]);
+    }, []);
+
+    const toggleSelectAll = useCallback(() => {
+        setSelectedItemIds(prev => prev.length === cart.items.length && cart.items.length > 0 ? [] : cart.items.map(i => i.product.id as number));
+    }, [cart.items]);
+
+    const totalSelectedPrice = useMemo(() => {
+        return cart.items.filter(i => selectedItemIds.includes(i.product.id as number))
+            .reduce((t, i) => t + i.product.price * i.quantity, 0);
+    }, [cart.items, selectedItemIds]);
 
     return (
-        <CartContext.Provider value={{ cart, addToCart, updateQuantity, isCartOpen, setIsCartOpen }}>
+        <CartContext.Provider value={{ cart, addToCart, updateQuantity, selectedItemIds, toggleItemSelected, toggleSelectAll, totalSelectedPrice }}>
             {children}
         </CartContext.Provider>
     );
 };
 
-// 5. Custom Hook để sử dụng Context
 export const useCart = () => {
     const context = useContext(CartContext);
-    if (context === undefined) {
-        throw new Error('useCart must be used within a CartProvider');
-    }
+    if (!context) throw new Error('useCart must be used within CartProvider');
     return context;
 };
