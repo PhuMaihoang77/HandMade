@@ -8,6 +8,8 @@ export interface Product {
     imageUrl: string;
     description: string;
     inventory: number;
+    rating?: number; 
+    commentCount?: number;
 }
 
 // Bạn cũng nên chuyển User interface vào đây luôn
@@ -32,4 +34,12 @@ export interface Category {
 export interface PriceRange {
     id: string;
     label: string;
+}
+export interface Review {
+    id: number;
+    productId: number;
+    userName: string;
+    rating: number;
+    comment: string;
+    createdAt: string;
 }

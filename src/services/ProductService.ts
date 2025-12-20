@@ -1,6 +1,7 @@
 // src/services/ProductService.ts
 import api from './api';
-import { Product } from '../types/model';
+import { Product, Review } from '../types/model';
+
 // 1. Lấy tất cả sản phẩm
 export const getProducts = async (): Promise<Product[]> => {
     try {
@@ -8,28 +9,42 @@ export const getProducts = async (): Promise<Product[]> => {
         return response.data;
     } catch (error) {
         console.error("Lỗi fetch products:", error);
-        return []; // Trả về mảng rỗng nếu lỗi để không crash App
+        return [];
     }
 };
 
-// 2. Lấy sản phẩm theo ID (API thực thụ)
+// 2. Lấy sản phẩm theo ID
 export const getProductById = async (id: number): Promise<Product | null> => {
     try {
-        // json-server hỗ trợ: /products/123
         const response = await api.get(`/products/${id}`);
         return response.data;
     } catch (error) {
-        // Nếu API trả về 404 (Không tìm thấy)
         return null;
     }
 };
 
-// 3. (Mở rộng) Lấy sản phẩm theo Category
-export const getProductsByCategory = async (categoryId: number): Promise<Product[]> => {
+// --- PHẦN THÊM MỚI CHO REVIEW ---
+
+// 4. Lấy reviews theo productId
+// json-server hỗ trợ filter: /reviews?productId=1
+export const getReviewsByProductId = async (productId: number): Promise<Review[]> => {
     try {
-        const response = await api.get(`/products?categoryId=${categoryId}`);
+        const response = await api.get(`/reviews?productId=${productId}`);
         return response.data;
     } catch (error) {
+        console.error("Lỗi fetch reviews:", error);
         return [];
     }
+};
+
+// 5. Gửi review mới lên server (Lưu trực tiếp vào json)
+export const postReview = async (newReview: Omit<Review, 'id'>): Promise<Review | null> => {
+    try {
+        const response = await api.post('/reviews', newReview);
+        return response.data;
+    } catch (error) {
+        console.error("Lỗi gửi review:", error);
+        return null;
+    }
+    
 };
