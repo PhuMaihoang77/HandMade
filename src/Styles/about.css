@@ -1,150 +1,173 @@
-/* About.css */
+:root {
+  --primary-gold: #b28e5e;
+  --dark-oak: #3d2b1f;
+  --soft-cream: #fdfaf7;
+  --glass-white: rgba(255, 255, 255, 0.9);
+}
 
-/* === BODY & SECTION CHUNG === */
 .about-page {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 60px 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: var(--color-text-dark);
+  background-color: #f8f9fa;
+  color: var(--dark-oak);
+  font-family: 'Inter', sans-serif;
 }
 
-.about-section {
-    margin-bottom: 60px;
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-.about-section h2 {
-    font-size: 1.8em;
-    font-weight: 700;
-    margin-bottom: 20px;
-    color: var(--color-primary);
-    border-bottom: 2px solid var(--color-secondary);
-    display: inline-block;
-    padding-bottom: 5px;
-}
-
-.about-section p {
-    line-height: 1.7;
-    margin-bottom: 15px;
-    font-size: 1em;
-}
-
-.about-section ul {
-    list-style: disc inside;
-    margin-left: 20px;
-}
-
-.about-section ul li {
-    margin-bottom: 10px;
-}
-
-/* === HERO SECTION === */
+/* HERO NÂNG CẤP */
 .about-hero {
-    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-    color: white;
-    text-align: center;
-    padding: 80px 20px;
-    border-radius: 12px;
-    box-shadow: 0 6px 16px rgba(0,0,0,0.1);
-    margin-bottom: 60px;
+  height: 450px;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+              url('https://images.unsplash.com/photo-1513519245088-0e12902e35ca?auto=format&fit=crop&q=80') center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  margin-bottom: -60px; /* Tạo hiệu ứng đè lên */
+}
+
+.hero-badge {
+  background: var(--primary-gold);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .about-hero h1 {
-    font-size: 2.8em;
-    font-weight: 800;
-    margin-bottom: 20px;
+  font-size: 3.5rem;
+  margin: 15px 0;
+  font-weight: 800;
 }
 
-.about-hero p {
-    font-size: 1.2em;
-    font-weight: 500;
+.welcome-tag {
+  margin-top: 20px;
+  background: var(--glass-white);
+  color: var(--dark-oak);
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 50px;
+  backdrop-filter: blur(5px);
 }
 
-/* === TEAM / NGHỆ NHÂN === */
-.about-team {
-    text-align: center;
+/* GRID SECTIONS */
+.about-grid-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 50px;
 }
 
-.about-team .team-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
-    margin-top: 40px;
+.about-card {
+  background: white;
+  padding: 40px;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  border: 1px solid #eee;
 }
 
-.team-member {
-    background: #fff;
-    border-radius: 12px;
-    padding: 20px;
-    width: 250px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    transition: transform 0.3s, box-shadow 0.3s;
+.icon-box {
+  width: 50px;
+  height: 50px;
+  background: var(--soft-cream);
+  color: var(--primary-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  margin-bottom: 20px;
 }
 
-.team-member:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+/* CAM KẾT */
+.commitments-section {
+  background: white;
+  padding: 60px 40px;
+  border-radius: 24px;
+  margin-bottom: 50px;
 }
 
-.team-member img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 15px;
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2rem;
 }
 
-.team-member h3 {
-    font-size: 1.2em;
-    font-weight: 700;
-    margin-bottom: 5px;
+.commitments-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
 }
 
-.team-member p {
-    font-size: 0.95em;
-    color: var(--color-text-light);
+.commit-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px;
+  background: var(--soft-cream);
+  border-radius: 12px;
+  transition: 0.3s;
 }
 
-/* === LIÊN HỆ === */
-.about-contact {
-    background-color: var(--color-background-light);
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+.commit-item:hover {
+  background: var(--primary-gold);
+  color: white;
 }
 
-.about-contact p {
-    margin-bottom: 10px;
+.commit-icon {
+  color: var(--primary-gold);
 }
 
-/* === RESPONSIVE === */
-@media (max-width: 1024px) {
-    .about-page {
-        padding: 50px 20px;
-    }
-    .about-hero h1 {
-        font-size: 2.4em;
-    }
-    .about-hero p {
-        font-size: 1.1em;
-    }
-    .team-member {
-        width: 45%;
-    }
+.commit-item:hover .commit-icon {
+  color: white;
 }
 
+/* BOTTOM LAYOUT */
+.bottom-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 30px;
+  margin-bottom: 80px;
+}
+
+.contact-info-card {
+  background: var(--dark-oak) !important;
+  color: white !important;
+}
+
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  opacity: 0.9;
+}
+
+.workshop-badge {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 5px 15px;
+  border: 1px dashed var(--primary-gold);
+  color: var(--primary-gold);
+  border-radius: 8px;
+}
+
+/* RESPONSIVE */
 @media (max-width: 768px) {
-    .about-hero {
-        padding: 60px 15px;
-    }
-    .about-hero h1 {
-        font-size: 2em;
-    }
-    .about-hero p {
-        font-size: 1em;
-    }
-    .team-member {
-        width: 100%;
-    }
+  .about-grid-section, .bottom-grid {
+    grid-template-columns: 1fr;
+  }
+  .about-hero h1 {
+    font-size: 2.5rem;
+  }
 }

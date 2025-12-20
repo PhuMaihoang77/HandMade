@@ -33,6 +33,7 @@ import { CartProvider } from './context/CartContext';
 
 import { User } from './types/model';
 import './Styles/global.css';
+import About from './Pages/About';
 
 // =======================
 // 5. MAIN LAYOUT
@@ -179,6 +180,15 @@ function App() {
                         <MainLayout currentUser={currentUser} onLogout={handleLogout}>
                             {/* Truyền thêm handleLogout vào đây để thỏa mãn yêu cầu của ProfileProps */}
                             <Profile currentUser={currentUser} onLogout={handleLogout} /> 
+                        </MainLayout>
+                    }
+                />
+                  <Route
+                    path="/about"
+                    element={
+                        <MainLayout currentUser={currentUser} onLogout={handleLogout}>
+                            {/* Truyền thêm handleLogout vào đây để thỏa mãn yêu cầu của ProfileProps */}
+                            <About currentUser={currentUser}  /> 
                         </MainLayout>
                     }
                 />
