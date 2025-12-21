@@ -1,7 +1,6 @@
 {
   "products": [
     {
-
       "id": 616,
       "name": "Vòng tay mã não thiên nhiên 5mm quấn 2 vòng tay do da",
       "price": 199000,
@@ -32,7 +31,6 @@
       "inventory": 20
     },
     {
-
       "id": 41,
       "name": "Dây Đeo Chú Lăng Nghiêm",
       "price": 129000,
@@ -1077,6 +1075,7 @@
       "name": "Văn phòng phẩm"
     }
   ],
+  "massage": [],
   "orders": [],
   "policyData": [
     {
