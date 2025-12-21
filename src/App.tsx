@@ -21,6 +21,7 @@ import ProductDetail from './Pages/ProductDetail';
 import Profile from './Pages/Profile';
 import Checkout from './Pages/Checkout';
 import About from './Pages/About';
+import Chatbox from './Pages/Chatbox';
 
 import Login from './Pages/Login';
 import Register from './Pages/Register';
@@ -162,6 +163,14 @@ function App() {
                     element={
                         <MainLayout currentUser={currentUser} onLogout={handleLogout}>
                             <Product currentUser={currentUser} />
+                        </MainLayout>
+                    }
+                />
+                <Route
+                    path="/chat"
+                     element={
+                        <MainLayout currentUser={currentUser} onLogout={handleLogout}>
+                            <Chatbox currentUser={currentUser} />
                         </MainLayout>
                     }
                 />

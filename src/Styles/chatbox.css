@@ -1,0 +1,157 @@
+.chatbox {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  max-width: 420px;
+  margin: auto;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* ===== HEADER ===== */
+.chat-header {
+  padding: 14px 16px;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: #fff;
+  border-radius: 14px 14px 0 0;
+}
+
+.chat-header span {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.chat-header small {
+  display: block;
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+/* ===== BODY ===== */
+.chat-body {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  background: #f8fafc;
+}
+
+/* ===== MESSAGE ===== */
+.chat-message {
+  display: flex;
+  margin-bottom: 12px;
+}
+
+
+
+/* ===== TYPING ===== */
+.typing {
+  font-size: 12px;
+  color: #6b7280;
+  margin-top: 6px;
+  font-style: italic;
+}
+
+/* ===== INPUT ===== */
+.chat-input {
+  display: flex;
+  gap: 8px;
+  padding: 12px;
+  border-top: 1px solid #e5e7eb;
+  background: #ffffff;
+  border-radius: 0 0 14px 14px;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  outline: none;
+}
+
+.chat-input input:focus {
+  border-color: #22c55e;
+}
+
+.chat-input button {
+  background: #22c55e;
+  color: #fff;
+  border: none;
+  padding: 0 18px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.chat-input button:hover {
+  background: #16a34a;
+}
+/* ===== MESSAGE ROW ===== */
+.chat-message {
+  display: flex;
+  margin-bottom: 12px;
+}
+
+/* ===== LEFT (BOT / SHOP) ===== */
+/* ===== MESSAGE ROW ===== */
+.chat-message {
+  display: flex;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+/* ===== WRAPPER ===== */
+.chat-bubble-wrap {
+  max-width: 78%; /* Bubble không quá rộng */
+  display: flex;
+}
+
+/* ===== LEFT (SHOP / AI) ===== */
+.chat-message.left {
+  justify-content: flex-start;
+}
+
+.chat-message.left .chat-bubble {
+  background: #f1f5f9;
+  color: #111827;
+  border-radius: 14px 14px 14px 4px;
+}
+
+/* ===== RIGHT (USER) ===== */
+.chat-message.right {
+  justify-content: flex-end;
+}
+
+.chat-message.right .chat-bubble {
+  background: #22c55e;
+  color: #ffffff;
+  border-radius: 14px 14px 4px 14px;
+}
+
+/* ===== CHAT BUBBLE ===== */
+.chat-bubble {
+  padding: 10px 14px;
+  font-size: 14px;
+  line-height: 1.5;
+  word-break: break-word;      /* Không tràn chữ */
+  white-space: pre-wrap;       /* Xuống dòng chuẩn */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+
+/* ===== TYPING ===== */
+.typing {
+  font-size: 12px;
+  color: #64748b;
+  padding: 6px 14px;
+  font-style: italic;
+  animation: pulse 1.4s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+

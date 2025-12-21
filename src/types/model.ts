@@ -33,3 +33,10 @@ export interface PriceRange {
     id: string;
     label: string;
 }
+export interface Message {
+    id?: number;
+    userId: number | string;
+    content: string;
+    sender: 'user' | 'admin' | 'bot';
+    createdAt: string;
+}

@@ -8,7 +8,6 @@ declare namespace NodeJS {
     readonly PUBLIC_URL: string;
   }
 }
-
 declare module '*.avif' {
   const src: string;
   export default src;
@@ -68,4 +67,13 @@ declare module '*.module.scss' {
 declare module '*.module.sass' {
   const classes: { readonly [key: string]: string };
   export default classes;
+}
+/// <reference types="vite/client" />
+
+interface ImportMetaEnv {
+  readonly VITE_GROQ_API_KEY: string;
+}
+
+interface ImportMeta {
+  readonly env: ImportMetaEnv;
 }
