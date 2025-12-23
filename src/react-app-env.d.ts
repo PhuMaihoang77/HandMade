@@ -71,7 +71,7 @@ declare module '*.module.sass' {
 /// <reference types="vite/client" />
 
 interface ImportMetaEnv {
-  readonly VITE_GROQ_API_KEY: string;
+  readonly REACT_APP_GROQ_API_KEY: string;
 }
 
 interface ImportMeta {
