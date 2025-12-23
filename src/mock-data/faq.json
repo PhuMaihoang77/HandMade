@@ -4,6 +4,7 @@
     "keywords": ["túi", "ví", "túi xách", "túi đeo", "ví da", "clutch", "balo"],
     "action": "SHOW_PRODUCT",
     "targetCategory": "Túi & Ví",
+    "categoryId": "1",
     "responseText": "Mời bạn tham khảo bộ sưu tập túi và ví handmade của shop nhé:"
   },
   {
@@ -11,6 +12,7 @@
     "keywords": ["trang trí", "decor", "nhà cửa", "đèn", "tranh", "đồ decor", "đồ trang trí"],
     "action": "SHOW_PRODUCT",
     "targetCategory": "Trang trí nhà cửa",
+    "categoryId": "2",
     "responseText": "Đây là các sản phẩm decor handmade giúp không gian thêm ấm cúng:"
   },
   {
@@ -18,6 +20,7 @@
     "keywords": ["phụ kiện", "móc khóa", "kẹp tóc", "khăn", "nón", "phụ kiện thời trang"],
     "action": "SHOW_PRODUCT",
     "targetCategory": "Phụ kiện",
+    "categoryId": "3",
     "responseText": "Shop có nhiều phụ kiện handmade xinh xắn, bạn xem thử nhé:"
   },
   {
@@ -25,6 +28,7 @@
     "keywords": ["vòng tay", "nhẫn", "vòng cổ", "khuyên tai", "trang sức", "jewelry"],
     "action": "SHOW_PRODUCT",
     "targetCategory": "Trang sức",
+    "categoryId": "4",
     "responseText": "Đây là những mẫu trang sức handmade tinh xảo của shop:"
   },
   {
@@ -32,6 +36,7 @@
     "keywords": ["gốm sứ", "bình gốm", "ly gốm", "chén", "đĩa", "ceramic"],
     "action": "SHOW_PRODUCT",
     "targetCategory": "Gốm sứ",
+    "categoryId": "5",
     "responseText": "Các sản phẩm gốm sứ thủ công độc đáo đang có tại shop:"
   },
   {
@@ -39,6 +44,7 @@
     "keywords": ["đồ da", "ví da", "túi da", "thắt lưng", "leather"],
     "action": "SHOW_PRODUCT",
     "targetCategory": "Đồ da",
+    "categoryId": "6",
     "responseText": "Mời bạn xem các sản phẩm đồ da handmade chất lượng cao:"
   },
   {
@@ -46,6 +52,7 @@
     "keywords": ["mỹ phẩm", "son", "kem dưỡng", "skincare", "làm đẹp", "cosmetic"],
     "action": "SHOW_PRODUCT",
     "targetCategory": "Mỹ phẩm",
+    "categoryId": "7",
     "responseText": "Shop có các sản phẩm mỹ phẩm handmade an toàn, lành tính:"
   },
   {
@@ -53,6 +60,7 @@
     "keywords": ["văn phòng", "sticker", "sổ", "bút", "giấy", "stationery"],
     "action": "SHOW_PRODUCT",
     "targetCategory": "Văn phòng phẩm",
+    "categoryId": "8",
     "responseText": "Các mẫu văn phòng phẩm handmade dễ thương đang có sẵn:"
   },
 
