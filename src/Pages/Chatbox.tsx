@@ -1,24 +1,21 @@
 import React, { useState, useEffect, useRef } from 'react';
 import api from '../services/api';
 import { AIService } from '../services/aiService';
-import { Message, User } from "../types/model";
+import {  User } from "../types/model";
 import '../Styles/chatbox.css';
-import { io, Socket } from 'socket.io-client';
+import '../Styles/chatWidget.css';
 
-// 1. Khởi tạo socket ngoài Component để tránh tạo kết nối dư thừa khi re-render
-const socket: Socket = io('http://localhost:5000');
 
 interface ChatboxProps {
     currentUser: User | null;
 }
 
 const ChatBox: React.FC<ChatboxProps> = ({ currentUser }) => {
-    const [messages, setMessages] = useState<Message[]>([]);
+    const [messages, setMessages] = useState<any[]>([]);
     const [input, setInput] = useState<string>('');
     const [isTyping, setIsTyping] = useState<boolean>(false);
     const scrollBottomRef = useRef<HTMLDivElement>(null);
 
-    // 2. Tự động cuộn xuống khi có tin nhắn mới
     const scrollToBottom = () => {
         scrollBottomRef.current?.scrollIntoView({ behavior: 'smooth' });
     };
@@ -27,16 +24,14 @@ const ChatBox: React.FC<ChatboxProps> = ({ currentUser }) => {
         scrollToBottom();
     }, [messages, isTyping]);
 
-    // 3. Quản lý kết nối Socket và Fetch dữ liệu ban đầu
+    // Lấy lịch sử chat
     useEffect(() => {
         if (!currentUser?.id) return;
 
-        // Lấy lịch sử chat từ server
         const fetchHistory = async () => {
             try {
-                const res = await api.get(`/messages`, {
-                    params: { userId: currentUser.id }
-                });
+                // Lấy tin nhắn của user hiện tại từ JSON Server
+                const res = await api.get(`/messages?userId=${currentUser.id}`);
                 setMessages(res.data);
             } catch (err) {
                 console.error("Lỗi lấy lịch sử chat:", err);
@@ -44,60 +39,71 @@ const ChatBox: React.FC<ChatboxProps> = ({ currentUser }) => {
         };
 
         fetchHistory();
-
-        // Lắng nghe tin nhắn từ Socket (Real-time)
-        socket.on('receive_message', (newMsg: Message) => {
-            // Chỉ thêm vào nếu tin nhắn đó thuộc về user hiện tại
-            if (newMsg.userId === currentUser.id) {
-                setMessages((prev) => [...prev, newMsg]);
-            }
-        });
-
-        // Cleanup: Ngắt lắng nghe khi component bị hủy (unmount)
-        return () => {
-            socket.off('receive_message');
-        };
     }, [currentUser?.id]);
 
-    // 4. Xử lý gửi tin nhắn
-    const onSend = async () => {
-        if (!input.trim() || !currentUser) return;
+   const onSend = async () => {
+    if (!input.trim() || !currentUser) return;
 
-        const userText = input;
-        setInput(''); // Clear input ngay để UX mượt (Optimistic UI)
-        setIsTyping(true);
+    const userRawText = input;
+    setInput('');
+    setIsTyping(true);
 
-        try {
-            // AI xử lý văn phong
-            const gentleText = await AIService.polishText(userText);
-            
-            const newMsgData = {
+    try {
+        // 1. Lưu tin nhắn User (Giữ nguyên)
+        const userRes = await api.post('/messages', {
+            userId: currentUser.id,
+            content: userRawText,
+            sender: 'user',
+            createdAt: new Date().toISOString()
+        });
+        setMessages(prev => [...prev, userRes.data]);
+
+        // 2. Lấy dữ liệu FAQ và Products
+        const [faqRes, prodRes] = await Promise.all([
+            api.get('/faq'),
+            api.get('/products')
+        ]);
+        
+        const faqs = faqRes.data;
+        const products = prodRes.data;
+
+        // 3. Tìm Category phù hợp
+        const lowerInput = userRawText.toLowerCase();
+        const match = faqs.find((f: any) => 
+            f.keywords?.some((key: string) => lowerInput.includes(key.toLowerCase()))
+        );
+
+        let dataForAI = "";
+        if (match && match.action === "SHOW_PRODUCT") {
+            // Lọc danh sách sản phẩm phù hợp nhưng không render UI
+            const filtered = products.filter((p: any) => p.category === match.targetCategory);
+            // Chuyển danh sách sản phẩm thành văn bản để AI đọc
+            dataForAI = JSON.stringify(filtered);
+        }
+
+        // 4. AI xử lý tư vấn
+        // Chúng ta truyền thêm dataForAI vào hàm này
+        const adviceResponse = await AIService.generateConsultantResponse(userRawText, dataForAI);
+
+        setTimeout(async () => {
+            const botMsgData = {
                 userId: currentUser.id,
-                content: gentleText,
-                sender: 'user',
-                createdAt: new Date().toISOString()
+                content: adviceResponse,
+                sender: 'bot',
+                createdAt: new Date().toISOString(),
+                relatedProducts: [] // Để trống mảng này vì không muốn hiện Card
             };
 
-            // Lưu vào db.json qua API
-            const res = await api.post('/messages', newMsgData);
-            const savedMsg = res.data;
-
-            // Cập nhật giao diện cá nhân trước
-            setMessages(prev => [...prev, savedMsg]);
-
-            // Gửi tín hiệu real-time qua Socket cho Admin/các tab khác
-            socket.emit('send_message', savedMsg);
-
-        } catch (error) {
-            console.error("Lỗi gửi tin:", error);
-            alert("Không thể gửi tin nhắn. Vui lòng thử lại!");
-            setInput(userText); // Trả lại text nếu lỗi
-        } finally {
+            const botRes = await api.post('/messages', botMsgData);
+            setMessages(prev => [...prev, botRes.data]);
             setIsTyping(false);
-        }
-    };
+        }, 1000);
 
-    // 5. Xử lý nhấn phím Enter để gửi
+    } catch (error) {
+        console.error("Lỗi:", error);
+        setIsTyping(false);
+    }
+};
     const handleKeyDown = (e: React.KeyboardEvent) => {
         if (e.key === 'Enter') onSend();
     };
@@ -109,22 +115,33 @@ const ChatBox: React.FC<ChatboxProps> = ({ currentUser }) => {
             <div className="chat-header">
                 <div className="status-dot"></div>
                 <div className="header-info">
-                    <span>Hỗ trợ khách hàng</span>
+                    <span>Hỗ trợ HandMade</span>
                     <small>AI Assistant đang trực tuyến</small>
                 </div>
             </div>
 
             <div className="chat-body">
-                {messages.length === 0 && (
-                    <div className="chat-empty">Hãy bắt đầu cuộc trò chuyện!</div>
-                )}
                 {messages.map((m) => (
-                    <div
-                        key={m.id || Math.random()}
-                        className={`chat-message ${m.sender === 'user' ? 'right' : 'left'}`}
-                    >
+                    <div key={m.id || Math.random()} className={`chat-message ${m.sender === 'user' ? 'right' : 'left'}`}>
                         <div className="chat-bubble">
-                            {m.content}
+                            <div className="msg-text">{m.content}</div>
+                            
+                            {/* Hiển thị sản phẩm nếu có */}
+                            {m.relatedProducts && m.relatedProducts.length > 0 && (
+                                <div className="product-carousel">
+                                    {m.relatedProducts.map((p: any) => (
+                                        <div key={p.id} className="product-item">
+                                            <img src={p.image} alt={p.name} />
+                                            <div className="p-info">
+                                                <h6>{p.name}</h6>
+                                                <p>{p.price.toLocaleString()}đ</p>
+                                                <button className="buy-btn">Xem chi tiết</button>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            )}
+
                             <span className="chat-time">
                                 {new Date(m.createdAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                             </span>
@@ -134,10 +151,8 @@ const ChatBox: React.FC<ChatboxProps> = ({ currentUser }) => {
                 
                 {isTyping && (
                     <div className="chat-message left">
-                        <div className="chat-bubble typing-bubble">
-                            <div className="typing-dots">
-                                <span></span><span></span><span></span>
-                            </div>
+                        <div className="chat-bubble typing">
+                            <span></span><span></span><span></span>
                         </div>
                     </div>
                 )}
@@ -146,13 +161,13 @@ const ChatBox: React.FC<ChatboxProps> = ({ currentUser }) => {
 
             <div className="chat-input">
                 <input
-                    placeholder="Nhập tin nhắn..."
+                    placeholder="Hỏi về sản phẩm..."
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
                     onKeyDown={handleKeyDown}
                 />
                 <button onClick={onSend} disabled={!input.trim() || isTyping}>
-                    {isTyping ? '...' : 'Gửi'}
+                    Gửi
                 </button>
             </div>
         </div>
