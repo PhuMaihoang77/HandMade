@@ -1,0 +1,36 @@
+[
+  {
+    "id": "f1",
+    "keywords": ["vòng tay", "nhẫn", "vòng cổ", "khuyên tai", "trang sức"],
+    "action": "SHOW_PRODUCT",
+    "targetCategory": "Trang sức",
+    "responseText": "Chào bạn! Đây là những mẫu trang sức handmade tinh xảo nhất của shop:"
+  },
+  {
+    "id": "f2",
+    "keywords": ["túi", "ví", "túi xách", "quai đeo"],
+    "action": "SHOW_PRODUCT",
+    "targetCategory": "Túi & Ví",
+    "responseText": "Mời bạn tham khảo bộ sưu tập túi và ví thủ công của chúng mình:"
+  },
+  {
+    "id": "f3",
+    "keywords": ["trang trí", "decor", "nhà cửa", "đèn", "tranh"],
+    "action": "SHOW_PRODUCT",
+    "targetCategory": "Trang trí nhà cửa",
+    "responseText": "Đây là các món đồ decor giúp không gian nhà bạn thêm ấm cúng:"
+  },
+  {
+    "id": "f4",
+    "keywords": ["văn phòng", "sticker", "sổ", "bút", "giấy"],
+    "action": "SHOW_PRODUCT",
+    "targetCategory": "Văn phòng phẩm",
+    "responseText": "Các mẫu văn phòng phẩm dễ thương đang có sẵn tại shop:"
+  },
+  {
+    "id": "default",
+    "keywords": [],
+    "action": "SEND_TEXT",
+    "responseText": "Xin lỗi, shop chưa hiểu ý bạn. Bạn có thể hỏi về 'Trang sức', 'Túi ví' hoặc 'Văn phòng phẩm' không?"
+  }
+]
