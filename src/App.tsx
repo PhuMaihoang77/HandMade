@@ -36,7 +36,7 @@ import './Styles/global.css';
 import Cart from './Pages/Cart';
 import OrderHistory from "./Pages/OrderHistory";
 import { OrderProvider } from './context/OrderContext';
-
+import ChatWidget from "./Pages/ChatWidget";
 import './Styles/global.css';
 
 // =======================
@@ -58,8 +58,10 @@ const MainLayout = ({
             <main style={{ minHeight: '80vh', paddingTop: '20px' }}>
                 {children}
             </main>
+            
             <Footer />
-            <ScrollToTop />
+            <ScrollToTop />  
+              <ChatWidget currentUser={currentUser} />
         </>
 
     );
