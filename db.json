@@ -1,8 +1,7 @@
 {
   "products": [
     {
-
-      "id": 616,
+      "id": "616",
       "name": "Vòng tay mã não thiên nhiên 5mm quấn 2 vòng tay do da",
       "price": 199000,
       "category": "Trang sức",
@@ -12,7 +11,7 @@
       "inventory": 20
     },
     {
-      "id": 615,
+      "id": "615",
       "name": "Vòng tay mã não thiên nhiên 5mm quấn 2 vòng tay gom su ",
       "price": 199000,
       "category": "Trang sức",
@@ -22,7 +21,7 @@
       "inventory": 20
     },
     {
-      "id": 617,
+      "id": "617",
       "name": "Vòng tay mã não thiên nhiên 5mm quấn 2 vòng tay my pham",
       "price": 199000,
       "category": "Trang sức",
@@ -32,8 +31,7 @@
       "inventory": 20
     },
     {
-
-      "id": 41,
+      "id": "41",
       "name": "Dây Đeo Chú Lăng Nghiêm",
       "price": 129000,
       "category": "Phụ kiện",
@@ -43,7 +41,7 @@
       "inventory": 20
     },
     {
-      "id": 42,
+      "id": "42",
       "name": "Dây Chuyền Vòng Trăng Ánh Sao",
       "price": 229000,
       "category": "Phụ kiện",
@@ -53,7 +51,7 @@
       "inventory": 20
     },
     {
-      "id": 43,
+      "id": "43",
       "name": "Dây Chuyền Pha Lê Ánh Trăng",
       "price": 259000,
       "category": "Phụ kiện",
@@ -63,7 +61,7 @@
       "inventory": 20
     },
     {
-      "id": 44,
+      "id": "44",
       "name": "Dây Chuyền Đá Aquamarine",
       "price": 279000,
       "category": "Phụ kiện",
@@ -73,7 +71,7 @@
       "inventory": 20
     },
     {
-      "id": 45,
+      "id": "45",
       "name": "Dây Chuyền Đá Pha Lê Chuồn Chuồn",
       "price": 259000,
       "category": "Phụ kiện",
@@ -83,7 +81,7 @@
       "inventory": 20
     },
     {
-      "id": 46,
+      "id": "46",
       "name": "Dây Chuyền Đá Mã Não Đỏ",
       "price": 289000,
       "category": "Phụ kiện",
@@ -93,7 +91,7 @@
       "inventory": 20
     },
     {
-      "id": 47,
+      "id": "47",
       "name": "Dây Chuyền Trái Tim Cỏ Bốn Lá May Mắn",
       "price": 189000,
       "category": "Phụ kiện",
@@ -103,7 +101,7 @@
       "inventory": 20
     },
     {
-      "id": 48,
+      "id": "48",
       "name": "Dây Chuyền Hoa 4 Lá May Mắn",
       "price": 219000,
       "category": "Phụ kiện",
@@ -113,7 +111,7 @@
       "inventory": 20
     },
     {
-      "id": 49,
+      "id": "49",
       "name": "Dây Chuyền Pha Lê Giọt Sương Cánh Bướm",
       "price": 199000,
       "category": "Phụ kiện",
@@ -123,7 +121,7 @@
       "inventory": 20
     },
     {
-      "id": 50,
+      "id": "50",
       "name": "Dây Chuyền Quả Cầu Chu Sa Đỏ",
       "price": 249000,
       "category": "Phụ kiện",
@@ -133,7 +131,7 @@
       "inventory": 20
     },
     {
-      "id": 51,
+      "id": "51",
       "name": "Dây Chuyền Hạt Tròn Sáp Ong",
       "price": 299000,
       "category": "Phụ kiện",
@@ -143,7 +141,7 @@
       "inventory": 20
     },
     {
-      "id": 52,
+      "id": "52",
       "name": "Dây Chuyền Pha Lê Anh Đào Đôi",
       "price": 199000,
       "category": "Phụ kiện",
@@ -153,7 +151,7 @@
       "inventory": 20
     },
     {
-      "id": 53,
+      "id": "53",
       "name": "Dây Chuyền Ngọc Bích Bình An",
       "price": 289000,
       "category": "Phụ kiện",
@@ -163,7 +161,7 @@
       "inventory": 20
     },
     {
-      "id": 54,
+      "id": "54",
       "name": "Dây Chuyền Đá Hoa Nắng",
       "price": 249000,
       "category": "Phụ kiện",
@@ -173,7 +171,7 @@
       "inventory": 20
     },
     {
-      "id": 55,
+      "id": "55",
       "name": "Dây Chuyền Đá Zircon Hình Trái Tim",
       "price": 299000,
       "category": "Phụ kiện",
@@ -183,7 +181,7 @@
       "inventory": 20
     },
     {
-      "id": 56,
+      "id": "56",
       "name": "Dây Chuyền Đồng Xu Đá Thạch Anh Tím",
       "price": 379000,
       "category": "Phụ kiện",
@@ -193,7 +191,7 @@
       "inventory": 20
     },
     {
-      "id": 57,
+      "id": "57",
       "name": "Dây Chuyền Ngọc Bích Hình Mây",
       "price": 489000,
       "category": "Phụ kiện",
@@ -203,7 +201,7 @@
       "inventory": 20
     },
     {
-      "id": 58,
+      "id": "58",
       "name": "Dây Chuyền Đá Thạch Anh Xanh Dương",
       "price": 289000,
       "category": "Phụ kiện",
@@ -213,7 +211,7 @@
       "inventory": 20
     },
     {
-      "id": 59,
+      "id": "59",
       "name": "Dây Chuyền Pha Lê 12 Cung Hoàng Đạo",
       "price": 379000,
       "category": "Phụ kiện",
@@ -223,7 +221,7 @@
       "inventory": 20
     },
     {
-      "id": 60,
+      "id": "60",
       "name": "Dây Chuyền Pha Lê Charm Trái Tim",
       "price": 559000,
       "category": "Phụ kiện",
@@ -233,7 +231,7 @@
       "inventory": 20
     },
     {
-      "id": 61,
+      "id": "61",
       "name": "Vòng tay mã não thiên nhiên 5mm quấn 2 vòng tay",
       "price": 199000,
       "category": "Trang sức",
@@ -243,7 +241,7 @@
       "inventory": 20
     },
     {
-      "id": 62,
+      "id": "62",
       "name": "Vòng tay mã não thiên nhiên 4mm quấn 3 vòng tay hoa sen bạc",
       "price": 199000,
       "category": "Trang sức",
@@ -253,7 +251,7 @@
       "inventory": 20
     },
     {
-      "id": 63,
+      "id": "63",
       "name": "Vòng tay mã não thiên nhiên 7mm mix cẩm thạch",
       "price": 199000,
       "category": "Trang sức",
@@ -263,7 +261,7 @@
       "inventory": 20
     },
     {
-      "id": 64,
+      "id": "64",
       "name": "Vòng tay ngọc bích thiên nhiên 8mm mix chu sa, ngọc trai và charm bạc",
       "price": 199000,
       "category": "Trang sức",
@@ -273,7 +271,7 @@
       "inventory": 20
     },
     {
-      "id": 65,
+      "id": "65",
       "name": "Vòng tay đá moonstone thiên nhiên 4mm quấn 3 vòng tay mix thạch anh tím, hổ phách",
       "price": 199000,
       "category": "Trang sức",
@@ -283,7 +281,7 @@
       "inventory": 20
     },
     {
-      "id": 66,
+      "id": "66",
       "name": "Vòng tay mã não thiên nhiên quấn 2 vòng mix bánh xe và lu",
       "price": 199000,
       "category": "Trang sức",
@@ -293,7 +291,7 @@
       "inventory": 20
     },
     {
-      "id": 67,
+      "id": "67",
       "name": "Kiềng tay mã não thiên nhiên bánh xe 6mm charm sen",
       "price": 199000,
       "category": "Trang sức",
@@ -303,7 +301,7 @@
       "inventory": 20
     },
     {
-      "id": 68,
+      "id": "68",
       "name": "Hoa tai Hàn Quốc 432E",
       "price": 199000,
       "category": "Trang sức",
@@ -313,7 +311,7 @@
       "inventory": 20
     },
     {
-      "id": 69,
+      "id": "69",
       "name": "Hoa tai Hàn Quốc 648E",
       "price": 199000,
       "category": "Trang sức",
@@ -323,7 +321,7 @@
       "inventory": 20
     },
     {
-      "id": 70,
+      "id": "70",
       "name": "Hoa tai Hàn Quốc 15EC",
       "price": 199000,
       "category": "Trang sức",
@@ -333,7 +331,7 @@
       "inventory": 20
     },
     {
-      "id": 71,
+      "id": "71",
       "name": "Hoa tai Hàn Quốc 139E",
       "price": 199000,
       "category": "Trang sức",
@@ -343,7 +341,7 @@
       "inventory": 20
     },
     {
-      "id": 72,
+      "id": "72",
       "name": "Hoa tai Hàn Quốc 446E",
       "price": 199000,
       "category": "Trang sức",
@@ -353,7 +351,7 @@
       "inventory": 20
     },
     {
-      "id": 73,
+      "id": "73",
       "name": "Hoa tai Hàn Quốc 506E",
       "price": 199000,
       "category": "Trang sức",
@@ -363,7 +361,7 @@
       "inventory": 20
     },
     {
-      "id": 74,
+      "id": "74",
       "name": "Hoa tai pha lê ngắn hạt tròn 5003M10",
       "price": 199000,
       "category": "Trang sức",
@@ -373,7 +371,7 @@
       "inventory": 20
     },
     {
-      "id": 75,
+      "id": "75",
       "name": "Hoa tai pha lê dài mix 4470M10, pendant 5650M20",
       "price": 199000,
       "category": "Trang sức",
@@ -383,7 +381,7 @@
       "inventory": 20
     },
     {
-      "id": 76,
+      "id": "76",
       "name": "Hoa tai pha lê dài mix 4470M10, pendant 5203M18",
       "price": 199000,
       "category": "Trang sức",
@@ -393,7 +391,7 @@
       "inventory": 20
     },
     {
-      "id": 77,
+      "id": "77",
       "name": "Hoa tai pha lê dài mix 4470M10, pendant 6465M25",
       "price": 199000,
       "category": "Trang sức",
@@ -403,7 +401,7 @@
       "inventory": 20
     },
     {
-      "id": 78,
+      "id": "78",
       "name": "Hoa tai pha lê dài mix 4470M12, pendant 6026M20",
       "price": 199000,
       "category": "Trang sức",
@@ -413,7 +411,7 @@
       "inventory": 20
     },
     {
-      "id": 79,
+      "id": "79",
       "name": "Hoa tai pha lê dài mix 4470M10, pendant 6791M25",
       "price": 199000,
       "category": "Trang sức",
@@ -423,7 +421,7 @@
       "inventory": 20
     },
     {
-      "id": 80,
+      "id": "80",
       "name": "Hoa tai pha lê dài mix 4470M10, pendant 6690M27",
       "price": 199000,
       "category": "Trang sức",
@@ -433,7 +431,7 @@
       "inventory": 20
     },
     {
-      "id": 20,
+      "id": "20",
       "name": "Đèn Bàn Hình Vầng Trăng Phản Quang Halo Bowl Độc Đáo",
       "price": 2256000,
       "category": "Trang trí nhà cửa",
@@ -443,7 +441,7 @@
       "inventory": 50
     },
     {
-      "id": 21,
+      "id": "21",
       "name": "Đồng Hồ Treo Tường Kim Loại Đa Giác Chéo",
       "price": 599000,
       "category": "Trang trí nhà cửa",
@@ -453,7 +451,7 @@
       "inventory": 24
     },
     {
-      "id": 22,
+      "id": "22",
       "name": "Tranh Thảm Treo Tường Dệt Sợi Hammock Chiếc Lá Xanh",
       "price": 399000,
       "category": "Trang trí nhà cửa",
@@ -463,7 +461,7 @@
       "inventory": 12
     },
     {
-      "id": 23,
+      "id": "23",
       "name": "Set Decor Ánh Kim Huyền Bí – Modern Luxury",
       "price": 1599000,
       "category": "Trang trí nhà cửa",
@@ -473,7 +471,7 @@
       "inventory": 24
     },
     {
-      "id": 24,
+      "id": "24",
       "name": "Ghế Sofa Da Onyx Hiện Đại Tối Giản",
       "price": 11599000,
       "category": "Trang trí nhà cửa",
@@ -483,7 +481,7 @@
       "inventory": 2
     },
     {
-      "id": 25,
+      "id": "25",
       "name": "Ghế Ăn Lót Đệm Bo Cong Sang Trọng",
       "price": 1599000,
       "category": "Trang trí nhà cửa",
@@ -493,7 +491,7 @@
       "inventory": 14
     },
     {
-      "id": 26,
+      "id": "26",
       "name": "Đèn Sàn Cây Đứng Chân Gỗ Thân Cong Kim Loại",
       "price": 3599000,
       "category": "Trang trí nhà cửa",
@@ -503,7 +501,7 @@
       "inventory": 4
     },
     {
-      "id": 27,
+      "id": "27",
       "name": "Bình Gốm 3D Kiểu Pháp Trang Trí Xếp Ply Cong",
       "price": 2599000,
       "category": "Trang trí nhà cửa",
@@ -513,7 +511,7 @@
       "inventory": 24
     },
     {
-      "id": 28,
+      "id": "28",
       "name": "Bình Gốm 3D Kiểu Pháp Trang Trí Xếp Ply Cong",
       "price": 599000,
       "category": "Trang trí nhà cửa",
@@ -523,7 +521,7 @@
       "inventory": 24
     },
     {
-      "id": 29,
+      "id": "29",
       "name": "Ghế Tựa thư giãn",
       "price": 599000,
       "category": "Trang trí nhà cửa",
@@ -533,7 +531,7 @@
       "inventory": 24
     },
     {
-      "id": 30,
+      "id": "30",
       "name": "Đôn Ngồi Kiểu Nắp Rời Hiện Đại Daily Queen",
       "price": 1599000,
       "category": "Trang trí nhà cửa",
@@ -543,7 +541,7 @@
       "inventory": 24
     },
     {
-      "id": 31,
+      "id": "31",
       "name": "Bàn Trà Gỗ Mặt Kính Decor Tiện Di Chuyển ",
       "price": 2599000,
       "category": "Trang trí nhà cửa",
@@ -553,7 +551,7 @@
       "inventory": 14
     },
     {
-      "id": 32,
+      "id": "32",
       "name": "Thảm Lau Chân Cotton Len Thấm Hút Họa Tiết Cầu Vồng Vũ Trụ",
       "price": 18000,
       "category": "Trang trí nhà cửa",
@@ -563,7 +561,7 @@
       "inventory": 4
     },
     {
-      "id": 33,
+      "id": "33",
       "name": "Thảm Lau Chân Cotton Len Cừu Hoạt Hình",
       "price": 99000,
       "category": "Trang trí nhà cửa",
@@ -573,7 +571,7 @@
       "inventory": 36
     },
     {
-      "id": 34,
+      "id": "34",
       "name": "Tranh Vải Treo Tường Hoạt Hình Đáng Yêu",
       "price": 69000,
       "category": "Trang trí nhà cửa",
@@ -583,7 +581,7 @@
       "inventory": 14
     },
     {
-      "id": 35,
+      "id": "35",
       "name": "Vỏ Gối Tựa Lưng Bắc Âu Nhung Nỉ In Màu 2 Mặt Đen Trắng Sang Trọng",
       "price": 99000,
       "category": "Trang trí nhà cửa",
@@ -593,7 +591,7 @@
       "inventory": 2
     },
     {
-      "id": 36,
+      "id": "36",
       "name": "Vỏ Gối Tựa Lưng Nhuộm Sợi Phong Cách Ý Gối Sọc Phối Lá Bắc Âu",
       "price": 599000,
       "category": "Trang trí nhà cửa",
@@ -603,7 +601,7 @@
       "inventory": 36
     },
     {
-      "id": 37,
+      "id": "37",
       "name": "Vỏ Gối Tựa Lưng Sofa Hoa Lụa Sọc Vàng Sang Trọng Chất Êm Ái",
       "price": 599000,
       "category": "Trang trí nhà cửa",
@@ -613,7 +611,7 @@
       "inventory": 24
     },
     {
-      "id": 38,
+      "id": "38",
       "name": " Gấu Bông Búp Bê Khủng Long Gấu Bông Nhập Khẩu Mẫu Hot",
       "price": 99000,
       "category": "Trang trí nhà cửa",
@@ -623,7 +621,7 @@
       "inventory": 24
     },
     {
-      "id": 39,
+      "id": "39",
       "name": "Thảm Bếp Set 2 Chiếc Hình Chữ L Họa Tiết Chú Chó Đáng Yêu",
       "price": 599000,
       "category": "Trang trí nhà cửa",
@@ -633,7 +631,7 @@
       "inventory": 24
     },
     {
-      "id": 40,
+      "id": "40",
       "name": "Thảm Phủ Sofa Họa Tiết Tranh Vẽ Trừu Tượng Chiếc Lá Xanh",
       "price": 599000,
       "category": "Trang trí nhà cửa",
@@ -643,7 +641,7 @@
       "inventory": 24
     },
     {
-      "id": 1,
+      "id": "1",
       "name": "Túi Tote Vải Canvas In Chữ Vintage",
       "price": 89000,
       "category": "Túi & Ví",
@@ -653,7 +651,7 @@
       "inventory": 50
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Ví Da Nam Bifold Cổ Điển",
       "price": 450000,
       "category": "Túi & Ví",
@@ -663,7 +661,7 @@
       "inventory": 24
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Túi Đeo Chéo Da Nữ Mini",
       "price": 320000,
       "category": "Túi & Ví",
@@ -673,7 +671,7 @@
       "inventory": 15
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Balo Laptop Chống Sốc Urban",
       "price": 550000,
       "category": "Túi & Ví",
@@ -683,7 +681,7 @@
       "inventory": 30
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Ví Cầm Tay Clutch Dự Tiệc",
       "price": 680000,
       "category": "Túi & Ví",
@@ -693,7 +691,7 @@
       "inventory": 10
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Ví Da Đen Classic",
       "price": 199000,
       "category": "Túi & Ví",
@@ -703,7 +701,7 @@
       "inventory": 50
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "Ví Da Màu Kem Nhẹ Nhàng",
       "price": 399000,
       "category": "Túi & Ví",
@@ -713,7 +711,7 @@
       "inventory": 50
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "Ví Da Màu Nâu Vintage",
       "price": 599000,
       "category": "Túi & Ví",
@@ -723,7 +721,7 @@
       "inventory": 50
     },
     {
-      "id": 9,
+      "id": "9",
       "name": "Ví Da Đen Trơn Cao Cấp",
       "price": 699000,
       "category": "Túi & Ví",
@@ -733,7 +731,7 @@
       "inventory": 50
     },
     {
-      "id": 10,
+      "id": "10",
       "name": "Ví Dài Da Jean Phong Cách Trẻ",
       "price": 599000,
       "category": "Túi & Ví",
@@ -743,7 +741,7 @@
       "inventory": 50
     },
     {
-      "id": 11,
+      "id": "11",
       "name": "Ví Da Đen Phong Cách Hiện Đại",
       "price": 499000,
       "category": "Túi & Ví",
@@ -753,7 +751,7 @@
       "inventory": 50
     },
     {
-      "id": 12,
+      "id": "12",
       "name": "Ví Da Trắng Thanh Lịch",
       "price": 299000,
       "category": "Túi & Ví",
@@ -763,7 +761,7 @@
       "inventory": 50
     },
     {
-      "id": 13,
+      "id": "13",
       "name": "Ví Da Hồng Thời Trang",
       "price": 899000,
       "category": "Túi & Ví",
@@ -773,7 +771,7 @@
       "inventory": 50
     },
     {
-      "id": 14,
+      "id": "14",
       "name": "Ví Da Bạc Ánh Kim",
       "price": 399000,
       "category": "Túi & Ví",
@@ -783,7 +781,7 @@
       "inventory": 50
     },
     {
-      "id": 15,
+      "id": "15",
       "name": "Ví Da Bạc Gương Cao Cấp",
       "price": 199000,
       "category": "Túi & Ví",
@@ -793,7 +791,7 @@
       "inventory": 50
     },
     {
-      "id": 16,
+      "id": "16",
       "name": "Ví Da Đen Phom Dáng Gọn",
       "price": 799000,
       "category": "Túi & Ví",
@@ -803,7 +801,7 @@
       "inventory": 50
     },
     {
-      "id": 17,
+      "id": "17",
       "name": "Ví Da Trắng Tinh Tế",
       "price": 699000,
       "category": "Túi & Ví",
@@ -813,7 +811,7 @@
       "inventory": 50
     },
     {
-      "id": 18,
+      "id": "18",
       "name": "Ví Da Trắng Trẻ Trung",
       "price": 289000,
       "category": "Túi & Ví",
@@ -823,7 +821,7 @@
       "inventory": 50
     },
     {
-      "id": 19,
+      "id": "19",
       "name": "Ví Da Đen Basic",
       "price": 299000,
       "category": "Túi & Ví",
@@ -833,7 +831,7 @@
       "inventory": 50
     },
     {
-      "id": 20,
+      "id": "20",
       "name": "Ví Da Hồng Nhạt Nữ Tính",
       "price": 399000,
       "category": "Túi & Ví",
@@ -843,7 +841,7 @@
       "inventory": 50
     },
     {
-      "id": 161,
+      "id": "161",
       "name": "Sticker chủ đề Phật Giáo - (9.5cm x 21cm) - Set 02 tờ",
       "price": 399000,
       "category": "Văn phòng phẩm",
@@ -853,7 +851,7 @@
       "inventory": 50
     },
     {
-      "id": 162,
+      "id": "162",
       "name": "Dụng cụ khắc, tỉa họa tiết - Bộ 03 chiếc",
       "price": 199000,
       "category": "Văn phòng phẩm",
@@ -863,7 +861,7 @@
       "inventory": 50
     },
     {
-      "id": 163,
+      "id": "163",
       "name": "Kit thiệp Giáng sinh tự trang trí- Kit 10 phôi thiệp_HK37",
       "price": 699000,
       "category": "Văn phòng phẩm",
@@ -873,7 +871,7 @@
       "inventory": 50
     },
     {
-      "id": 164,
+      "id": "164",
       "name": "Kit thiệp tặng thầy, cô ngày 20/11 tự trang trí- Kit 10 phôi thiệp_HTK36",
       "price": 599000,
       "category": "Văn phòng phẩm",
@@ -883,7 +881,7 @@
       "inventory": 50
     },
     {
-      "id": 165,
+      "id": "165",
       "name": "Kit nguyên liệu cao su khắc, tỉa hình handmade Junesix (02 dao khắc cán gỗ)_CSK05",
       "price": 399000,
       "category": "Văn phòng phẩm",
@@ -893,7 +891,7 @@
       "inventory": 50
     },
     {
-      "id": 166,
+      "id": "166",
       "name": "Bộ dụng cụ ép hoa khô cao cấp - 01 bộ",
       "price": 899000,
       "category": "Văn phòng phẩm",
@@ -903,7 +901,7 @@
       "inventory": 50
     },
     {
-      "id": 167,
+      "id": "167",
       "name": "Tissue paper - Giấy làm hoa PomPom, gói quà, gói hoa, phông nên chụp ảnh (50cm x 70cm) - Số lượng 10 tờ/ 1 màu",
       "price": 799000,
       "category": "Văn phòng phẩm",
@@ -913,7 +911,7 @@
       "inventory": 50
     },
     {
-      "id": 168,
+      "id": "168",
       "name": "Bộ dụng cụ ép hoa khô - Sổ ép hoa khô - 01 bộ",
       "price": 699000,
       "category": "Văn phòng phẩm",
@@ -923,7 +921,7 @@
       "inventory": 50
     },
     {
-      "id": 169,
+      "id": "169",
       "name": "Hũ sữa chua nhựa Zin - Tiêu chuẩn chất lượng về Vệ Sinh An Toàn Thực Phẩm - (100ml hoặc 120ml)",
       "price": 199000,
       "category": "Văn phòng phẩm",
@@ -933,7 +931,7 @@
       "inventory": 50
     },
     {
-      "id": 170,
+      "id": "170",
       "name": "Album, scrapbook chủ đề Thanh xuân vườn trường, couple - Set nguyên liệu tự trang trí",
       "price": 299000,
       "category": "Văn phòng phẩm",
@@ -943,7 +941,7 @@
       "inventory": 50
     },
     {
-      "id": 171,
+      "id": "171",
       "name": "Kit thiệp Giáng sinh tự trang trí- Kit 10 phôi thiệp_HK37",
       "price": 999000,
       "category": "Văn phòng phẩm",
@@ -953,7 +951,7 @@
       "inventory": 50
     },
     {
-      "id": 172,
+      "id": "172",
       "name": "Kit thiệp tặng thầy, cô ngày 20/11 tự trang trí- Kit 10 phôi thiệp_HTK36",
       "price": 699000,
       "category": "Văn phòng phẩm",
@@ -963,7 +961,7 @@
       "inventory": 50
     },
     {
-      "id": 173,
+      "id": "173",
       "name": "Bộ dụng cụ ép hoa khô cao cấp - 01 bộ",
       "price": 499000,
       "category": "Văn phòng phẩm",
@@ -973,7 +971,7 @@
       "inventory": 50
     },
     {
-      "id": 174,
+      "id": "174",
       "name": "Túi viết xóa - Dry erase pocket - (Màu giao ngẫu nhiên)",
       "price": 199000,
       "category": "Văn phòng phẩm",
@@ -983,7 +981,7 @@
       "inventory": 50
     },
     {
-      "id": 175,
+      "id": "175",
       "name": "Bộ dụng cụ ép hoa khô - Sổ ép hoa khô - 01 bộ",
       "price": 399000,
       "category": "Văn phòng phẩm",
@@ -993,7 +991,7 @@
       "inventory": 50
     },
     {
-      "id": 176,
+      "id": "176",
       "name": "Kit in tranh vân tay độ tuổi 3+",
       "price": 299000,
       "category": "Văn phòng phẩm",
@@ -1003,7 +1001,7 @@
       "inventory": 50
     },
     {
-      "id": 177,
+      "id": "177",
       "name": "Sticker chủ đề Phật Giáo - (9.5cm x 21cm) - Set 02 tờ",
       "price": 299000,
       "category": "Văn phòng phẩm",
@@ -1013,7 +1011,7 @@
       "inventory": 50
     },
     {
-      "id": 178,
+      "id": "178",
       "name": "Washi Tap Noel_S201",
       "price": 299000,
       "category": "Văn phòng phẩm",
@@ -1023,7 +1021,7 @@
       "inventory": 50
     },
     {
-      "id": 179,
+      "id": "179",
       "name": "Tissue paper - Giấy làm hoa PomPom, gói quà, gói hoa, phông nên chụp ảnh (50cm x 70cm) - Số lượng 10 tờ/ 1 màu",
       "price": 399000,
       "category": "Văn phòng phẩm",
@@ -1033,7 +1031,7 @@
       "inventory": 50
     },
     {
-      "id": 180,
+      "id": "180",
       "name": "Sticker chữ Meet You - Set 04 tờ",
       "price": 499000,
       "category": "Văn phòng phẩm",
@@ -1043,59 +1041,752 @@
       "inventory": 50
     }
   ],
+  "messages": [
+    {
+      "id": "f26b",
+      "userId": "cbc1",
+      "content": "Chào bạn! 👋 Shop HandMade có thể giúp gì cho Bạn?",
+      "sender": "bot",
+      "createdAt": "2025-12-23T08:20:38.449Z"
+    },
+    {
+      "id": "85af",
+      "userId": "cbc1",
+      "content": "Chào bạn! 👋 Shop HandMade có thể giúp gì cho Bạn?",
+      "sender": "bot",
+      "createdAt": "2025-12-23T08:20:38.785Z"
+    },
+    {
+      "id": "2a54",
+      "userId": "cbc1",
+      "content": "túi ",
+      "sender": "user",
+      "createdAt": "2025-12-23T08:20:46.620Z"
+    },
+    {
+      "id": "2a54",
+      "userId": "cbc1",
+      "content": "túi ",
+      "sender": "user",
+      "createdAt": "2025-12-23T08:20:46.620Z"
+    },
+    {
+      "id": "0c40",
+      "userId": "cbc1",
+      "content": "Bạn đang tìm kiếm một chiếc túi handmade để sử dụng ạ? 🎁\n\nĐúng như mong muốn của bạn, Shop có sản phẩm túi handmade rất đẹp và đa dạng. Dưới đây là một số mẫu túi mà bạn có thể tham khảo:\n\n- **Túi Tote Vải Canvas In Chữ Vintage**: Một mẫu túi tote handmade từ vải canvas in chữ vintage độc đáo, mang đến cho bạn phong cách thời trang hiện đại. Xem tại: http://localhost:3000/product/1\n- **Túi Đeo Chéo Da Nữ Mini**: Một mẫu túi đeo chéo handmade từ da nữ, nhỏ gọn nhưng rất sang trọng. Xem tại: http://localhost:3000/product/3\n\nTất cả các sản phẩm túi handmade của Shop đều được làm bằng tay với chất liệu cao cấp, đảm bảo độ bền và tính thẩm mỹ cao. Bạn muốn tìm quà tặng hay dùng cá nhân ạ?\n\nTừ khóa: túi handmade, túi tote, túi da.",
+      "sender": "bot",
+      "createdAt": "2025-12-23T08:20:50.097Z"
+    },
+    {
+      "id": "0c40",
+      "userId": "cbc1",
+      "content": "Bạn đang tìm kiếm một chiếc túi handmade để sử dụng ạ? 🎁\n\nĐúng như mong muốn của bạn, Shop có sản phẩm túi handmade rất đẹp và đa dạng. Dưới đây là một số mẫu túi mà bạn có thể tham khảo:\n\n- **Túi Tote Vải Canvas In Chữ Vintage**: Một mẫu túi tote handmade từ vải canvas in chữ vintage độc đáo, mang đến cho bạn phong cách thời trang hiện đại. Xem tại: http://localhost:3000/product/1\n- **Túi Đeo Chéo Da Nữ Mini**: Một mẫu túi đeo chéo handmade từ da nữ, nhỏ gọn nhưng rất sang trọng. Xem tại: http://localhost:3000/product/3\n\nTất cả các sản phẩm túi handmade của Shop đều được làm bằng tay với chất liệu cao cấp, đảm bảo độ bền và tính thẩm mỹ cao. Bạn muốn tìm quà tặng hay dùng cá nhân ạ?\n\nTừ khóa: túi handmade, túi tote, túi da.",
+      "sender": "bot",
+      "createdAt": "2025-12-23T08:20:50.097Z"
+    },
+    {
+      "id": "941e",
+      "userId": "cbc1",
+      "content": "túi ví ",
+      "sender": "user",
+      "createdAt": "2025-12-23T08:21:14.284Z"
+    },
+    {
+      "id": "941e",
+      "userId": "cbc1",
+      "content": "túi ví ",
+      "sender": "user",
+      "createdAt": "2025-12-23T08:21:14.284Z"
+    },
+    {
+      "id": "cc83",
+      "userId": "cbc1",
+      "content": "Bạn đang tìm kiếm về các mẫu túi ví handmade của Shop? 🎁\n\nShop có các mẫu túi ví rất đẹp và độc đáo, dưới đây là một số mẫu bạn có thể tham khảo:\n\n- **Túi Tote Vải Canvas In Chữ Vintage**: Đây là một mẫu túi tote rất phổ biến, được làm từ vải canvas với thiết kế chữ vintage độc đáo. Bạn có thể xem chi tiết tại: http://localhost:3000/product/1\n- **Túi Đeo Chéo Da Nữ Mini**: Đây là một mẫu túi đeo chéo mini được làm từ da nữ với thiết kế đơn giản nhưng tinh tế. Bạn có thể xem chi tiết tại: http://localhost:3000/product/3\n\nTất cả các sản phẩm của Shop đều được làm thủ công với chất liệu cao cấp, đảm bảo độ bền và tính thẩm mỹ cao. Bạn muốn tìm quà tặng hay dùng cá nhân ạ? 🤔\n\nTừ khóa: Túi ví, Handmade, Túi tote, Ví da",
+      "sender": "bot",
+      "createdAt": "2025-12-23T08:21:16.483Z"
+    },
+    {
+      "id": "cc83",
+      "userId": "cbc1",
+      "content": "Bạn đang tìm kiếm về các mẫu túi ví handmade của Shop? 🎁\n\nShop có các mẫu túi ví rất đẹp và độc đáo, dưới đây là một số mẫu bạn có thể tham khảo:\n\n- **Túi Tote Vải Canvas In Chữ Vintage**: Đây là một mẫu túi tote rất phổ biến, được làm từ vải canvas với thiết kế chữ vintage độc đáo. Bạn có thể xem chi tiết tại: http://localhost:3000/product/1\n- **Túi Đeo Chéo Da Nữ Mini**: Đây là một mẫu túi đeo chéo mini được làm từ da nữ với thiết kế đơn giản nhưng tinh tế. Bạn có thể xem chi tiết tại: http://localhost:3000/product/3\n\nTất cả các sản phẩm của Shop đều được làm thủ công với chất liệu cao cấp, đảm bảo độ bền và tính thẩm mỹ cao. Bạn muốn tìm quà tặng hay dùng cá nhân ạ? 🤔\n\nTừ khóa: Túi ví, Handmade, Túi tote, Ví da",
+      "sender": "bot",
+      "createdAt": "2025-12-23T08:21:16.483Z"
+    },
+    {
+      "id": "db8d",
+      "userId": "cbc1",
+      "content": "túi ví ",
+      "sender": "user",
+      "createdAt": "2025-12-23T08:22:12.775Z"
+    },
+    {
+      "id": "db8d",
+      "userId": "cbc1",
+      "content": "túi ví ",
+      "sender": "user",
+      "createdAt": "2025-12-23T08:22:12.775Z"
+    },
+    {
+      "id": "2291",
+      "userId": "cbc1",
+      "content": "Bạn đang tìm kiếm một mẫu túi ví handmade độc đáo ạ? 😊\n\nShop có một số mẫu túi ví rất đẹp và chất lượng:\n\n- Túi Đeo Chéo Da Nữ Mini: Đây là mẫu túi ví được làm từ da cao cấp, thiết kế nhỏ gọn, dễ dàng mang theo. Mỗi sản phẩm đều được làm thủ công một cách cẩn thận, mang đến cho bạn một sản phẩm độc đáo và chất lượng. Xem tại: http://localhost:3000/product/2\n- Ví Da Nam Bifold Cổ Điển: Đây là mẫu ví da được thiết kế cổ điển, mang đến cho bạn một cảm giác lịch lãm và sang trọng. Mỗi sản phẩm đều được làm từ da cao cấp, đảm bảo chất lượng và độ bền cao. Xem tại: http://localhost:3000/product/3\n\nCả hai sản phẩm đều được làm từ chất liệu da cao cấp, đảm bảo độ bền và chất lượng. Bạn muốn tìm một mẫu túi ví nào khác ạ?\n\nTags: Ví da, Túi ví handmade, Đồ da cao cấp",
+      "sender": "bot",
+      "createdAt": "2025-12-23T08:22:15.354Z"
+    },
+    {
+      "id": "2291",
+      "userId": "cbc1",
+      "content": "Bạn đang tìm kiếm một mẫu túi ví handmade độc đáo ạ? 😊\n\nShop có một số mẫu túi ví rất đẹp và chất lượng:\n\n- Túi Đeo Chéo Da Nữ Mini: Đây là mẫu túi ví được làm từ da cao cấp, thiết kế nhỏ gọn, dễ dàng mang theo. Mỗi sản phẩm đều được làm thủ công một cách cẩn thận, mang đến cho bạn một sản phẩm độc đáo và chất lượng. Xem tại: http://localhost:3000/product/2\n- Ví Da Nam Bifold Cổ Điển: Đây là mẫu ví da được thiết kế cổ điển, mang đến cho bạn một cảm giác lịch lãm và sang trọng. Mỗi sản phẩm đều được làm từ da cao cấp, đảm bảo chất lượng và độ bền cao. Xem tại: http://localhost:3000/product/3\n\nCả hai sản phẩm đều được làm từ chất liệu da cao cấp, đảm bảo độ bền và chất lượng. Bạn muốn tìm một mẫu túi ví nào khác ạ?\n\nTags: Ví da, Túi ví handmade, Đồ da cao cấp",
+      "sender": "bot",
+      "createdAt": "2025-12-23T08:22:15.354Z"
+    },
+    {
+      "id": "032c",
+      "userId": "cbc1",
+      "content": "phụ kiện",
+      "sender": "user",
+      "createdAt": "2025-12-23T08:22:24.631Z"
+    },
+    {
+      "id": "032c",
+      "userId": "cbc1",
+      "content": "phụ kiện",
+      "sender": "user",
+      "createdAt": "2025-12-23T08:22:24.631Z"
+    },
+    {
+      "id": "1ce5",
+      "userId": "cbc1",
+      "content": "Bạn đang tìm kiếm phụ kiện handmade ạ. Shop có nhiều mẫu phù hợp cho bạn.\n\n- Dây Đeo Chú Lăng Nghiêm: Một chiếc dây đeo cổ handmade với chất liệu da cao cấp, thiết kế độc đáo. Xem tại: http://localhost:3000/product/41\n- Dây Chuyền Vòng Trăng Ánh Sao: Một chiếc dây chuyền handmade với thiết kế hiện đại, phù hợp với phong cách trẻ trung. Xem tại: http://localhost:3000/product/42\n- Dây Chuyền Pha Lê Ánh Trăng: Một chiếc dây chuyền handmade với chất liệu pha lê tinh tế, mang lại cảm giác sang trọng. Xem tại: http://localhost:3000/product/43\n\nBạn muốn tìm quà tặng hay dùng cá nhân ạ? 🎁",
+      "sender": "bot",
+      "createdAt": "2025-12-23T08:22:26.741Z"
+    },
+    {
+      "id": "1ce5",
+      "userId": "cbc1",
+      "content": "Bạn đang tìm kiếm phụ kiện handmade ạ. Shop có nhiều mẫu phù hợp cho bạn.\n\n- Dây Đeo Chú Lăng Nghiêm: Một chiếc dây đeo cổ handmade với chất liệu da cao cấp, thiết kế độc đáo. Xem tại: http://localhost:3000/product/41\n- Dây Chuyền Vòng Trăng Ánh Sao: Một chiếc dây chuyền handmade với thiết kế hiện đại, phù hợp với phong cách trẻ trung. Xem tại: http://localhost:3000/product/42\n- Dây Chuyền Pha Lê Ánh Trăng: Một chiếc dây chuyền handmade với chất liệu pha lê tinh tế, mang lại cảm giác sang trọng. Xem tại: http://localhost:3000/product/43\n\nBạn muốn tìm quà tặng hay dùng cá nhân ạ? 🎁",
+      "sender": "bot",
+      "createdAt": "2025-12-23T08:22:26.741Z"
+    },
+    {
+      "id": "e8a6",
+      "userId": "cbc1",
+      "content": "văn phòng phẩm ",
+      "sender": "user",
+      "createdAt": "2025-12-23T08:22:54.394Z"
+    },
+    {
+      "id": "e8a6",
+      "userId": "cbc1",
+      "content": "văn phòng phẩm ",
+      "sender": "user",
+      "createdAt": "2025-12-23T08:22:54.394Z"
+    },
+    {
+      "id": "9971",
+      "userId": "cbc1",
+      "content": "Bạn đang tìm kiếm đồ dùng văn phòng handmade, đúng không ạ? 📝\n\nChúng tôi có một số sản phẩm văn phòng phẩm handmade rất đẹp và hữu dụng. Một trong số đó là Sticker chủ đề Phật Giáo - (9.5cm x 21cm) - Set 02 tờ, làm từ giấy chất lượng cao, thiết kế độc đáo, và rất phù hợp để trang trí văn phòng. Xem nhanh tại: http://localhost:3000/product/161\n\nMột sản phẩm khác là Dụng cụ khắc, tỉa họa tiết - Bộ 03 chiếc, được làm từ gỗ tự nhiên, rất bền và dễ sử dụng. Nó giúp bạn có thể tạo ra các họa tiết độc đáo cho các sản phẩm handmade của mình. Xem nhanh tại: http://localhost:3000/product/162\n\nBạn muốn tìm sản phẩm nào khác ạ? Bạn muốn dùng cho mục đích gì? Từ khóa: Văn phòng phẩm handmade, Sticker Phật Giáo",
+      "sender": "bot",
+      "createdAt": "2025-12-23T08:22:56.850Z"
+    },
+    {
+      "id": "9971",
+      "userId": "cbc1",
+      "content": "Bạn đang tìm kiếm đồ dùng văn phòng handmade, đúng không ạ? 📝\n\nChúng tôi có một số sản phẩm văn phòng phẩm handmade rất đẹp và hữu dụng. Một trong số đó là Sticker chủ đề Phật Giáo - (9.5cm x 21cm) - Set 02 tờ, làm từ giấy chất lượng cao, thiết kế độc đáo, và rất phù hợp để trang trí văn phòng. Xem nhanh tại: http://localhost:3000/product/161\n\nMột sản phẩm khác là Dụng cụ khắc, tỉa họa tiết - Bộ 03 chiếc, được làm từ gỗ tự nhiên, rất bền và dễ sử dụng. Nó giúp bạn có thể tạo ra các họa tiết độc đáo cho các sản phẩm handmade của mình. Xem nhanh tại: http://localhost:3000/product/162\n\nBạn muốn tìm sản phẩm nào khác ạ? Bạn muốn dùng cho mục đích gì? Từ khóa: Văn phòng phẩm handmade, Sticker Phật Giáo",
+      "sender": "bot",
+      "createdAt": "2025-12-23T08:22:56.850Z"
+    },
+    {
+      "id": "82ea",
+      "userId": "cbc1",
+      "content": "dădwadwadwadw",
+      "sender": "user",
+      "createdAt": "2025-12-23T08:36:16.084Z"
+    },
+    {
+      "id": "82ea",
+      "userId": "cbc1",
+      "content": "dădwadwadwadw",
+      "sender": "user",
+      "createdAt": "2025-12-23T08:36:16.084Z"
+    },
+    {
+      "id": "8385",
+      "userId": "cbc1",
+      "content": "Rất tiếc, Shop không thể hiểu câu hỏi của Bạn 😊. Bạn có muốn hỏi lại hoặc tìm sản phẩm khác không ạ?",
+      "sender": "bot",
+      "createdAt": "2025-12-23T08:36:17.768Z"
+    },
+    {
+      "id": "8385",
+      "userId": "cbc1",
+      "content": "Rất tiếc, Shop không thể hiểu câu hỏi của Bạn 😊. Bạn có muốn hỏi lại hoặc tìm sản phẩm khác không ạ?",
+      "sender": "bot",
+      "createdAt": "2025-12-23T08:36:17.768Z"
+    },
+    {
+      "id": "168f",
+      "userId": "cbc1",
+      "content": "jdhjahda",
+      "sender": "user",
+      "createdAt": "2025-12-23T08:39:21.492Z"
+    },
+    {
+      "id": "168f",
+      "userId": "cbc1",
+      "content": "jdhjahda",
+      "sender": "user",
+      "createdAt": "2025-12-23T08:39:21.492Z"
+    },
+    {
+      "id": "ed98",
+      "userId": "cbc1",
+      "content": "Xin lỗi, nhưng tôi không thể hiểu rõ câu hỏi của bạn ạ. Bạn có thể cho tôi biết thêm chi tiết về sản phẩm bạn đang tìm kiếm không?",
+      "sender": "bot",
+      "createdAt": "2025-12-23T08:39:23.024Z"
+    },
+    {
+      "id": "ed98",
+      "userId": "cbc1",
+      "content": "Xin lỗi, nhưng tôi không thể hiểu rõ câu hỏi của bạn ạ. Bạn có thể cho tôi biết thêm chi tiết về sản phẩm bạn đang tìm kiếm không?",
+      "sender": "bot",
+      "createdAt": "2025-12-23T08:39:23.024Z"
+    },
+    {
+      "id": "881b",
+      "userId": "cbc1",
+      "content": "đa",
+      "sender": "user",
+      "createdAt": "2025-12-23T08:45:46.210Z"
+    },
+    {
+      "id": "881b",
+      "userId": "cbc1",
+      "content": "đa",
+      "sender": "user",
+      "createdAt": "2025-12-23T08:45:46.210Z"
+    },
+    {
+      "id": "3c31",
+      "userId": "cbc1",
+      "content": "Rất tiếc, hiện Shop chưa có mẫu đa này rồi ạ. Bạn tham khảo thêm các dòng Trang sức, Gốm sứ, Đồ da, Túi & Ví handmade của Shop nhé:\n\nhttp://localhost:3000/products?page=1&cat=1",
+      "sender": "bot",
+      "createdAt": "2025-12-23T08:45:47.569Z"
+    },
+    {
+      "id": "3c31",
+      "userId": "cbc1",
+      "content": "Rất tiếc, hiện Shop chưa có mẫu đa này rồi ạ. Bạn tham khảo thêm các dòng Trang sức, Gốm sứ, Đồ da, Túi & Ví handmade của Shop nhé:\n\nhttp://localhost:3000/products?page=1&cat=1",
+      "sender": "bot",
+      "createdAt": "2025-12-23T08:45:47.569Z"
+    },
+    {
+      "id": "9d9d",
+      "userId": "cbc1",
+      "content": "đă",
+      "sender": "user",
+      "createdAt": "2025-12-23T08:46:22.786Z"
+    },
+    {
+      "id": "9d9d",
+      "userId": "cbc1",
+      "content": "đă",
+      "sender": "user",
+      "createdAt": "2025-12-23T08:46:22.786Z"
+    },
+    {
+      "id": "3aaf",
+      "userId": "cbc1",
+      "content": "Shop không thể hiểu rõ ý của bạn. Bạn có thể nói rõ hơn về nhu cầu của mình không? Shop sẵn sàng giúp đỡ bạn.",
+      "sender": "bot",
+      "createdAt": "2025-12-23T08:46:24.841Z"
+    },
+    {
+      "id": "3aaf",
+      "userId": "cbc1",
+      "content": "Shop không thể hiểu rõ ý của bạn. Bạn có thể nói rõ hơn về nhu cầu của mình không? Shop sẵn sàng giúp đỡ bạn.",
+      "sender": "bot",
+      "createdAt": "2025-12-23T08:46:24.841Z"
+    },
+    {
+      "id": "c60a",
+      "userId": "cbc1",
+      "content": "đâ",
+      "sender": "user",
+      "createdAt": "2025-12-23T08:50:44.746Z"
+    },
+    {
+      "id": "c60a",
+      "userId": "cbc1",
+      "content": "đâ",
+      "sender": "user",
+      "createdAt": "2025-12-23T08:50:44.746Z"
+    },
+    {
+      "id": "501c",
+      "userId": "cbc1",
+      "content": "Rất tiếc, hiện Shop chưa có mẫu đó. Bạn tham khảo thêm các dòng có sẵn của Shop tại đây nhé:\nhttp://localhost:3000/products?page=1&cat=1 (Trang sức) hoặc\nhttp://localhost:3000/products?page=1&cat=2 (Đồ da) hoặc\nhttp://localhost:3000/products?page=1&cat=3 (Gốm sứ nghệ thuật) hoặc\nhttp://localhost:3000/products?page=1&cat=4 (Túi ví vải)\n\nBạn muốn tìm quà tặng hay dùng cá nhân ạ? 😊\nTrang sức đá, Đồ da khâu tay, Gốm sứ nghệ thuật, Túi ví vải...",
+      "sender": "bot",
+      "createdAt": "2025-12-23T08:50:46.536Z"
+    },
+    {
+      "id": "501c",
+      "userId": "cbc1",
+      "content": "Rất tiếc, hiện Shop chưa có mẫu đó. Bạn tham khảo thêm các dòng có sẵn của Shop tại đây nhé:\nhttp://localhost:3000/products?page=1&cat=1 (Trang sức) hoặc\nhttp://localhost:3000/products?page=1&cat=2 (Đồ da) hoặc\nhttp://localhost:3000/products?page=1&cat=3 (Gốm sứ nghệ thuật) hoặc\nhttp://localhost:3000/products?page=1&cat=4 (Túi ví vải)\n\nBạn muốn tìm quà tặng hay dùng cá nhân ạ? 😊\nTrang sức đá, Đồ da khâu tay, Gốm sứ nghệ thuật, Túi ví vải...",
+      "sender": "bot",
+      "createdAt": "2025-12-23T08:50:46.536Z"
+    },
+    {
+      "id": "c70d",
+      "userId": "cbc1",
+      "content": "dăd",
+      "sender": "user",
+      "createdAt": "2025-12-23T08:51:40.522Z"
+    },
+    {
+      "id": "c70d",
+      "userId": "cbc1",
+      "content": "dăd",
+      "sender": "user",
+      "createdAt": "2025-12-23T08:51:40.522Z"
+    },
+    {
+      "id": "c937",
+      "userId": "cbc1",
+      "content": "Rất tiếc, Shop chưa có mẫu đó. Bạn có muốn tham khảo thêm các mẫu khác của Shop không?",
+      "sender": "bot",
+      "createdAt": "2025-12-23T08:51:42.689Z"
+    },
+    {
+      "id": "c937",
+      "userId": "cbc1",
+      "content": "Rất tiếc, Shop chưa có mẫu đó. Bạn có muốn tham khảo thêm các mẫu khác của Shop không?",
+      "sender": "bot",
+      "createdAt": "2025-12-23T08:51:42.689Z"
+    },
+    {
+      "id": "a6ef",
+      "userId": "cbc1",
+      "content": "ădawq",
+      "sender": "user",
+      "createdAt": "2025-12-23T08:51:50.261Z"
+    },
+    {
+      "id": "a6ef",
+      "userId": "cbc1",
+      "content": "ădawq",
+      "sender": "user",
+      "createdAt": "2025-12-23T08:51:50.261Z"
+    },
+    {
+      "id": "7e18",
+      "userId": "cbc1",
+      "content": "Xin lỗi, nhưng Shop không hiểu câu hỏi của Bạn 😊. Bạn có thể cho Shop biết sản phẩm gì mà Bạn đang tìm kiếm không?",
+      "sender": "bot",
+      "createdAt": "2025-12-23T08:51:52.166Z"
+    },
+    {
+      "id": "7e18",
+      "userId": "cbc1",
+      "content": "Xin lỗi, nhưng Shop không hiểu câu hỏi của Bạn 😊. Bạn có thể cho Shop biết sản phẩm gì mà Bạn đang tìm kiếm không?",
+      "sender": "bot",
+      "createdAt": "2025-12-23T08:51:52.166Z"
+    },
+    {
+      "id": "4f11",
+      "userId": "cbc1",
+      "content": "ădayiuwyo2ihdsia",
+      "sender": "user",
+      "createdAt": "2025-12-23T08:51:57.621Z"
+    },
+    {
+      "id": "4f11",
+      "userId": "cbc1",
+      "content": "ădayiuwyo2ihdsia",
+      "sender": "user",
+      "createdAt": "2025-12-23T08:51:57.621Z"
+    },
+    {
+      "id": "68f9",
+      "userId": "cbc1",
+      "content": "Tôi không thể tìm được bất kỳ thông tin nào liên quan đến yêu cầu của bạn. Bạn có cần tôi giúp gì khác không?",
+      "sender": "bot",
+      "createdAt": "2025-12-23T08:51:59.371Z"
+    },
+    {
+      "id": "68f9",
+      "userId": "cbc1",
+      "content": "Tôi không thể tìm được bất kỳ thông tin nào liên quan đến yêu cầu của bạn. Bạn có cần tôi giúp gì khác không?",
+      "sender": "bot",
+      "createdAt": "2025-12-23T08:51:59.371Z"
+    },
+    {
+      "id": "2de8",
+      "userId": "cbc1",
+      "content": "các dòng có sẵn của Shop ",
+      "sender": "user",
+      "createdAt": "2025-12-23T08:52:23.974Z"
+    },
+    {
+      "id": "2de8",
+      "userId": "cbc1",
+      "content": "các dòng có sẵn của Shop ",
+      "sender": "user",
+      "createdAt": "2025-12-23T08:52:23.974Z"
+    },
+    {
+      "id": "eca4",
+      "userId": "cbc1",
+      "content": "Bạn ơi! Shop có 4 dòng sản phẩm handmade đẹp mắt và chất lượng cao:\n\n1. **Trang sức đá**: Mang đến vẻ đẹp tinh tế và sang trọng với các mẫu nhẫn, vòng cổ, dây chuyền được làm từ đá quý tự nhiên.\n2. **Đồ da khâu tay**: Tuyệt vời cho những ai yêu thích sự độc đáo và chất lượng, với các sản phẩm như túi xách, ví, giày da được khâu tay một cách tỉ mỉ.\n3. **Gốm sứ nghệ thuật**: Cung cấp cho bạn một không gian nội thất độc đáo với các sản phẩm gốm sứ được thiết kế và chế tác tinh tế.\n4. **Túi ví vải**: Phong cách và tinh tế, các sản phẩm túi ví vải handmade của Shop sẽ mang đến cho bạn một cảm giác thoải mái và tiện lợi.\n\nBạn có muốn khám phá thêm về từng dòng sản phẩm không? 🛍️",
+      "sender": "bot",
+      "createdAt": "2025-12-23T08:52:25.947Z"
+    },
+    {
+      "id": "eca4",
+      "userId": "cbc1",
+      "content": "Bạn ơi! Shop có 4 dòng sản phẩm handmade đẹp mắt và chất lượng cao:\n\n1. **Trang sức đá**: Mang đến vẻ đẹp tinh tế và sang trọng với các mẫu nhẫn, vòng cổ, dây chuyền được làm từ đá quý tự nhiên.\n2. **Đồ da khâu tay**: Tuyệt vời cho những ai yêu thích sự độc đáo và chất lượng, với các sản phẩm như túi xách, ví, giày da được khâu tay một cách tỉ mỉ.\n3. **Gốm sứ nghệ thuật**: Cung cấp cho bạn một không gian nội thất độc đáo với các sản phẩm gốm sứ được thiết kế và chế tác tinh tế.\n4. **Túi ví vải**: Phong cách và tinh tế, các sản phẩm túi ví vải handmade của Shop sẽ mang đến cho bạn một cảm giác thoải mái và tiện lợi.\n\nBạn có muốn khám phá thêm về từng dòng sản phẩm không? 🛍️",
+      "sender": "bot",
+      "createdAt": "2025-12-23T08:52:25.947Z"
+    },
+    {
+      "id": "ff8a",
+      "userId": "cbc1",
+      "content": "cho tôi đường dẫn ",
+      "sender": "user",
+      "createdAt": "2025-12-23T08:52:31.911Z"
+    },
+    {
+      "id": "ff8a",
+      "userId": "cbc1",
+      "content": "cho tôi đường dẫn ",
+      "sender": "user",
+      "createdAt": "2025-12-23T08:52:31.911Z"
+    },
+    {
+      "id": "6321",
+      "userId": "cbc1",
+      "content": "Rất tiếc, Shop chưa có đường dẫn cụ thể về \"danh mục\" có thể bạn đang tìm kiếm. Tuy nhiên, Shop có một số danh mục nổi bật như:\n\n- Trang sức handmade: Trang sức được thiết kế và làm thủ công bằng chất liệu tự nhiên như đá, gỗ, đồng.\n- Đồ da handmade: Sản phẩm được làm từ da, thường có thiết kế độc đáo và chất lượng cao.\n- Gốm sứ handmade: Các sản phẩm được làm thủ công từ gốm sứ, có thể có thiết kế độc đáo và chất lượng cao.\n- Túi và ví handmade: Các sản phẩm được làm thủ công từ vải, thường có thiết kế độc đáo và chất lượng cao.\n\nBạn có muốn Shop tư vấn thêm dòng nào khác không ạ?",
+      "sender": "bot",
+      "createdAt": "2025-12-23T08:52:33.860Z"
+    },
+    {
+      "id": "6321",
+      "userId": "cbc1",
+      "content": "Rất tiếc, Shop chưa có đường dẫn cụ thể về \"danh mục\" có thể bạn đang tìm kiếm. Tuy nhiên, Shop có một số danh mục nổi bật như:\n\n- Trang sức handmade: Trang sức được thiết kế và làm thủ công bằng chất liệu tự nhiên như đá, gỗ, đồng.\n- Đồ da handmade: Sản phẩm được làm từ da, thường có thiết kế độc đáo và chất lượng cao.\n- Gốm sứ handmade: Các sản phẩm được làm thủ công từ gốm sứ, có thể có thiết kế độc đáo và chất lượng cao.\n- Túi và ví handmade: Các sản phẩm được làm thủ công từ vải, thường có thiết kế độc đáo và chất lượng cao.\n\nBạn có muốn Shop tư vấn thêm dòng nào khác không ạ?",
+      "sender": "bot",
+      "createdAt": "2025-12-23T08:52:33.860Z"
+    },
+    {
+      "id": "11c2",
+      "userId": "cbc1",
+      "content": "giày ",
+      "sender": "user",
+      "createdAt": "2025-12-23T08:52:41.579Z"
+    },
+    {
+      "id": "11c2",
+      "userId": "cbc1",
+      "content": "giày ",
+      "sender": "user",
+      "createdAt": "2025-12-23T08:52:41.579Z"
+    },
+    {
+      "id": "c141",
+      "userId": "cbc1",
+      "content": "Rất tiếc, hiện Shop chưa có mẫu giày handmade này rồi ạ. Bạn có muốn tham khảo thêm các dòng khác của Shop như Trang sức, Gốm sứ, Đồ da, Túi & Ví handmade không ạ? 🎁",
+      "sender": "bot",
+      "createdAt": "2025-12-23T08:52:43.283Z"
+    },
+    {
+      "id": "c141",
+      "userId": "cbc1",
+      "content": "Rất tiếc, hiện Shop chưa có mẫu giày handmade này rồi ạ. Bạn có muốn tham khảo thêm các dòng khác của Shop như Trang sức, Gốm sứ, Đồ da, Túi & Ví handmade không ạ? 🎁",
+      "sender": "bot",
+      "createdAt": "2025-12-23T08:52:43.283Z"
+    },
+    {
+      "id": "5475",
+      "userId": "cbc1",
+      "content": "vó",
+      "sender": "user",
+      "createdAt": "2025-12-23T08:52:44.842Z"
+    },
+    {
+      "id": "5475",
+      "userId": "cbc1",
+      "content": "vó",
+      "sender": "user",
+      "createdAt": "2025-12-23T08:52:44.842Z"
+    },
+    {
+      "id": "9415",
+      "userId": "cbc1",
+      "content": "Rất tiếc, hiện Shop chưa có mẫu vó này. Bạn tham khảo thêm các mẫu Túi & Ví handmade của Shop tại đây nhé: http://localhost:3000/products?page=1&cat=1\n\nBạn có muốn Shop tư vấn thêm dòng ví da khâu tay hoặc túi xách handmade khác không ạ?",
+      "sender": "bot",
+      "createdAt": "2025-12-23T08:52:46.415Z"
+    },
+    {
+      "id": "9415",
+      "userId": "cbc1",
+      "content": "Rất tiếc, hiện Shop chưa có mẫu vó này. Bạn tham khảo thêm các mẫu Túi & Ví handmade của Shop tại đây nhé: http://localhost:3000/products?page=1&cat=1\n\nBạn có muốn Shop tư vấn thêm dòng ví da khâu tay hoặc túi xách handmade khác không ạ?",
+      "sender": "bot",
+      "createdAt": "2025-12-23T08:52:46.415Z"
+    }
+  ],
+  "faq": [
+    {
+      "id": "f_tui_vi",
+      "keywords": [
+        "túi",
+        "ví",
+        "túi xách",
+        "túi đeo",
+        "ví da",
+        "clutch",
+        "balo"
+      ],
+      "action": "SHOW_PRODUCT",
+      "targetCategory": "Túi & Ví",
+      "responseText": "Mời bạn tham khảo bộ sưu tập túi và ví handmade của shop nhé:"
+    },
+    {
+      "id": "f_trang_tri",
+      "keywords": [
+        "trang trí",
+        "decor",
+        "nhà cửa",
+        "đèn",
+        "tranh",
+        "đồ decor",
+        "đồ trang trí"
+      ],
+      "action": "SHOW_PRODUCT",
+      "targetCategory": "Trang trí nhà cửa",
+      "responseText": "Đây là các sản phẩm decor handmade giúp không gian thêm ấm cúng:"
+    },
+    {
+      "id": "f_phu_kien",
+      "keywords": [
+        "phụ kiện",
+        "móc khóa",
+        "kẹp tóc",
+        "khăn",
+        "nón",
+        "phụ kiện thời trang"
+      ],
+      "action": "SHOW_PRODUCT",
+      "targetCategory": "Phụ kiện",
+      "responseText": "Shop có nhiều phụ kiện handmade xinh xắn, bạn xem thử nhé:"
+    },
+    {
+      "id": "f_trang_suc",
+      "keywords": [
+        "vòng tay",
+        "nhẫn",
+        "vòng cổ",
+        "khuyên tai",
+        "trang sức",
+        "jewelry"
+      ],
+      "action": "SHOW_PRODUCT",
+      "targetCategory": "Trang sức",
+      "responseText": "Đây là những mẫu trang sức handmade tinh xảo của shop:"
+    },
+    {
+      "id": "f_gom_su",
+      "keywords": [
+        "gốm sứ",
+        "bình gốm",
+        "ly gốm",
+        "chén",
+        "đĩa",
+        "ceramic"
+      ],
+      "action": "SHOW_PRODUCT",
+      "targetCategory": "Gốm sứ",
+      "responseText": "Các sản phẩm gốm sứ thủ công độc đáo đang có tại shop:"
+    },
+    {
+      "id": "f_do_da",
+      "keywords": [
+        "đồ da",
+        "ví da",
+        "túi da",
+        "thắt lưng",
+        "leather"
+      ],
+      "action": "SHOW_PRODUCT",
+      "targetCategory": "Đồ da",
+      "responseText": "Mời bạn xem các sản phẩm đồ da handmade chất lượng cao:"
+    },
+    {
+      "id": "f_my_pham",
+      "keywords": [
+        "mỹ phẩm",
+        "son",
+        "kem dưỡng",
+        "skincare",
+        "làm đẹp",
+        "cosmetic"
+      ],
+      "action": "SHOW_PRODUCT",
+      "targetCategory": "Mỹ phẩm",
+      "responseText": "Shop có các sản phẩm mỹ phẩm handmade an toàn, lành tính:"
+    },
+    {
+      "id": "f_van_phong_pham",
+      "keywords": [
+        "văn phòng",
+        "sticker",
+        "sổ",
+        "bút",
+        "giấy",
+        "stationery"
+      ],
+      "action": "SHOW_PRODUCT",
+      "targetCategory": "Văn phòng phẩm",
+      "responseText": "Các mẫu văn phòng phẩm handmade dễ thương đang có sẵn:"
+    },
+    {
+      "id": "f_gia_ca",
+      "keywords": [
+        "giá",
+        "bao nhiêu tiền",
+        "giá bao nhiêu",
+        "mắc không",
+        "rẻ không"
+      ],
+      "action": "SEND_TEXT",
+      "responseText": "Giá sản phẩm handmade phụ thuộc vào chất liệu và độ thủ công. Bạn có thể bấm vào sản phẩm để xem giá chi tiết nhé!"
+    },
+    {
+      "id": "f_dat_lam_rieng",
+      "keywords": [
+        "đặt làm riêng",
+        "custom",
+        "đặt theo yêu cầu",
+        "khắc tên",
+        "thiết kế riêng"
+      ],
+      "action": "SEND_TEXT",
+      "responseText": "Shop có nhận đặt làm riêng và khắc tên theo yêu cầu 💝 Bạn hãy nhắn chi tiết cho shop nhé!"
+    },
+    {
+      "id": "f_qua_tang",
+      "keywords": [
+        "quà tặng",
+        "tặng sinh nhật",
+        "tặng người yêu",
+        "tặng bạn",
+        "gift"
+      ],
+      "action": "SEND_TEXT",
+      "responseText": "Các sản phẩm handmade rất phù hợp làm quà tặng 🎁 Shop có hỗ trợ gói quà miễn phí."
+    },
+    {
+      "id": "f_chat_lieu",
+      "keywords": [
+        "chất liệu",
+        "làm bằng gì",
+        "nguyên liệu",
+        "material"
+      ],
+      "action": "SEND_TEXT",
+      "responseText": "Shop sử dụng chất liệu thân thiện môi trường và được chọn lọc kỹ. Thông tin chi tiết có trong từng sản phẩm."
+    },
+    {
+      "id": "f_bao_quan",
+      "keywords": [
+        "bảo quản",
+        "giữ gìn",
+        "xài lâu",
+        "cách dùng"
+      ],
+      "action": "SEND_TEXT",
+      "responseText": "Mỗi sản phẩm handmade đều có hướng dẫn bảo quản riêng để sử dụng được lâu nhất."
+    },
+    {
+      "id": "f_giao_hang",
+      "keywords": [
+        "giao hàng",
+        "ship",
+        "vận chuyển",
+        "bao lâu nhận"
+      ],
+      "action": "SEND_TEXT",
+      "responseText": "Shop giao hàng toàn quốc 🚚 Thời gian nhận hàng từ 2–5 ngày tùy khu vực."
+    },
+    {
+      "id": "f_khuyen_mai",
+      "keywords": [
+        "khuyến mãi",
+        "giảm giá",
+        "sale",
+        "ưu đãi"
+      ],
+      "action": "SEND_TEXT",
+      "responseText": "Shop thường có ưu đãi vào dịp lễ 🎉 Bạn nhớ theo dõi để không bỏ lỡ nhé!"
+    },
+    {
+      "id": "default",
+      "keywords": [],
+      "action": "SEND_TEXT",
+      "responseText": "Shop chưa hiểu rõ câu hỏi của bạn 🤔 Bạn có thể hỏi về sản phẩm, giá cả, giao hàng hoặc đặt làm riêng nhé!"
+    }
+  ],
   "categories": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Túi & Ví"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Trang trí nhà cửa"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Phụ kiện"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Trang sức"
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Gốm sứ"
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Đồ da"
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "Mỹ phẩm"
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "Văn phòng phẩm"
     }
   ],
   "orders": [],
   "policyData": [
     {
-      "id": 1,
+      "id": "1",
       "iconClass": "fas fa-shield-alt",
       "title": "Bảo hành 12 tháng"
     },
     {
-      "id": 2,
+      "id": "2",
       "iconClass": "fas fa-sync-alt",
       "title": "Đổi trả trong 7 ngày"
     },
     {
-      "id": 3,
+      "id": "3",
       "iconClass": "fas fa-truck",
       "title": "Giao hàng toàn quốc"
     },
     {
-      "id": 4,
+      "id": "4",
       "iconClass": "fas fa-money-bill-wave",
       "title": "Thanh toán khi nhận hàng"
     }
