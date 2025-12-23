@@ -2,6 +2,7 @@ import React, { useMemo, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { User } from '../types/model';
 import { useProducts } from '../hooks/useProducts';
+import { useCart } from '../context/CartContext';
 
 // 1. Cập nhật Interface để nhận thêm onLogout
 interface HeaderProps {
@@ -10,10 +11,11 @@ interface HeaderProps {
 }
 
 // 2. Nhận onLogout từ props
-const Header: React.FC<HeaderProps> = ({ currentUser, onLogout }) => { 
+const Header: React.FC<HeaderProps> = ({ currentUser, onLogout }) => {
     const navigate = useNavigate();
     const { products } = useProducts();
     const [query, setQuery] = useState('');
+    const { cartCount } = useCart();
 
     const normalizedQuery = query.trim().toLowerCase();
     const suggestions = useMemo(() => {
@@ -32,7 +34,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser, onLogout }) => {
             setQuery('');
         }
     };
-
+    //const totalItems = cart?.items?.reduce((total: number, item: any) => total + item.quantity, 0) || 0;
     return (
         <header className="main-header">
             {/* Logo */}
@@ -48,8 +50,12 @@ const Header: React.FC<HeaderProps> = ({ currentUser, onLogout }) => {
                 <Link to="/Home" className="nav-link">Trang Chủ</Link>
                 <Link to="/products" className="nav-link">Sản Phẩm</Link>
                 <Link to="/about" className="nav-link">Giới thiệu</Link>
-                <Link to="/cart" className="nav-link">Giỏ hàng</Link>
-                <Link to="/orders" className="nav-link">Đơn mua</Link>
+                <Link to="/" className="nav-link">Tin tức</Link>
+                <Link to="/cart" className="nav-link cart-link">
+                    <i className="fas fa-shopping-cart"></i>
+                    Giỏ hàng
+                    {cartCount > 0 && <span className="cart-badge">{cartCount}</span>}
+                </Link>
             </nav>
 
             {/* Search */}
@@ -93,8 +99,8 @@ const Header: React.FC<HeaderProps> = ({ currentUser, onLogout }) => {
                             <span>{currentUser.username}</span>
                         </Link>
                         {/* 3. Thêm nút Đăng xuất để sử dụng onLogout */}
-                        <button 
-                            onClick={onLogout} 
+                        <button
+                            onClick={onLogout}
                             className="logout-btn"
                             style={{ marginLeft: '10px', cursor: 'pointer', border: 'none', background: 'none', color: 'red' }}
                         >

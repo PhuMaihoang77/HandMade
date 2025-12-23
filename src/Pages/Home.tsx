@@ -78,7 +78,7 @@ const Home: React.FC<HomeProps> = ({ currentUser }) => {
                 {!loading && !error && (
                     <div className="product-grid-limited">
                         {featuredProducts.map(product => (
-                            <ProductCard key={product.id} product={product} />
+                            <ProductCard key={product.id} product={product} currentUser={currentUser}/>
                         ))}
                     </div>
                 )}

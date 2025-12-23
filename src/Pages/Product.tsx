@@ -129,7 +129,7 @@ const Product: React.FC<ProductProps> = ({ currentUser }) => {
                         <>
                             <div className="pro-product-grid">
                                 {currentProducts.map(product => (
-                                    <ProductCard key={product.id} product={product} />
+                                    <ProductCard key={product.id} product={product} currentUser={currentUser}/>
                                 ))}
                             </div>
                             
