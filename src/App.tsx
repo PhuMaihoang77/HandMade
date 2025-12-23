@@ -11,7 +11,6 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
-import Cart from './Pages/Cart';
 
 // =======================
 // 3. IMPORT PAGES
@@ -21,6 +20,8 @@ import Product from './Pages/Product';
 import ProductDetail from './Pages/ProductDetail';
 import Profile from './Pages/Profile';
 import Checkout from './Pages/Checkout';
+import About from './Pages/About';
+import Chatbox from './Pages/Chatbox';
 
 import Login from './Pages/Login';
 import Register from './Pages/Register';
@@ -32,13 +33,10 @@ import ForgotPassword from './Pages/ForgotPassword';
 import { CartProvider } from './context/CartContext';
 import { User } from './types/model';
 import './Styles/global.css';
-import Checkout from "./Pages/Checkout";
-import { CartProvider } from './context/CartContext';
 import Cart from './Pages/Cart';
 import OrderHistory from "./Pages/OrderHistory";
 import { OrderProvider } from './context/OrderContext';
-
-import { User } from './types/model';
+import ChatWidget from "./Pages/ChatWidget";
 import './Styles/global.css';
 
 // =======================
@@ -60,8 +58,10 @@ const MainLayout = ({
             <main style={{ minHeight: '80vh', paddingTop: '20px' }}>
                 {children}
             </main>
+            
             <Footer />
-            <ScrollToTop />
+            <ScrollToTop />  
+              <ChatWidget currentUser={currentUser} />
         </>
 
     );
@@ -160,12 +160,30 @@ function App() {
                     }
                 />
 
-
-                <Route path="/profile" element={
-                    <MainLayout currentUser={currentUser} onLogout={handleLogout}>
-                        <Profile currentUser={currentUser} />
-                    </MainLayout>
-                } />
+                <Route
+                    path="/products"
+                    element={
+                        <MainLayout currentUser={currentUser} onLogout={handleLogout}>
+                            <Product currentUser={currentUser} />
+                        </MainLayout>
+                    }
+                />
+                <Route
+                    path="/chat"
+                     element={
+                        <MainLayout currentUser={currentUser} onLogout={handleLogout}>
+                            <Chatbox currentUser={currentUser} />
+                        </MainLayout>
+                    }
+                />
+                 <Route
+                    path="/about"
+                    element={
+                        <MainLayout currentUser={currentUser} onLogout={handleLogout}>
+                            <About currentUser={currentUser} />
+                        </MainLayout>
+                    }
+                />
 
                 {/* Route động: /product/1, /product/2 */}
                 <Route path="/product/:id" element={
