@@ -1,7 +1,7 @@
 // src/Pages/Product.tsx
 import React, { useEffect } from 'react';
 import ProductCard from './ProductCard';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { User } from '../types/model';
 import { useProducts } from '../hooks/useProducts';
 // 1. Import thêm PRICE_RANGES
@@ -16,15 +16,18 @@ interface ProductProps {
 
 const Product: React.FC<ProductProps> = ({ currentUser }) => {
     const navigate = useNavigate();
+    const [searchParams] = useSearchParams();
+    const searchQuery = searchParams.get('search') || '';
+    
     const { products, loading, error } = useProducts();
     
-    // 2. Lấy thêm selectedPriceRange và handlePriceChange ở đây
+    // 2. Lấy thêm selectedPriceRange và handlePriceChange ở đây, truyền searchQuery vào hook
     const { 
         currentProducts, totalCount, currentPage, totalPages, sortOption, selectedCategoryId,
         selectedPriceRange, // <--- THÊM VÀO
         handleCategoryChange, handleSortChange, handlePriceChange, // <--- THÊM VÀO
         setCurrentPage 
-    } = useProductFeatures({ products, itemsPerPage: 9 });
+    } = useProductFeatures({ products, itemsPerPage: 9, searchQuery });
 
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -106,13 +109,30 @@ const Product: React.FC<ProductProps> = ({ currentUser }) => {
                     {/* ... Phần Main Content giữ nguyên ... */}
                     <div className="shop-toolbar">
                        <h1>
-                            {selectedCategoryId === 'all'
-                                ? 'Bộ Sưu Tập'
-                                : categories.find(c => c.id === selectedCategoryId)?.name}
+                            {searchQuery 
+                                ? `Kết quả tìm kiếm: "${searchQuery}"`
+                                : selectedCategoryId === 'all'
+                                    ? 'Bộ Sưu Tập'
+                                    : categories.find(c => c.id === selectedCategoryId)?.name}
                         </h1>
 
                         <div className="toolbar-actions">
                             <span className="count-label">Tìm thấy {totalCount} sp</span>
+                            {searchQuery && (
+                                <button 
+                                    onClick={() => navigate('/products')}
+                                    style={{
+                                        padding: '6px 12px',
+                                        marginLeft: '10px',
+                                        background: '#f5f5f5',
+                                        border: '1px solid #ddd',
+                                        borderRadius: '4px',
+                                        cursor: 'pointer'
+                                    }}
+                                >
+                                    Xóa tìm kiếm
+                                </button>
+                            )}
                             <select value={sortOption} onChange={handleSortChange} className="sort-select">
                                 <option value="default">Sắp xếp: Mặc định</option>
                                 <option value="price-asc">Giá: Thấp đến Cao</option>
