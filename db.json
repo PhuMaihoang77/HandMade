@@ -1043,494 +1043,46 @@
   ],
   "messages": [
     {
-      "id": "f26b",
+      "id": "900b",
       "userId": "cbc1",
       "content": "Chào bạn! 👋 Shop HandMade có thể giúp gì cho Bạn?",
       "sender": "bot",
-      "createdAt": "2025-12-23T08:20:38.449Z"
+      "createdAt": "2025-12-27T09:01:09.496Z"
     },
     {
-      "id": "85af",
+      "id": "92aa",
       "userId": "cbc1",
       "content": "Chào bạn! 👋 Shop HandMade có thể giúp gì cho Bạn?",
       "sender": "bot",
-      "createdAt": "2025-12-23T08:20:38.785Z"
+      "createdAt": "2025-12-27T09:01:09.818Z"
     },
     {
-      "id": "2a54",
+      "id": "987f",
       "userId": "cbc1",
-      "content": "túi ",
+      "content": "dép",
       "sender": "user",
-      "createdAt": "2025-12-23T08:20:46.620Z"
+      "createdAt": "2025-12-27T09:01:13.046Z"
     },
     {
-      "id": "2a54",
+      "id": "987f",
       "userId": "cbc1",
-      "content": "túi ",
+      "content": "dép",
       "sender": "user",
-      "createdAt": "2025-12-23T08:20:46.620Z"
+      "createdAt": "2025-12-27T09:01:13.046Z"
     },
     {
-      "id": "0c40",
+      "id": "b4d4",
       "userId": "cbc1",
-      "content": "Bạn đang tìm kiếm một chiếc túi handmade để sử dụng ạ? 🎁\n\nĐúng như mong muốn của bạn, Shop có sản phẩm túi handmade rất đẹp và đa dạng. Dưới đây là một số mẫu túi mà bạn có thể tham khảo:\n\n- **Túi Tote Vải Canvas In Chữ Vintage**: Một mẫu túi tote handmade từ vải canvas in chữ vintage độc đáo, mang đến cho bạn phong cách thời trang hiện đại. Xem tại: http://localhost:3000/product/1\n- **Túi Đeo Chéo Da Nữ Mini**: Một mẫu túi đeo chéo handmade từ da nữ, nhỏ gọn nhưng rất sang trọng. Xem tại: http://localhost:3000/product/3\n\nTất cả các sản phẩm túi handmade của Shop đều được làm bằng tay với chất liệu cao cấp, đảm bảo độ bền và tính thẩm mỹ cao. Bạn muốn tìm quà tặng hay dùng cá nhân ạ?\n\nTừ khóa: túi handmade, túi tote, túi da.",
+      "content": "Rất tiếc, hiện Shop chưa có mẫu dép này. Bạn tham khảo thêm các mẫu Túi & Ví handmade của Shop tại đây nhé: http://localhost:3000/products?page=1&cat=1",
       "sender": "bot",
-      "createdAt": "2025-12-23T08:20:50.097Z"
+      "createdAt": "2025-12-27T09:01:15.331Z"
     },
     {
-      "id": "0c40",
+      "id": "b4d4",
       "userId": "cbc1",
-      "content": "Bạn đang tìm kiếm một chiếc túi handmade để sử dụng ạ? 🎁\n\nĐúng như mong muốn của bạn, Shop có sản phẩm túi handmade rất đẹp và đa dạng. Dưới đây là một số mẫu túi mà bạn có thể tham khảo:\n\n- **Túi Tote Vải Canvas In Chữ Vintage**: Một mẫu túi tote handmade từ vải canvas in chữ vintage độc đáo, mang đến cho bạn phong cách thời trang hiện đại. Xem tại: http://localhost:3000/product/1\n- **Túi Đeo Chéo Da Nữ Mini**: Một mẫu túi đeo chéo handmade từ da nữ, nhỏ gọn nhưng rất sang trọng. Xem tại: http://localhost:3000/product/3\n\nTất cả các sản phẩm túi handmade của Shop đều được làm bằng tay với chất liệu cao cấp, đảm bảo độ bền và tính thẩm mỹ cao. Bạn muốn tìm quà tặng hay dùng cá nhân ạ?\n\nTừ khóa: túi handmade, túi tote, túi da.",
+      "content": "Rất tiếc, hiện Shop chưa có mẫu dép này. Bạn tham khảo thêm các mẫu Túi & Ví handmade của Shop tại đây nhé: http://localhost:3000/products?page=1&cat=1",
       "sender": "bot",
-      "createdAt": "2025-12-23T08:20:50.097Z"
-    },
-    {
-      "id": "941e",
-      "userId": "cbc1",
-      "content": "túi ví ",
-      "sender": "user",
-      "createdAt": "2025-12-23T08:21:14.284Z"
-    },
-    {
-      "id": "941e",
-      "userId": "cbc1",
-      "content": "túi ví ",
-      "sender": "user",
-      "createdAt": "2025-12-23T08:21:14.284Z"
-    },
-    {
-      "id": "cc83",
-      "userId": "cbc1",
-      "content": "Bạn đang tìm kiếm về các mẫu túi ví handmade của Shop? 🎁\n\nShop có các mẫu túi ví rất đẹp và độc đáo, dưới đây là một số mẫu bạn có thể tham khảo:\n\n- **Túi Tote Vải Canvas In Chữ Vintage**: Đây là một mẫu túi tote rất phổ biến, được làm từ vải canvas với thiết kế chữ vintage độc đáo. Bạn có thể xem chi tiết tại: http://localhost:3000/product/1\n- **Túi Đeo Chéo Da Nữ Mini**: Đây là một mẫu túi đeo chéo mini được làm từ da nữ với thiết kế đơn giản nhưng tinh tế. Bạn có thể xem chi tiết tại: http://localhost:3000/product/3\n\nTất cả các sản phẩm của Shop đều được làm thủ công với chất liệu cao cấp, đảm bảo độ bền và tính thẩm mỹ cao. Bạn muốn tìm quà tặng hay dùng cá nhân ạ? 🤔\n\nTừ khóa: Túi ví, Handmade, Túi tote, Ví da",
-      "sender": "bot",
-      "createdAt": "2025-12-23T08:21:16.483Z"
-    },
-    {
-      "id": "cc83",
-      "userId": "cbc1",
-      "content": "Bạn đang tìm kiếm về các mẫu túi ví handmade của Shop? 🎁\n\nShop có các mẫu túi ví rất đẹp và độc đáo, dưới đây là một số mẫu bạn có thể tham khảo:\n\n- **Túi Tote Vải Canvas In Chữ Vintage**: Đây là một mẫu túi tote rất phổ biến, được làm từ vải canvas với thiết kế chữ vintage độc đáo. Bạn có thể xem chi tiết tại: http://localhost:3000/product/1\n- **Túi Đeo Chéo Da Nữ Mini**: Đây là một mẫu túi đeo chéo mini được làm từ da nữ với thiết kế đơn giản nhưng tinh tế. Bạn có thể xem chi tiết tại: http://localhost:3000/product/3\n\nTất cả các sản phẩm của Shop đều được làm thủ công với chất liệu cao cấp, đảm bảo độ bền và tính thẩm mỹ cao. Bạn muốn tìm quà tặng hay dùng cá nhân ạ? 🤔\n\nTừ khóa: Túi ví, Handmade, Túi tote, Ví da",
-      "sender": "bot",
-      "createdAt": "2025-12-23T08:21:16.483Z"
-    },
-    {
-      "id": "db8d",
-      "userId": "cbc1",
-      "content": "túi ví ",
-      "sender": "user",
-      "createdAt": "2025-12-23T08:22:12.775Z"
-    },
-    {
-      "id": "db8d",
-      "userId": "cbc1",
-      "content": "túi ví ",
-      "sender": "user",
-      "createdAt": "2025-12-23T08:22:12.775Z"
-    },
-    {
-      "id": "2291",
-      "userId": "cbc1",
-      "content": "Bạn đang tìm kiếm một mẫu túi ví handmade độc đáo ạ? 😊\n\nShop có một số mẫu túi ví rất đẹp và chất lượng:\n\n- Túi Đeo Chéo Da Nữ Mini: Đây là mẫu túi ví được làm từ da cao cấp, thiết kế nhỏ gọn, dễ dàng mang theo. Mỗi sản phẩm đều được làm thủ công một cách cẩn thận, mang đến cho bạn một sản phẩm độc đáo và chất lượng. Xem tại: http://localhost:3000/product/2\n- Ví Da Nam Bifold Cổ Điển: Đây là mẫu ví da được thiết kế cổ điển, mang đến cho bạn một cảm giác lịch lãm và sang trọng. Mỗi sản phẩm đều được làm từ da cao cấp, đảm bảo chất lượng và độ bền cao. Xem tại: http://localhost:3000/product/3\n\nCả hai sản phẩm đều được làm từ chất liệu da cao cấp, đảm bảo độ bền và chất lượng. Bạn muốn tìm một mẫu túi ví nào khác ạ?\n\nTags: Ví da, Túi ví handmade, Đồ da cao cấp",
-      "sender": "bot",
-      "createdAt": "2025-12-23T08:22:15.354Z"
-    },
-    {
-      "id": "2291",
-      "userId": "cbc1",
-      "content": "Bạn đang tìm kiếm một mẫu túi ví handmade độc đáo ạ? 😊\n\nShop có một số mẫu túi ví rất đẹp và chất lượng:\n\n- Túi Đeo Chéo Da Nữ Mini: Đây là mẫu túi ví được làm từ da cao cấp, thiết kế nhỏ gọn, dễ dàng mang theo. Mỗi sản phẩm đều được làm thủ công một cách cẩn thận, mang đến cho bạn một sản phẩm độc đáo và chất lượng. Xem tại: http://localhost:3000/product/2\n- Ví Da Nam Bifold Cổ Điển: Đây là mẫu ví da được thiết kế cổ điển, mang đến cho bạn một cảm giác lịch lãm và sang trọng. Mỗi sản phẩm đều được làm từ da cao cấp, đảm bảo chất lượng và độ bền cao. Xem tại: http://localhost:3000/product/3\n\nCả hai sản phẩm đều được làm từ chất liệu da cao cấp, đảm bảo độ bền và chất lượng. Bạn muốn tìm một mẫu túi ví nào khác ạ?\n\nTags: Ví da, Túi ví handmade, Đồ da cao cấp",
-      "sender": "bot",
-      "createdAt": "2025-12-23T08:22:15.354Z"
-    },
-    {
-      "id": "032c",
-      "userId": "cbc1",
-      "content": "phụ kiện",
-      "sender": "user",
-      "createdAt": "2025-12-23T08:22:24.631Z"
-    },
-    {
-      "id": "032c",
-      "userId": "cbc1",
-      "content": "phụ kiện",
-      "sender": "user",
-      "createdAt": "2025-12-23T08:22:24.631Z"
-    },
-    {
-      "id": "1ce5",
-      "userId": "cbc1",
-      "content": "Bạn đang tìm kiếm phụ kiện handmade ạ. Shop có nhiều mẫu phù hợp cho bạn.\n\n- Dây Đeo Chú Lăng Nghiêm: Một chiếc dây đeo cổ handmade với chất liệu da cao cấp, thiết kế độc đáo. Xem tại: http://localhost:3000/product/41\n- Dây Chuyền Vòng Trăng Ánh Sao: Một chiếc dây chuyền handmade với thiết kế hiện đại, phù hợp với phong cách trẻ trung. Xem tại: http://localhost:3000/product/42\n- Dây Chuyền Pha Lê Ánh Trăng: Một chiếc dây chuyền handmade với chất liệu pha lê tinh tế, mang lại cảm giác sang trọng. Xem tại: http://localhost:3000/product/43\n\nBạn muốn tìm quà tặng hay dùng cá nhân ạ? 🎁",
-      "sender": "bot",
-      "createdAt": "2025-12-23T08:22:26.741Z"
-    },
-    {
-      "id": "1ce5",
-      "userId": "cbc1",
-      "content": "Bạn đang tìm kiếm phụ kiện handmade ạ. Shop có nhiều mẫu phù hợp cho bạn.\n\n- Dây Đeo Chú Lăng Nghiêm: Một chiếc dây đeo cổ handmade với chất liệu da cao cấp, thiết kế độc đáo. Xem tại: http://localhost:3000/product/41\n- Dây Chuyền Vòng Trăng Ánh Sao: Một chiếc dây chuyền handmade với thiết kế hiện đại, phù hợp với phong cách trẻ trung. Xem tại: http://localhost:3000/product/42\n- Dây Chuyền Pha Lê Ánh Trăng: Một chiếc dây chuyền handmade với chất liệu pha lê tinh tế, mang lại cảm giác sang trọng. Xem tại: http://localhost:3000/product/43\n\nBạn muốn tìm quà tặng hay dùng cá nhân ạ? 🎁",
-      "sender": "bot",
-      "createdAt": "2025-12-23T08:22:26.741Z"
-    },
-    {
-      "id": "e8a6",
-      "userId": "cbc1",
-      "content": "văn phòng phẩm ",
-      "sender": "user",
-      "createdAt": "2025-12-23T08:22:54.394Z"
-    },
-    {
-      "id": "e8a6",
-      "userId": "cbc1",
-      "content": "văn phòng phẩm ",
-      "sender": "user",
-      "createdAt": "2025-12-23T08:22:54.394Z"
-    },
-    {
-      "id": "9971",
-      "userId": "cbc1",
-      "content": "Bạn đang tìm kiếm đồ dùng văn phòng handmade, đúng không ạ? 📝\n\nChúng tôi có một số sản phẩm văn phòng phẩm handmade rất đẹp và hữu dụng. Một trong số đó là Sticker chủ đề Phật Giáo - (9.5cm x 21cm) - Set 02 tờ, làm từ giấy chất lượng cao, thiết kế độc đáo, và rất phù hợp để trang trí văn phòng. Xem nhanh tại: http://localhost:3000/product/161\n\nMột sản phẩm khác là Dụng cụ khắc, tỉa họa tiết - Bộ 03 chiếc, được làm từ gỗ tự nhiên, rất bền và dễ sử dụng. Nó giúp bạn có thể tạo ra các họa tiết độc đáo cho các sản phẩm handmade của mình. Xem nhanh tại: http://localhost:3000/product/162\n\nBạn muốn tìm sản phẩm nào khác ạ? Bạn muốn dùng cho mục đích gì? Từ khóa: Văn phòng phẩm handmade, Sticker Phật Giáo",
-      "sender": "bot",
-      "createdAt": "2025-12-23T08:22:56.850Z"
-    },
-    {
-      "id": "9971",
-      "userId": "cbc1",
-      "content": "Bạn đang tìm kiếm đồ dùng văn phòng handmade, đúng không ạ? 📝\n\nChúng tôi có một số sản phẩm văn phòng phẩm handmade rất đẹp và hữu dụng. Một trong số đó là Sticker chủ đề Phật Giáo - (9.5cm x 21cm) - Set 02 tờ, làm từ giấy chất lượng cao, thiết kế độc đáo, và rất phù hợp để trang trí văn phòng. Xem nhanh tại: http://localhost:3000/product/161\n\nMột sản phẩm khác là Dụng cụ khắc, tỉa họa tiết - Bộ 03 chiếc, được làm từ gỗ tự nhiên, rất bền và dễ sử dụng. Nó giúp bạn có thể tạo ra các họa tiết độc đáo cho các sản phẩm handmade của mình. Xem nhanh tại: http://localhost:3000/product/162\n\nBạn muốn tìm sản phẩm nào khác ạ? Bạn muốn dùng cho mục đích gì? Từ khóa: Văn phòng phẩm handmade, Sticker Phật Giáo",
-      "sender": "bot",
-      "createdAt": "2025-12-23T08:22:56.850Z"
-    },
-    {
-      "id": "82ea",
-      "userId": "cbc1",
-      "content": "dădwadwadwadw",
-      "sender": "user",
-      "createdAt": "2025-12-23T08:36:16.084Z"
-    },
-    {
-      "id": "82ea",
-      "userId": "cbc1",
-      "content": "dădwadwadwadw",
-      "sender": "user",
-      "createdAt": "2025-12-23T08:36:16.084Z"
-    },
-    {
-      "id": "8385",
-      "userId": "cbc1",
-      "content": "Rất tiếc, Shop không thể hiểu câu hỏi của Bạn 😊. Bạn có muốn hỏi lại hoặc tìm sản phẩm khác không ạ?",
-      "sender": "bot",
-      "createdAt": "2025-12-23T08:36:17.768Z"
-    },
-    {
-      "id": "8385",
-      "userId": "cbc1",
-      "content": "Rất tiếc, Shop không thể hiểu câu hỏi của Bạn 😊. Bạn có muốn hỏi lại hoặc tìm sản phẩm khác không ạ?",
-      "sender": "bot",
-      "createdAt": "2025-12-23T08:36:17.768Z"
-    },
-    {
-      "id": "168f",
-      "userId": "cbc1",
-      "content": "jdhjahda",
-      "sender": "user",
-      "createdAt": "2025-12-23T08:39:21.492Z"
-    },
-    {
-      "id": "168f",
-      "userId": "cbc1",
-      "content": "jdhjahda",
-      "sender": "user",
-      "createdAt": "2025-12-23T08:39:21.492Z"
-    },
-    {
-      "id": "ed98",
-      "userId": "cbc1",
-      "content": "Xin lỗi, nhưng tôi không thể hiểu rõ câu hỏi của bạn ạ. Bạn có thể cho tôi biết thêm chi tiết về sản phẩm bạn đang tìm kiếm không?",
-      "sender": "bot",
-      "createdAt": "2025-12-23T08:39:23.024Z"
-    },
-    {
-      "id": "ed98",
-      "userId": "cbc1",
-      "content": "Xin lỗi, nhưng tôi không thể hiểu rõ câu hỏi của bạn ạ. Bạn có thể cho tôi biết thêm chi tiết về sản phẩm bạn đang tìm kiếm không?",
-      "sender": "bot",
-      "createdAt": "2025-12-23T08:39:23.024Z"
-    },
-    {
-      "id": "881b",
-      "userId": "cbc1",
-      "content": "đa",
-      "sender": "user",
-      "createdAt": "2025-12-23T08:45:46.210Z"
-    },
-    {
-      "id": "881b",
-      "userId": "cbc1",
-      "content": "đa",
-      "sender": "user",
-      "createdAt": "2025-12-23T08:45:46.210Z"
-    },
-    {
-      "id": "3c31",
-      "userId": "cbc1",
-      "content": "Rất tiếc, hiện Shop chưa có mẫu đa này rồi ạ. Bạn tham khảo thêm các dòng Trang sức, Gốm sứ, Đồ da, Túi & Ví handmade của Shop nhé:\n\nhttp://localhost:3000/products?page=1&cat=1",
-      "sender": "bot",
-      "createdAt": "2025-12-23T08:45:47.569Z"
-    },
-    {
-      "id": "3c31",
-      "userId": "cbc1",
-      "content": "Rất tiếc, hiện Shop chưa có mẫu đa này rồi ạ. Bạn tham khảo thêm các dòng Trang sức, Gốm sứ, Đồ da, Túi & Ví handmade của Shop nhé:\n\nhttp://localhost:3000/products?page=1&cat=1",
-      "sender": "bot",
-      "createdAt": "2025-12-23T08:45:47.569Z"
-    },
-    {
-      "id": "9d9d",
-      "userId": "cbc1",
-      "content": "đă",
-      "sender": "user",
-      "createdAt": "2025-12-23T08:46:22.786Z"
-    },
-    {
-      "id": "9d9d",
-      "userId": "cbc1",
-      "content": "đă",
-      "sender": "user",
-      "createdAt": "2025-12-23T08:46:22.786Z"
-    },
-    {
-      "id": "3aaf",
-      "userId": "cbc1",
-      "content": "Shop không thể hiểu rõ ý của bạn. Bạn có thể nói rõ hơn về nhu cầu của mình không? Shop sẵn sàng giúp đỡ bạn.",
-      "sender": "bot",
-      "createdAt": "2025-12-23T08:46:24.841Z"
-    },
-    {
-      "id": "3aaf",
-      "userId": "cbc1",
-      "content": "Shop không thể hiểu rõ ý của bạn. Bạn có thể nói rõ hơn về nhu cầu của mình không? Shop sẵn sàng giúp đỡ bạn.",
-      "sender": "bot",
-      "createdAt": "2025-12-23T08:46:24.841Z"
-    },
-    {
-      "id": "c60a",
-      "userId": "cbc1",
-      "content": "đâ",
-      "sender": "user",
-      "createdAt": "2025-12-23T08:50:44.746Z"
-    },
-    {
-      "id": "c60a",
-      "userId": "cbc1",
-      "content": "đâ",
-      "sender": "user",
-      "createdAt": "2025-12-23T08:50:44.746Z"
-    },
-    {
-      "id": "501c",
-      "userId": "cbc1",
-      "content": "Rất tiếc, hiện Shop chưa có mẫu đó. Bạn tham khảo thêm các dòng có sẵn của Shop tại đây nhé:\nhttp://localhost:3000/products?page=1&cat=1 (Trang sức) hoặc\nhttp://localhost:3000/products?page=1&cat=2 (Đồ da) hoặc\nhttp://localhost:3000/products?page=1&cat=3 (Gốm sứ nghệ thuật) hoặc\nhttp://localhost:3000/products?page=1&cat=4 (Túi ví vải)\n\nBạn muốn tìm quà tặng hay dùng cá nhân ạ? 😊\nTrang sức đá, Đồ da khâu tay, Gốm sứ nghệ thuật, Túi ví vải...",
-      "sender": "bot",
-      "createdAt": "2025-12-23T08:50:46.536Z"
-    },
-    {
-      "id": "501c",
-      "userId": "cbc1",
-      "content": "Rất tiếc, hiện Shop chưa có mẫu đó. Bạn tham khảo thêm các dòng có sẵn của Shop tại đây nhé:\nhttp://localhost:3000/products?page=1&cat=1 (Trang sức) hoặc\nhttp://localhost:3000/products?page=1&cat=2 (Đồ da) hoặc\nhttp://localhost:3000/products?page=1&cat=3 (Gốm sứ nghệ thuật) hoặc\nhttp://localhost:3000/products?page=1&cat=4 (Túi ví vải)\n\nBạn muốn tìm quà tặng hay dùng cá nhân ạ? 😊\nTrang sức đá, Đồ da khâu tay, Gốm sứ nghệ thuật, Túi ví vải...",
-      "sender": "bot",
-      "createdAt": "2025-12-23T08:50:46.536Z"
-    },
-    {
-      "id": "c70d",
-      "userId": "cbc1",
-      "content": "dăd",
-      "sender": "user",
-      "createdAt": "2025-12-23T08:51:40.522Z"
-    },
-    {
-      "id": "c70d",
-      "userId": "cbc1",
-      "content": "dăd",
-      "sender": "user",
-      "createdAt": "2025-12-23T08:51:40.522Z"
-    },
-    {
-      "id": "c937",
-      "userId": "cbc1",
-      "content": "Rất tiếc, Shop chưa có mẫu đó. Bạn có muốn tham khảo thêm các mẫu khác của Shop không?",
-      "sender": "bot",
-      "createdAt": "2025-12-23T08:51:42.689Z"
-    },
-    {
-      "id": "c937",
-      "userId": "cbc1",
-      "content": "Rất tiếc, Shop chưa có mẫu đó. Bạn có muốn tham khảo thêm các mẫu khác của Shop không?",
-      "sender": "bot",
-      "createdAt": "2025-12-23T08:51:42.689Z"
-    },
-    {
-      "id": "a6ef",
-      "userId": "cbc1",
-      "content": "ădawq",
-      "sender": "user",
-      "createdAt": "2025-12-23T08:51:50.261Z"
-    },
-    {
-      "id": "a6ef",
-      "userId": "cbc1",
-      "content": "ădawq",
-      "sender": "user",
-      "createdAt": "2025-12-23T08:51:50.261Z"
-    },
-    {
-      "id": "7e18",
-      "userId": "cbc1",
-      "content": "Xin lỗi, nhưng Shop không hiểu câu hỏi của Bạn 😊. Bạn có thể cho Shop biết sản phẩm gì mà Bạn đang tìm kiếm không?",
-      "sender": "bot",
-      "createdAt": "2025-12-23T08:51:52.166Z"
-    },
-    {
-      "id": "7e18",
-      "userId": "cbc1",
-      "content": "Xin lỗi, nhưng Shop không hiểu câu hỏi của Bạn 😊. Bạn có thể cho Shop biết sản phẩm gì mà Bạn đang tìm kiếm không?",
-      "sender": "bot",
-      "createdAt": "2025-12-23T08:51:52.166Z"
-    },
-    {
-      "id": "4f11",
-      "userId": "cbc1",
-      "content": "ădayiuwyo2ihdsia",
-      "sender": "user",
-      "createdAt": "2025-12-23T08:51:57.621Z"
-    },
-    {
-      "id": "4f11",
-      "userId": "cbc1",
-      "content": "ădayiuwyo2ihdsia",
-      "sender": "user",
-      "createdAt": "2025-12-23T08:51:57.621Z"
-    },
-    {
-      "id": "68f9",
-      "userId": "cbc1",
-      "content": "Tôi không thể tìm được bất kỳ thông tin nào liên quan đến yêu cầu của bạn. Bạn có cần tôi giúp gì khác không?",
-      "sender": "bot",
-      "createdAt": "2025-12-23T08:51:59.371Z"
-    },
-    {
-      "id": "68f9",
-      "userId": "cbc1",
-      "content": "Tôi không thể tìm được bất kỳ thông tin nào liên quan đến yêu cầu của bạn. Bạn có cần tôi giúp gì khác không?",
-      "sender": "bot",
-      "createdAt": "2025-12-23T08:51:59.371Z"
-    },
-    {
-      "id": "2de8",
-      "userId": "cbc1",
-      "content": "các dòng có sẵn của Shop ",
-      "sender": "user",
-      "createdAt": "2025-12-23T08:52:23.974Z"
-    },
-    {
-      "id": "2de8",
-      "userId": "cbc1",
-      "content": "các dòng có sẵn của Shop ",
-      "sender": "user",
-      "createdAt": "2025-12-23T08:52:23.974Z"
-    },
-    {
-      "id": "eca4",
-      "userId": "cbc1",
-      "content": "Bạn ơi! Shop có 4 dòng sản phẩm handmade đẹp mắt và chất lượng cao:\n\n1. **Trang sức đá**: Mang đến vẻ đẹp tinh tế và sang trọng với các mẫu nhẫn, vòng cổ, dây chuyền được làm từ đá quý tự nhiên.\n2. **Đồ da khâu tay**: Tuyệt vời cho những ai yêu thích sự độc đáo và chất lượng, với các sản phẩm như túi xách, ví, giày da được khâu tay một cách tỉ mỉ.\n3. **Gốm sứ nghệ thuật**: Cung cấp cho bạn một không gian nội thất độc đáo với các sản phẩm gốm sứ được thiết kế và chế tác tinh tế.\n4. **Túi ví vải**: Phong cách và tinh tế, các sản phẩm túi ví vải handmade của Shop sẽ mang đến cho bạn một cảm giác thoải mái và tiện lợi.\n\nBạn có muốn khám phá thêm về từng dòng sản phẩm không? 🛍️",
-      "sender": "bot",
-      "createdAt": "2025-12-23T08:52:25.947Z"
-    },
-    {
-      "id": "eca4",
-      "userId": "cbc1",
-      "content": "Bạn ơi! Shop có 4 dòng sản phẩm handmade đẹp mắt và chất lượng cao:\n\n1. **Trang sức đá**: Mang đến vẻ đẹp tinh tế và sang trọng với các mẫu nhẫn, vòng cổ, dây chuyền được làm từ đá quý tự nhiên.\n2. **Đồ da khâu tay**: Tuyệt vời cho những ai yêu thích sự độc đáo và chất lượng, với các sản phẩm như túi xách, ví, giày da được khâu tay một cách tỉ mỉ.\n3. **Gốm sứ nghệ thuật**: Cung cấp cho bạn một không gian nội thất độc đáo với các sản phẩm gốm sứ được thiết kế và chế tác tinh tế.\n4. **Túi ví vải**: Phong cách và tinh tế, các sản phẩm túi ví vải handmade của Shop sẽ mang đến cho bạn một cảm giác thoải mái và tiện lợi.\n\nBạn có muốn khám phá thêm về từng dòng sản phẩm không? 🛍️",
-      "sender": "bot",
-      "createdAt": "2025-12-23T08:52:25.947Z"
-    },
-    {
-      "id": "ff8a",
-      "userId": "cbc1",
-      "content": "cho tôi đường dẫn ",
-      "sender": "user",
-      "createdAt": "2025-12-23T08:52:31.911Z"
-    },
-    {
-      "id": "ff8a",
-      "userId": "cbc1",
-      "content": "cho tôi đường dẫn ",
-      "sender": "user",
-      "createdAt": "2025-12-23T08:52:31.911Z"
-    },
-    {
-      "id": "6321",
-      "userId": "cbc1",
-      "content": "Rất tiếc, Shop chưa có đường dẫn cụ thể về \"danh mục\" có thể bạn đang tìm kiếm. Tuy nhiên, Shop có một số danh mục nổi bật như:\n\n- Trang sức handmade: Trang sức được thiết kế và làm thủ công bằng chất liệu tự nhiên như đá, gỗ, đồng.\n- Đồ da handmade: Sản phẩm được làm từ da, thường có thiết kế độc đáo và chất lượng cao.\n- Gốm sứ handmade: Các sản phẩm được làm thủ công từ gốm sứ, có thể có thiết kế độc đáo và chất lượng cao.\n- Túi và ví handmade: Các sản phẩm được làm thủ công từ vải, thường có thiết kế độc đáo và chất lượng cao.\n\nBạn có muốn Shop tư vấn thêm dòng nào khác không ạ?",
-      "sender": "bot",
-      "createdAt": "2025-12-23T08:52:33.860Z"
-    },
-    {
-      "id": "6321",
-      "userId": "cbc1",
-      "content": "Rất tiếc, Shop chưa có đường dẫn cụ thể về \"danh mục\" có thể bạn đang tìm kiếm. Tuy nhiên, Shop có một số danh mục nổi bật như:\n\n- Trang sức handmade: Trang sức được thiết kế và làm thủ công bằng chất liệu tự nhiên như đá, gỗ, đồng.\n- Đồ da handmade: Sản phẩm được làm từ da, thường có thiết kế độc đáo và chất lượng cao.\n- Gốm sứ handmade: Các sản phẩm được làm thủ công từ gốm sứ, có thể có thiết kế độc đáo và chất lượng cao.\n- Túi và ví handmade: Các sản phẩm được làm thủ công từ vải, thường có thiết kế độc đáo và chất lượng cao.\n\nBạn có muốn Shop tư vấn thêm dòng nào khác không ạ?",
-      "sender": "bot",
-      "createdAt": "2025-12-23T08:52:33.860Z"
-    },
-    {
-      "id": "11c2",
-      "userId": "cbc1",
-      "content": "giày ",
-      "sender": "user",
-      "createdAt": "2025-12-23T08:52:41.579Z"
-    },
-    {
-      "id": "11c2",
-      "userId": "cbc1",
-      "content": "giày ",
-      "sender": "user",
-      "createdAt": "2025-12-23T08:52:41.579Z"
-    },
-    {
-      "id": "c141",
-      "userId": "cbc1",
-      "content": "Rất tiếc, hiện Shop chưa có mẫu giày handmade này rồi ạ. Bạn có muốn tham khảo thêm các dòng khác của Shop như Trang sức, Gốm sứ, Đồ da, Túi & Ví handmade không ạ? 🎁",
-      "sender": "bot",
-      "createdAt": "2025-12-23T08:52:43.283Z"
-    },
-    {
-      "id": "c141",
-      "userId": "cbc1",
-      "content": "Rất tiếc, hiện Shop chưa có mẫu giày handmade này rồi ạ. Bạn có muốn tham khảo thêm các dòng khác của Shop như Trang sức, Gốm sứ, Đồ da, Túi & Ví handmade không ạ? 🎁",
-      "sender": "bot",
-      "createdAt": "2025-12-23T08:52:43.283Z"
-    },
-    {
-      "id": "5475",
-      "userId": "cbc1",
-      "content": "vó",
-      "sender": "user",
-      "createdAt": "2025-12-23T08:52:44.842Z"
-    },
-    {
-      "id": "5475",
-      "userId": "cbc1",
-      "content": "vó",
-      "sender": "user",
-      "createdAt": "2025-12-23T08:52:44.842Z"
-    },
-    {
-      "id": "9415",
-      "userId": "cbc1",
-      "content": "Rất tiếc, hiện Shop chưa có mẫu vó này. Bạn tham khảo thêm các mẫu Túi & Ví handmade của Shop tại đây nhé: http://localhost:3000/products?page=1&cat=1\n\nBạn có muốn Shop tư vấn thêm dòng ví da khâu tay hoặc túi xách handmade khác không ạ?",
-      "sender": "bot",
-      "createdAt": "2025-12-23T08:52:46.415Z"
-    },
-    {
-      "id": "9415",
-      "userId": "cbc1",
-      "content": "Rất tiếc, hiện Shop chưa có mẫu vó này. Bạn tham khảo thêm các mẫu Túi & Ví handmade của Shop tại đây nhé: http://localhost:3000/products?page=1&cat=1\n\nBạn có muốn Shop tư vấn thêm dòng ví da khâu tay hoặc túi xách handmade khác không ạ?",
-      "sender": "bot",
-      "createdAt": "2025-12-23T08:52:46.415Z"
+      "createdAt": "2025-12-27T09:01:15.331Z"
     }
   ],
   "faq": [
@@ -1547,6 +1099,7 @@
       ],
       "action": "SHOW_PRODUCT",
       "targetCategory": "Túi & Ví",
+      "categoryId": "1",
       "responseText": "Mời bạn tham khảo bộ sưu tập túi và ví handmade của shop nhé:"
     },
     {
@@ -1562,6 +1115,7 @@
       ],
       "action": "SHOW_PRODUCT",
       "targetCategory": "Trang trí nhà cửa",
+      "categoryId": "2",
       "responseText": "Đây là các sản phẩm decor handmade giúp không gian thêm ấm cúng:"
     },
     {
@@ -1576,6 +1130,7 @@
       ],
       "action": "SHOW_PRODUCT",
       "targetCategory": "Phụ kiện",
+      "categoryId": "3",
       "responseText": "Shop có nhiều phụ kiện handmade xinh xắn, bạn xem thử nhé:"
     },
     {
@@ -1590,6 +1145,7 @@
       ],
       "action": "SHOW_PRODUCT",
       "targetCategory": "Trang sức",
+      "categoryId": "4",
       "responseText": "Đây là những mẫu trang sức handmade tinh xảo của shop:"
     },
     {
@@ -1604,6 +1160,7 @@
       ],
       "action": "SHOW_PRODUCT",
       "targetCategory": "Gốm sứ",
+      "categoryId": "5",
       "responseText": "Các sản phẩm gốm sứ thủ công độc đáo đang có tại shop:"
     },
     {
@@ -1617,6 +1174,7 @@
       ],
       "action": "SHOW_PRODUCT",
       "targetCategory": "Đồ da",
+      "categoryId": "6",
       "responseText": "Mời bạn xem các sản phẩm đồ da handmade chất lượng cao:"
     },
     {
@@ -1631,6 +1189,7 @@
       ],
       "action": "SHOW_PRODUCT",
       "targetCategory": "Mỹ phẩm",
+      "categoryId": "7",
       "responseText": "Shop có các sản phẩm mỹ phẩm handmade an toàn, lành tính:"
     },
     {
@@ -1645,6 +1204,7 @@
       ],
       "action": "SHOW_PRODUCT",
       "targetCategory": "Văn phòng phẩm",
+      "categoryId": "8",
       "responseText": "Các mẫu văn phòng phẩm handmade dễ thương đang có sẵn:"
     },
     {
