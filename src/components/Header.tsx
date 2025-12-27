@@ -80,7 +80,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser, onLogout }) => {
 
                 <Link to="/about" className="nav-link">Giới thiệu</Link>
                 <Link to="/cart" className="nav-link">Giỏ hàng</Link>
-                <Link to="/chat" className="nav-link">Đơn mua</Link>
+                <Link to="#" className="nav-link">Đơn mua</Link>
             </nav>
 
             
