@@ -169,6 +169,14 @@ function App() {
                     }
                 />
                 <Route
+                    path="/profile"
+                    element={
+                        <MainLayout currentUser={currentUser} onLogout={handleLogout}>
+                            <Profile currentUser={currentUser} onLogout={handleLogout} />
+                        </MainLayout>
+                    }
+                />
+                <Route
                     path="/chat"
                      element={
                         <MainLayout currentUser={currentUser} onLogout={handleLogout}>
