@@ -25,7 +25,7 @@ import ForgotPassword from './Pages/ForgotPassword';
 import Checkout from "./Pages/Checkout";
 import Cart from './Pages/Cart';
 import OrderHistory from "./Pages/OrderHistory";
-
+import VNPayReturn from "./Pages/VNPayReturn";
 // =======================
 // 4. CONTEXT / TYPES / STYLES
 // =======================
@@ -74,7 +74,8 @@ function App() {
     const handleLoginSuccess = (user: User) => {
         setCurrentUser(user);
         localStorage.setItem('user', JSON.stringify(user));
-        navigate('/');
+        const redirectPath = location.state?.from || '/';
+        navigate(redirectPath);
     };
 
     const handleLogout = () => {
@@ -161,6 +162,8 @@ function App() {
                                 <OrderHistory currentUser={currentUser}/>
                             </MainLayout>
                         } />
+                        <Route path="/orders" element={<OrderHistory currentUser={currentUser} />} />
+                        <Route path="/vnpay-return" element={<VNPayReturn />} />
 
                         <Route path="*" element={<Navigate to="/" />} />
                     </Routes>
