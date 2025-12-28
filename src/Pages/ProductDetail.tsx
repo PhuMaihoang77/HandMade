@@ -3,7 +3,6 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useProductDetail } from '../hooks/useProductDetail';
 import ProductPolicy from '../components/ProductPolicy';
 import '../Styles/productDetail.css';
-import api from '../services/api';
 import { User } from '../types/model';
 import {useCart} from "../context/CartContext";
 
@@ -15,7 +14,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ currentUser }) => {
     const { id } = useParams<{ id: string }>();
     const navigate = useNavigate();
     const { product, loading, error } = useProductDetail(id);
-    const { addToCart,refreshCart } = useCart();
+    const { addToCart } = useCart();
 
     if (loading) return <div className="loading-spinner">Đang tải chi tiết...</div>;
 
@@ -28,12 +27,16 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ currentUser }) => {
 
     const handleAddToCart = (e?: React.MouseEvent) => {
         if (e) e.stopPropagation();
-        // Chỉ cần 1 dòng duy nhất
         void addToCart(product, currentUser);
     };
 
     const handleBuyNow = () => {
         if (product && product.inventory > 0) {
+            if (!currentUser) {
+                alert("Vui lòng đăng nhập để mua hàng!");
+                navigate('/login', { state: { from: '/checkout', buyNowItem: product } });
+                return;
+            }
             navigate('/checkout', { state: { buyNowItem: product } });
         }
     };

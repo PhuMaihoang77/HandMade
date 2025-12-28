@@ -2,7 +2,7 @@ import React, { useMemo, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { User } from '../types/model';
 import { useProducts } from '../hooks/useProducts';
-import { useCart } from '../context/CartContext';
+import CartBadge from "./CartBadge";
 
 // 1. Cập nhật Interface để nhận thêm onLogout
 interface HeaderProps {
@@ -15,7 +15,6 @@ const Header: React.FC<HeaderProps> = ({ currentUser, onLogout }) => {
     const navigate = useNavigate();
     const { products } = useProducts();
     const [query, setQuery] = useState('');
-    const { cartCount } = useCart();
 
     const normalizedQuery = query.trim().toLowerCase();
     const suggestions = useMemo(() => {
@@ -51,11 +50,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser, onLogout }) => {
                 <Link to="/products" className="nav-link">Sản Phẩm</Link>
                 <Link to="/about" className="nav-link">Giới thiệu</Link>
                 <Link to="/" className="nav-link">Tin tức</Link>
-                <Link to="/cart" className="nav-link cart-link">
-                    <i className="fas fa-shopping-cart"></i>
-                    Giỏ hàng
-                    {cartCount > 0 && <span className="cart-badge">{cartCount}</span>}
-                </Link>
+                <CartBadge />
             </nav>
 
             {/* Search */}

@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import api from '../services/api';
 import { getProducts } from '../services/ProductService';
 import { User, Product } from '../types/model';
-import { useCart } from '../context/CartContext'; // Import context
+import { useCart } from '../context/CartContext';
 import '../Styles/cart.css';
 
 interface CartProps {
@@ -12,7 +12,7 @@ interface CartProps {
 
 const Cart: FC<CartProps> = ({ currentUser }) => {
     const navigate = useNavigate();
-    const { refreshCart } = useCart(); // Lấy hàm refresh từ context
+    const { refreshCart } = useCart();
 
     const [cartItems, setCartItems] = useState<{ productId: number; quantity: number }[]>([]);
     const [products, setProducts] = useState<Product[]>([]);
@@ -22,21 +22,21 @@ const Cart: FC<CartProps> = ({ currentUser }) => {
 
     useEffect(() => {
         const loadCartData = async () => {
-            if (!currentUser) {
-                setLoading(false);
-                return;
-            }
             try {
-                const [allProducts, cartRes] = await Promise.all([
-                    getProducts(),
-                    api.get(`/carts?userId=${currentUser.id}`)
-                ]);
-
+                const allProducts = await getProducts();
                 setProducts(allProducts);
-                if (cartRes.data.length > 0) {
-                    const userCart = cartRes.data[0];
-                    setCartItems(userCart.items || []);
-                    setCartRecordId(userCart.id);
+
+                if (currentUser) {
+                    const cartRes = await api.get(`/carts?userId=${currentUser.id}`);
+                    if (cartRes.data.length > 0) {
+                        setCartItems(cartRes.data[0].items || []);
+                        setCartRecordId(cartRes.data[0].id);
+                    }
+                } else {
+                    const localData = localStorage.getItem('guestCart');
+                    if (localData) {
+                        setCartItems(JSON.parse(localData));
+                    }
                 }
             } catch (err) {
                 console.error("Lỗi tải giỏ hàng:", err);
@@ -44,23 +44,23 @@ const Cart: FC<CartProps> = ({ currentUser }) => {
                 setLoading(false);
             }
         };
-
         void loadCartData();
-        document.title = "Handmade | Cart";
     }, [currentUser]);
 
     const getProductInfo = (pid: number) => products.find(p => p.id === pid);
 
     const updateServer = async (newItems: any[]) => {
-        setCartItems(newItems); // Cập nhật UI nhanh tại trang Cart
+        setCartItems(newItems);
         if (currentUser && cartRecordId) {
             try {
                 await api.patch(`/carts/${cartRecordId}`, { items: newItems });
-                // QUAN TRỌNG: Gọi refresh để Header cập nhật số lượng badge
                 await refreshCart();
             } catch (err) {
                 console.error("Lỗi cập nhật server:", err);
             }
+        } else if (!currentUser) {
+            localStorage.setItem('guestCart', JSON.stringify(newItems));
+            await refreshCart();
         }
     };
 
@@ -83,9 +83,7 @@ const Cart: FC<CartProps> = ({ currentUser }) => {
         }
     };
 
-    const handleClearSelection = () => {
-        setSelectedItemIds([]);
-    };
+    const handleClearSelection = () => setSelectedItemIds([]);
 
     const isAllSelected = cartItems.length > 0 && selectedItemIds.length === cartItems.length;
 
@@ -101,8 +99,17 @@ const Cart: FC<CartProps> = ({ currentUser }) => {
             return sum + (p?.price || 0) * i.quantity;
         }, 0);
 
+    const handleGoToCheckout = () => {
+        if (!currentUser) {
+            alert("Vui lòng đăng nhập để thực hiện mua hàng!");
+            // Điều hướng sang login và gửi kèm trạng thái để sau khi login xong quay lại đúng Checkout
+            navigate('/login', { state: { from: '/checkout', selectedIds: selectedItemIds } });
+            return;
+        }
+        navigate('/checkout', { state: { selectedIds: selectedItemIds } });
+    };
+
     if (loading) return <div className="loading-container">Đang tải...</div>;
-    if (!currentUser) return <div className="auth-error">Vui lòng đăng nhập để xem giỏ hàng!</div>;
 
     return (
         <div className="cart-page-container">
@@ -177,7 +184,7 @@ const Cart: FC<CartProps> = ({ currentUser }) => {
                     <button
                         className="checkout-button"
                         disabled={selectedItemIds.length === 0}
-                        onClick={() => navigate('/checkout', { state: { selectedIds: selectedItemIds } })}
+                        onClick={handleGoToCheckout}
                     >
                         Mua Hàng
                     </button>
