@@ -18,7 +18,6 @@ export interface User {
     email: string;
     username: string;
     password?: string;
-    wishlist?: Product[];
 }
 export interface CartItem {
     product: Product;
