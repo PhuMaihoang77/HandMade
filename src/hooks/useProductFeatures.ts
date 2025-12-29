@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useMemo, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Product } from '../types/model';
 
@@ -16,10 +16,27 @@ export const useProductFeatures = ({ products, itemsPerPage = 9 }: { products: P
     const selectedPriceRange = searchParams.getAll('price');
     const sortOption = searchParams.get('sort') || 'default';
     const currentPage = parseInt(searchParams.get('page') || '1');
+    const searchQuery = searchParams.get('search') || '';
 
     // 1. Lọc sản phẩm
     const filteredProducts = useMemo(() => {
         let result = products ?? [];
+        
+        // Lọc theo Search Query - Tìm kiếm trong nhiều trường
+        if (searchQuery.trim()) {
+            const query = searchQuery.trim().toLowerCase();
+            result = result.filter(p => {
+                const nameMatch = p.name.toLowerCase().includes(query);
+                const descMatch = p.description.toLowerCase().includes(query);
+                const categoryMatch = p.category.toLowerCase().includes(query);
+                const priceMatch = !isNaN(Number(query)) && 
+                    p.price.toString().includes(query.replace(/[^\d]/g, ''));
+                const idMatch = !isNaN(Number(query)) && 
+                    p.id.toString().includes(query.replace(/[^\d]/g, ''));
+                return nameMatch || descMatch || categoryMatch || priceMatch || idMatch;
+            });
+        }
+        
         if (selectedCategoryId !== 'all') {
             result = result.filter(p => p.categoryId.toString() === selectedCategoryId);
         }
@@ -61,11 +78,14 @@ export const useProductFeatures = ({ products, itemsPerPage = 9 }: { products: P
     // Reset về trang 1 khi search query thay đổi
     useEffect(() => {
         if (searchQuery) {
-            setCurrentPage(1);
+            const newParams = new URLSearchParams(searchParams);
+            newParams.set('page', '1');
+            setSearchParams(newParams);
         }
-    }, [searchQuery]);
+    }, [searchQuery, searchParams, setSearchParams]);
 
     return {
+        searchQuery,
         currentProducts: sortedProducts.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage),
         totalCount,
         totalPages,
