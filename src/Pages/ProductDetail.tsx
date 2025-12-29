@@ -4,35 +4,37 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useProductDetail } from '../hooks/useProductDetail';
 import ProductPolicy from '../components/ProductPolicy';
 import { useCart } from '../context/CartContext';
-import { Review } from '../types/model';
-// Sử dụng FontAwesome classes thay vì react-icons để tránh lỗi TypeScript
+import { User } from '../types/model'; // Import User type
 import '../Styles/productDetail.css';
 
+// ==========================================
+// 1. THÊM INTERFACE ĐỂ SỬA LỖI TS2322
+// ==========================================
 interface ProductDetailProps {
-    currentUser: User | null; // Nhận từ Route
+    currentUser: User | null;
 }
 
+// 2. CẬP NHẬT ĐỂ NHẬN PROPS { currentUser }
 const ProductDetail: React.FC<ProductDetailProps> = ({ currentUser }) => {
     const { id } = useParams<{ id: string }>();
     const navigate = useNavigate();
     const { addToCart } = useCart();
 
-    // Sử dụng hook đã nâng cấp
+    // Sử dụng hook để lấy dữ liệu sản phẩm và reviews
     const { product, loading, error, reviews, addReview } = useProductDetail(id);
 
-    // State cho Form Review (Giữ lại state nội bộ của Form)
+    // State cho Form Review
     const [rating, setRating] = useState<number>(0);
     const [hoverRating, setHoverRating] = useState<number>(0);
     const [comment, setComment] = useState<string>('');
 
-    // Lấy user đang đăng nhập
-    const storedUser = localStorage.getItem('user');
-    const currentUser = storedUser ? JSON.parse(storedUser) : null;
+    // Xóa dòng lấy localStorage ở đây vì ta đã nhận currentUser từ App.tsx truyền xuống
 
     const handleSubmitReview = (e: React.FormEvent) => {
         e.preventDefault();
         if (!currentUser) {
-            navigate('/login');
+            alert('Vui lòng đăng nhập để gửi đánh giá!');
+            navigate('/login', { state: { from: `/product/${id}` } });
             return;
         }
         if (rating === 0 || !comment.trim()) {
@@ -45,23 +47,21 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ currentUser }) => {
             rating,
             comment: comment.trim(),
         });
+        
+        // Reset form
         setRating(0);
         setHoverRating(0);
         setComment('');
     };
 
     if (loading) return <div className="loading-spinner">Đang tải...</div>;
+    
     if (error || !product) return (
         <div className="error-container" style={{ textAlign: 'center', marginTop: '50px' }}>
             <p>{error || "Sản phẩm không tồn tại!"}</p>
             <button onClick={() => navigate('/')}>Về trang chủ</button>
         </div>
     );
-
-    const handleAddToCart = (e?: React.MouseEvent) => {
-        if (e) e.stopPropagation();
-        void addToCart(product, currentUser);
-    };
 
     const handleBuyNow = () => {
         if (product && product.inventory > 0) {
@@ -76,32 +76,48 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ currentUser }) => {
 
     return (
         <div className="product-page-container">
-        <div className="product-detail">
+            <div className="product-detail">
                 {/* BÊN TRÁI: ẢNH */}
-            <div className="product-detail-image-wrapper">
+                <div className="product-detail-image-wrapper">
                     <img className="product-detail-image" src={product.imageUrl} alt={product.name} />
-            </div>
+                </div>
 
                 {/* BÊN PHẢI: THÔNG TIN */}
-            <div className="product-detail-info">
-                <h2 className="product-title">{product.name}</h2>
+                <div className="product-detail-info">
+                    <h2 className="product-title">{product.name}</h2>
                     <p className="product-price">{product.price.toLocaleString('vi-VN')} VNĐ</p>
 
-                <ProductPolicy />
+                    <ProductPolicy />
 
-                <div className="product-meta">
-                    <p><strong>Danh mục:</strong> {product.category}</p>
-                        <p><strong>Tình trạng:</strong> {product.inventory > 0 ? ' Còn hàng' : ' Hết hàng'}</p>
-                </div>
+                    <div className="product-meta">
+                        <p><strong>Danh mục:</strong> {product.category}</p>
+                        <p><strong>Tình trạng:</strong> 
+                            <span style={{ color: product.inventory > 0 ? '#27ae60' : '#e74c3c' }}>
+                                {product.inventory > 0 ? ' Còn hàng' : ' Hết hàng'}
+                            </span>
+                        </p>
+                    </div>
 
                     <div className="product-description">{product.description}</div>
 
                     <div className="product-actions">
-                        <button className="btn-buy-now" onClick={() => navigate('/checkout')} disabled={product.inventory === 0}>Mua ngay</button>
-                        <button className="btn-add-cart" onClick={() => addToCart(product)}>Thêm vào giỏ</button>
+                        <button 
+                            className="btn-buy-now" 
+                            onClick={handleBuyNow} 
+                            disabled={product.inventory === 0}
+                        >
+                            Mua ngay
+                        </button>
+                        <button 
+                            className="btn-add-cart" 
+                            onClick={() => addToCart(product, currentUser)}
+                            disabled={product.inventory === 0}
+                        >
+                            Thêm vào giỏ
+                        </button>
                     </div>
                 </div>
-                </div>
+            </div>
 
             {/* BÊN DƯỚI: ĐÁNH GIÁ */}
             <div className="product-review-section">
@@ -111,7 +127,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ currentUser }) => {
                     <form className="review-form" onSubmit={handleSubmitReview}>
                         <div className="review-stars">
                             {[1, 2, 3, 4, 5].map(star => (
-                    <button
+                                <button
                                     key={star}
                                     type="button"
                                     className={(hoverRating || rating) >= star ? 'star-button active' : 'star-button'}
@@ -120,34 +136,42 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ currentUser }) => {
                                     onMouseLeave={() => setHoverRating(0)}
                                 >
                                     <i className="fas fa-star"></i>
-                    </button>
+                                </button>
                             ))}
                         </div>
                         <textarea 
                             className="review-textarea"
                             value={comment}
                             onChange={(e) => setComment(e.target.value)}
-                            placeholder="Cảm nhận của bạn..."
+                            placeholder="Cảm nhận của bạn về sản phẩm này..."
                         />
                         <button type="submit" className="btn-primary">Gửi đánh giá</button>
                     </form>
                 ) : (
-                    <div className="review-login-hint">Vui lòng đăng nhập để bình luận.</div>
+                    <div className="review-login-hint">
+                        Vui lòng <strong style={{cursor:'pointer', color:'#007bff'}} onClick={() => navigate('/login')}>đăng nhập</strong> để bình luận.
+                    </div>
                 )}
 
                 <div className="review-list">
-                    {reviews.map(r => (
-                        <div key={r.id} className="review-item">
-                            <div className="review-header">
-                                <span className="review-user"><i className="fas fa-user-circle"></i> {r.userName}</span>
-                                <span className="review-rating">
-                                    {'★'.repeat(r.rating)}{'☆'.repeat(5 - r.rating)}
-                                </span>
+                    {reviews.length === 0 ? (
+                        <p style={{color: '#888', fontStyle: 'italic'}}>Chưa có đánh giá nào cho sản phẩm này.</p>
+                    ) : (
+                        reviews.map(r => (
+                            <div key={r.id} className="review-item">
+                                <div className="review-header">
+                                    <span className="review-user">
+                                        <i className="fas fa-user-circle"></i> {r.userName}
+                                    </span>
+                                    <span className="review-rating">
+                                        {'★'.repeat(r.rating)}{'☆'.repeat(5 - r.rating)}
+                                    </span>
+                                </div>
+                                <p className="review-comment">{r.comment}</p>
+                                <span className="review-date">{r.createdAt}</span>
                             </div>
-                            <p className="review-comment">{r.comment}</p>
-                            <span className="review-date">{r.createdAt}</span>
-                        </div>
-                    ))}
+                        ))
+                    )}
                 </div>
             </div>
         </div>

@@ -110,11 +110,6 @@ const Profile: React.FC<ProfileProps> = ({ currentUser, onLogout }) => {
                         <i className="fa-solid fa-shield-halved"></i> Bảo mật mật khẩu
                     </div>
 
-                    <div className={`menu-item ${activeSection==='info'?'active':''}`} onClick={() => setActiveSection('info')}>Thông tin tài khoản</div>
-                    <div className={`menu-item ${activeSection==='email'?'active':''}`} onClick={() => setActiveSection('email')}>Đổi email</div>
-                    <div className={`menu-item ${activeSection==='password'?'active':''}`} onClick={() => setActiveSection('password')}>Đổi mật khẩu</div>
-                    <div className={`menu-item ${activeSection==='orders'?'active':''}`} onClick={() => setActiveSection('orders')}>Lịch sử mua hàng</div>
-
                 </div>
 
                 {/* Main Content Area */}

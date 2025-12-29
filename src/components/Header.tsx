@@ -43,13 +43,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser, onLogout }) => {
             </h1>
 
             {/* Navigation */}
-            <nav className="main-nav">
-                <Link to="/Home" className="nav-link">Trang Chủ</Link>
-                <Link to="/products" className="nav-link">Sản Phẩm</Link>
-                <Link to="/about" className="nav-link">Giới thiệu</Link>
-                <Link to="/" className="nav-link">Tin tức</Link>
-                <CartBadge />
-            </nav>
+            
 
             {/* Search */}
             <div className="search-wrapper">

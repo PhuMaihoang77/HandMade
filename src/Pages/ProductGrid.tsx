@@ -1,9 +1,10 @@
 import React from 'react';
 import ProductCard from './ProductCard';
-
+import { User } from '../types/model';
 interface ProductGridProps {
     products: any[];
     totalCount: number;
+    currentUser?: User | null;
     sortOption: string;
     onSortChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
     title: string;
