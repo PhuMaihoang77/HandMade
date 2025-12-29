@@ -1,113 +1,104 @@
-import React, { useMemo, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { User } from '../types/model';
-import { useProducts } from '../hooks/useProducts';
+import React, { useMemo, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { User } from "../types/model";
+import { useProducts } from "../hooks/useProducts";
 import CartBadge from "./CartBadge";
+import "../Styles/header.css";
 
-// 1. Cập nhật Interface để nhận thêm onLogout
 interface HeaderProps {
-    currentUser: User | null;
-    onLogout: () => void; // Thêm dòng này
+  currentUser: User | null;
+  onLogout: () => void;
 }
 
-// 2. Nhận onLogout từ props
 const Header: React.FC<HeaderProps> = ({ currentUser, onLogout }) => {
-    const navigate = useNavigate();
-    const { products } = useProducts();
-    const [query, setQuery] = useState('');
+  const navigate = useNavigate();
+  const { products } = useProducts();
+  const [query, setQuery] = useState("");
 
-    const normalizedQuery = query.trim().toLowerCase();
-    const suggestions = useMemo(() => {
-        if (!normalizedQuery) return [];
-        return products
-            .filter(p => p.name.toLowerCase().includes(normalizedQuery))
-            .slice(0, 6);
-    }, [products, normalizedQuery]);
+  const suggestions = useMemo(() => {
+    if (!query.trim()) return [];
+    return products
+      .filter(p =>
+        p.name.toLowerCase().includes(query.toLowerCase())
+      )
+      .slice(0, 6);
+  }, [query, products]);
 
-    const handleSearch = (e: React.FormEvent) => {
-        e.preventDefault();
-        if (!normalizedQuery) return;
-        // Điều hướng đến trang products với query string để hiển thị kết quả tìm kiếm có phân trang
-        navigate(`/products?search=${encodeURIComponent(query.trim())}`);
-        setQuery('');
-    };
-    //const totalItems = cart?.items?.reduce((total: number, item: any) => total + item.quantity, 0) || 0;
-    return (
-        <header className="main-header">
-            {/* Logo */}
-            <h1>
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!query.trim()) return;
+    navigate(`/products?search=${query}`);
+    setQuery("");
+  };
 
-                <Link to="/Home" className="logo-link">
-                    HandMade<span>Store</span>
-                </Link>
-            </h1>
+  return (
+    <header className="main-header">
+      {/* LOGO */}
+      <Link to="/home" className="logo">
+        HandMade<span>Store</span>
+      </Link>
 
+      {/* SEARCH */}
+      <div className="search-wrapper">
+        <form className="search-form" onSubmit={handleSearch}>
+          <input
+            type="text"
+            placeholder="Tìm kiếm sản phẩm..."
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+          />
+          <button type="submit">
+            <i className="fas fa-search"></i>
+          </button>
+        </form>
 
-            {/* Search */}
-            <div className="search-wrapper">
-                <form className="search-bar" onSubmit={handleSearch}>
-                    <input
-                        type="text"
-                        placeholder="Tìm kiếm sản phẩm..."
-                        value={query}
-                        onChange={(e) => setQuery(e.target.value)}
-                    />
-                    <button type="submit"><i className="fas fa-search"></i></button>
-                </form>
-                {suggestions.length > 0 && (
-                    <div className="search-suggestions">
-                        {suggestions.map(product => (
-                            <button
-                                key={product.id}
-                                className="suggestion-item"
-                                onClick={() => {
-                                    navigate(`/product/${product.id}`);
-                                    setQuery('');
-                                }}
-                            >
-                                <span className="suggestion-name">{product.name}</span>
-                                <span className="suggestion-price">
-                                    {product.price.toLocaleString('vi-VN')} VNĐ
-                                </span>
-                            </button>
-                        ))}
-                    </div>
-                )}
-            </div>
-            {/* Navigation */}
-            <nav className="main-nav">
-                <Link to="/Home" className="nav-link">Trang Chủ</Link>
-                <Link to="/products" className="nav-link">Sản Phẩm</Link>
+        {suggestions.length > 0 && (
+          <div className="search-dropdown">
+            {suggestions.map(item => (
+              <div
+                key={item.id}
+                className="search-item"
+                onClick={() => {
+                  navigate(`/product/${item.id}`);
+                  setQuery("");
+                }}
+              >
+                <span>{item.name}</span>
+                <span className="price">
+                  {item.price.toLocaleString("vi-VN")}₫
+                </span>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
 
-                <Link to="/about" className="nav-link">Giới thiệu</Link>
-                                <CartBadge />
+      {/* NAVIGATION */}
+      <nav className="nav-links">
+        <Link to="/home">Trang chủ</Link>
+        <Link to="/products">Sản phẩm</Link>
+        <Link to="/about">Giới thiệu</Link>
+        <CartBadge />
+      </nav>
 
-            </nav>
-
-            
-
-            {/* User / Auth */}
-            <div className="auth-actions">
-                {currentUser ? (
-                    <div className="user-logged-in">
-                        <Link to="/profile" className="profile-link-header">
-                            <i className="fas fa-user-circle"></i>
-                            <span>{currentUser.username}</span>
-                        </Link>
-                        {/* 3. Thêm nút Đăng xuất để sử dụng onLogout */}
-                        <button
-                            onClick={onLogout}
-                            className="logout-btn"
-                            style={{ marginLeft: '10px', cursor: 'pointer', border: 'none', background: 'none', color: 'red' }}
-                        >
-                        </button>
-                    </div>
-                ) : (
-                    <Link to="/login" className="auth-link-header">Đăng Nhập</Link>
-                )}
-            </div>
-        </header>
-    );
+      {/* USER */}
+      <div className="user-area">
+        {currentUser ? (
+          <>
+            <Link to="/profile" className="user-info">
+              <i className="fas fa-user-circle"></i>
+              <span>{currentUser.username}</span>
+            </Link>
+            <button className="logout-btn" onClick={onLogout}>
+              Đăng xuất
+            </button>
+          </>
+        ) : (
+          <Link to="/login" className="login-btn">Đăng nhập</Link>
+        )}
+      </div>
+    </header>
+  );
 };
 
 export default Header;
