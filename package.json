@@ -77,9 +77,9 @@
     "db:server": "json-server --watch db.json --port 5000",
     "db:watch-data": "nodemon --watch mock-data --ext json --exec \"npm run db:merge\"",
     "//--- API COMMAND (CHẠY RIÊNG SERVER) ---": "",
-    "api": "npm run db:merge && concurrently -n \"WATCH,SERVER,OPEN\" -c \"magenta,blue,green\" \"npm run db:watch-data\" \"npm run db:server\" \"npx wait-on tcp:5000 && npx open-cli http://localhost:5000\"",
-    "//--- FULL DEV COMMAND (CHẠY TẤT CẢ) ---": "",
-    "dev": " concurrently -n \"REACT,API_SYSTEM\" -c \"bgBlue.bold,bgMagenta.bold\" \"npm start\" \"npm run api\""
+    "api": "concurrently -n \"WATCH,SERVER,OPEN\" -c \"magenta,blue,green\" \"npm run db:watch-data\" \"npm run db:server\" \"npx wait-on tcp:5000 && npx open-cli http://localhost:5000\"",
+  
+  "dev": "concurrently -n \"REACT,API_SYSTEM\" -c \"bgBlue.bold,bgMagenta.bold\" \"npm start\" \"npm run api\""
   },
   "eslintConfig": {
     "extends": [
