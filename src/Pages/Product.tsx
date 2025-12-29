@@ -15,7 +15,7 @@ const Product: React.FC<{ currentUser: any }> = ({ currentUser }) => {
 
     const { 
         currentProducts, totalCount, currentPage, totalPages, sortOption, selectedCategoryId,
-        selectedPriceRange, handleCategoryChange, handleSortChange, handlePriceChange, 
+        selectedPriceRange, searchQuery, handleCategoryChange, handleSortChange, handlePriceChange, 
         setCurrentPage 
     } = useProductFeatures({ products, itemsPerPage: 9 });
 
@@ -43,9 +43,11 @@ const Product: React.FC<{ currentUser: any }> = ({ currentUser }) => {
         updateURL(params);
     };
 
-    const pageTitle = selectedCategoryId === 'all' 
-        ? 'Bộ Sưu Tập' 
-        : categories.find(c => c.id.toString() === selectedCategoryId)?.name || 'Sản phẩm';
+    const pageTitle = searchQuery
+        ? `Kết quả tìm kiếm: "${searchQuery}"`
+        : selectedCategoryId === 'all' 
+            ? 'Bộ Sưu Tập' 
+            : categories.find(c => c.id.toString() === selectedCategoryId)?.name || 'Sản phẩm';
 
     return (
         <div className="shop-container">
