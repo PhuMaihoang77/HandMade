@@ -4,13 +4,11 @@ import { User } from '../types/model';
 import { useProducts } from '../hooks/useProducts';
 import CartBadge from "./CartBadge";
 
-// 1. Cập nhật Interface để nhận thêm onLogout
 interface HeaderProps {
     currentUser: User | null;
-    onLogout: () => void; // Thêm dòng này
+    onLogout: () => void;
 }
 
-// 2. Nhận onLogout từ props
 const Header: React.FC<HeaderProps> = ({ currentUser, onLogout }) => {
     const navigate = useNavigate();
     const { products } = useProducts();
@@ -27,26 +25,18 @@ const Header: React.FC<HeaderProps> = ({ currentUser, onLogout }) => {
     const handleSearch = (e: React.FormEvent) => {
         e.preventDefault();
         if (!normalizedQuery) return;
-        // Điều hướng đến trang products với query string để hiển thị kết quả tìm kiếm có phân trang
         navigate(`/products?search=${encodeURIComponent(query.trim())}`);
         setQuery('');
     };
-    //const totalItems = cart?.items?.reduce((total: number, item: any) => total + item.quantity, 0) || 0;
+
     return (
         <header className="main-header">
             {/* Logo */}
             <h1>
-
                 <Link to="/Home" className="logo-link">
                     HandMade<span>Store</span>
                 </Link>
             </h1>
-
-<<<<<<< HEAD
-            {/* Navigation */}
-            
-=======
->>>>>>> 409ce4a65149389ee5a7fb8f37956bde0af74519
 
             {/* Search */}
             <div className="search-wrapper">
@@ -59,6 +49,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser, onLogout }) => {
                     />
                     <button type="submit"><i className="fas fa-search"></i></button>
                 </form>
+                
                 {suggestions.length > 0 && (
                     <div className="search-suggestions">
                         {suggestions.map(product => (
@@ -79,17 +70,14 @@ const Header: React.FC<HeaderProps> = ({ currentUser, onLogout }) => {
                     </div>
                 )}
             </div>
+
             {/* Navigation */}
             <nav className="main-nav">
                 <Link to="/Home" className="nav-link">Trang Chủ</Link>
                 <Link to="/products" className="nav-link">Sản Phẩm</Link>
-
                 <Link to="/about" className="nav-link">Giới thiệu</Link>
-                                <CartBadge />
-
+                <CartBadge />
             </nav>
-
-            
 
             {/* User / Auth */}
             <div className="auth-actions">
@@ -99,12 +87,13 @@ const Header: React.FC<HeaderProps> = ({ currentUser, onLogout }) => {
                             <i className="fas fa-user-circle"></i>
                             <span>{currentUser.username}</span>
                         </Link>
-                        {/* 3. Thêm nút Đăng xuất để sử dụng onLogout */}
                         <button
                             onClick={onLogout}
                             className="logout-btn"
+                            title="Đăng xuất"
                             style={{ marginLeft: '10px', cursor: 'pointer', border: 'none', background: 'none', color: 'red' }}
                         >
+                            <i className="fas fa-sign-out-alt"></i>
                         </button>
                     </div>
                 ) : (
