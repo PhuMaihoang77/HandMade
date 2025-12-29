@@ -181,6 +181,7 @@ function App() {
                     path="/about"
                     element={
                         <MainLayout currentUser={currentUser} onLogout={handleLogout}>
+                        <About currentUser={currentUser} />
                         </MainLayout>
                     }
                 />
