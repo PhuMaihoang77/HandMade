@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate, Link } from 'react-router-dom';
 import { User } from '../types/model';
 import { updateUserEmail, updateUserPassword } from '../services/AuthService';
 import '../Styles/profile.css';
@@ -11,13 +11,16 @@ interface ProfileProps {
 
 const Profile: React.FC<ProfileProps> = ({ currentUser, onLogout }) => {
     const navigate = useNavigate();
+    // Loại bỏ 'favorites' khỏi state này vì đã có trang riêng
     const [activeSection, setActiveSection] = useState<'info' | 'email' | 'password'>('info');
 
+    // --- State cho Email ---
     const [emailValue, setEmailValue] = useState(currentUser?.email ?? '');
     const [emailMessage, setEmailMessage] = useState('');
     const [emailError, setEmailError] = useState('');
     const [emailLoading, setEmailLoading] = useState(false);
 
+    // --- State cho Password ---
     const [passwordValue, setPasswordValue] = useState('');
     const [passwordConfirm, setPasswordConfirm] = useState('');
     const [passwordMessage, setPasswordMessage] = useState('');
@@ -25,125 +28,145 @@ const Profile: React.FC<ProfileProps> = ({ currentUser, onLogout }) => {
     const [passwordLoading, setPasswordLoading] = useState(false);
 
     const emailChanged = useMemo(() => {
-        const currentEmail = currentUser?.email ?? '';
-        return emailValue.trim() !== currentEmail;
+        return emailValue.trim() !== (currentUser?.email ?? '');
     }, [emailValue, currentUser?.email]);
 
     if (!currentUser) return <Navigate to="/login" replace />;
 
     const initial = currentUser.username?.charAt(0).toUpperCase() || '?';
 
+    // --- Xử lý cập nhật Email ---
     const handleUpdateEmail = async (e: React.FormEvent) => {
         e.preventDefault();
-        setEmailMessage('');
-        setEmailError('');
-
+        setEmailMessage(''); setEmailError('');
         const trimmed = emailValue.trim();
-        if (!trimmed) { setEmailError('Email không được để trống.'); return; }
-        if (!trimmed.includes('@')) { setEmailError('Email không hợp lệ.'); return; }
-        if (!emailChanged) { setEmailError('Bạn chưa thay đổi email.'); return; }
-
+        if (!trimmed || !trimmed.includes('@') || !emailChanged) {
+            setEmailError('Vui lòng kiểm tra lại email.'); return;
+        }
         try {
             setEmailLoading(true);
             const updated = await updateUserEmail(currentUser.id, trimmed);
             localStorage.setItem('user', JSON.stringify(updated));
-            setEmailMessage('Cập nhật email thành công. Trang sẽ tải lại.');
+            setEmailMessage('Cập nhật email thành công!');
+            // Reload nhẹ để Header nhận email mới
             setTimeout(() => window.location.reload(), 800);
-        } catch (err) {
-            setEmailError((err as Error).message || 'Không thể cập nhật email.');
-        } finally { setEmailLoading(false); }
+        } catch (err) { setEmailError('Lỗi cập nhật email.'); } 
+        finally { setEmailLoading(false); }
     };
 
+    // --- Xử lý đổi mật khẩu ---
     const handleUpdatePassword = async (e: React.FormEvent) => {
         e.preventDefault();
-        setPasswordMessage('');
-        setPasswordError('');
-
-        if (passwordValue.length < 6) { setPasswordError('Mật khẩu phải tối thiểu 6 ký tự.'); return; }
-        if (passwordValue !== passwordConfirm) { setPasswordError('Mật khẩu nhập lại không khớp.'); return; }
-
+        if (passwordValue.length < 6 || passwordValue !== passwordConfirm) {
+            setPasswordError('Mật khẩu không khớp hoặc quá ngắn (tối thiểu 6 ký tự).'); return;
+        }
         try {
             setPasswordLoading(true);
             await updateUserPassword(currentUser.id, passwordValue);
-            setPasswordMessage('Đổi mật khẩu thành công. Vui lòng đăng nhập lại.');
-            setPasswordValue('');
-            setPasswordConfirm('');
-            setTimeout(() => onLogout(), 800); // Logout sau khi đổi mật khẩu
-        } catch (err) {
-            setPasswordError((err as Error).message || 'Không thể đổi mật khẩu.');
-        } finally { setPasswordLoading(false); }
+            setPasswordMessage('Đổi mật khẩu thành công. Hệ thống sẽ đăng xuất...');
+            setTimeout(() => onLogout(), 1500);
+        } catch (err) { setPasswordError('Lỗi đổi mật khẩu.'); }
+        finally { setPasswordLoading(false); }
     };
 
     return (
         <div className="profile-page">
+            {/* Header trang Profile */}
             <div className="profile-header">
-                <div>
-                    <p className="profile-subtitle">Trang cá nhân</p>
+                <div className="profile-header-info">
+                    <p className="profile-subtitle">Tài khoản cá nhân</p>
                     <h2 className="profile-title">Xin chào, {currentUser.username}</h2>
-                    <p className="profile-desc">Quản lý thông tin và bảo mật tài khoản của bạn.</p>
+                    <p className="profile-desc">Quản lý bảo mật thông tin và quyền truy cập của bạn.</p>
                 </div>
                 <div className="profile-avatar">{initial}</div>
             </div>
 
             <div className="profile-container">
-                {/* Menu trái */}
+                {/* Sidebar Menu */}
                 <div className="profile-menu">
-                    <div className={`menu-item ${activeSection==='info'?'active':''}`} onClick={() => setActiveSection('info')}>Thông tin tài khoản</div>
-                    <div className={`menu-item ${activeSection==='email'?'active':''}`} onClick={() => setActiveSection('email')}>Đổi email</div>
-                    <div className={`menu-item ${activeSection==='password'?'active':''}`} onClick={() => setActiveSection('password')}>Đổi mật khẩu</div>
+                    <div 
+                        className={`menu-item ${activeSection === 'info' ? 'active' : ''}`} 
+                        onClick={() => setActiveSection('info')}
+                    >
+                        <i className="fa-solid fa-user-gear"></i> Thông tin tài khoản
+                    </div>
+
+                    {/* Link dẫn sang trang Wishlist riêng */}
+                    <Link to="/wishlist" className="menu-item" style={{ textDecoration: 'none', color: 'inherit', display: 'flex', alignItems: 'center' }}>
+                        <i className="fa-solid fa-heart"></i> Sản phẩm yêu thích
+                    </Link>
+
+                    <div 
+                        className={`menu-item ${activeSection === 'email' ? 'active' : ''}`} 
+                        onClick={() => setActiveSection('email')}
+                    >
+                        <i className="fa-solid fa-envelope"></i> Thay đổi email
+                    </div>
+                    <div 
+                        className={`menu-item ${activeSection === 'password' ? 'active' : ''}`} 
+                        onClick={() => setActiveSection('password')}
+                    >
+                        <i className="fa-solid fa-shield-halved"></i> Bảo mật mật khẩu
+                    </div>
                 </div>
 
-                {/* Nội dung phải */}
+                {/* Main Content Area */}
                 <div className="profile-content">
-                    {activeSection==='info' && (
-                        <section className="profile-card">
-                            <div className="info-row"><span>Tên hiển thị</span><strong>{currentUser.username}</strong></div>
-                            <div className="info-row"><span>Email</span><strong>{currentUser.email}</strong></div>
-                            <div className="info-row"><span>Mã người dùng</span><strong>#{currentUser.id}</strong></div>
+                    {/* SECTION 1: INFO */}
+                    {activeSection === 'info' && (
+                        <section className="profile-card fade-in">
+                            <h3>Thông tin cơ bản</h3>
+                            <div className="info-row"><span>Tên người dùng:</span><strong>{currentUser.username}</strong></div>
+                            <div className="info-row"><span>Email đăng ký:</span><strong>{currentUser.email}</strong></div>
+                            <div className="info-row"><span>Mã định danh (ID):</span><strong>#{currentUser.id}</strong></div>
+                            <div className="info-row"><span>Trạng thái:</span><strong style={{color: 'green'}}>Đang hoạt động</strong></div>
                         </section>
                     )}
 
-                    {activeSection==='email' && (
-                        <section className="profile-card">
+                    {/* SECTION 2: EMAIL */}
+                    {activeSection === 'email' && (
+                        <section className="profile-card fade-in">
+                            <h3>Cập nhật Email</h3>
                             <form className="profile-form" onSubmit={handleUpdateEmail}>
                                 <div className="form-group">
-                                    <label>Email mới</label>
-                                    <input type="email" value={emailValue} onChange={e=>setEmailValue(e.target.value)} placeholder="email@domain.com" />
+                                    <label>Địa chỉ Email mới</label>
+                                    <input type="email" value={emailValue} onChange={e => setEmailValue(e.target.value)} />
                                 </div>
-                                {emailError && <p className="form-error">{emailError}</p>}
-                                {emailMessage && <p className="form-success">{emailMessage}</p>}
-                                <div className="form-actions">
-                                    <button type="button" onClick={()=>setEmailValue(currentUser.email)}>Đặt lại</button>
-                                    <button type="submit">{emailLoading?'Đang lưu...':'Lưu email'}</button>
-                                </div>
+                                {emailError && <p className="form-error"><i className="fa-solid fa-circle-exclamation"></i> {emailError}</p>}
+                                {emailMessage && <p className="form-success"><i className="fa-solid fa-circle-check"></i> {emailMessage}</p>}
+                                <button type="submit" className="btn-save" disabled={emailLoading || !emailChanged}>
+                                    {emailLoading ? 'Đang lưu...' : 'Lưu thay đổi'}
+                                </button>
                             </form>
                         </section>
                     )}
 
-                    {activeSection==='password' && (
-                        <section className="profile-card">
+                    {/* SECTION 3: PASSWORD */}
+                    {activeSection === 'password' && (
+                        <section className="profile-card fade-in">
+                            <h3>Thay đổi mật khẩu</h3>
                             <form className="profile-form" onSubmit={handleUpdatePassword}>
                                 <div className="form-group">
                                     <label>Mật khẩu mới</label>
-                                    <input type="password" value={passwordValue} onChange={e=>setPasswordValue(e.target.value)} placeholder="Tối thiểu 6 ký tự" />
+                                    <input type="password" placeholder="Nhập ít nhất 6 ký tự" value={passwordValue} onChange={e => setPasswordValue(e.target.value)} />
                                 </div>
                                 <div className="form-group">
-                                    <label>Nhập lại mật khẩu</label>
-                                    <input type="password" value={passwordConfirm} onChange={e=>setPasswordConfirm(e.target.value)} placeholder="Nhập lại để xác nhận" />
+                                    <label>Xác nhận mật khẩu</label>
+                                    <input type="password" placeholder="Nhập lại mật khẩu mới" value={passwordConfirm} onChange={e => setPasswordConfirm(e.target.value)} />
                                 </div>
-                                {passwordError && <p className="form-error">{passwordError}</p>}
-                                {passwordMessage && <p className="form-success">{passwordMessage}</p>}
-                                <div className="form-actions">
-                                    <button type="button" onClick={()=>{setPasswordValue('');setPasswordConfirm('')}}>Xóa nhập</button>
-                                    <button type="submit">{passwordLoading?'Đang lưu...':'Lưu mật khẩu'}</button>
-                                </div>
+                                {passwordError && <p className="form-error"><i className="fa-solid fa-circle-exclamation"></i> {passwordError}</p>}
+                                {passwordMessage && <p className="form-success"><i className="fa-solid fa-circle-check"></i> {passwordMessage}</p>}
+                                <button type="submit" className="btn-save" disabled={passwordLoading}>
+                                    {passwordLoading ? 'Đang thực hiện...' : 'Cập nhật mật khẩu'}
+                                </button>
                             </form>
                         </section>
                     )}
 
-                    {/* Logout */}
-                    <div className="logout-section">
-                        <button className="btn-logout" onClick={onLogout}>Đăng Xuất</button>
+                    <div className="logout-section" style={{ marginTop: '20px' }}>
+                        <button className="btn-logout" onClick={onLogout}>
+                            <i className="fa-solid fa-right-from-bracket"></i> Đăng xuất tài khoản
+                        </button>
                     </div>
                 </div>
             </div>

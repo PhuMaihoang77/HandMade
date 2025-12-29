@@ -4,11 +4,19 @@ const path = require('path');
 const mockDataDir = path.join(__dirname, '../src/mock-data');
 const dbFile = path.join(__dirname, '../db.json');
 
-// 1. Khởi tạo cấu trúc db mặc định
+// --- 1. Đọc dữ liệu cũ từ db.json (Nơi chứa Wishlist và Reviews thật) ---
+let oldDbData = { products: [], messages: [], faq: [], reviews: [], users: [] };
+if (fs.existsSync(dbFile)) {
+  try {
+    oldDbData = JSON.parse(fs.readFileSync(dbFile, 'utf-8'));
+  } catch (e) {
+    console.warn("⚠️ Không thể đọc db.json cũ.");
+  }
+}
+
 const db = {
-  products: [],
-  messages: [], // Sửa: Khởi tạo mảng rỗng thay vì dùng biến chưa định nghĩa
-  faq: []       // Thêm sẵn faq để bot tra cứu
+  ...oldDbData, // Mặc định giữ lại tất cả (Reviews, Users kèm Wishlist)
+  products: [], // Reset để nạp sản phẩm mới từ mock-data
 };
 
 if (!fs.existsSync(mockDataDir)) {
@@ -16,67 +24,71 @@ if (!fs.existsSync(mockDataDir)) {
   process.exit(1);
 }
 
-// 2. Hàm đọc file JSON an toàn
 const readJsonFile = (filePath) => {
   try {
     const fileContent = fs.readFileSync(filePath, 'utf-8');
     if (!fileContent.trim()) return [];
     const data = JSON.parse(fileContent);
-    // Đảm bảo dữ liệu trả về là mảng nếu file chứa mảng
     return Array.isArray(data) ? data : [data];
   } catch (error) {
-    console.error(`⚠️ Lỗi cú pháp trong file "${path.basename(filePath)}". Bỏ qua.`);
     return [];
   }
 };
 
-// 3. Quét và Merge dữ liệu
+// 2. Quét thư mục mock-data
 const items = fs.readdirSync(mockDataDir);
 
 items.forEach(item => {
   const itemPath = path.join(mockDataDir, item);
   const stat = fs.statSync(itemPath);
 
-  // A: Xử lý thư mục "products" (Gom nhiều file sản phẩm nhỏ)
   if (stat.isDirectory() && item === 'products') {
-    console.log('📂 Đang quét thư mục products...');
     const productFiles = fs.readdirSync(itemPath);
-
     productFiles.forEach(file => {
       if (path.extname(file) === '.json') {
-        const filePath = path.join(itemPath, file);
-        const data = readJsonFile(filePath);
-        db.products.push(...data);
+        db.products.push(...readJsonFile(path.join(itemPath, file)));
       }
     });
-  }
-  // B: Xử lý các file lẻ (messages.json, faq.json, users.json...)
+  } 
   else if (stat.isFile() && path.extname(item) === '.json') {
     const resourceName = path.basename(item, '.json');
-    // Đặc biệt xử lý cho messages vì bạn dùng tên massage.json
     const finalKey = resourceName === 'massage' ? 'messages' : resourceName;
-    const data = readJsonFile(itemPath);
-    db[finalKey] = data;
+
+    // QUAN TRỌNG: Logic để không làm mất Yêu thích (Wishlist)
+    if (finalKey === 'users') {
+      const mockUsers = readJsonFile(itemPath);
+      
+      // So khớp: Giữ lại wishlist từ db.json cũ cho từng user
+      db.users = mockUsers.map(mUser => {
+        const existingUser = oldDbData.users?.find(u => u.id === mUser.id || u.email === mUser.email);
+        return {
+          ...mUser,
+          wishlist: existingUser?.wishlist || mUser.wishlist || [] // Ưu tiên wishlist cũ
+        };
+      });
+    } 
+    // Không ghi đè reviews từ mock-data nếu db.json đã có reviews
+    else if (finalKey === 'reviews') {
+      db.reviews = oldDbData.reviews && oldDbData.reviews.length > 0 
+                   ? oldDbData.reviews 
+                   : readJsonFile(itemPath);
+    }
+    else {
+      db[finalKey] = readJsonFile(itemPath);
+    }
   }
 });
 
-// 4. Ghi file db.json (Chỉ ghi nếu có thay đổi)
-let oldData = null;
-if (fs.existsSync(dbFile)) {
-  try {
-    oldData = JSON.parse(fs.readFileSync(dbFile, 'utf-8'));
-  } catch (e) { oldData = null; }
-}
-
-if (JSON.stringify(db) !== JSON.stringify(oldData)) {
+// 3. Ghi lại file db.json
+if (JSON.stringify(db) !== JSON.stringify(oldDbData)) {
   try {
     fs.writeFileSync(dbFile, JSON.stringify(db, null, 2));
-    console.log(`✅ Merge thành công!`);
-    console.log(`   - Tổng sản phẩm: ${db.products.length}`);
-    console.log(`   - Endpoints: ${Object.keys(db).map(k => '/' + k).join(', ')}`);
+    console.log(`✅ Đã đồng bộ thành công!`);
+    console.log(`   - Bảo toàn Wishlist cho ${db.users.length} người dùng.`);
+    console.log(`   - Bảo toàn ${db.reviews.length} đánh giá.`);
   } catch (error) {
-    console.error('❌ Lỗi khi ghi file db.json:', error);
+    console.error('❌ Lỗi ghi file:', error);
   }
 } else {
-  console.log(`ℹ️ Dữ liệu không thay đổi.`);
+  console.log(`ℹ️ Không có thay đổi dữ liệu.`);
 }

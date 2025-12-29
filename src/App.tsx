@@ -26,7 +26,7 @@ import Chatbox from './Pages/Chatbox';
 import Login from './Pages/Login';
 import Register from './Pages/Register';
 import ForgotPassword from './Pages/ForgotPassword';
-
+import Wishlist from './Pages/Wishlist';
 // =======================
 // 4. CONTEXT / TYPES / STYLES
 // =======================
@@ -215,6 +215,12 @@ function App() {
                         <OrderHistory />
                     </MainLayout>
                 } />
+                <Route path="/wishlist" element={
+                 <MainLayout currentUser={currentUser} onLogout={handleLogout}>
+                  <Wishlist />
+                 </MainLayout>
+                  }
+                />
                 {/* Route 404: Nếu nhập linh tinh thì về Home */}
                 <Route path="*" element={<Navigate to="/" />} />
             </Routes>
