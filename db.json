@@ -1821,6 +1821,13 @@
       "responseText": "Shop chưa hiểu rõ câu hỏi của bạn 🤔 Bạn có thể hỏi về sản phẩm, giá cả, giao hàng hoặc đặt làm riêng nhé!"
     }
   ],
+  "carts": [
+    {
+      "userId": "1",
+      "items": [],
+      "totalPrice": 0
+    }
+  ],
   "categories": [
     {
       "id": 1,
@@ -1878,56 +1885,25 @@
       "title": "Thanh toán khi nhận hàng"
     }
   ],
-  "reviews": [
-    {
-      "id": "a1d8",
-      "productId": 616,
-      "userName": "thoai",
-      "rating": 4,
-      "comment": "123123",
-      "createdAt": "15:38:59 29/12/2025"
-    },
-    {
-      "id": "6a20",
-      "productId": 616,
-      "userName": "Phu",
-      "rating": 4,
-      "comment": "123124124",
-      "createdAt": "15:45:41 29/12/2025"
-    }
-  ],
+  "reviews": [],
   "users": [
     {
       "id": "1",
       "email": "phu@gmail.com",
       "password": "123456",
-      "username": "Phu",
-      "wishlist": [
-        {
-          "id": "44",
-          "name": "Dây Chuyền Đá Aquamarine",
-          "price": 279000,
-          "category": "Phụ kiện",
-          "categoryId": 3,
-          "imageUrl": "https://antinh.vn/wp-content/uploads/2025/09/Day-Chuyen-Da-Aquamarine-800x800.jpg",
-          "description": "Dây Chuyền Đá Aquamarine",
-          "inventory": 20
-        }
-      ]
+      "username": "Phu"
     },
     {
       "id": "cbc1",
       "email": "thuan11111@gmail.com",
       "password": "123456",
-      "username": "Thuan",
-      "wishlist": []
+      "username": "Thuan"
     },
     {
       "id": "aae8",
       "email": "thoai@gmail.com",
       "password": "123456",
-      "username": "thoai",
-      "wishlist": []
+      "username": "thoai"
     }
   ],
   "carts": [

@@ -11,7 +11,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
-
+import Wishlist from './Pages/Wishlist';
 // =======================
 // 3. IMPORT PAGES
 // =======================
@@ -22,7 +22,6 @@ import Profile from './Pages/Profile';
 import Login from './Pages/Login';
 import Register from './Pages/Register';
 import ForgotPassword from './Pages/ForgotPassword';
-import Wishlist from './Pages/Wishlist';
 import Checkout from './Pages/Checkout';
 import Cart from './Pages/Cart';
 import OrderHistory from './Pages/OrderHistory';
@@ -116,6 +115,7 @@ function App() {
                             </div>
                         )
                     } />
+              
 
                     <Route path="/register" element={
                         <div className="auth-page-wrapper">
@@ -168,7 +168,7 @@ function App() {
 
                     <Route path="/product/:id" element={
                         <MainLayout currentUser={currentUser} onLogout={handleLogout}>
-                            <ProductDetail currentUser={currentUser}/>
+                            <ProductDetail currentUser={currentUser} onLogout={handleLogout}/>
                         </MainLayout>
                     } />
 
@@ -202,6 +202,7 @@ function App() {
                     <Route path="*" element={<Navigate to="/" />} />
                 </Routes>
             </div>
+
         </CartProvider>
     );
 }

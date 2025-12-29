@@ -1,35 +1,30 @@
-// src/pages/ProductDetail.tsx
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useProductDetail } from '../hooks/useProductDetail';
 import ProductPolicy from '../components/ProductPolicy';
 import { useCart } from '../context/CartContext';
-import { User } from '../types/model'; // Import User type
+import { User } from '../types/model';
+
 import '../Styles/productDetail.css';
 
-// ==========================================
-// 1. THÊM INTERFACE ĐỂ SỬA LỖI TS2322
-// ==========================================
+// Interface cho Props
 interface ProductDetailProps {
     currentUser: User | null;
+    onLogout: () => void;
 }
 
-// 2. CẬP NHẬT ĐỂ NHẬN PROPS { currentUser }
 const ProductDetail: React.FC<ProductDetailProps> = ({ currentUser }) => {
     const { id } = useParams<{ id: string }>();
     const navigate = useNavigate();
     const { addToCart } = useCart();
 
-    // Sử dụng hook để lấy dữ liệu sản phẩm và reviews
     const { product, loading, error, reviews, addReview } = useProductDetail(id);
 
-    // State cho Form Review
     const [rating, setRating] = useState<number>(0);
     const [hoverRating, setHoverRating] = useState<number>(0);
     const [comment, setComment] = useState<string>('');
 
-    // Xóa dòng lấy localStorage ở đây vì ta đã nhận currentUser từ App.tsx truyền xuống
-
+    // Xử lý gửi đánh giá
     const handleSubmitReview = (e: React.FormEvent) => {
         e.preventDefault();
         if (!currentUser) {
@@ -48,21 +43,11 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ currentUser }) => {
             comment: comment.trim(),
         });
         
-        // Reset form
         setRating(0);
-        setHoverRating(0);
         setComment('');
     };
 
-    if (loading) return <div className="loading-spinner">Đang tải...</div>;
-    
-    if (error || !product) return (
-        <div className="error-container" style={{ textAlign: 'center', marginTop: '50px' }}>
-            <p>{error || "Sản phẩm không tồn tại!"}</p>
-            <button onClick={() => navigate('/')}>Về trang chủ</button>
-        </div>
-    );
-
+    // Xử lý Mua ngay
     const handleBuyNow = () => {
         if (product && product.inventory > 0) {
             if (!currentUser) {
@@ -73,6 +58,15 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ currentUser }) => {
             navigate('/checkout', { state: { buyNowItem: product } });
         }
     };
+
+    if (loading) return <div className="loading-spinner">Đang tải...</div>;
+    
+    if (error || !product) return (
+        <div className="error-container" style={{ textAlign: 'center', marginTop: '50px' }}>
+            <p>{error || "Sản phẩm không tồn tại!"}</p>
+            <button onClick={() => navigate('/')}>Về trang chủ</button>
+        </div>
+    );
 
     return (
         <div className="product-page-container">
@@ -99,7 +93,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ currentUser }) => {
                     </div>
 
                     <div className="product-description">{product.description}</div>
-
+                    
                     <div className="product-actions">
                         <button 
                             className="btn-buy-now" 

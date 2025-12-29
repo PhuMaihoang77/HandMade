@@ -6,7 +6,7 @@ import { Product, User } from '../types/model';
 
 interface ProductCardProps {    
     product: Product;
-    currentUser?: User | null; 
+    currentUser: User | null;
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
@@ -14,24 +14,28 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
     const { addToCart } = useCart();
     const [isFavorite, setIsFavorite] = useState(false);
     
+    // Lấy thông tin user hiện tại từ localStorage để đảm bảo dữ liệu mới nhất
     const userString = localStorage.getItem('user');
-    const userInStorage: User | null = userString ? JSON.parse(userString) : null;
+    const localUser: User | null = userString ? JSON.parse(userString) : null;
 
     useEffect(() => {
-        if (userInStorage?.wishlist) {
-            const exists = userInStorage.wishlist.some((p: Product) => p.id === product.id);
+        // Kiểm tra xem sản phẩm có trong wishlist của user không
+        if (localUser?.wishlist) {
+            const exists = localUser.wishlist.some((p: Product) => p.id === product.id);
             setIsFavorite(exists);
         }
-    }, [product.id, userInStorage]);
+    }, [product.id, localUser]);
 
+    // Xử lý Yêu thích
     const toggleFavorite = async (e: React.MouseEvent) => {
         e.stopPropagation();
-        if (!userInStorage) {
+
+        if (!localUser) {
             alert("Vui lòng đăng nhập để lưu sản phẩm yêu thích!");
             return;
         }
 
-        const currentWishlist = userInStorage.wishlist || [];
+        const currentWishlist = localUser.wishlist || [];
         let updatedWishlist: Product[];
 
         if (isFavorite) {
@@ -41,14 +45,15 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         }
 
         try {
-            const response = await axios.patch(`http://localhost:3000/users/${userInStorage.id}`, {
+            const response = await axios.patch(`http://localhost:3000/users/${localUser.id}`, {
                 wishlist: updatedWishlist
             });
 
             if (response.status === 200) {
-                const updatedUser = { ...userInStorage, wishlist: updatedWishlist };
+                const updatedUser = { ...localUser, wishlist: updatedWishlist };
                 localStorage.setItem('user', JSON.stringify(updatedUser));
                 setIsFavorite(!isFavorite);
+                // Phát tín hiệu để các component khác (Profile/Wishlist) cập nhật
                 window.dispatchEvent(new Event('wishlistUpdated'));
             }
         } catch (error) {
@@ -57,15 +62,18 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         }
     };
 
+    // Xử lý Thêm vào giỏ hàng
     const handleAddToCart = (e: React.MouseEvent) => {
         e.stopPropagation();
         if (product.inventory > 0) {
-            void addToCart(product, userInStorage);
+            void addToCart(product, localUser);
+            // alert(`Đã thêm ${product.name} vào giỏ hàng!`); // Bật nếu context chưa có thông báo
         } else {
             alert("Sản phẩm đã hết hàng!");
         }
     };
 
+    // Xử lý Mua ngay
     const handleBuyNow = (e: React.MouseEvent) => {
         e.stopPropagation();
         if (product.inventory > 0) {
@@ -80,18 +88,17 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             <div className="product-image" onClick={() => navigate(`/product/${product.id}`)}>
                 <img src={product.imageUrl} alt={product.name} />
 
-                {/* SỬA LỖI: Dùng thẻ <i> của FontAwesome thay cho react-icons */}
+                {/* Icon trái tim - Sử dụng FontAwesome để tránh lỗi TS2786 */}
                 <div 
                     className={`favorite-icon ${isFavorite ? 'active' : ''}`} 
                     onClick={toggleFavorite}
                 >
-                    {isFavorite 
-                        ? <i className="fas fa-heart" style={{ color: '#ff4d4d' }}></i> 
-                        : <i className="far fa-heart"></i>
-                    }
+                    <i className={`${isFavorite ? 'fas' : 'far'} fa-heart`} 
+                       style={{ color: isFavorite ? "#ff4d4d" : "" }}>
+                    </i>
                 </div>
 
-                {/* SỬA LỖI: Dùng thẻ <i> của FontAwesome thay cho react-icons */}
+                {/* Icon giỏ hàng nhanh */}
                 <div className="add-to-cart-icon" title="Thêm vào giỏ" onClick={handleAddToCart}>
                     <i className="fas fa-shopping-cart"></i>
                 </div>
@@ -106,7 +113,11 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
                     <button className="view-button" onClick={() => navigate(`/product/${product.id}`)}>
                         Xem chi tiết
                     </button>
-                    <button className="buy-button" onClick={handleBuyNow}>
+                    <button 
+                        className="buy-button" 
+                        onClick={handleBuyNow}
+                        disabled={product.inventory <= 0}
+                    >
                         Mua ngay
                     </button>
                 </div>

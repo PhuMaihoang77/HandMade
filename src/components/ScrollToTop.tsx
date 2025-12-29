@@ -34,5 +34,8 @@ export default ScrollToTop;
 
 
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 409ce4a65149389ee5a7fb8f37956bde0af74519
