@@ -1,149 +1,200 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import api from '../services/api';
+import { getProducts } from '../services/ProductService';
+import { User } from '../types/model';
 import { useCart } from '../context/CartContext';
-import { useOrders, Order } from '../context/OrderContext';
+import { generateVNPayUrl } from '../services/vnpayService';
 import '../Styles/checkout.css';
 
-const Checkout: React.FC = () => {
-    const navigate = useNavigate();
-    const location = useLocation(); // Dùng để nhận dữ liệu từ "Mua ngay"
-    const { cart, selectedItemIds, totalSelectedPrice, updateQuantity } = useCart();
-    const { addOrder } = useOrders();
+interface CheckoutProps { currentUser: User | null; }
 
-    const [paymentMethod, setPaymentMethod] = useState<'cod' | 'bank' | 'vnpay'>('cod');
+const Checkout: React.FC<CheckoutProps> = ({ currentUser }) => {
+    const navigate = useNavigate();
+    const location = useLocation();
+    const { refreshCart } = useCart();
+
+    const [displayItems, setDisplayItems] = useState<any[]>([]);
+    const [finalTotal, setFinalTotal] = useState(0);
+    const [paymentMethod, setPaymentMethod] = useState<'cod' | 'vnpay'>('cod');
+    const [loading, setLoading] = useState(true);
+
+    const buyNowItem = location.state?.buyNowItem;
+    const selectedIds = location.state?.selectedIds || [];
 
     useEffect(() => {
-        document.title = "Handmade | Checkout";
-    }, []);
-
-    // --- LOGIC XỬ LÝ NGUỒN DỮ LIỆU ---
-    // 1. Kiểm tra xem có sản phẩm "Mua ngay" được truyền qua state không
-    const buyNowItem = location.state?.buyNowItem;
-
-    // 2. Xác định danh sách sản phẩm sẽ hiển thị và thanh toán
-    const displayItems = buyNowItem
-        ? [{ product: buyNowItem, quantity: 1 }] // Nếu là Mua ngay
-        : cart.items.filter(item => selectedItemIds.includes(item.product.id as number)); // Nếu từ giỏ hàng
-
-    // 3. Xác định tổng tiền thanh toán
-    const finalTotal = buyNowItem
-        ? buyNowItem.price
-        : totalSelectedPrice;
-
-    const handleConfirmOrder = () => {
-        // Lấy thông tin từ form
-        const fullName = (document.querySelector('input[placeholder="Họ và tên nhận hàng *"]') as HTMLInputElement)?.value.trim();
-        const phone = (document.querySelector('input[placeholder="Số điện thoại *"]') as HTMLInputElement)?.value.trim();
-        const address = (document.querySelector('textarea[placeholder="Địa chỉ giao hàng chi tiết *"]') as HTMLTextAreaElement)?.value.trim();
-
-        if (!fullName || !phone || !address) {
-            alert('Vui lòng điền đầy đủ thông tin giao hàng!');
+        if (!currentUser) {
+            navigate('/login');
             return;
         }
 
-        // Tạo đối tượng đơn hàng mới
-        const newOrder: Order = {
-            id: 'ORD-' + Date.now(),
-            date: new Date().toLocaleString('vi-VN'),
-            items: [...displayItems], // Lưu bản sao sản phẩm tại thời điểm mua
-            totalAmount: finalTotal,
-            paymentMethod: paymentMethod === 'cod' ? 'Tiền mặt (COD)' :
-                paymentMethod === 'bank' ? 'Chuyển khoản' : 'VNPAY',
-            status: 'Đang xử lý'
+        const loadCheckoutData = async () => {
+            setLoading(true);
+            try {
+                // TRƯỜNG HỢP 1: MUA NGAY (Kiểm tra dữ liệu từ trang Chi tiết sản phẩm)
+                if (buyNowItem && buyNowItem.id) {
+                    setDisplayItems([{ product: buyNowItem, quantity: 1 }]);
+                    setFinalTotal(Number(buyNowItem.price));
+                    setLoading(false);
+                    return; // Thoát sớm, không chạy xuống phần Cart
+                }
+
+                // TRƯỜNG HỢP 2: THANH TOÁN GIỎ HÀNG (Dữ liệu từ trang Cart)
+                if (selectedIds.length > 0) {
+                    const [allProducts, cartRes] = await Promise.all([
+                        getProducts(),
+                        api.get(`/carts?userId=${currentUser.id}`)
+                    ]);
+
+                    if (cartRes.data.length > 0) {
+                        const userCart = cartRes.data[0];
+                        const itemsToPay = userCart.items
+                            .filter((item: any) => selectedIds.includes(item.productId))
+                            .map((item: any) => ({
+                                product: allProducts.find((p: any) => p.id === item.productId),
+                                quantity: item.quantity
+                            }))
+                            .filter((i: any) => i.product);
+
+                        if (itemsToPay.length > 0) {
+                            setDisplayItems(itemsToPay);
+                            const total = itemsToPay.reduce((sum: number, i: any) => sum + (i.product.price * i.quantity), 0);
+                            setFinalTotal(total);
+                            setLoading(false);
+                            return;
+                        }
+                    }
+                }
+
+                // Nếu không rơi vào 2 trường hợp trên (F5 trang hoặc dữ liệu trống)
+                navigate('/home');
+            } catch (err) {
+                console.error("Lỗi load checkout:", err);
+            } finally {
+                setLoading(false);
+            }
         };
 
-        // Lưu đơn hàng vào lịch sử
-        addOrder(newOrder);
-        alert(`Đặt hàng thành công! Mã đơn: ${newOrder.id}`);
+        void loadCheckoutData();
+    }, [currentUser?.id, buyNowItem?.id, selectedIds.length]);
 
-        // Xử lý sau khi đặt hàng thành công
-        if (!buyNowItem) {
-            // Nếu mua từ giỏ hàng thì mới xóa các mục đã chọn trong giỏ
-            selectedItemIds.forEach(id => updateQuantity(id, 0));
+    const handleConfirmOrder = async () => {
+        if (!currentUser) return;
+
+        const fullName = (document.querySelector('input[name="fullname"]') as HTMLInputElement)?.value;
+        const phone = (document.querySelector('input[name="phone"]') as HTMLInputElement)?.value;
+        const address = (document.querySelector('textarea[name="address"]') as HTMLTextAreaElement)?.value;
+
+        if (!fullName || !phone || !address) return alert('Vui lòng nhập đủ thông tin!');
+
+        const orderId = 'ORD-' + Date.now();
+        const isVNPay = paymentMethod === 'vnpay';
+
+        const newOrder = {
+            id: orderId,
+            userId: currentUser.id,
+            fullName, phone, address,
+            date: new Date().toLocaleString('vi-VN'),
+            items: displayItems,
+            totalAmount: finalTotal,
+            paymentMethod: paymentMethod.toUpperCase(),
+            status: isVNPay ? 'Chờ thanh toán' : 'Đang xử lý',
+            // Lưu meta-data để trang Return xử lý dọn giỏ sau này
+            checkoutType: buyNowItem ? 'buy_now' : 'cart',
+            selectedIds: selectedIds
+        };
+
+        try {
+            // 1. Tạo đơn hàng vào database
+            await api.post('/orders', newOrder);
+
+            if (isVNPay) {
+                // Luồng VNPay: Chỉ tạo đơn, dọn giỏ sẽ làm ở trang vnpay-return nếu thành công
+                const paymentUrl = generateVNPayUrl(finalTotal, orderId);
+                window.location.href = paymentUrl;
+            } else {
+                // Luồng COD: Dọn giỏ ngay vì giao dịch coi như xong bước đặt
+                await cleanCartLocally();
+                alert("Đặt hàng thành công!");
+                navigate('/home');
+            }
+        } catch (err) {
+            console.error("Lỗi đặt hàng:", err);
+            alert("Lỗi đặt hàng!");
         }
-
-        // Chuyển hướng về trang lịch sử đơn hàng
-        navigate('/orders');
     };
 
-    // Nếu không có sản phẩm nào (truy cập trực tiếp link checkout mà không chọn đồ)
-    if (displayItems.length === 0) {
-        return (
-            <div className="empty-checkout">
-                <h2>Không có sản phẩm nào để thanh toán</h2>
-                <button onClick={() => navigate('/cart')} className="btn-back">Quay lại giỏ hàng</button>
-            </div>
-        );
-    }
+    const cleanCartLocally = async () => {
+        try {
+            const res = await api.get(`/carts?userId=${currentUser?.id}`);
+            const userCart = res.data[0];
+            if (userCart) {
+                let remaining = [];
+                if (buyNowItem) {
+                    remaining = userCart.items.filter((i: any) => i.productId !== buyNowItem.id);
+                } else {
+                    remaining = userCart.items.filter((i: any) => !selectedIds.includes(i.productId));
+                }
+                await api.patch(`/carts/${userCart.id}`, { items: remaining });
+                await refreshCart();
+            }
+        } catch (err) {
+            console.warn("Lỗi dọn giỏ hàng:", err);
+        }
+    };
+
+    if (loading) return <div className="loading">Đang tải...</div>;
 
     return (
         <div className="checkout-container">
-            <h1 className="checkout-page-title">
-                {buyNowItem ? "Thanh Toán Nhanh" : "Thanh Toán Đơn Hàng"}
-            </h1>
-
+            <h1>Thanh Toán</h1>
             <div className="checkout-grid">
-                {/* Cột Trái: Danh sách sản phẩm */}
                 <div className="checkout-left">
                     <div className="checkout-card">
-                        <h2 className="card-header">Sản phẩm thanh toán</h2>
-                        <div className="checkout-product-list">
-                            {displayItems.map((item, index) => (
-                                <div key={item.product.id || index} className="checkout-product-item">
-                                    <img src={item.product.imageUrl} alt={item.product.name} />
-                                    <div className="checkout-product-info">
-                                        <p className="name">{item.product.name}</p>
-                                        <p className="category">Phân loại: {item.product.category}</p>
-                                        <p className="qty">Số lượng: {item.quantity}</p>
-                                    </div>
-                                    <div className="checkout-product-price">
-                                        ₫{(item.product.price * item.quantity).toLocaleString('vi-VN')}
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
+                        <h3>Sản phẩm</h3>
+                        {displayItems.map((item, idx) => (
+                            <div key={idx} className="checkout-product-item">
+                                {item.product && (
+                                    <>
+                                        <img src={item.product.imageUrl} width={50} alt={item.product.name} />
+                                        <div className="item-detail">
+                                            <span>{item.product.name} (x{item.quantity})</span>
+                                            <span className="item-subtotal">
+                                                ₫{(item.product.price * item.quantity).toLocaleString('vi-VN')}
+                                            </span>
+                                        </div>
+                                    </>
+                                )}
+                            </div>
+                        ))}
                     </div>
                 </div>
 
-                {/* Cột Phải: Thông tin & Thanh toán */}
                 <div className="checkout-right">
                     <div className="checkout-card">
-                        <h2 className="card-header">Thông tin giao hàng</h2>
+                        <h3>Thông tin nhận hàng</h3>
                         <div className="checkout-form">
-                            <input type="text" placeholder="Họ và tên nhận hàng *" required />
-                            <input type="tel" placeholder="Số điện thoại *" required />
-                            <textarea placeholder="Địa chỉ giao hàng chi tiết *" rows={3} required />
+                            <input name="fullname" placeholder="Họ tên *" required />
+                            <input name="phone" placeholder="Số điện thoại *" required />
+                            <textarea name="address" placeholder="Địa chia *" required />
                         </div>
-
-                        <h2 className="card-header" style={{marginTop: '20px'}}>Phương thức thanh toán</h2>
-                        <div className="payment-options-list">
-                            <label className={`option-item ${paymentMethod === 'cod' ? 'selected' : ''}`}>
-                                <input type="radio" name="pay-method" checked={paymentMethod === 'cod'} onChange={() => setPaymentMethod('cod')} />
-                                <span>Thanh toán khi nhận hàng (COD)</span>
+                        <h3>Phương thức thanh toán</h3>
+                        <div className="payment-methods">
+                            <label>
+                                <input type="radio" checked={paymentMethod === 'cod'} onChange={() => setPaymentMethod('cod')} />
+                                COD (Thanh toán khi nhận hàng)
                             </label>
-                            <label className={`option-item ${paymentMethod === 'bank' ? 'selected' : ''}`}>
-                                <input type="radio" name="pay-method" checked={paymentMethod === 'bank'} onChange={() => setPaymentMethod('bank')} />
-                                <span>Chuyển khoản qua ngân hàng</span>
-                            </label>
-                            <label className={`option-item ${paymentMethod === 'vnpay' ? 'selected' : ''}`}>
-                                <input type="radio" name="pay-method" checked={paymentMethod === 'vnpay'} onChange={() => setPaymentMethod('vnpay')} />
-                                <span>Ví điện tử VNPAY (QR Code)</span>
+                            <label>
+                                <input type="radio" checked={paymentMethod === 'vnpay'} onChange={() => setPaymentMethod('vnpay')} />
+                                <b>Thanh toán qua VNPay</b>
                             </label>
                         </div>
-
-                        <div className="checkout-final-summary">
-                            <div className="summary-line">
-                                <span>Tổng tiền sản phẩm:</span>
-                                <span>₫{finalTotal.toLocaleString('vi-VN')}</span>
-                            </div>
-                            <div className="summary-line highlight-total">
-                                <span>Tổng cộng:</span>
-                                <span className="price">₫{finalTotal.toLocaleString('vi-VN')}</span>
-                            </div>
+                        <div className="checkout-total">
+                            <span>Tổng cộng:</span>
+                            <span className="price">₫{finalTotal.toLocaleString('vi-VN')}</span>
                         </div>
-
-                        <button className="btn-order-confirm" onClick={handleConfirmOrder}>
-                            XÁC NHẬN ĐẶT HÀNG
+                        <button className="btn-order-confirm" onClick={() => void handleConfirmOrder()}>
+                            XÁC NHẬN
                         </button>
                     </div>
                 </div>

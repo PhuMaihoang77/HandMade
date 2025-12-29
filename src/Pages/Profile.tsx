@@ -3,6 +3,7 @@ import { Navigate, useNavigate, Link } from 'react-router-dom';
 import { User } from '../types/model';
 import { updateUserEmail, updateUserPassword } from '../services/AuthService';
 import '../Styles/profile.css';
+import OrderHistory from './OrderHistory';
 
 interface ProfileProps {
     currentUser: User | null;
@@ -11,8 +12,8 @@ interface ProfileProps {
 
 const Profile: React.FC<ProfileProps> = ({ currentUser, onLogout }) => {
     const navigate = useNavigate();
-    // Loại bỏ 'favorites' khỏi state này vì đã có trang riêng
-    const [activeSection, setActiveSection] = useState<'info' | 'email' | 'password'>('info');
+    const [activeSection, setActiveSection] = useState<'info' | 'email' | 'password'|'orders'>('info');
+
 
     // --- State cho Email ---
     const [emailValue, setEmailValue] = useState(currentUser?.email ?? '');
@@ -108,6 +109,12 @@ const Profile: React.FC<ProfileProps> = ({ currentUser, onLogout }) => {
                     >
                         <i className="fa-solid fa-shield-halved"></i> Bảo mật mật khẩu
                     </div>
+
+                    <div className={`menu-item ${activeSection==='info'?'active':''}`} onClick={() => setActiveSection('info')}>Thông tin tài khoản</div>
+                    <div className={`menu-item ${activeSection==='email'?'active':''}`} onClick={() => setActiveSection('email')}>Đổi email</div>
+                    <div className={`menu-item ${activeSection==='password'?'active':''}`} onClick={() => setActiveSection('password')}>Đổi mật khẩu</div>
+                    <div className={`menu-item ${activeSection==='orders'?'active':''}`} onClick={() => setActiveSection('orders')}>Lịch sử mua hàng</div>
+
                 </div>
 
                 {/* Main Content Area */}
@@ -162,11 +169,11 @@ const Profile: React.FC<ProfileProps> = ({ currentUser, onLogout }) => {
                             </form>
                         </section>
                     )}
-
                     <div className="logout-section" style={{ marginTop: '20px' }}>
                         <button className="btn-logout" onClick={onLogout}>
                             <i className="fa-solid fa-right-from-bracket"></i> Đăng xuất tài khoản
                         </button>
+
                     </div>
                 </div>
             </div>
