@@ -44,7 +44,7 @@ const VNPayReturn: React.FC = () => {
                 } else {
                     // --- TRƯỜNG HỢP THẤT BẠI/HỦY ---
                     await api.patch(`/orders/${orderId}`, { status: 'Thanh toán thất bại' });
-                    alert("Thanh toán không thành công. Bạn có thể thử lại trong phần Lịch sử đơn hàng.");
+                    alert("Thanh toán không thành công. Bạn thử lại xem!");
                 }
             } catch (err) {
                 console.error("Lỗi xử lý kết quả VNPay:", err);
