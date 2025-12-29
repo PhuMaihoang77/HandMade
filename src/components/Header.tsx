@@ -40,18 +40,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser, onLogout }) => {
                     HandMade<span>Store</span>
                 </Link>
             </h1>
-
-            {/* Navigation */}
-            <nav className="main-nav">
-                <Link to="/Home" className="nav-link">Trang Chủ</Link>
-                <Link to="/products" className="nav-link">Sản Phẩm</Link>
-
-                <Link to="/about" className="nav-link">Giới thiệu</Link>
-                <Link to="/cart" className="nav-link">Giỏ hàng</Link>
-                <Link to="/chat" className="nav-link">Đơn mua</Link>
-            </nav>
-
-            {/* Search */}
+{/* Search */}
             <div className="search-wrapper">
                 <form className="search-bar" onSubmit={handleSearch}>
                     <input
@@ -82,6 +71,17 @@ const Header: React.FC<HeaderProps> = ({ currentUser, onLogout }) => {
                     </div>
                 )}
             </div>
+            {/* Navigation */}
+            <nav className="main-nav">
+                <Link to="/Home" className="nav-link">Trang Chủ</Link>
+                <Link to="/products" className="nav-link">Sản Phẩm</Link>
+
+                <Link to="/about" className="nav-link">Giới thiệu</Link>
+                <Link to="/cart" className="nav-link">Giỏ hàng</Link>
+                <Link to="#" className="nav-link">Đơn mua</Link>
+            </nav>
+
+            
 
             {/* User / Auth */}
             <div className="auth-actions">
@@ -97,7 +97,6 @@ const Header: React.FC<HeaderProps> = ({ currentUser, onLogout }) => {
                             className="logout-btn"
                             style={{ marginLeft: '10px', cursor: 'pointer', border: 'none', background: 'none', color: 'red' }}
                         >
-                            <i className="fas fa-sign-out-alt"></i>
                         </button>
                     </div>
                 ) : (
