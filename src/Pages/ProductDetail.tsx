@@ -8,7 +8,11 @@ import { Review } from '../types/model';
 // Sử dụng FontAwesome classes thay vì react-icons để tránh lỗi TypeScript
 import '../Styles/productDetail.css';
 
-const ProductDetail: React.FC = () => {
+interface ProductDetailProps {
+    currentUser: User | null; // Nhận từ Route
+}
+
+const ProductDetail: React.FC<ProductDetailProps> = ({ currentUser }) => {
     const { id } = useParams<{ id: string }>();
     const navigate = useNavigate();
     const { addToCart } = useCart();
@@ -53,18 +57,19 @@ const ProductDetail: React.FC = () => {
             <button onClick={() => navigate('/')}>Về trang chủ</button>
         </div>
     );
-    //Hàm thêm vào cart: thêm sản phẩm vào giỏ hàng
-    const handleAddToCart = () => {
-        if (product && product.inventory > 0) {
-            addToCart(product);
-            alert(`Đã thêm "${product.name}" vào giỏ hàng thành công!`);
-        } else {
-            alert("Rất tiếc, sản phẩm này hiện đã hết hàng!");
-        }
+
+    const handleAddToCart = (e?: React.MouseEvent) => {
+        if (e) e.stopPropagation();
+        void addToCart(product, currentUser);
     };
-    // Hàm Mua ngay: thêm sản phẩm vào localStorage rồi chuyển sang checkout
+
     const handleBuyNow = () => {
         if (product && product.inventory > 0) {
+            if (!currentUser) {
+                alert("Vui lòng đăng nhập để mua hàng!");
+                navigate('/login', { state: { from: '/checkout', buyNowItem: product } });
+                return;
+            }
             navigate('/checkout', { state: { buyNowItem: product } });
         }
     };
@@ -148,4 +153,5 @@ const ProductDetail: React.FC = () => {
         </div>
     );
 };
+
 export default ProductDetail;
