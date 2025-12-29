@@ -1041,9 +1041,7 @@
       "inventory": 50
     }
   ],
-
   "messages": [],
-
   "faq": [
     {
       "id": "f_tui_vi",
@@ -1310,16 +1308,7 @@
       "title": "Thanh toán khi nhận hàng"
     }
   ],
-  "reviews": [
-    {
-      "id": "cec3",
-      "productId": 616,
-      "userName": "Phu",
-      "rating": 4,
-      "comment": "1",
-      "createdAt": "10:53:46 29/12/2025"
-    }
-  ],
+  "reviews": [],
   "users": [
     {
       "id": "1",
