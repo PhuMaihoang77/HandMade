@@ -27,11 +27,9 @@ const Header: React.FC<HeaderProps> = ({ currentUser, onLogout }) => {
     const handleSearch = (e: React.FormEvent) => {
         e.preventDefault();
         if (!normalizedQuery) return;
-        const target = suggestions[0] ?? products.find(p => p.name.toLowerCase().includes(normalizedQuery));
-        if (target) {
-            navigate(`/product/${target.id}`);
-            setQuery('');
-        }
+        // Điều hướng đến trang products với query string để hiển thị kết quả tìm kiếm có phân trang
+        navigate(`/products?search=${encodeURIComponent(query.trim())}`);
+        setQuery('');
     };
     //const totalItems = cart?.items?.reduce((total: number, item: any) => total + item.quantity, 0) || 0;
     return (
@@ -84,6 +82,17 @@ const Header: React.FC<HeaderProps> = ({ currentUser, onLogout }) => {
                     </div>
                 )}
             </div>
+            {/* Navigation */}
+            <nav className="main-nav">
+                <Link to="/Home" className="nav-link">Trang Chủ</Link>
+                <Link to="/products" className="nav-link">Sản Phẩm</Link>
+
+                <Link to="/about" className="nav-link">Giới thiệu</Link>
+                <Link to="/cart" className="nav-link">Giỏ hàng</Link>
+                <Link to="#" className="nav-link">Đơn mua</Link>
+            </nav>
+
+            
 
             {/* User / Auth */}
             <div className="auth-actions">
@@ -99,7 +108,6 @@ const Header: React.FC<HeaderProps> = ({ currentUser, onLogout }) => {
                             className="logout-btn"
                             style={{ marginLeft: '10px', cursor: 'pointer', border: 'none', background: 'none', color: 'red' }}
                         >
-                            <i className="fas fa-sign-out-alt"></i>
                         </button>
                     </div>
                 ) : (

@@ -22,16 +22,23 @@ import Profile from './Pages/Profile';
 import Login from './Pages/Login';
 import Register from './Pages/Register';
 import ForgotPassword from './Pages/ForgotPassword';
-import Checkout from "./Pages/Checkout";
+import Checkout from './Pages/Checkout';
 import Cart from './Pages/Cart';
-import OrderHistory from "./Pages/OrderHistory";
-import VNPayReturn from "./Pages/VNPayReturn";
+import OrderHistory from './Pages/OrderHistory';
+import VNPayReturn from './Pages/VNPayReturn';
+import About from './Pages/About';
+import Chatbox from './Pages/Chatbox';
+import ChatWidget from './Pages/ChatWidget';
+
 // =======================
 // 4. CONTEXT / TYPES / STYLES
 // =======================
+import { CartProvider } from './context/CartContext';
+import { OrderProvider } from './context/OrderContext';
 import { User } from './types/model';
 import './Styles/global.css';
-import {CartProvider} from "./context/CartContext";
+
+
 
 // =======================
 // 5. MAIN LAYOUT
@@ -51,8 +58,10 @@ const MainLayout = ({
             <main style={{ minHeight: '80vh', paddingTop: '20px' }}>
                 {children}
             </main>
+            
             <Footer />
-            <ScrollToTop />
+            <ScrollToTop />  
+              <ChatWidget currentUser={currentUser} />
         </>
     );
 };
@@ -123,51 +132,103 @@ function App() {
                                     onClose={() => navigate('/')}
                                 />
                             </div>
-                        } />
+                        )
+                    }
+                />
 
-                        {/* ===== MAIN ROUTES ===== */}
-                        <Route path="/" element={
-                            <MainLayout currentUser={currentUser} onLogout={handleLogout}>
-                                <Home currentUser={currentUser} />
-                            </MainLayout>
-                        } />
+                <Route
+                    path="/register"
+                    element={
+                        <div className="auth-page-wrapper">
+                            <Register
+                                onSwitchToLogin={() => navigate('/login')}
+                                onClose={() => navigate('/')}
+                            />
+                        </div>
+                    }
+                />
 
-                        <Route path="/profile" element={
-                            <MainLayout currentUser={currentUser} onLogout={handleLogout}>
-                                {/* FIX LỖI TS2741: TRUYỀN THÊM onLogout VÀO ĐÂY */}
-                                <Profile currentUser={currentUser} onLogout={handleLogout} />
-                            </MainLayout>
-                        } />
+                <Route
+                    path="/forgot-password"
+                    element={
+                        <div className="auth-page-wrapper">
+                            <ForgotPassword
+                                onSwitchToLogin={() => navigate('/login')}
+                                onClose={() => navigate('/')}
+                            />
+                        </div>
+                    }
+                />
 
-                        <Route path="/product/:id" element={
-                            <MainLayout currentUser={currentUser} onLogout={handleLogout}>
-                                <ProductDetail currentUser={currentUser}/>
-                            </MainLayout>
-                        } />
+                {/* ===== MAIN ROUTES ===== */}
+                <Route
+                    path="/"
+                    element={
+                        <MainLayout currentUser={currentUser} onLogout={handleLogout}>
+                            <Home currentUser={currentUser} />
+                        </MainLayout>
+                    }
+                />
 
-                        <Route path="/checkout" element={
-                            <MainLayout currentUser={currentUser} onLogout={handleLogout}>
-                                <Checkout currentUser={currentUser}/>
-                            </MainLayout>
-                        } />
+                <Route
+                    path="/products"
+                    element={
+                        <MainLayout currentUser={currentUser} onLogout={handleLogout}>
+                            <Product currentUser={currentUser} />
+                        </MainLayout>
+                    }
+                />
+                <Route
+                    path="/profile"
+                    element={
+                        <MainLayout currentUser={currentUser} onLogout={handleLogout}>
+                            <Profile currentUser={currentUser} onLogout={handleLogout} />
+                        </MainLayout>
+                    }
+                />
+                <Route
+                    path="/chat"
+                     element={
+                        <MainLayout currentUser={currentUser} onLogout={handleLogout}>
+                            <Chatbox currentUser={currentUser} />
+                        </MainLayout>
+                    }
+                />
+                 <Route
+                    path="/about"
+                    element={
+                        <MainLayout currentUser={currentUser} onLogout={handleLogout}>
+                        <About currentUser={currentUser} />
+                        </MainLayout>
+                    }
+                />
 
-                        <Route path="/cart" element={
-                            <MainLayout currentUser={currentUser} onLogout={handleLogout}>
+                {/* Route động: /product/1, /product/2 */}
+                <Route path="/product/:id" element={
+                    <MainLayout currentUser={currentUser} onLogout={handleLogout}>
+                         <ProductDetail currentUser={currentUser}/>
+                    </MainLayout>
+                } />
+                <Route path="/checkout" element={
+                    <MainLayout currentUser={currentUser} onLogout={handleLogout}>
+                        <Checkout currentUser={currentUser}/>
+                    </MainLayout>
+                } />
+                <Route path="/cart" element={
+                    <MainLayout currentUser={currentUser} onLogout={handleLogout}>
                                 <Cart currentUser={currentUser}/>
-                            </MainLayout>
-                        }/>
-
-                        <Route path="/orders" element={
-                            <MainLayout currentUser={currentUser} onLogout={handleLogout}>
+                    </MainLayout>
+                }/>
+                <Route path="/orders" element={
+                    <MainLayout currentUser={currentUser} onLogout={handleLogout}>
                                 <OrderHistory currentUser={currentUser}/>
-                            </MainLayout>
-                        } />
-                        <Route path="/orders" element={<OrderHistory currentUser={currentUser} />} />
-                        <Route path="/vnpay-return" element={<VNPayReturn />} />
-
-                        <Route path="*" element={<Navigate to="/" />} />
-                    </Routes>
-                </div>
+                    </MainLayout>
+                } />
+                <Route path="/vnpay-return" element={<VNPayReturn />} />
+                {/* Route 404: Nếu nhập linh tinh thì về Home */}
+                <Route path="*" element={<Navigate to="/" />} />
+            </Routes>
+        </div>
         </CartProvider>
     );
 }

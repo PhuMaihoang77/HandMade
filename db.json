@@ -1618,6 +1618,217 @@
       "totalPrice": 0
     }
   ],
+  "messages": [],
+
+  "faq": [
+    {
+      "id": "f_tui_vi",
+      "keywords": [
+        "túi",
+        "ví",
+        "túi xách",
+        "túi đeo",
+        "ví da",
+        "clutch",
+        "balo"
+      ],
+      "action": "SHOW_PRODUCT",
+      "targetCategory": "Túi & Ví",
+      "categoryId": "1",
+      "responseText": "Mời bạn tham khảo bộ sưu tập túi và ví handmade của shop nhé:"
+    },
+    {
+      "id": "f_trang_tri",
+      "keywords": [
+        "trang trí",
+        "decor",
+        "nhà cửa",
+        "đèn",
+        "tranh",
+        "đồ decor",
+        "đồ trang trí"
+      ],
+      "action": "SHOW_PRODUCT",
+      "targetCategory": "Trang trí nhà cửa",
+      "categoryId": "2",
+      "responseText": "Đây là các sản phẩm decor handmade giúp không gian thêm ấm cúng:"
+    },
+    {
+      "id": "f_phu_kien",
+      "keywords": [
+        "phụ kiện",
+        "móc khóa",
+        "kẹp tóc",
+        "khăn",
+        "nón",
+        "phụ kiện thời trang"
+      ],
+      "action": "SHOW_PRODUCT",
+      "targetCategory": "Phụ kiện",
+      "categoryId": "3",
+      "responseText": "Shop có nhiều phụ kiện handmade xinh xắn, bạn xem thử nhé:"
+    },
+    {
+      "id": "f_trang_suc",
+      "keywords": [
+        "vòng tay",
+        "nhẫn",
+        "vòng cổ",
+        "khuyên tai",
+        "trang sức",
+        "jewelry"
+      ],
+      "action": "SHOW_PRODUCT",
+      "targetCategory": "Trang sức",
+      "categoryId": "4",
+      "responseText": "Đây là những mẫu trang sức handmade tinh xảo của shop:"
+    },
+    {
+      "id": "f_gom_su",
+      "keywords": [
+        "gốm sứ",
+        "bình gốm",
+        "ly gốm",
+        "chén",
+        "đĩa",
+        "ceramic"
+      ],
+      "action": "SHOW_PRODUCT",
+      "targetCategory": "Gốm sứ",
+      "categoryId": "5",
+      "responseText": "Các sản phẩm gốm sứ thủ công độc đáo đang có tại shop:"
+    },
+    {
+      "id": "f_do_da",
+      "keywords": [
+        "đồ da",
+        "ví da",
+        "túi da",
+        "thắt lưng",
+        "leather"
+      ],
+      "action": "SHOW_PRODUCT",
+      "targetCategory": "Đồ da",
+      "categoryId": "6",
+      "responseText": "Mời bạn xem các sản phẩm đồ da handmade chất lượng cao:"
+    },
+    {
+      "id": "f_my_pham",
+      "keywords": [
+        "mỹ phẩm",
+        "son",
+        "kem dưỡng",
+        "skincare",
+        "làm đẹp",
+        "cosmetic"
+      ],
+      "action": "SHOW_PRODUCT",
+      "targetCategory": "Mỹ phẩm",
+      "categoryId": "7",
+      "responseText": "Shop có các sản phẩm mỹ phẩm handmade an toàn, lành tính:"
+    },
+    {
+      "id": "f_van_phong_pham",
+      "keywords": [
+        "văn phòng",
+        "sticker",
+        "sổ",
+        "bút",
+        "giấy",
+        "stationery"
+      ],
+      "action": "SHOW_PRODUCT",
+      "targetCategory": "Văn phòng phẩm",
+      "categoryId": "8",
+      "responseText": "Các mẫu văn phòng phẩm handmade dễ thương đang có sẵn:"
+    },
+    {
+      "id": "f_gia_ca",
+      "keywords": [
+        "giá",
+        "bao nhiêu tiền",
+        "giá bao nhiêu",
+        "mắc không",
+        "rẻ không"
+      ],
+      "action": "SEND_TEXT",
+      "responseText": "Giá sản phẩm handmade phụ thuộc vào chất liệu và độ thủ công. Bạn có thể bấm vào sản phẩm để xem giá chi tiết nhé!"
+    },
+    {
+      "id": "f_dat_lam_rieng",
+      "keywords": [
+        "đặt làm riêng",
+        "custom",
+        "đặt theo yêu cầu",
+        "khắc tên",
+        "thiết kế riêng"
+      ],
+      "action": "SEND_TEXT",
+      "responseText": "Shop có nhận đặt làm riêng và khắc tên theo yêu cầu 💝 Bạn hãy nhắn chi tiết cho shop nhé!"
+    },
+    {
+      "id": "f_qua_tang",
+      "keywords": [
+        "quà tặng",
+        "tặng sinh nhật",
+        "tặng người yêu",
+        "tặng bạn",
+        "gift"
+      ],
+      "action": "SEND_TEXT",
+      "responseText": "Các sản phẩm handmade rất phù hợp làm quà tặng 🎁 Shop có hỗ trợ gói quà miễn phí."
+    },
+    {
+      "id": "f_chat_lieu",
+      "keywords": [
+        "chất liệu",
+        "làm bằng gì",
+        "nguyên liệu",
+        "material"
+      ],
+      "action": "SEND_TEXT",
+      "responseText": "Shop sử dụng chất liệu thân thiện môi trường và được chọn lọc kỹ. Thông tin chi tiết có trong từng sản phẩm."
+    },
+    {
+      "id": "f_bao_quan",
+      "keywords": [
+        "bảo quản",
+        "giữ gìn",
+        "xài lâu",
+        "cách dùng"
+      ],
+      "action": "SEND_TEXT",
+      "responseText": "Mỗi sản phẩm handmade đều có hướng dẫn bảo quản riêng để sử dụng được lâu nhất."
+    },
+    {
+      "id": "f_giao_hang",
+      "keywords": [
+        "giao hàng",
+        "ship",
+        "vận chuyển",
+        "bao lâu nhận"
+      ],
+      "action": "SEND_TEXT",
+      "responseText": "Shop giao hàng toàn quốc 🚚 Thời gian nhận hàng từ 2–5 ngày tùy khu vực."
+    },
+    {
+      "id": "f_khuyen_mai",
+      "keywords": [
+        "khuyến mãi",
+        "giảm giá",
+        "sale",
+        "ưu đãi"
+      ],
+      "action": "SEND_TEXT",
+      "responseText": "Shop thường có ưu đãi vào dịp lễ 🎉 Bạn nhớ theo dõi để không bỏ lỡ nhé!"
+    },
+    {
+      "id": "default",
+      "keywords": [],
+      "action": "SEND_TEXT",
+      "responseText": "Shop chưa hiểu rõ câu hỏi của bạn 🤔 Bạn có thể hỏi về sản phẩm, giá cả, giao hàng hoặc đặt làm riêng nhé!"
+    }
+  ],
   "categories": [
     {
       "id": 1,
@@ -1673,6 +1884,16 @@
       "id": 4,
       "iconClass": "fas fa-money-bill-wave",
       "title": "Thanh toán khi nhận hàng"
+    }
+  ],
+  "reviews": [
+    {
+      "id": "cec3",
+      "productId": 616,
+      "userName": "Phu",
+      "rating": 4,
+      "comment": "1",
+      "createdAt": "10:53:46 29/12/2025"
     }
   ],
   "users": [
