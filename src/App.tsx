@@ -39,6 +39,7 @@ import { OrderProvider } from './context/OrderContext';
 import ChatWidget from "./Pages/ChatWidget";
 import './Styles/global.css';
 
+
 // =======================
 // 5. MAIN LAYOUT
 // =======================
@@ -180,7 +181,6 @@ function App() {
                     path="/about"
                     element={
                         <MainLayout currentUser={currentUser} onLogout={handleLogout}>
-                            <About currentUser={currentUser} />
                         </MainLayout>
                     }
                 />

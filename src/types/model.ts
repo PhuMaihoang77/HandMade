@@ -8,6 +8,8 @@ export interface Product {
     imageUrl: string;
     description: string;
     inventory: number;
+    rating?: number; 
+    commentCount?: number;
 }
 
 // Bạn cũng nên chuyển User interface vào đây luôn
@@ -62,3 +64,4 @@ export interface ProductGridProps {
     targetCategory?: string; // Có dấu ? vì không phải mục nào cũng có
     categoryId?: string;     // Có dấu ? vì không phải mục nào cũng có
 }
+

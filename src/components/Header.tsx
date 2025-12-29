@@ -26,11 +26,9 @@ const Header: React.FC<HeaderProps> = ({ currentUser, onLogout }) => {
     const handleSearch = (e: React.FormEvent) => {
         e.preventDefault();
         if (!normalizedQuery) return;
-        const target = suggestions[0] ?? products.find(p => p.name.toLowerCase().includes(normalizedQuery));
-        if (target) {
-            navigate(`/product/${target.id}`);
-            setQuery('');
-        }
+        // Điều hướng đến trang products với query string để hiển thị kết quả tìm kiếm có phân trang
+        navigate(`/products?search=${encodeURIComponent(query.trim())}`);
+        setQuery('');
     };
 
     return (
