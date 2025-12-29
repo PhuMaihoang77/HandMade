@@ -4,14 +4,15 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useProductDetail } from '../hooks/useProductDetail';
 import ProductPolicy from '../components/ProductPolicy';
 import { useCart } from '../context/CartContext';
-import * as Icons from 'react-icons/fa'; 
+import { Review } from '../types/model';
+// Sử dụng FontAwesome classes thay vì react-icons để tránh lỗi TypeScript
 import '../Styles/productDetail.css';
 
 const ProductDetail: React.FC = () => {
     const { id } = useParams<{ id: string }>();
     const navigate = useNavigate();
     const { addToCart } = useCart();
-    
+
     // Sử dụng hook đã nâng cấp
     const { product, loading, error, reviews, addReview } = useProductDetail(id);
 
@@ -20,6 +21,32 @@ const ProductDetail: React.FC = () => {
     const [hoverRating, setHoverRating] = useState<number>(0);
     const [comment, setComment] = useState<string>('');
 
+    // Lấy user đang đăng nhập
+    const storedUser = localStorage.getItem('user');
+    const currentUser = storedUser ? JSON.parse(storedUser) : null;
+
+    const handleSubmitReview = (e: React.FormEvent) => {
+        e.preventDefault();
+        if (!currentUser) {
+            navigate('/login');
+            return;
+        }
+        if (rating === 0 || !comment.trim()) {
+            alert('Vui lòng chọn sao và nhập nội dung.');
+            return;
+        }
+
+        addReview({
+            userName: currentUser.username,
+            rating,
+            comment: comment.trim(),
+        });
+        setRating(0);
+        setHoverRating(0);
+        setComment('');
+    };
+
+    if (loading) return <div className="loading-spinner">Đang tải...</div>;
     if (error || !product) return (
         <div className="error-container" style={{ textAlign: 'center', marginTop: '50px' }}>
             <p>{error || "Sản phẩm không tồn tại!"}</p>
@@ -44,23 +71,23 @@ const ProductDetail: React.FC = () => {
 
     return (
         <div className="product-page-container">
-            <div className="product-detail">
+        <div className="product-detail">
                 {/* BÊN TRÁI: ẢNH */}
-                <div className="product-detail-image-wrapper">
+            <div className="product-detail-image-wrapper">
                     <img className="product-detail-image" src={product.imageUrl} alt={product.name} />
-                </div>
+            </div>
 
                 {/* BÊN PHẢI: THÔNG TIN */}
-                <div className="product-detail-info">
-                    <h2 className="product-title">{product.name}</h2>
+            <div className="product-detail-info">
+                <h2 className="product-title">{product.name}</h2>
                     <p className="product-price">{product.price.toLocaleString('vi-VN')} VNĐ</p>
-                    
-                    <ProductPolicy />
 
-                    <div className="product-meta">
-                        <p><strong>Danh mục:</strong> {product.category}</p>
+                <ProductPolicy />
+
+                <div className="product-meta">
+                    <p><strong>Danh mục:</strong> {product.category}</p>
                         <p><strong>Tình trạng:</strong> {product.inventory > 0 ? ' Còn hàng' : ' Hết hàng'}</p>
-                    </div>
+                </div>
 
                     <div className="product-description">{product.description}</div>
 
@@ -69,7 +96,7 @@ const ProductDetail: React.FC = () => {
                         <button className="btn-add-cart" onClick={() => addToCart(product)}>Thêm vào giỏ</button>
                     </div>
                 </div>
-            </div>
+                </div>
 
             {/* BÊN DƯỚI: ĐÁNH GIÁ */}
             <div className="product-review-section">
@@ -79,7 +106,7 @@ const ProductDetail: React.FC = () => {
                     <form className="review-form" onSubmit={handleSubmitReview}>
                         <div className="review-stars">
                             {[1, 2, 3, 4, 5].map(star => (
-                                <button
+                    <button
                                     key={star}
                                     type="button"
                                     className={(hoverRating || rating) >= star ? 'star-button active' : 'star-button'}
@@ -87,8 +114,8 @@ const ProductDetail: React.FC = () => {
                                     onMouseEnter={() => setHoverRating(star)}
                                     onMouseLeave={() => setHoverRating(0)}
                                 >
-                                    <FaStar />
-                                </button>
+                                    <i className="fas fa-star"></i>
+                    </button>
                             ))}
                         </div>
                         <textarea 
@@ -107,7 +134,7 @@ const ProductDetail: React.FC = () => {
                     {reviews.map(r => (
                         <div key={r.id} className="review-item">
                             <div className="review-header">
-                                <span className="review-user"><FaUserCircle /> {r.userName}</span>
+                                <span className="review-user"><i className="fas fa-user-circle"></i> {r.userName}</span>
                                 <span className="review-rating">
                                     {'★'.repeat(r.rating)}{'☆'.repeat(5 - r.rating)}
                                 </span>
