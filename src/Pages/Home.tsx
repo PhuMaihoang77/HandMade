@@ -26,7 +26,7 @@ const Home: React.FC<HomeProps> = ({ currentUser }) => {
             <section className="hero-banner">
                 <div className="hero-overlay"></div>
                 <div className="hero-content">
-                    <span className="hero-subtitle">Bộ Sưu Tập Mới 2024</span>
+                    <span className="hero-subtitle">Bộ Sưu Tập Mới 2026</span>
                     <h1>Tinh Hoa Thủ Công Việt</h1>
                     <p>Mỗi sản phẩm là một câu chuyện, được làm nên từ đôi bàn tay khéo léo và trái tim nhiệt huyết.</p>
                     
