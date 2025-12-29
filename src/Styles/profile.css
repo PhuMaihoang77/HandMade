@@ -226,3 +226,57 @@
         margin-left: auto;
     }
 }
+/* Trong ProductCard */
+.product-image { position: relative; }
+
+.favorite-icon {
+    position: absolute;
+    top: 10px;
+    left: 10px; /* Bên trái */
+    background: white;
+    padding: 8px;
+    border-radius: 50%;
+    display: flex;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.favorite-icon:hover { transform: scale(1.1); }
+
+/* Trong Profile Favorites */
+.wishlist-container {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.wishlist-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+}
+
+.wishlist-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.wishlist-info { flex: 1; }
+
+.btn-del {
+    background: #fff0f0;
+    color: #ff4d4d;
+    border: 1px solid #ff4d4d;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-del:hover { background: #ff4d4d; color: white; }
