@@ -23,7 +23,8 @@ export interface CartItem {
     product: Product;
     quantity: number;
 }
-export interface Cart{
+export interface Cart {
+    id: number;
     items: CartItem[];
     totalPrice: number;
 }

@@ -12,7 +12,6 @@ import '../Styles/product.css';
 const Product: React.FC<{ currentUser: any }> = ({ currentUser }) => {
     const [searchParams, setSearchParams] = useSearchParams();
     const { products, loading, error } = useProducts();
-
     const { 
         currentProducts, totalCount, currentPage, totalPages, sortOption, selectedCategoryId,
         selectedPriceRange, searchQuery, handleCategoryChange, handleSortChange, handlePriceChange, 
@@ -63,6 +62,7 @@ const Product: React.FC<{ currentUser: any }> = ({ currentUser }) => {
                     title={pageTitle}
                     products={currentProducts}
                     totalCount={totalCount}
+                    currentUser={currentUser} 
                     sortOption={sortOption}
                     onSortChange={handleSortChange}
                     loading={loading}
