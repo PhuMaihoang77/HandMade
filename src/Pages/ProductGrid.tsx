@@ -27,7 +27,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({
                     <ProductCard 
                         key={product.id} 
                         product={product} 
-                        currentUser={currentUser} // TRUYỀN DỮ LIỆU VÀO ĐÂY
+                        currentUser={currentUser??null} // TRUYỀN DỮ LIỆU VÀO ĐÂY
                     />
                 ))}
             </div>
