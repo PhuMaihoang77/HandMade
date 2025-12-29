@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Product } from '../types/model';
 
+
 export const PRICE_RANGES = [
     { id: 'under-100', label: 'Dưới 100k', min: 0, max: 100000 },
     { id: '100-500', label: '100k - 500k', min: 100000, max: 500000 },
@@ -31,7 +32,7 @@ export const useProductFeatures = ({ products, itemsPerPage = 9 }: { products: P
             );
         }
         return result;
-    }, [products, selectedCategoryId, selectedPriceRange]);
+    }, [products, searchQuery, selectedCategoryId, selectedPriceRange]);
 
     // 2. Sắp xếp
     const sortedProducts = useMemo(() => {
@@ -56,6 +57,13 @@ export const useProductFeatures = ({ products, itemsPerPage = 9 }: { products: P
         newParams.set('page', '1');
         setSearchParams(newParams);
     };
+
+    // Reset về trang 1 khi search query thay đổi
+    useEffect(() => {
+        if (searchQuery) {
+            setCurrentPage(1);
+        }
+    }, [searchQuery]);
 
     return {
         currentProducts: sortedProducts.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage),
