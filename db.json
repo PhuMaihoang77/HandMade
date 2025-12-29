@@ -1,7 +1,7 @@
 {
   "products": [
     {
-      "id": "616",
+      "id": 616,
       "name": "Vòng tay mã não thiên nhiên 5mm quấn 2 vòng tay do da",
       "price": 199000,
       "category": "Trang sức",
@@ -11,7 +11,7 @@
       "inventory": 20
     },
     {
-      "id": "615",
+      "id": 615,
       "name": "Vòng tay mã não thiên nhiên 5mm quấn 2 vòng tay gom su ",
       "price": 199000,
       "category": "Trang sức",
@@ -21,7 +21,7 @@
       "inventory": 20
     },
     {
-      "id": "617",
+      "id": 617,
       "name": "Vòng tay mã não thiên nhiên 5mm quấn 2 vòng tay my pham",
       "price": 199000,
       "category": "Trang sức",
@@ -31,7 +31,7 @@
       "inventory": 20
     },
     {
-      "id": "41",
+      "id": 41,
       "name": "Dây Đeo Chú Lăng Nghiêm",
       "price": 129000,
       "category": "Phụ kiện",
@@ -41,7 +41,7 @@
       "inventory": 20
     },
     {
-      "id": "42",
+      "id": 42,
       "name": "Dây Chuyền Vòng Trăng Ánh Sao",
       "price": 229000,
       "category": "Phụ kiện",
@@ -51,7 +51,7 @@
       "inventory": 20
     },
     {
-      "id": "43",
+      "id": 43,
       "name": "Dây Chuyền Pha Lê Ánh Trăng",
       "price": 259000,
       "category": "Phụ kiện",
@@ -61,7 +61,7 @@
       "inventory": 20
     },
     {
-      "id": "44",
+      "id": 44,
       "name": "Dây Chuyền Đá Aquamarine",
       "price": 279000,
       "category": "Phụ kiện",
@@ -71,7 +71,7 @@
       "inventory": 20
     },
     {
-      "id": "45",
+      "id": 45,
       "name": "Dây Chuyền Đá Pha Lê Chuồn Chuồn",
       "price": 259000,
       "category": "Phụ kiện",
@@ -81,7 +81,7 @@
       "inventory": 20
     },
     {
-      "id": "46",
+      "id": 46,
       "name": "Dây Chuyền Đá Mã Não Đỏ",
       "price": 289000,
       "category": "Phụ kiện",
@@ -91,7 +91,7 @@
       "inventory": 20
     },
     {
-      "id": "47",
+      "id": 47,
       "name": "Dây Chuyền Trái Tim Cỏ Bốn Lá May Mắn",
       "price": 189000,
       "category": "Phụ kiện",
@@ -101,7 +101,7 @@
       "inventory": 20
     },
     {
-      "id": "48",
+      "id": 48,
       "name": "Dây Chuyền Hoa 4 Lá May Mắn",
       "price": 219000,
       "category": "Phụ kiện",
@@ -111,7 +111,7 @@
       "inventory": 20
     },
     {
-      "id": "49",
+      "id": 49,
       "name": "Dây Chuyền Pha Lê Giọt Sương Cánh Bướm",
       "price": 199000,
       "category": "Phụ kiện",
@@ -121,7 +121,7 @@
       "inventory": 20
     },
     {
-      "id": "50",
+      "id": 50,
       "name": "Dây Chuyền Quả Cầu Chu Sa Đỏ",
       "price": 249000,
       "category": "Phụ kiện",
@@ -131,7 +131,7 @@
       "inventory": 20
     },
     {
-      "id": "51",
+      "id": 51,
       "name": "Dây Chuyền Hạt Tròn Sáp Ong",
       "price": 299000,
       "category": "Phụ kiện",
@@ -141,7 +141,7 @@
       "inventory": 20
     },
     {
-      "id": "52",
+      "id": 52,
       "name": "Dây Chuyền Pha Lê Anh Đào Đôi",
       "price": 199000,
       "category": "Phụ kiện",
@@ -151,7 +151,7 @@
       "inventory": 20
     },
     {
-      "id": "53",
+      "id": 53,
       "name": "Dây Chuyền Ngọc Bích Bình An",
       "price": 289000,
       "category": "Phụ kiện",
@@ -161,7 +161,7 @@
       "inventory": 20
     },
     {
-      "id": "54",
+      "id": 54,
       "name": "Dây Chuyền Đá Hoa Nắng",
       "price": 249000,
       "category": "Phụ kiện",
@@ -171,7 +171,7 @@
       "inventory": 20
     },
     {
-      "id": "55",
+      "id": 55,
       "name": "Dây Chuyền Đá Zircon Hình Trái Tim",
       "price": 299000,
       "category": "Phụ kiện",
@@ -181,7 +181,7 @@
       "inventory": 20
     },
     {
-      "id": "56",
+      "id": 56,
       "name": "Dây Chuyền Đồng Xu Đá Thạch Anh Tím",
       "price": 379000,
       "category": "Phụ kiện",
@@ -191,7 +191,7 @@
       "inventory": 20
     },
     {
-      "id": "57",
+      "id": 57,
       "name": "Dây Chuyền Ngọc Bích Hình Mây",
       "price": 489000,
       "category": "Phụ kiện",
@@ -201,7 +201,7 @@
       "inventory": 20
     },
     {
-      "id": "58",
+      "id": 58,
       "name": "Dây Chuyền Đá Thạch Anh Xanh Dương",
       "price": 289000,
       "category": "Phụ kiện",
@@ -211,7 +211,7 @@
       "inventory": 20
     },
     {
-      "id": "59",
+      "id": 59,
       "name": "Dây Chuyền Pha Lê 12 Cung Hoàng Đạo",
       "price": 379000,
       "category": "Phụ kiện",
@@ -221,7 +221,7 @@
       "inventory": 20
     },
     {
-      "id": "60",
+      "id": 60,
       "name": "Dây Chuyền Pha Lê Charm Trái Tim",
       "price": 559000,
       "category": "Phụ kiện",
@@ -231,7 +231,7 @@
       "inventory": 20
     },
     {
-      "id": "61",
+      "id": 61,
       "name": "Vòng tay mã não thiên nhiên 5mm quấn 2 vòng tay",
       "price": 199000,
       "category": "Trang sức",
@@ -241,7 +241,7 @@
       "inventory": 20
     },
     {
-      "id": "62",
+      "id": 62,
       "name": "Vòng tay mã não thiên nhiên 4mm quấn 3 vòng tay hoa sen bạc",
       "price": 199000,
       "category": "Trang sức",
@@ -251,7 +251,7 @@
       "inventory": 20
     },
     {
-      "id": "63",
+      "id": 63,
       "name": "Vòng tay mã não thiên nhiên 7mm mix cẩm thạch",
       "price": 199000,
       "category": "Trang sức",
@@ -261,7 +261,7 @@
       "inventory": 20
     },
     {
-      "id": "64",
+      "id": 64,
       "name": "Vòng tay ngọc bích thiên nhiên 8mm mix chu sa, ngọc trai và charm bạc",
       "price": 199000,
       "category": "Trang sức",
@@ -271,7 +271,7 @@
       "inventory": 20
     },
     {
-      "id": "65",
+      "id": 65,
       "name": "Vòng tay đá moonstone thiên nhiên 4mm quấn 3 vòng tay mix thạch anh tím, hổ phách",
       "price": 199000,
       "category": "Trang sức",
@@ -281,7 +281,7 @@
       "inventory": 20
     },
     {
-      "id": "66",
+      "id": 66,
       "name": "Vòng tay mã não thiên nhiên quấn 2 vòng mix bánh xe và lu",
       "price": 199000,
       "category": "Trang sức",
@@ -291,7 +291,7 @@
       "inventory": 20
     },
     {
-      "id": "67",
+      "id": 67,
       "name": "Kiềng tay mã não thiên nhiên bánh xe 6mm charm sen",
       "price": 199000,
       "category": "Trang sức",
@@ -301,7 +301,7 @@
       "inventory": 20
     },
     {
-      "id": "68",
+      "id": 68,
       "name": "Hoa tai Hàn Quốc 432E",
       "price": 199000,
       "category": "Trang sức",
@@ -311,7 +311,7 @@
       "inventory": 20
     },
     {
-      "id": "69",
+      "id": 69,
       "name": "Hoa tai Hàn Quốc 648E",
       "price": 199000,
       "category": "Trang sức",
@@ -321,7 +321,7 @@
       "inventory": 20
     },
     {
-      "id": "70",
+      "id": 70,
       "name": "Hoa tai Hàn Quốc 15EC",
       "price": 199000,
       "category": "Trang sức",
@@ -331,7 +331,7 @@
       "inventory": 20
     },
     {
-      "id": "71",
+      "id": 71,
       "name": "Hoa tai Hàn Quốc 139E",
       "price": 199000,
       "category": "Trang sức",
@@ -341,7 +341,7 @@
       "inventory": 20
     },
     {
-      "id": "72",
+      "id": 72,
       "name": "Hoa tai Hàn Quốc 446E",
       "price": 199000,
       "category": "Trang sức",
@@ -351,7 +351,7 @@
       "inventory": 20
     },
     {
-      "id": "73",
+      "id": 73,
       "name": "Hoa tai Hàn Quốc 506E",
       "price": 199000,
       "category": "Trang sức",
@@ -361,7 +361,7 @@
       "inventory": 20
     },
     {
-      "id": "74",
+      "id": 74,
       "name": "Hoa tai pha lê ngắn hạt tròn 5003M10",
       "price": 199000,
       "category": "Trang sức",
@@ -371,7 +371,7 @@
       "inventory": 20
     },
     {
-      "id": "75",
+      "id": 75,
       "name": "Hoa tai pha lê dài mix 4470M10, pendant 5650M20",
       "price": 199000,
       "category": "Trang sức",
@@ -381,7 +381,7 @@
       "inventory": 20
     },
     {
-      "id": "76",
+      "id": 76,
       "name": "Hoa tai pha lê dài mix 4470M10, pendant 5203M18",
       "price": 199000,
       "category": "Trang sức",
@@ -391,7 +391,7 @@
       "inventory": 20
     },
     {
-      "id": "77",
+      "id": 77,
       "name": "Hoa tai pha lê dài mix 4470M10, pendant 6465M25",
       "price": 199000,
       "category": "Trang sức",
@@ -401,7 +401,7 @@
       "inventory": 20
     },
     {
-      "id": "78",
+      "id": 78,
       "name": "Hoa tai pha lê dài mix 4470M12, pendant 6026M20",
       "price": 199000,
       "category": "Trang sức",
@@ -411,7 +411,7 @@
       "inventory": 20
     },
     {
-      "id": "79",
+      "id": 79,
       "name": "Hoa tai pha lê dài mix 4470M10, pendant 6791M25",
       "price": 199000,
       "category": "Trang sức",
@@ -421,7 +421,7 @@
       "inventory": 20
     },
     {
-      "id": "80",
+      "id": 80,
       "name": "Hoa tai pha lê dài mix 4470M10, pendant 6690M27",
       "price": 199000,
       "category": "Trang sức",
@@ -431,7 +431,7 @@
       "inventory": 20
     },
     {
-      "id": "20",
+      "id": 20,
       "name": "Đèn Bàn Hình Vầng Trăng Phản Quang Halo Bowl Độc Đáo",
       "price": 2256000,
       "category": "Trang trí nhà cửa",
@@ -441,7 +441,7 @@
       "inventory": 50
     },
     {
-      "id": "21",
+      "id": 21,
       "name": "Đồng Hồ Treo Tường Kim Loại Đa Giác Chéo",
       "price": 599000,
       "category": "Trang trí nhà cửa",
@@ -451,7 +451,7 @@
       "inventory": 24
     },
     {
-      "id": "22",
+      "id": 22,
       "name": "Tranh Thảm Treo Tường Dệt Sợi Hammock Chiếc Lá Xanh",
       "price": 399000,
       "category": "Trang trí nhà cửa",
@@ -461,7 +461,7 @@
       "inventory": 12
     },
     {
-      "id": "23",
+      "id": 23,
       "name": "Set Decor Ánh Kim Huyền Bí – Modern Luxury",
       "price": 1599000,
       "category": "Trang trí nhà cửa",
@@ -471,7 +471,7 @@
       "inventory": 24
     },
     {
-      "id": "24",
+      "id": 24,
       "name": "Ghế Sofa Da Onyx Hiện Đại Tối Giản",
       "price": 11599000,
       "category": "Trang trí nhà cửa",
@@ -481,7 +481,7 @@
       "inventory": 2
     },
     {
-      "id": "25",
+      "id": 25,
       "name": "Ghế Ăn Lót Đệm Bo Cong Sang Trọng",
       "price": 1599000,
       "category": "Trang trí nhà cửa",
@@ -491,7 +491,7 @@
       "inventory": 14
     },
     {
-      "id": "26",
+      "id": 26,
       "name": "Đèn Sàn Cây Đứng Chân Gỗ Thân Cong Kim Loại",
       "price": 3599000,
       "category": "Trang trí nhà cửa",
@@ -501,7 +501,7 @@
       "inventory": 4
     },
     {
-      "id": "27",
+      "id": 27,
       "name": "Bình Gốm 3D Kiểu Pháp Trang Trí Xếp Ply Cong",
       "price": 2599000,
       "category": "Trang trí nhà cửa",
@@ -511,7 +511,7 @@
       "inventory": 24
     },
     {
-      "id": "28",
+      "id": 28,
       "name": "Bình Gốm 3D Kiểu Pháp Trang Trí Xếp Ply Cong",
       "price": 599000,
       "category": "Trang trí nhà cửa",
@@ -521,7 +521,7 @@
       "inventory": 24
     },
     {
-      "id": "29",
+      "id": 29,
       "name": "Ghế Tựa thư giãn",
       "price": 599000,
       "category": "Trang trí nhà cửa",
@@ -531,7 +531,7 @@
       "inventory": 24
     },
     {
-      "id": "30",
+      "id": 30,
       "name": "Đôn Ngồi Kiểu Nắp Rời Hiện Đại Daily Queen",
       "price": 1599000,
       "category": "Trang trí nhà cửa",
@@ -541,7 +541,7 @@
       "inventory": 24
     },
     {
-      "id": "31",
+      "id": 31,
       "name": "Bàn Trà Gỗ Mặt Kính Decor Tiện Di Chuyển ",
       "price": 2599000,
       "category": "Trang trí nhà cửa",
@@ -551,7 +551,7 @@
       "inventory": 14
     },
     {
-      "id": "32",
+      "id": 32,
       "name": "Thảm Lau Chân Cotton Len Thấm Hút Họa Tiết Cầu Vồng Vũ Trụ",
       "price": 18000,
       "category": "Trang trí nhà cửa",
@@ -561,7 +561,7 @@
       "inventory": 4
     },
     {
-      "id": "33",
+      "id": 33,
       "name": "Thảm Lau Chân Cotton Len Cừu Hoạt Hình",
       "price": 99000,
       "category": "Trang trí nhà cửa",
@@ -571,7 +571,7 @@
       "inventory": 36
     },
     {
-      "id": "34",
+      "id": 34,
       "name": "Tranh Vải Treo Tường Hoạt Hình Đáng Yêu",
       "price": 69000,
       "category": "Trang trí nhà cửa",
@@ -581,7 +581,7 @@
       "inventory": 14
     },
     {
-      "id": "35",
+      "id": 35,
       "name": "Vỏ Gối Tựa Lưng Bắc Âu Nhung Nỉ In Màu 2 Mặt Đen Trắng Sang Trọng",
       "price": 99000,
       "category": "Trang trí nhà cửa",
@@ -591,7 +591,7 @@
       "inventory": 2
     },
     {
-      "id": "36",
+      "id": 36,
       "name": "Vỏ Gối Tựa Lưng Nhuộm Sợi Phong Cách Ý Gối Sọc Phối Lá Bắc Âu",
       "price": 599000,
       "category": "Trang trí nhà cửa",
@@ -601,7 +601,7 @@
       "inventory": 36
     },
     {
-      "id": "37",
+      "id": 37,
       "name": "Vỏ Gối Tựa Lưng Sofa Hoa Lụa Sọc Vàng Sang Trọng Chất Êm Ái",
       "price": 599000,
       "category": "Trang trí nhà cửa",
@@ -611,7 +611,7 @@
       "inventory": 24
     },
     {
-      "id": "38",
+      "id": 38,
       "name": " Gấu Bông Búp Bê Khủng Long Gấu Bông Nhập Khẩu Mẫu Hot",
       "price": 99000,
       "category": "Trang trí nhà cửa",
@@ -621,7 +621,7 @@
       "inventory": 24
     },
     {
-      "id": "39",
+      "id": 39,
       "name": "Thảm Bếp Set 2 Chiếc Hình Chữ L Họa Tiết Chú Chó Đáng Yêu",
       "price": 599000,
       "category": "Trang trí nhà cửa",
@@ -631,7 +631,7 @@
       "inventory": 24
     },
     {
-      "id": "40",
+      "id": 40,
       "name": "Thảm Phủ Sofa Họa Tiết Tranh Vẽ Trừu Tượng Chiếc Lá Xanh",
       "price": 599000,
       "category": "Trang trí nhà cửa",
@@ -641,7 +641,7 @@
       "inventory": 24
     },
     {
-      "id": "1",
+      "id": 1,
       "name": "Túi Tote Vải Canvas In Chữ Vintage",
       "price": 89000,
       "category": "Túi & Ví",
@@ -651,7 +651,7 @@
       "inventory": 50
     },
     {
-      "id": "2",
+      "id": 2,
       "name": "Ví Da Nam Bifold Cổ Điển",
       "price": 450000,
       "category": "Túi & Ví",
@@ -661,7 +661,7 @@
       "inventory": 24
     },
     {
-      "id": "3",
+      "id": 3,
       "name": "Túi Đeo Chéo Da Nữ Mini",
       "price": 320000,
       "category": "Túi & Ví",
@@ -671,7 +671,7 @@
       "inventory": 15
     },
     {
-      "id": "4",
+      "id": 4,
       "name": "Balo Laptop Chống Sốc Urban",
       "price": 550000,
       "category": "Túi & Ví",
@@ -681,7 +681,7 @@
       "inventory": 30
     },
     {
-      "id": "5",
+      "id": 5,
       "name": "Ví Cầm Tay Clutch Dự Tiệc",
       "price": 680000,
       "category": "Túi & Ví",
@@ -691,7 +691,7 @@
       "inventory": 10
     },
     {
-      "id": "6",
+      "id": 6,
       "name": "Ví Da Đen Classic",
       "price": 199000,
       "category": "Túi & Ví",
@@ -701,7 +701,7 @@
       "inventory": 50
     },
     {
-      "id": "7",
+      "id": 7,
       "name": "Ví Da Màu Kem Nhẹ Nhàng",
       "price": 399000,
       "category": "Túi & Ví",
@@ -711,7 +711,7 @@
       "inventory": 50
     },
     {
-      "id": "8",
+      "id": 8,
       "name": "Ví Da Màu Nâu Vintage",
       "price": 599000,
       "category": "Túi & Ví",
@@ -721,7 +721,7 @@
       "inventory": 50
     },
     {
-      "id": "9",
+      "id": 9,
       "name": "Ví Da Đen Trơn Cao Cấp",
       "price": 699000,
       "category": "Túi & Ví",
@@ -731,7 +731,7 @@
       "inventory": 50
     },
     {
-      "id": "10",
+      "id": 10,
       "name": "Ví Dài Da Jean Phong Cách Trẻ",
       "price": 599000,
       "category": "Túi & Ví",
@@ -741,7 +741,7 @@
       "inventory": 50
     },
     {
-      "id": "11",
+      "id": 11,
       "name": "Ví Da Đen Phong Cách Hiện Đại",
       "price": 499000,
       "category": "Túi & Ví",
@@ -751,7 +751,7 @@
       "inventory": 50
     },
     {
-      "id": "12",
+      "id": 12,
       "name": "Ví Da Trắng Thanh Lịch",
       "price": 299000,
       "category": "Túi & Ví",
@@ -761,7 +761,7 @@
       "inventory": 50
     },
     {
-      "id": "13",
+      "id": 13,
       "name": "Ví Da Hồng Thời Trang",
       "price": 899000,
       "category": "Túi & Ví",
@@ -771,7 +771,7 @@
       "inventory": 50
     },
     {
-      "id": "14",
+      "id": 14,
       "name": "Ví Da Bạc Ánh Kim",
       "price": 399000,
       "category": "Túi & Ví",
@@ -781,7 +781,7 @@
       "inventory": 50
     },
     {
-      "id": "15",
+      "id": 15,
       "name": "Ví Da Bạc Gương Cao Cấp",
       "price": 199000,
       "category": "Túi & Ví",
@@ -791,7 +791,7 @@
       "inventory": 50
     },
     {
-      "id": "16",
+      "id": 16,
       "name": "Ví Da Đen Phom Dáng Gọn",
       "price": 799000,
       "category": "Túi & Ví",
@@ -801,7 +801,7 @@
       "inventory": 50
     },
     {
-      "id": "17",
+      "id": 17,
       "name": "Ví Da Trắng Tinh Tế",
       "price": 699000,
       "category": "Túi & Ví",
@@ -811,7 +811,7 @@
       "inventory": 50
     },
     {
-      "id": "18",
+      "id": 18,
       "name": "Ví Da Trắng Trẻ Trung",
       "price": 289000,
       "category": "Túi & Ví",
@@ -821,7 +821,7 @@
       "inventory": 50
     },
     {
-      "id": "19",
+      "id": 19,
       "name": "Ví Da Đen Basic",
       "price": 299000,
       "category": "Túi & Ví",
@@ -831,7 +831,7 @@
       "inventory": 50
     },
     {
-      "id": "20",
+      "id": 20,
       "name": "Ví Da Hồng Nhạt Nữ Tính",
       "price": 399000,
       "category": "Túi & Ví",
@@ -841,7 +841,7 @@
       "inventory": 50
     },
     {
-      "id": "161",
+      "id": 161,
       "name": "Sticker chủ đề Phật Giáo - (9.5cm x 21cm) - Set 02 tờ",
       "price": 399000,
       "category": "Văn phòng phẩm",
@@ -851,7 +851,7 @@
       "inventory": 50
     },
     {
-      "id": "162",
+      "id": 162,
       "name": "Dụng cụ khắc, tỉa họa tiết - Bộ 03 chiếc",
       "price": 199000,
       "category": "Văn phòng phẩm",
@@ -861,7 +861,7 @@
       "inventory": 50
     },
     {
-      "id": "163",
+      "id": 163,
       "name": "Kit thiệp Giáng sinh tự trang trí- Kit 10 phôi thiệp_HK37",
       "price": 699000,
       "category": "Văn phòng phẩm",
@@ -871,7 +871,7 @@
       "inventory": 50
     },
     {
-      "id": "164",
+      "id": 164,
       "name": "Kit thiệp tặng thầy, cô ngày 20/11 tự trang trí- Kit 10 phôi thiệp_HTK36",
       "price": 599000,
       "category": "Văn phòng phẩm",
@@ -881,7 +881,7 @@
       "inventory": 50
     },
     {
-      "id": "165",
+      "id": 165,
       "name": "Kit nguyên liệu cao su khắc, tỉa hình handmade Junesix (02 dao khắc cán gỗ)_CSK05",
       "price": 399000,
       "category": "Văn phòng phẩm",
@@ -891,7 +891,7 @@
       "inventory": 50
     },
     {
-      "id": "166",
+      "id": 166,
       "name": "Bộ dụng cụ ép hoa khô cao cấp - 01 bộ",
       "price": 899000,
       "category": "Văn phòng phẩm",
@@ -901,7 +901,7 @@
       "inventory": 50
     },
     {
-      "id": "167",
+      "id": 167,
       "name": "Tissue paper - Giấy làm hoa PomPom, gói quà, gói hoa, phông nên chụp ảnh (50cm x 70cm) - Số lượng 10 tờ/ 1 màu",
       "price": 799000,
       "category": "Văn phòng phẩm",
@@ -911,7 +911,7 @@
       "inventory": 50
     },
     {
-      "id": "168",
+      "id": 168,
       "name": "Bộ dụng cụ ép hoa khô - Sổ ép hoa khô - 01 bộ",
       "price": 699000,
       "category": "Văn phòng phẩm",
@@ -921,7 +921,7 @@
       "inventory": 50
     },
     {
-      "id": "169",
+      "id": 169,
       "name": "Hũ sữa chua nhựa Zin - Tiêu chuẩn chất lượng về Vệ Sinh An Toàn Thực Phẩm - (100ml hoặc 120ml)",
       "price": 199000,
       "category": "Văn phòng phẩm",
@@ -931,7 +931,7 @@
       "inventory": 50
     },
     {
-      "id": "170",
+      "id": 170,
       "name": "Album, scrapbook chủ đề Thanh xuân vườn trường, couple - Set nguyên liệu tự trang trí",
       "price": 299000,
       "category": "Văn phòng phẩm",
@@ -941,7 +941,7 @@
       "inventory": 50
     },
     {
-      "id": "171",
+      "id": 171,
       "name": "Kit thiệp Giáng sinh tự trang trí- Kit 10 phôi thiệp_HK37",
       "price": 999000,
       "category": "Văn phòng phẩm",
@@ -951,7 +951,7 @@
       "inventory": 50
     },
     {
-      "id": "172",
+      "id": 172,
       "name": "Kit thiệp tặng thầy, cô ngày 20/11 tự trang trí- Kit 10 phôi thiệp_HTK36",
       "price": 699000,
       "category": "Văn phòng phẩm",
@@ -961,7 +961,7 @@
       "inventory": 50
     },
     {
-      "id": "173",
+      "id": 173,
       "name": "Bộ dụng cụ ép hoa khô cao cấp - 01 bộ",
       "price": 499000,
       "category": "Văn phòng phẩm",
@@ -971,7 +971,7 @@
       "inventory": 50
     },
     {
-      "id": "174",
+      "id": 174,
       "name": "Túi viết xóa - Dry erase pocket - (Màu giao ngẫu nhiên)",
       "price": 199000,
       "category": "Văn phòng phẩm",
@@ -981,7 +981,7 @@
       "inventory": 50
     },
     {
-      "id": "175",
+      "id": 175,
       "name": "Bộ dụng cụ ép hoa khô - Sổ ép hoa khô - 01 bộ",
       "price": 399000,
       "category": "Văn phòng phẩm",
@@ -991,7 +991,7 @@
       "inventory": 50
     },
     {
-      "id": "176",
+      "id": 176,
       "name": "Kit in tranh vân tay độ tuổi 3+",
       "price": 299000,
       "category": "Văn phòng phẩm",
@@ -1001,7 +1001,7 @@
       "inventory": 50
     },
     {
-      "id": "177",
+      "id": 177,
       "name": "Sticker chủ đề Phật Giáo - (9.5cm x 21cm) - Set 02 tờ",
       "price": 299000,
       "category": "Văn phòng phẩm",
@@ -1011,7 +1011,7 @@
       "inventory": 50
     },
     {
-      "id": "178",
+      "id": 178,
       "name": "Washi Tap Noel_S201",
       "price": 299000,
       "category": "Văn phòng phẩm",
@@ -1021,7 +1021,7 @@
       "inventory": 50
     },
     {
-      "id": "179",
+      "id": 179,
       "name": "Tissue paper - Giấy làm hoa PomPom, gói quà, gói hoa, phông nên chụp ảnh (50cm x 70cm) - Số lượng 10 tờ/ 1 màu",
       "price": 399000,
       "category": "Văn phòng phẩm",
@@ -1031,7 +1031,7 @@
       "inventory": 50
     },
     {
-      "id": "180",
+      "id": 180,
       "name": "Sticker chữ Meet You - Set 04 tờ",
       "price": 499000,
       "category": "Văn phòng phẩm",
@@ -1041,50 +1041,7 @@
       "inventory": 50
     }
   ],
-  "messages": [
-    {
-      "id": "d320",
-      "userId": "1",
-      "content": "Chào bạn! 👋 Shop HandMade có thể giúp gì cho Bạn?",
-      "sender": "bot",
-      "createdAt": "2025-12-29T03:53:04.341Z"
-    },
-    {
-      "id": "a9ae",
-      "userId": "1",
-      "content": "Chào bạn! 👋 Shop HandMade có thể giúp gì cho Bạn?",
-      "sender": "bot",
-      "createdAt": "2025-12-29T03:53:04.369Z"
-    },
-    {
-      "id": "0e14",
-      "userId": "1",
-      "content": "hello",
-      "sender": "user",
-      "createdAt": "2025-12-29T03:53:07.597Z"
-    },
-    {
-      "id": "0e14",
-      "userId": "1",
-      "content": "hello",
-      "sender": "user",
-      "createdAt": "2025-12-29T03:53:07.597Z"
-    },
-    {
-      "id": "5fdf",
-      "userId": "1",
-      "content": "Chào bạn, shop có thể giúp gì cho bạn về các sản phẩm thủ công ạ?",
-      "sender": "bot",
-      "createdAt": "2025-12-29T03:53:09.461Z"
-    },
-    {
-      "id": "5fdf",
-      "userId": "1",
-      "content": "Chào bạn, shop có thể giúp gì cho bạn về các sản phẩm thủ công ạ?",
-      "sender": "bot",
-      "createdAt": "2025-12-29T03:53:09.461Z"
-    }
-  ],
+  "messages": [],
   "faq": [
     {
       "id": "f_tui_vi",
@@ -1296,71 +1253,62 @@
   ],
   "categories": [
     {
-      "id": "1",
+      "id": 1,
       "name": "Túi & Ví"
     },
     {
-      "id": "2",
+      "id": 2,
       "name": "Trang trí nhà cửa"
     },
     {
-      "id": "3",
+      "id": 3,
       "name": "Phụ kiện"
     },
     {
-      "id": "4",
+      "id": 4,
       "name": "Trang sức"
     },
     {
-      "id": "5",
+      "id": 5,
       "name": "Gốm sứ"
     },
     {
-      "id": "6",
+      "id": 6,
       "name": "Đồ da"
     },
     {
-      "id": "7",
+      "id": 7,
       "name": "Mỹ phẩm"
     },
     {
-      "id": "8",
+      "id": 8,
       "name": "Văn phòng phẩm"
     }
   ],
   "orders": [],
   "policyData": [
     {
-      "id": "1",
+      "id": 1,
       "iconClass": "fas fa-shield-alt",
       "title": "Bảo hành 12 tháng"
     },
     {
-      "id": "2",
+      "id": 2,
       "iconClass": "fas fa-sync-alt",
       "title": "Đổi trả trong 7 ngày"
     },
     {
-      "id": "3",
+      "id": 3,
       "iconClass": "fas fa-truck",
       "title": "Giao hàng toàn quốc"
     },
     {
-      "id": "4",
+      "id": 4,
       "iconClass": "fas fa-money-bill-wave",
       "title": "Thanh toán khi nhận hàng"
     }
   ],
-  "reviews": [
-    {
-      "id": "cec3",
-      "productId": 616,
-      "userName": "Phu",
-      "rating": 4,
-      "comment": "1",
-      "createdAt": "10:53:46 29/12/2025"
-    }
-  ],
+  "reviews": [],
   "users": [
     {
       "id": "1",
