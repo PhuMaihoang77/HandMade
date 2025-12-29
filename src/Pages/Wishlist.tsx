@@ -8,7 +8,7 @@ import '../Styles/Wishlist.css';
 
 const Wishlist: React.FC = () => {
     const navigate = useNavigate();
-    const { addToCart } = useCart();
+    const {addToCart } = useCart();
     const [wishlist, setWishlist] = useState<Product[]>([]);
     const [currentUser, setCurrentUser] = useState<User | null>(null);
     const [selectedIds, setSelectedIds] = useState<number[]>([]);
@@ -48,7 +48,7 @@ const Wishlist: React.FC = () => {
         const itemsToMove = wishlist.filter(p => selectedIds.includes(p.id));
         if (itemsToMove.length === 0) return;
         
-        itemsToMove.forEach(p => p.inventory > 0 && addToCart(p));
+        itemsToMove.forEach(p => p.inventory > 0 && addToCart(p, currentUser));
         triggerNotification(`Đã thêm ${itemsToMove.length} sản phẩm vào giỏ hàng!`);
         setSelectedIds([]);
     };
@@ -105,7 +105,7 @@ const Wishlist: React.FC = () => {
                                     <p className="card-price">{item.price.toLocaleString()} VNĐ</p>
                                     <div className="card-btns">
                                         <button className="btn-ui btn-ui-view" onClick={() => navigate(`/product/${item.id}`)}>Chi tiết</button>
-                                        <button className="btn-ui btn-ui-buy" onClick={() => { addToCart(item); triggerNotification("Đã thêm vào giỏ hàng!"); }}>
+                                        <button className="btn-ui btn-ui-buy" onClick={() => { addToCart(item, currentUser); triggerNotification("Đã thêm vào giỏ hàng!"); }}>
                                             + Giỏ hàng
                                         </button>
                                     </div>
