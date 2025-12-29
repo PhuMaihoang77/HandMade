@@ -22,6 +22,7 @@ import Profile from './Pages/Profile';
 import Login from './Pages/Login';
 import Register from './Pages/Register';
 import ForgotPassword from './Pages/ForgotPassword';
+import Wishlist from './Pages/Wishlist';
 import Checkout from './Pages/Checkout';
 import Cart from './Pages/Cart';
 import OrderHistory from './Pages/OrderHistory';
@@ -29,7 +30,6 @@ import VNPayReturn from './Pages/VNPayReturn';
 import About from './Pages/About';
 import Chatbox from './Pages/Chatbox';
 import ChatWidget from './Pages/ChatWidget';
-
 // =======================
 // 4. CONTEXT / TYPES / STYLES
 // =======================
@@ -224,6 +224,13 @@ function App() {
                                 <OrderHistory currentUser={currentUser}/>
                     </MainLayout>
                 } />
+
+                <Route path="/wishlist" element={
+                 <MainLayout currentUser={currentUser} onLogout={handleLogout}>
+                  <Wishlist />
+                 </MainLayout>
+                  }
+                />
                 <Route path="/vnpay-return" element={<VNPayReturn />} />
                 {/* Route 404: Nếu nhập linh tinh thì về Home */}
                 <Route path="*" element={<Navigate to="/" />} />
