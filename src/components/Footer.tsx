@@ -1,23 +1,24 @@
 // src/components/Footer.tsx
 import React from "react";
-import "../Styles/Footer.css"
+import "../Styles/Footer.css";
 
 const Footer: React.FC = () => {
-    return (
+  return (
     <footer className="footer">
       <div className="footer-container">
-        {/* Logo & About */}
-        <div className="footer-section">
-          <h2 className="footer-logo">Handmade Shop</h2>
+
+        {/* BRAND */}
+        <div className="footer-brand">
+          <h2 className="footer-logo">Handmade<span>Shop</span></h2>
           <p className="footer-desc">
-            Sản phẩm thủ công tinh tế – mang giá trị thủ công truyền thống đến
-            từng khách hàng.
+            Mang đến những sản phẩm thủ công tinh tế, được tạo nên từ sự tỉ mỉ
+            và tâm huyết của nghệ nhân Việt.
           </p>
         </div>
 
-        {/* Navigation */}
+        {/* LINKS */}
         <div className="footer-section">
-          <h3>Liên kết</h3>
+          <h3>Danh mục</h3>
           <ul>
             <li><a href="/">Trang chủ</a></li>
             <li><a href="/products">Sản phẩm</a></li>
@@ -26,11 +27,22 @@ const Footer: React.FC = () => {
           </ul>
         </div>
 
-        {/* Contact */}
+        {/* SUPPORT */}
+        <div className="footer-section">
+          <h3>Hỗ trợ</h3>
+          <ul>
+            <li><a href="#">Chính sách đổi trả</a></li>
+            <li><a href="#">Chính sách bảo mật</a></li>
+            <li><a href="#">Hướng dẫn mua hàng</a></li>
+          </ul>
+        </div>
+
+        {/* CONTACT */}
         <div className="footer-section">
           <h3>Liên hệ</h3>
           <p>Email: support@handmadeshop.com</p>
           <p>Hotline: 0123 456 789</p>
+          <p>Địa chỉ: TP. Hồ Chí Minh</p>
         </div>
       </div>
 
