@@ -35,11 +35,33 @@ export interface PriceRange {
     id: string;
     label: string;
 }
-export interface Review {
-    id: number;
-    productId: number;
-    userName: string;
-    rating: number;
-    comment: string;
+export interface Message {
+    id?: number;
+    userId: number | string;
+    content: string;
+    sender: 'user' | 'admin' | 'bot';
     createdAt: string;
 }
+export interface ProductGridProps {
+    products: any[];
+    totalCount: number;
+    sortOption: string;
+    onSortChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+    title: string;
+    loading: boolean;
+    error: string | null;
+    pagination: {
+        currentPage: number;
+        totalPages: number;
+        onPageChange: (page: number) => void;
+    };
+}
+ export interface FAQItem {
+    id: string;
+    keywords: string[];
+    action: string;
+    responseText: string;
+    targetCategory?: string; // Có dấu ? vì không phải mục nào cũng có
+    categoryId?: string;     // Có dấu ? vì không phải mục nào cũng có
+}
+

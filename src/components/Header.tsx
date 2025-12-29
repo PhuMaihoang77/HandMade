@@ -35,17 +35,20 @@ const Header: React.FC<HeaderProps> = ({ currentUser, onLogout }) => {
         <header className="main-header">
             {/* Logo */}
             <h1>
-                <Link to="/" className="logo-link"> {/* Sửa /Home thành / cho chuẩn route của bạn */}
+
+                <Link to="/Home" className="logo-link">
                     HandMade<span>Store</span>
                 </Link>
             </h1>
 
             {/* Navigation */}
             <nav className="main-nav">
-                <Link to="/" className="nav-link">Trang Chủ</Link>
+                <Link to="/Home" className="nav-link">Trang Chủ</Link>
                 <Link to="/products" className="nav-link">Sản Phẩm</Link>
-                <Link to="/about" className="nav-link">Giới Thiệu</Link>
-                <Link to="/contact" className="nav-link">Liên Hệ</Link>
+
+                <Link to="/about" className="nav-link">Giới thiệu</Link>
+                <Link to="/cart" className="nav-link">Giỏ hàng</Link>
+                <Link to="/chat" className="nav-link">Đơn mua</Link>
             </nav>
 
             {/* Search */}

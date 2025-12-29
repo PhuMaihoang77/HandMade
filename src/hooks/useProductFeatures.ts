@@ -1,102 +1,61 @@
-// src/hooks/useProductFeatures.ts
-import { useState, useMemo, useEffect } from 'react';
+import { useMemo } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { Product } from '../types/model';
 
-interface UseProductFeaturesProps {
-    products: Product[] | null;
-    itemsPerPage?: number;
-    searchQuery?: string; // Thêm search query
-}
 
-// --- THÊM "export" VÀO ĐÂY ---
 export const PRICE_RANGES = [
     { id: 'under-100', label: 'Dưới 100k', min: 0, max: 100000 },
     { id: '100-500', label: '100k - 500k', min: 100000, max: 500000 },
     { id: 'over-500', label: 'Trên 500k', min: 500000, max: Infinity },
 ];
 
-export const useProductFeatures = ({ products, itemsPerPage = 9, searchQuery = '' }: UseProductFeaturesProps) => {
-    const [sortOption, setSortOption] = useState('default');
-    const [currentPage, setCurrentPage] = useState(1);
-    const [selectedCategoryId, setSelectedCategoryId] = useState<number | 'all'>('all');
-    const [selectedPriceRange, setSelectedPriceRange] = useState<string[]>([]);
+export const useProductFeatures = ({ products, itemsPerPage = 9 }: { products: Product[] | null, itemsPerPage?: number }) => {
+    const [searchParams, setSearchParams] = useSearchParams();
 
-    // Logic Filter & Sort
+    const selectedCategoryId = searchParams.get('cat') || 'all';
+    const selectedPriceRange = searchParams.getAll('price');
+    const sortOption = searchParams.get('sort') || 'default';
+    const currentPage = parseInt(searchParams.get('page') || '1');
+
+    // 1. Lọc sản phẩm
     const filteredProducts = useMemo(() => {
         let result = products ?? [];
-
-        // Lọc theo Search Query - Tìm kiếm trong nhiều trường
-        if (searchQuery.trim()) {
-            const query = searchQuery.trim().toLowerCase();
-            result = result.filter(p => {
-                // Tìm trong tên sản phẩm
-                const nameMatch = p.name.toLowerCase().includes(query);
-                // Tìm trong mô tả
-                const descMatch = p.description.toLowerCase().includes(query);
-                // Tìm trong tên danh mục
-                const categoryMatch = p.category.toLowerCase().includes(query);
-                // Tìm theo giá (nếu query là số)
-                const priceMatch = !isNaN(Number(query)) && 
-                    p.price.toString().includes(query.replace(/[^\d]/g, ''));
-                // Tìm theo ID (nếu query là số)
-                const idMatch = !isNaN(Number(query)) && 
-                    p.id.toString().includes(query.replace(/[^\d]/g, ''));
-                
-                return nameMatch || descMatch || categoryMatch || priceMatch || idMatch;
-            });
-        }
-
-        // Lọc Category
         if (selectedCategoryId !== 'all') {
-            result = result.filter(p => p.categoryId === selectedCategoryId);
+            result = result.filter(p => p.categoryId.toString() === selectedCategoryId);
         }
-
-        // Lọc Price
         if (selectedPriceRange.length > 0) {
             result = result.filter(product =>
                 selectedPriceRange.some(rangeId => {
                     const range = PRICE_RANGES.find(r => r.id === rangeId);
-                    if (!range) return false;
-                    return product.price >= range.min && product.price < range.max;
+                    return range ? (product.price >= range.min && product.price < range.max) : false;
                 })
             );
         }
         return result;
     }, [products, searchQuery, selectedCategoryId, selectedPriceRange]);
 
+    // 2. Sắp xếp
     const sortedProducts = useMemo(() => {
         const sorted = [...filteredProducts];
-        switch (sortOption) {
-            case 'price-asc': return sorted.sort((a, b) => a.price - b.price);
-            case 'price-desc': return sorted.sort((a, b) => b.price - a.price);
-            case 'name-asc': return sorted.sort((a, b) => a.name.localeCompare(b.name));
-            default: return sorted;
-        }
+        if (sortOption === 'price-asc') sorted.sort((a, b) => a.price - b.price);
+        if (sortOption === 'price-desc') sorted.sort((a, b) => b.price - a.price);
+        if (sortOption === 'name-asc') sorted.sort((a, b) => a.name.localeCompare(b.name));
+        return sorted;
     }, [filteredProducts, sortOption]);
 
-    const totalPages = Math.ceil(sortedProducts.length / itemsPerPage);
-    const paginatedProducts = useMemo(() => {
-        const start = (currentPage - 1) * itemsPerPage;
-        return sortedProducts.slice(start, start + itemsPerPage);
-    }, [sortedProducts, currentPage, itemsPerPage]);
+    const totalCount = filteredProducts.length;
+    const totalPages = Math.ceil(totalCount / itemsPerPage);
 
-    const handleCategoryChange = (categoryId: number | 'all') => {
-        setSelectedCategoryId(categoryId);
-        setCurrentPage(1);
-    };
-
-    const handleSortChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        setSortOption(e.target.value);
-        setCurrentPage(1);
-    };
-
-    const handlePriceChange = (rangeId: string) => {
-        setCurrentPage(1);
-        setSelectedPriceRange(prev =>
-            prev.includes(rangeId)
-                ? prev.filter(id => id !== rangeId)
-                : [...prev, rangeId]
-        );
+    // 3. Cập nhật URL
+    const updateParams = (key: string, value: string | string[] | null) => {
+        const newParams = new URLSearchParams(searchParams);
+        newParams.delete(key);
+        if (value && value !== 'all') {
+            if (Array.isArray(value)) value.forEach(v => newParams.append(key, v));
+            else newParams.set(key, value);
+        }
+        newParams.set('page', '1');
+        setSearchParams(newParams);
     };
 
     // Reset về trang 1 khi search query thay đổi
@@ -107,17 +66,25 @@ export const useProductFeatures = ({ products, itemsPerPage = 9, searchQuery = '
     }, [searchQuery]);
 
     return {
-        currentProducts: paginatedProducts,
-        totalCount: filteredProducts.length,
-        currentPage,
+        currentProducts: sortedProducts.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage),
+        totalCount,
         totalPages,
-        sortOption,
+        currentPage,
         selectedCategoryId,
         selectedPriceRange,
-        searchQuery, // Trả về search query để hiển thị
-        handleCategoryChange,
-        handleSortChange,
-        handlePriceChange,
-        setCurrentPage,
+        sortOption,
+        handleCategoryChange: (id: string) => updateParams('cat', id),
+        handlePriceChange: (id: string) => {
+            const next = selectedPriceRange.includes(id) 
+                ? selectedPriceRange.filter(p => p !== id) 
+                : [...selectedPriceRange, id];
+            updateParams('price', next);
+        },
+        handleSortChange: (e: any) => updateParams('sort', e.target.value),
+        setCurrentPage: (page: number) => {
+            const newParams = new URLSearchParams(searchParams);
+            newParams.set('page', page.toString());
+            setSearchParams(newParams);
+        }
     };
 };

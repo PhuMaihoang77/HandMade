@@ -20,32 +20,26 @@ const ProductDetail: React.FC = () => {
     const [hoverRating, setHoverRating] = useState<number>(0);
     const [comment, setComment] = useState<string>('');
 
-    // Lấy user đang đăng nhập
-    const storedUser = localStorage.getItem('user');
-    const currentUser = storedUser ? JSON.parse(storedUser) : null;
-
-    // Fix Icons
-    const FaStar = Icons.FaStar as any;
-    const FaUserCircle = Icons.FaUserCircle as any;
-
-    if (loading) return <div className="loading-spinner">Đang tải...</div>;
-    if (error || !product) return <div className="error-msg">{error}</div>;
-
-    const handleSubmitReview = (e: React.FormEvent) => {
-        e.preventDefault();
-        if (!currentUser) return navigate('/login');
-        if (rating === 0 || !comment.trim()) {
-            alert('Vui lòng chọn sao và nhập nội dung.');
-            return;
+    if (error || !product) return (
+        <div className="error-container" style={{ textAlign: 'center', marginTop: '50px' }}>
+            <p>{error || "Sản phẩm không tồn tại!"}</p>
+            <button onClick={() => navigate('/')}>Về trang chủ</button>
+        </div>
+    );
+    //Hàm thêm vào cart: thêm sản phẩm vào giỏ hàng
+    const handleAddToCart = () => {
+        if (product && product.inventory > 0) {
+            addToCart(product);
+            alert(`Đã thêm "${product.name}" vào giỏ hàng thành công!`);
+        } else {
+            alert("Rất tiếc, sản phẩm này hiện đã hết hàng!");
         }
-
-        addReview({
-            userName: currentUser.username,
-            rating,
-            comment: comment.trim(),
-        }); // Gọi hàm từ hook (sẽ tự lưu vào reviews.json)
-        setRating(0);
-        setComment('');
+    };
+    // Hàm Mua ngay: thêm sản phẩm vào localStorage rồi chuyển sang checkout
+    const handleBuyNow = () => {
+        if (product && product.inventory > 0) {
+            navigate('/checkout', { state: { buyNowItem: product } });
+        }
     };
 
     return (
