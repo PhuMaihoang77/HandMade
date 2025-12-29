@@ -5,7 +5,7 @@ import { Product, User } from '../types/model';
 import { useCart } from '../context/CartContext';
 import axios from 'axios';
 
-interface ProductCardProps {
+interface ProductCardProps {    
     product: Product;
 }
 
