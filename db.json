@@ -1826,6 +1826,16 @@
       "userId": "1",
       "items": [],
       "totalPrice": 0
+    },
+    {
+      "id": "88c7",
+      "userId": "cbc1",
+      "items": [
+        {
+          "productId": 122,
+          "quantity": 1
+        }
+      ]
     }
   ],
   "categories": [
