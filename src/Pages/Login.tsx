@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { loginUser } from '../services/AuthService';
 
 import { User } from '../types/model';
+import { useCart } from '../context/CartContext';
 
 import '../Styles/auth.css';
 
@@ -19,6 +20,7 @@ const Login: React.FC<LoginProps> = ({ onLoginSuccess, onSwitchToRegister, onSwi
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
+    const { mergeCart, refreshCart } = useCart();
 
     // Khai báo kiểu cho tham số sự kiện (e)
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -28,6 +30,8 @@ const Login: React.FC<LoginProps> = ({ onLoginSuccess, onSwitchToRegister, onSwi
         try {
             const user: User = await loginUser(email, password);
             localStorage.setItem('user', JSON.stringify(user));
+            await mergeCart(user.id);
+            await refreshCart();
             onLoginSuccess(user);
         } catch (err) {
             // Ép kiểu cho lỗi
