@@ -3,6 +3,7 @@ import { Navigate, useNavigate } from 'react-router-dom';
 import { User } from '../types/model';
 import { updateUserEmail, updateUserPassword } from '../services/AuthService';
 import '../Styles/profile.css';
+import OrderHistory from './OrderHistory';
 
 interface ProfileProps {
     currentUser: User | null;
@@ -11,7 +12,7 @@ interface ProfileProps {
 
 const Profile: React.FC<ProfileProps> = ({ currentUser, onLogout }) => {
     const navigate = useNavigate();
-    const [activeSection, setActiveSection] = useState<'info' | 'email' | 'password'>('info');
+    const [activeSection, setActiveSection] = useState<'info' | 'email' | 'password'|'orders'>('info');
 
     const [emailValue, setEmailValue] = useState(currentUser?.email ?? '');
     const [emailMessage, setEmailMessage] = useState('');
@@ -91,6 +92,7 @@ const Profile: React.FC<ProfileProps> = ({ currentUser, onLogout }) => {
                     <div className={`menu-item ${activeSection==='info'?'active':''}`} onClick={() => setActiveSection('info')}>Thông tin tài khoản</div>
                     <div className={`menu-item ${activeSection==='email'?'active':''}`} onClick={() => setActiveSection('email')}>Đổi email</div>
                     <div className={`menu-item ${activeSection==='password'?'active':''}`} onClick={() => setActiveSection('password')}>Đổi mật khẩu</div>
+                    <div className={`menu-item ${activeSection==='orders'?'active':''}`} onClick={() => setActiveSection('orders')}>Lịch sử mua hàng</div>
                 </div>
 
                 {/* Nội dung phải */}
@@ -140,7 +142,11 @@ const Profile: React.FC<ProfileProps> = ({ currentUser, onLogout }) => {
                             </form>
                         </section>
                     )}
-
+                    {activeSection === 'orders' && (
+                        <div className="profile-card">
+                            <OrderHistory currentUser={currentUser}/>
+                        </div>
+                    )}
                     {/* Logout */}
                     <div className="logout-section">
                         <button className="btn-logout" onClick={onLogout}>Đăng Xuất</button>

@@ -265,3 +265,23 @@
         justify-content: flex-start;
     }
 }
+.cart-badge {
+    position: absolute;
+    top: -12px;
+    right: -15px;
+    background-color: white;
+    color: #ee4d2d;
+    height: 22px;
+    min-width: 22px;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 0 5px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #ee4d2d;
+    line-height: 1;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    z-index: 10;
+}
