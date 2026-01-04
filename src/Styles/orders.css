@@ -1,55 +1,96 @@
-.orders-page {
-    max-width: 900px;
-    margin: 30px auto;
+.order-mgmt-wrapper {
+    max-width: 1200px;
+    margin: 40px auto;
     padding: 0 20px;
 }
 
-.order-card {
-    background: white;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+.order-mgmt-header {
+    margin-bottom: 25px;
 }
 
-.order-header {
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 10px;
-    margin-bottom: 15px;
-    font-size: 14px;
-}
-
-.order-status {
-    color: #2ecc71;
-    font-weight: bold;
-}
-
-.order-item-mini {
+.order-mgmt-header h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 5px;
     display: flex;
     align-items: center;
-    gap: 15px;
-    margin-bottom: 10px;
+    gap: 10px;
 }
 
-.order-item-mini img {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
-    border-radius: 4px;
+.order-mgmt-header h2 i { color: #f05d23; }
+.order-mgmt-header strong { color: #f05d23; }
+
+.table-container {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+    overflow-x: auto;
 }
 
-.order-footer {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 15px;
-    padding-top: 15px;
-    border-top: 1px solid #eee;
+.order-dashboard-table {
+    width: 100%;
+    border-collapse: collapse;
 }
 
-.order-total {
-    color: #ee4d2d;
-    font-size: 18px;
-    font-weight: bold;
+.order-dashboard-table th {
+    background: #fafafa;
+    padding: 15px 20px;
+    text-align: left;
+    color: #999;
+    font-size: 13px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #eee;
 }
+
+.order-dashboard-table td {
+    padding: 15px 20px; /* Thu hẹp padding dòng */
+    border-bottom: 1px solid #f9f9f9;
+    vertical-align: middle;
+}
+
+.order-id-cell { font-weight: 700; }
+.price-cell { color: #f05d23; font-weight: 700; }
+
+.pay-tag {
+    padding: 3px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    background: #f1f1f1;
+    font-weight: 600;
+}
+
+.status-badge {
+    display: inline-block;
+    white-space: nowrap; /* Chống xuống dòng */
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: 11px;
+    font-weight: 700;
+    text-align: center;
+    min-width: 100px;
+}
+
+.status-badge.pending { background: #fff4e5; color: #f05d23; }
+.status-badge.completed { background: #e6f7ed; color: #28a745; }
+
+/* Nút Xem chi tiết - Đã làm nhỏ lại */
+.detail-btn {
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 6px 16px; /* Size nhỏ lại */
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 11px; /* Font nhỏ lại */
+    font-weight: 600;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+.detail-btn:hover {
+    background: #f05d23;
+    box-shadow: 0 4px 10px rgba(240, 93, 35, 0.2);
+}
+
+.no-data { text-align: center; padding: 40px !important; color: #bbb; font-style: italic; }

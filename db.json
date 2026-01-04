@@ -1611,7 +1611,22 @@
       "inventory": 50
     }
   ],
-  "messages": [],
+  "messages": [
+    {
+      "id": "db1d",
+      "userId": "aae8",
+      "content": "Chào bạn! 👋 Shop HandMade có thể giúp gì cho Bạn?",
+      "sender": "bot",
+      "createdAt": "2026-01-04T15:41:18.099Z"
+    },
+    {
+      "id": "078d",
+      "userId": "aae8",
+      "content": "Chào bạn! 👋 Shop HandMade có thể giúp gì cho Bạn?",
+      "sender": "bot",
+      "createdAt": "2026-01-04T15:41:18.368Z"
+    }
+  ],
   "faq": [
     {
       "id": "f_tui_vi",
@@ -1826,10 +1841,10 @@
       "userId": "1",
       "items": [],
       "totalPrice": 0,
-      "id": "8d27"
+      "id": "fe6a"
     },
     {
-      "id": "4351",
+      "id": "94b8",
       "userId": "aae8",
       "items": []
     }
@@ -1870,33 +1885,33 @@
   ],
   "orders": [
     {
-      "id": "ORD-1767537846836",
+      "id": "ORD-1767539928739",
       "userId": "aae8",
-      "fullName": "Nguyên Thoai",
-      "phone": "0939395191",
-      "address": "ưqeqweqweqwewqeqweqweqw, Xã Thổ Bình, Huyện Lâm Bình, Tỉnh Tuyên Quang",
-      "date": "21:44:06 4/1/2026",
+      "fullName": "123123",
+      "phone": "123123123",
+      "address": "12312313213123, Xã Phố Là, Huyện Đồng Văn, Tỉnh Hà Giang",
+      "date": "22:18:48 4/1/2026",
       "items": [
         {
           "product": {
-            "id": "124",
-            "name": "Balo nữ da bò thật Handmade đẹp",
-            "price": 1400000,
+            "id": "122",
+            "name": "Vòng tay Handmade da thật",
+            "price": 180000,
             "category": "Đồ da",
             "categoryId": 6,
-            "imageUrl": "https://product.hstatic.net/1000260559/product/ghds_grande.jpg",
-            "description": "Balo nữ da bò thật được làm từ chất liệu da bò thật nhập khẩu nổi tiếng nhờ sự bền bỉ, chắc chắn, có độ đàn hồi cao, không bong tróc, bứt gãy, vô cùng ấn tượng và thời trang\n\n",
+            "imageUrl": "https://product.hstatic.net/1000260559/product/vong_tay_handmade_da_that__3__grande.jpg",
+            "description": "Vòng tay được làm từ da bò thật với thiết kế đơn giản mang hơi hướng cổ điển nhưng vẫn vô cùng cá tính . Vòng có nhiều phiên bản màu sắc cho bạn lựa chọn .\n\n",
             "inventory": 20
           },
           "quantity": 1
         }
       ],
-      "totalAmount": 1400000,
+      "totalAmount": 180000,
       "paymentMethod": "COD",
       "status": "Đang xử lý",
       "checkoutType": "cart",
       "selectedIds": [
-        "124"
+        "122"
       ]
     }
   ],
