@@ -5,6 +5,7 @@ import { getProducts } from '../services/ProductService';
 import { User } from '../types/model';
 import { useCart } from '../context/CartContext';
 import { generateVNPayUrl } from '../services/vnpayService';
+import DeliveryInfo from './DeliveryInfo'; // Đảm bảo đúng đường dẫn file
 import '../Styles/checkout.css';
 
 interface CheckoutProps { currentUser: User | null; }
@@ -13,6 +14,9 @@ const Checkout: React.FC<CheckoutProps> = ({ currentUser }) => {
     const navigate = useNavigate();
     const location = useLocation();
     const { refreshCart } = useCart();
+
+    // State nhận dữ liệu từ DeliveryInfo con
+    const [shippingDetails, setShippingDetails] = useState<any>(null);
 
     const [displayItems, setDisplayItems] = useState<any[]>([]);
     const [finalTotal, setFinalTotal] = useState(0);
@@ -31,15 +35,13 @@ const Checkout: React.FC<CheckoutProps> = ({ currentUser }) => {
         const loadCheckoutData = async () => {
             setLoading(true);
             try {
-                // TRƯỜNG HỢP 1: MUA NGAY (Kiểm tra dữ liệu từ trang Chi tiết sản phẩm)
                 if (buyNowItem && buyNowItem.id) {
                     setDisplayItems([{ product: buyNowItem, quantity: 1 }]);
                     setFinalTotal(Number(buyNowItem.price));
                     setLoading(false);
-                    return; // Thoát sớm, không chạy xuống phần Cart
+                    return;
                 }
 
-                // TRƯỜNG HỢP 2: THANH TOÁN GIỎ HÀNG (Dữ liệu từ trang Cart)
                 if (selectedIds.length > 0) {
                     const [allProducts, cartRes] = await Promise.all([
                         getProducts(),
@@ -65,8 +67,6 @@ const Checkout: React.FC<CheckoutProps> = ({ currentUser }) => {
                         }
                     }
                 }
-
-                // Nếu không rơi vào 2 trường hợp trên (F5 trang hoặc dữ liệu trống)
                 navigate('/home');
             } catch (err) {
                 console.error("Lỗi load checkout:", err);
@@ -81,39 +81,44 @@ const Checkout: React.FC<CheckoutProps> = ({ currentUser }) => {
     const handleConfirmOrder = async () => {
         if (!currentUser) return;
 
-        const fullName = (document.querySelector('input[name="fullname"]') as HTMLInputElement)?.value;
-        const phone = (document.querySelector('input[name="phone"]') as HTMLInputElement)?.value;
-        const address = (document.querySelector('textarea[name="address"]') as HTMLTextAreaElement)?.value;
-
-        if (!fullName || !phone || !address) return alert('Vui lòng nhập đủ thông tin!');
+        // Kiểm tra dữ liệu từ component con DeliveryInfo gửi lên
+        if (!shippingDetails ||
+            !shippingDetails.fullName ||
+            !shippingDetails.phone ||
+            !shippingDetails.province ||
+            !shippingDetails.district ||
+            !shippingDetails.ward ||
+            !shippingDetails.detailAddress) {
+            return alert('Vui lòng nhập đầy đủ thông tin giao hàng!');
+        }
 
         const orderId = 'ORD-' + Date.now();
         const isVNPay = paymentMethod === 'vnpay';
 
+        const fullAddress = `${shippingDetails.detailAddress}, ${shippingDetails.ward}, ${shippingDetails.district}, ${shippingDetails.province}`;
+
         const newOrder = {
             id: orderId,
             userId: currentUser.id,
-            fullName, phone, address,
+            fullName: shippingDetails.fullName,
+            phone: shippingDetails.phone,
+            address: fullAddress,
             date: new Date().toLocaleString('vi-VN'),
             items: displayItems,
             totalAmount: finalTotal,
             paymentMethod: paymentMethod.toUpperCase(),
             status: isVNPay ? 'Chờ thanh toán' : 'Đang xử lý',
-            // Lưu meta-data để trang Return xử lý dọn giỏ sau này
             checkoutType: buyNowItem ? 'buy_now' : 'cart',
             selectedIds: selectedIds
         };
 
         try {
-            // 1. Tạo đơn hàng vào database
             await api.post('/orders', newOrder);
 
             if (isVNPay) {
-                // Luồng VNPay: Chỉ tạo đơn, dọn giỏ sẽ làm ở trang vnpay-return nếu thành công
                 const paymentUrl = generateVNPayUrl(finalTotal, orderId);
                 window.location.href = paymentUrl;
             } else {
-                // Luồng COD: Dọn giỏ ngay vì giao dịch coi như xong bước đặt
                 await cleanCartLocally();
                 alert("Đặt hàng thành công!");
                 navigate('/home');
@@ -151,7 +156,13 @@ const Checkout: React.FC<CheckoutProps> = ({ currentUser }) => {
             <div className="checkout-grid">
                 <div className="checkout-left">
                     <div className="checkout-card">
-                        <h3>Sản phẩm</h3>
+                        <h3>Thông tin nhận hàng</h3>
+                        {/* Nhúng component con và hứng data qua callback */}
+                        <DeliveryInfo onAddressChange={(data) => setShippingDetails(data)} />
+                    </div>
+
+                    <div className="checkout-card" style={{ marginTop: '20px' }}>
+                        <h3>Sản phẩm thanh toán</h3>
                         {displayItems.map((item, idx) => (
                             <div key={idx} className="checkout-product-item">
                                 {item.product && (
@@ -172,29 +183,23 @@ const Checkout: React.FC<CheckoutProps> = ({ currentUser }) => {
 
                 <div className="checkout-right">
                     <div className="checkout-card">
-                        <h3>Thông tin nhận hàng</h3>
-                        <div className="checkout-form">
-                            <input name="fullname" placeholder="Họ tên *" required />
-                            <input name="phone" placeholder="Số điện thoại *" required />
-                            <textarea name="address" placeholder="Địa chia *" required />
-                        </div>
                         <h3>Phương thức thanh toán</h3>
                         <div className="payment-methods">
-                            <label>
+                            <label className={`method-item ${paymentMethod === 'cod' ? 'active' : ''}`}>
                                 <input type="radio" checked={paymentMethod === 'cod'} onChange={() => setPaymentMethod('cod')} />
                                 COD (Thanh toán khi nhận hàng)
                             </label>
-                            <label>
+                            <label className={`method-item ${paymentMethod === 'vnpay' ? 'active' : ''}`}>
                                 <input type="radio" checked={paymentMethod === 'vnpay'} onChange={() => setPaymentMethod('vnpay')} />
                                 <b>Thanh toán qua VNPay</b>
                             </label>
                         </div>
                         <div className="checkout-total">
-                            <span>Tổng cộng:</span>
+                            <span>Tổng tiền thanh toán:</span>
                             <span className="price">₫{finalTotal.toLocaleString('vi-VN')}</span>
                         </div>
                         <button className="btn-order-confirm" onClick={() => void handleConfirmOrder()}>
-                            XÁC NHẬN
+                            XÁC NHẬN ĐẶT HÀNG
                         </button>
                     </div>
                 </div>
