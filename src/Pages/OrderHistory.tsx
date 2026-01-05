@@ -1,26 +1,25 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import api from '../services/api';
 import { User } from '../types/model';
 import '../Styles/orders.css';
 
-interface OrderHistoryProps {
-    currentUser: User | null;
-}
+interface OrderHistoryProps { currentUser: User | null; }
 
 const OrderHistory: React.FC<OrderHistoryProps> = ({ currentUser }) => {
     const [orders, setOrders] = useState<any[]>([]);
     const [loading, setLoading] = useState(true);
+    const navigate = useNavigate();
 
+    // 1. Fetch dữ liệu
     useEffect(() => {
         const fetchOrders = async () => {
-            if (!currentUser) {
-                setLoading(false);
-                return;
-            }
+            if (!currentUser) return;
             try {
                 const res = await api.get(`/orders?userId=${currentUser.id}`);
-                // Sắp xếp đơn hàng mới nhất lên đầu
-                setOrders(res.data.sort((a: any, b: any) => b.id.split('-')[1] - a.id.split('-')[1]));
+                // Sắp xếp đơn mới nhất lên đầu dựa trên ID hoặc Date
+                const sortedOrders = res.data.sort((a: any, b: any) => b.id.localeCompare(a.id));
+                setOrders(sortedOrders);
             } catch (err) {
                 console.error("Lỗi tải đơn hàng:", err);
             } finally {
@@ -30,42 +29,61 @@ const OrderHistory: React.FC<OrderHistoryProps> = ({ currentUser }) => {
         void fetchOrders();
     }, [currentUser]);
 
-    if (loading) return <div style={{ padding: '50px', textAlign: 'center' }}>Đang tải...</div>;
-    if (!currentUser) return <div style={{ padding: '50px', textAlign: 'center' }}>Vui lòng đăng nhập!</div>;
+    if (loading) return <div className="loading-screen">Đang tải danh sách đơn hàng...</div>;
 
     return (
-        <div className="orders-page">
-            <h1>Lịch sử đơn hàng</h1>
-            {orders.length === 0 ? (
-                <p>Bạn chưa có đơn hàng nào.</p>
-            ) : (
-                <div className="orders-list">
-                    {orders.map(order => (
-                        <div key={order.id} className="order-card">
-                            <div className="order-header">
-                                <span>Mã đơn: <strong>{order.id}</strong></span>
-                                <span>Ngày đặt: {order.date}</span>
-                                <span className="order-status">{order.status}</span>
-                            </div>
-                            <div className="order-body">
-                                {order.items.map((item: any, index: number) => (
-                                    <div key={index} className="order-item-mini">
-                                        <img src={item.product.imageUrl} alt="" />
-                                        <div className="item-info">
-                                            <p>{item.product.name}</p>
-                                            <p>x{item.quantity}</p>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                            <div className="order-footer">
-                                <span>Phương thức: {order.paymentMethod}</span>
-                                <span className="order-total">Tổng tiền: ₫{order.totalAmount.toLocaleString()}</span>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            )}
+        <div className="order-mgmt-wrapper">
+            <div className="order-mgmt-header">
+                <h2><i className="fa-solid fa-box-open"></i> Lịch Sử Đơn Hàng</h2>
+                <p>Bạn có tổng cộng <strong>{orders.length}</strong> đơn hàng đã thực hiện</p>
+            </div>
+
+            <div className="table-container">
+                <table className="order-dashboard-table">
+                    <thead>
+                    <tr>
+                        <th style={{ width: '50px' }}>STT</th>
+                        <th>Mã Đơn</th>
+                        <th>Ngày Đặt</th>
+                        <th>Hình thức</th>
+                        <th>Tổng Tiền</th>
+                        <th>Trạng Thái</th>
+                        <th style={{ textAlign: 'center' }}>Thao Tác</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {orders.length > 0 ? (
+                        orders.map((order, index) => (
+                            <tr key={order.id}>
+                                {/* STT đếm số thứ tự chuẩn */}
+                                <td>{index + 1}</td>
+                                <td className="order-id-cell">#{order.id.split('-')[1] || order.id}</td>
+                                <td>{order.date}</td>
+                                <td><span className={`pay-tag ${order.paymentMethod.toLowerCase()}`}>{order.paymentMethod}</span></td>
+                                <td className="price-cell">₫{order.totalAmount.toLocaleString('vi-VN')}</td>
+                                <td>
+                                        <span className={`status-badge ${order.status === 'Chờ thanh toán' ? 'pending' : 'completed'}`}>
+                                            {order.status}
+                                        </span>
+                                </td>
+                                <td style={{ textAlign: 'center' }}>
+                                    <button
+                                        className="action-btn detail-btn"
+                                        onClick={() => navigate(`/order-detail/${order.id}`)}
+                                    >
+                                        Xem Chi Tiết
+                                    </button>
+                                </td>
+                            </tr>
+                        ))
+                    ) : (
+                        <tr>
+                            <td colSpan={7} className="no-data">Bạn chưa có đơn hàng nào.</td>
+                        </tr>
+                    )}
+                    </tbody>
+                </table>
+            </div>
         </div>
     );
 };
