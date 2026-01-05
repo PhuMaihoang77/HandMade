@@ -1,29 +1,33 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
 import '../Styles/deliveryInfo.css';
+
 interface DeliveryInfoProps {
+    initialData?: any; // Nhận data đơn hàng cũ
     onAddressChange: (data: any) => void;
 }
 
-const DeliveryInfo: React.FC<DeliveryInfoProps> = ({ onAddressChange }) => {
+const DeliveryInfo: React.FC<DeliveryInfoProps> = ({ initialData, onAddressChange }) => {
     const [provinces, setProvinces] = useState<any[]>([]);
     const [districts, setDistricts] = useState<any[]>([]);
     const [wards, setWards] = useState<any[]>([]);
 
     const [formData, setFormData] = useState({
-        fullName: '', phone: '', province: '', district: '', ward: '', detailAddress: ''
+        fullName: initialData?.fullName || '',
+        phone: initialData?.phone || '',
+        province: initialData?.province || '',
+        district: initialData?.district || '',
+        ward: initialData?.ward || '',
+        detailAddress: initialData?.detailAddress || ''
     });
 
-    // Load Tỉnh
     useEffect(() => {
         axios.get('https://provinces.open-api.vn/api/p/').then(res => setProvinces(res.data));
     }, []);
 
-    // Mỗi khi formData thay đổi, báo cho Checkout.tsx biết
     useEffect(() => {
         onAddressChange(formData);
-        }, [formData]);
+    }, [formData]);
 
     const handleProvinceChange = async (e: React.ChangeEvent<HTMLSelectElement>) => {
         const pCode = e.target.value;
@@ -49,29 +53,41 @@ const DeliveryInfo: React.FC<DeliveryInfoProps> = ({ onAddressChange }) => {
     return (
         <div className="delivery-info-component">
             <div className="input-row">
-                <input placeholder="Họ tên *" onChange={e => setFormData({...formData, fullName: e.target.value})} />
-                <input placeholder="Số điện thoại *" onChange={e => setFormData({...formData, phone: e.target.value})} />
+                <input
+                    placeholder="Họ tên *"
+                    value={formData.fullName}
+                    onChange={e => setFormData({...formData, fullName: e.target.value})}
+                />
+                <input
+                    placeholder="Số điện thoại *"
+                    value={formData.phone}
+                    onChange={e => setFormData({...formData, phone: e.target.value})}
+                />
             </div>
 
             <div className="address-selectors">
                 <select onChange={handleProvinceChange}>
-                    <option value="">Chọn Tỉnh/Thành</option>
+                    <option value="">{formData.province || "Chọn Tỉnh/Thành"}</option>
                     {provinces.map(p => <option key={p.code} value={p.code}>{p.name}</option>)}
                 </select>
 
                 <select onChange={handleDistrictChange} disabled={!districts.length}>
-                    <option value="">Chọn Quận/Huyện</option>
+                    <option value="">{formData.district || "Chọn Quận/Huyện"}</option>
                     {districts.map(d => <option key={d.code} value={d.code}>{d.name}</option>)}
                 </select>
 
-                <select onChange={e => setFormData({...formData, ward: wards.find(w => w.code === parseInt(e.target.value))?.name || ''})} disabled={!wards.length}>
-                    <option value="">Chọn Phường/Xã</option>
+                <select
+                    onChange={e => setFormData({...formData, ward: wards.find(w => w.code === parseInt(e.target.value))?.name || ''})}
+                    disabled={!wards.length}
+                >
+                    <option value="">{formData.ward || "Chọn Phường/Xã"}</option>
                     {wards.map(w => <option key={w.code} value={w.code}>{w.name}</option>)}
                 </select>
             </div>
 
             <textarea
                 placeholder="Địa chỉ cụ thể (Số nhà, tên đường...)"
+                value={formData.detailAddress}
                 onChange={e => setFormData({...formData, detailAddress: e.target.value})}
             />
         </div>

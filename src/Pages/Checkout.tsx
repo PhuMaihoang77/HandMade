@@ -5,19 +5,18 @@ import { getProducts } from '../services/ProductService';
 import { User } from '../types/model';
 import { useCart } from '../context/CartContext';
 import { generateVNPayUrl } from '../services/vnpayService';
-import DeliveryInfo from './DeliveryInfo'; // Đảm bảo đúng đường dẫn file
+import DeliveryInfo from './DeliveryInfo';
 import '../Styles/checkout.css';
 
 interface CheckoutProps { currentUser: User | null; }
 
 const Checkout: React.FC<CheckoutProps> = ({ currentUser }) => {
+
     const navigate = useNavigate();
     const location = useLocation();
     const { refreshCart } = useCart();
 
-    // State nhận dữ liệu từ DeliveryInfo con
     const [shippingDetails, setShippingDetails] = useState<any>(null);
-
     const [displayItems, setDisplayItems] = useState<any[]>([]);
     const [finalTotal, setFinalTotal] = useState(0);
     const [paymentMethod, setPaymentMethod] = useState<'cod' | 'vnpay'>('cod');
@@ -25,127 +24,138 @@ const Checkout: React.FC<CheckoutProps> = ({ currentUser }) => {
 
     const buyNowItem = location.state?.buyNowItem;
     const selectedIds = location.state?.selectedIds || [];
+    const rePayOrder = location.state?.rePayOrder;
 
     useEffect(() => {
-        if (!currentUser) {
-            navigate('/login');
-            return;
+        if (rePayOrder && !shippingDetails) {
+            setShippingDetails({
+                fullName: rePayOrder.fullName,
+                phone: rePayOrder.phone,
+                isFromOldOrder: true
+            });
         }
+    }, [rePayOrder]);
+
+    useEffect(() => {
+        if (!currentUser) { navigate('/login'); return; }
 
         const loadCheckoutData = async () => {
             setLoading(true);
             try {
-                if (buyNowItem && buyNowItem.id) {
+                if (rePayOrder) {
+                    setDisplayItems(rePayOrder.items);
+                    setFinalTotal(rePayOrder.totalAmount);
+                    setPaymentMethod(rePayOrder.paymentMethod.toLowerCase() === 'vnpay' ? 'vnpay' : 'cod');
+                } else if (buyNowItem?.id) {
                     setDisplayItems([{ product: buyNowItem, quantity: 1 }]);
                     setFinalTotal(Number(buyNowItem.price));
-                    setLoading(false);
-                    return;
-                }
-
-                if (selectedIds.length > 0) {
-                    const [allProducts, cartRes] = await Promise.all([
-                        getProducts(),
-                        api.get(`/carts?userId=${currentUser.id}`)
-                    ]);
-
-                    if (cartRes.data.length > 0) {
-                        const userCart = cartRes.data[0];
+                } else if (selectedIds.length > 0) {
+                    const [allProducts, cartRes] = await Promise.all([getProducts(), api.get(`/carts?userId=${currentUser.id}`)]);
+                    const userCart = cartRes.data[0];
+                    if (userCart) {
                         const itemsToPay = userCart.items
                             .filter((item: any) => selectedIds.includes(item.productId))
                             .map((item: any) => ({
                                 product: allProducts.find((p: any) => p.id === item.productId),
                                 quantity: item.quantity
-                            }))
-                            .filter((i: any) => i.product);
-
-                        if (itemsToPay.length > 0) {
-                            setDisplayItems(itemsToPay);
-                            const total = itemsToPay.reduce((sum: number, i: any) => sum + (i.product.price * i.quantity), 0);
-                            setFinalTotal(total);
-                            setLoading(false);
-                            return;
-                        }
+                            })).filter((i: any) => i.product);
+                        setDisplayItems(itemsToPay);
+                        setFinalTotal(itemsToPay.reduce((sum: number, i: any) => sum + (i.product.price * i.quantity), 0));
                     }
-                }
-                navigate('/home');
-            } catch (err) {
-                console.error("Lỗi load checkout:", err);
-            } finally {
-                setLoading(false);
-            }
+                } else { navigate('/home'); }
+            } catch (err) { console.error(err); } finally { setLoading(false); }
         };
-
         void loadCheckoutData();
-    }, [currentUser?.id, buyNowItem?.id, selectedIds.length]);
+    }, [currentUser?.id, buyNowItem?.id, selectedIds.length, rePayOrder]);
 
-    const handleConfirmOrder = async () => {
-        if (!currentUser) return;
+    const prepareOrderData = (status: string) => {
+        const hasFormAddress = shippingDetails?.detailAddress && shippingDetails?.province;
 
-        // Kiểm tra dữ liệu từ component con DeliveryInfo gửi lên
-        if (!shippingDetails ||
-            !shippingDetails.fullName ||
-            !shippingDetails.phone ||
-            !shippingDetails.province ||
-            !shippingDetails.district ||
-            !shippingDetails.ward ||
-            !shippingDetails.detailAddress) {
-            return alert('Vui lòng nhập đầy đủ thông tin giao hàng!');
+        let fullAddress = "";
+        if (hasFormAddress) {
+            fullAddress = `${shippingDetails.detailAddress}, ${shippingDetails.ward}, ${shippingDetails.district}, ${shippingDetails.province}`;
+        } else {
+            fullAddress = rePayOrder?.address || ", , , ";
         }
 
-        const orderId = 'ORD-' + Date.now();
-        const isVNPay = paymentMethod === 'vnpay';
-
-        const fullAddress = `${shippingDetails.detailAddress}, ${shippingDetails.ward}, ${shippingDetails.district}, ${shippingDetails.province}`;
-
-        const newOrder = {
-            id: orderId,
-            userId: currentUser.id,
-            fullName: shippingDetails.fullName,
-            phone: shippingDetails.phone,
+        return {
+            id: rePayOrder ? rePayOrder.id : 'ORD-' + Date.now(),
+            userId: currentUser?.id,
+            fullName: shippingDetails?.fullName || rePayOrder?.fullName || "",
+            phone: shippingDetails?.phone || rePayOrder?.phone || "",
             address: fullAddress,
-            date: new Date().toLocaleString('vi-VN'),
             items: displayItems,
             totalAmount: finalTotal,
             paymentMethod: paymentMethod.toUpperCase(),
-            status: isVNPay ? 'Chờ thanh toán' : 'Đang xử lý',
-            checkoutType: buyNowItem ? 'buy_now' : 'cart',
-            selectedIds: selectedIds
+            status: status,
+            date: rePayOrder ? rePayOrder.date : new Date().toLocaleString('vi-VN')
         };
+    };
+
+    const updateProductStock = async () => {
+        try {
+            const updatePromises = displayItems.map(item => {
+                const newStock = item.product.stock - item.quantity;
+                return api.patch(`/products/${item.product.id}`, { stock: newStock });
+            });
+            await Promise.all(updatePromises);
+        } catch (err) {
+            console.error("Lỗi cập nhật kho hàng:", err);
+        }
+    };
+
+    const handleConfirmOrder = async () => {
+        if (!currentUser) return;
+        if (!rePayOrder && (!shippingDetails?.fullName || !shippingDetails?.phone)) {
+            return alert('Vui lòng điền thông tin để đặt hàng!');
+        }
+
+        const isVNPay = paymentMethod === 'vnpay';
+        const statusText = isVNPay ? 'Chờ thanh toán' : 'Thanh toán khi nhận hàng';
+        const orderData = prepareOrderData(statusText);
 
         try {
-            await api.post('/orders', newOrder);
+            if (rePayOrder) {
+                await api.put(`/orders/${rePayOrder.id}`, orderData);
+            } else {
+                await api.post('/orders', orderData);
+                if (!buyNowItem) await cleanCartLocally();
+            }
 
             if (isVNPay) {
-                const paymentUrl = generateVNPayUrl(finalTotal, orderId);
-                window.location.href = paymentUrl;
+                window.location.href = generateVNPayUrl(finalTotal, orderData.id);
             } else {
-                await cleanCartLocally();
-                alert("Đặt hàng thành công!");
-                navigate('/home');
+                await updateProductStock();
+                alert("Xác nhận thành công!");
+                navigate('/order-history');
             }
         } catch (err) {
-            console.error("Lỗi đặt hàng:", err);
-            alert("Lỗi đặt hàng!");
+            alert("Lỗi hệ thống!");
         }
+    };
+
+    const handleCancelOrder = async () => {
+        const orderData = prepareOrderData('Đã hủy');
+        try {
+            if (rePayOrder) {
+                await api.put(`/orders/${rePayOrder.id}`, orderData);
+            } else {
+                await api.post('/orders', orderData);
+                if (!buyNowItem) await cleanCartLocally();
+            }
+            navigate('/order-history');
+        } catch (err) { navigate('/order-history'); }
     };
 
     const cleanCartLocally = async () => {
         try {
             const res = await api.get(`/carts?userId=${currentUser?.id}`);
-            const userCart = res.data[0];
-            if (userCart) {
-                let remaining = [];
-                if (buyNowItem) {
-                    remaining = userCart.items.filter((i: any) => i.productId !== buyNowItem.id);
-                } else {
-                    remaining = userCart.items.filter((i: any) => !selectedIds.includes(i.productId));
-                }
-                await api.patch(`/carts/${userCart.id}`, { items: remaining });
+            if (res.data[0]) {
+                let remaining = res.data[0].items.filter((i: any) => !displayItems.some(di => di.product.id === i.productId));
+                await api.patch(`/carts/${res.data[0].id}`, { items: remaining });
                 await refreshCart();
             }
-        } catch (err) {
-            console.warn("Lỗi dọn giỏ hàng:", err);
-        }
+        } catch (err) { }
     };
 
     if (loading) return <div className="loading">Đang tải...</div>;
@@ -156,51 +166,41 @@ const Checkout: React.FC<CheckoutProps> = ({ currentUser }) => {
             <div className="checkout-grid">
                 <div className="checkout-left">
                     <div className="checkout-card">
-                        <h3>Thông tin nhận hàng</h3>
-                        {/* Nhúng component con và hứng data qua callback */}
-                        <DeliveryInfo onAddressChange={(data) => setShippingDetails(data)} />
-                    </div>
-
-                    <div className="checkout-card" style={{ marginTop: '20px' }}>
                         <h3>Sản phẩm thanh toán</h3>
                         {displayItems.map((item, idx) => (
                             <div key={idx} className="checkout-product-item">
-                                {item.product && (
-                                    <>
-                                        <img src={item.product.imageUrl} width={50} alt={item.product.name} />
-                                        <div className="item-detail">
-                                            <span>{item.product.name} (x{item.quantity})</span>
-                                            <span className="item-subtotal">
-                                                ₫{(item.product.price * item.quantity).toLocaleString('vi-VN')}
-                                            </span>
-                                        </div>
-                                    </>
-                                )}
+                                <img src={item.product?.imageUrl} width={50} alt="" />
+                                <div className="item-detail">
+                                    <span>{item.product?.name} (x{item.quantity})</span>
+                                    <span className="item-subtotal">₫{(item.product?.price * item.quantity).toLocaleString('vi-VN')}</span>
+                                </div>
                             </div>
                         ))}
                     </div>
+                    <div className="checkout-card" style={{ marginTop: '20px' }}>
+                        <h3>Thông tin nhận hàng</h3>
+                        <DeliveryInfo
+                            initialData={rePayOrder}
+                            onAddressChange={(data) => setShippingDetails(data)}
+                        />
+                    </div>
                 </div>
-
                 <div className="checkout-right">
                     <div className="checkout-card">
                         <h3>Phương thức thanh toán</h3>
                         <div className="payment-methods">
                             <label className={`method-item ${paymentMethod === 'cod' ? 'active' : ''}`}>
-                                <input type="radio" checked={paymentMethod === 'cod'} onChange={() => setPaymentMethod('cod')} />
-                                COD (Thanh toán khi nhận hàng)
+                                <input type="radio" checked={paymentMethod === 'cod'} onChange={() => setPaymentMethod('cod')} /> COD
                             </label>
                             <label className={`method-item ${paymentMethod === 'vnpay' ? 'active' : ''}`}>
-                                <input type="radio" checked={paymentMethod === 'vnpay'} onChange={() => setPaymentMethod('vnpay')} />
-                                <b>Thanh toán qua VNPay</b>
+                                <input type="radio" checked={paymentMethod === 'vnpay'} onChange={() => setPaymentMethod('vnpay')} /> <b>VNPay</b>
                             </label>
                         </div>
-                        <div className="checkout-total">
-                            <span>Tổng tiền thanh toán:</span>
-                            <span className="price">₫{finalTotal.toLocaleString('vi-VN')}</span>
+                        <div className="checkout-total"><span>Tổng tiền:</span><span className="price">₫{finalTotal.toLocaleString('vi-VN')}</span></div>
+                        <div className="checkout-actions">
+                            <button className="btn-order-confirm" onClick={() => void handleConfirmOrder()}>XÁC NHẬN</button>
+                            <button className="btn-order-cancel" onClick={() => void handleCancelOrder()}>HỦY ĐƠN</button>
                         </div>
-                        <button className="btn-order-confirm" onClick={() => void handleConfirmOrder()}>
-                            XÁC NHẬN ĐẶT HÀNG
-                        </button>
                     </div>
                 </div>
             </div>

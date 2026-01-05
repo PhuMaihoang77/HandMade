@@ -1611,22 +1611,7 @@
       "inventory": 50
     }
   ],
-  "messages": [
-    {
-      "id": "db1d",
-      "userId": "aae8",
-      "content": "Chào bạn! 👋 Shop HandMade có thể giúp gì cho Bạn?",
-      "sender": "bot",
-      "createdAt": "2026-01-04T15:41:18.099Z"
-    },
-    {
-      "id": "078d",
-      "userId": "aae8",
-      "content": "Chào bạn! 👋 Shop HandMade có thể giúp gì cho Bạn?",
-      "sender": "bot",
-      "createdAt": "2026-01-04T15:41:18.368Z"
-    }
-  ],
+  "messages": [],
   "faq": [
     {
       "id": "f_tui_vi",
@@ -1841,12 +1826,7 @@
       "userId": "1",
       "items": [],
       "totalPrice": 0,
-      "id": "fe6a"
-    },
-    {
-      "id": "94b8",
-      "userId": "aae8",
-      "items": []
+      "id": "9c9b"
     }
   ],
   "categories": [
@@ -1885,34 +1865,56 @@
   ],
   "orders": [
     {
-      "id": "ORD-1767539928739",
+      "id": "ORD-1767601024752",
       "userId": "aae8",
-      "fullName": "123123",
-      "phone": "123123123",
-      "address": "12312313213123, Xã Phố Là, Huyện Đồng Văn, Tỉnh Hà Giang",
-      "date": "22:18:48 4/1/2026",
+      "fullName": "N/A",
+      "phone": "N/A",
+      "address": ", , , ",
       "items": [
         {
           "product": {
-            "id": "122",
-            "name": "Vòng tay Handmade da thật",
-            "price": 180000,
+            "id": "121",
+            "name": "Túi xách nữ Handmade da bò retro thời trang",
+            "price": 9000000,
             "category": "Đồ da",
             "categoryId": 6,
-            "imageUrl": "https://product.hstatic.net/1000260559/product/vong_tay_handmade_da_that__3__grande.jpg",
-            "description": "Vòng tay được làm từ da bò thật với thiết kế đơn giản mang hơi hướng cổ điển nhưng vẫn vô cùng cá tính . Vòng có nhiều phiên bản màu sắc cho bạn lựa chọn .\n\n",
+            "imageUrl": "https://product.hstatic.net/1000260559/product/tui_xach_nu__1__acaea5fbd93844ee83531408f5d294ee_grande.jpg",
+            "description": "Độ bền da thật cao, không bong tróc, nứt gãy, không ra màu, độ đàn hồi và chịu lực tốt là những ưu điểm nổi bật giúp chất liệu này được sử dụng rộng rãi trong ngành thời trang nữ",
             "inventory": 20
           },
           "quantity": 1
         }
       ],
-      "totalAmount": 180000,
+      "totalAmount": 9000000,
       "paymentMethod": "COD",
-      "status": "Đang xử lý",
-      "checkoutType": "cart",
-      "selectedIds": [
-        "122"
-      ]
+      "status": "Đã hủy",
+      "date": "15:17:04 5/1/2026"
+    },
+    {
+      "id": "ORD-1767601096839",
+      "userId": "aae8",
+      "fullName": "",
+      "phone": "",
+      "address": ", , , ",
+      "items": [
+        {
+          "product": {
+            "id": "123",
+            "name": "Túi xách nữ Handmade da bò retro thời trang",
+            "price": 210000,
+            "category": "Đồ da",
+            "categoryId": 6,
+            "imageUrl": "https://product.hstatic.net/1000260559/product/vi_dai_nu__3__f301f02c16b24e2c83f90e0a2058ab30_grande.jpg",
+            "description": "- Kích thước: 19.5cm x 9.5cm x 2cm\n\n- Chất liệu: Da bò thật 100%",
+            "inventory": 20
+          },
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 210000,
+      "paymentMethod": "COD",
+      "status": "Đã hủy",
+      "date": "15:18:16 5/1/2026"
     }
   ],
   "policyData": [
