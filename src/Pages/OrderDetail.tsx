@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import api from '../services/api';
 import '../Styles/orderDetail.css';
 
@@ -14,7 +14,7 @@ const OrderDetail: React.FC = () => {
                 const res = await api.get(`/orders/${id}`);
                 setOrder(res.data);
             } catch (err) {
-                console.error("Lỗi:", err);
+                console.error(err);
             }
         };
         void fetchOrderDetail();
@@ -23,9 +23,30 @@ const OrderDetail: React.FC = () => {
     if (!order) return <div className="loading">Đang tải...</div>;
 
     const handlePaymentAction = () => {
-        if (order.status === 'Chờ thanh toán') {
-            navigate('/checkout', { state: { rePayOrder: order } });
+        navigate('/checkout', { state: { rePayOrder: order } });
+    };
+
+    const renderPaymentStatus = () => {
+        const isPaid = ['Đã thanh toán', 'Thanh toán khi nhận hàng', 'Hoàn thành'].includes(order.status);
+
+        if (isPaid) {
+            return (
+                <span className="pill-status-btn paid">
+                    {order.status === 'Thanh toán khi nhận hàng' ? 'Thanh toán khi nhận hàng' : 'Đã thanh toán'}
+                </span>
+            );
         }
+
+        return (
+            <button
+                className="pill-status-btn unpaid repay-trigger"
+                onClick={handlePaymentAction}
+            >
+                <span className="btn-text">
+                    {order.status === 'Đã hủy' ? 'Đã hủy (Đặt lại)' : 'Chưa thanh toán'}
+                </span>
+            </button>
+        );
     };
 
     return (
@@ -45,16 +66,14 @@ const OrderDetail: React.FC = () => {
                     <div className="header-right">
                         <div className="status-badge-item">
                             <span>Trạng thái thanh toán:</span>
-                            <button
-                                className={`pill-status-btn ${order.status === 'Chờ thanh toán' ? 'unpaid' : 'paid'}`}
-                                onClick={handlePaymentAction}
-                            >
-                                {order.status === 'Chờ thanh toán' ? 'Chưa thanh toán' : 'Đã thanh toán'}
-                            </button>
+                            {renderPaymentStatus()}
                         </div>
                         <div className="status-badge-item">
                             <span>Trạng thái đơn hàng:</span>
-                            <span className="pill-white">Đang xử lý</span>
+                            {/* Ép trạng thái hiển thị là Đang xử lý nếu là COD hoặc đơn mới */}
+                            <span className={`pill-status-btn status-sync ${order.status === 'Đã hủy' ? 'canceled-style' : 'processing-style'}`}>
+                                {order.status === 'Đã hủy' ? 'Đã hủy' : 'Đang xử lý'}
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -111,11 +130,9 @@ const OrderDetail: React.FC = () => {
                 </div>
 
                 <div className="order-footer-actions">
-                    <div className="footer-right-btns">
-                        <button className="btn-print-handmade" onClick={() => window.print()}>
-                            in hóa đơn
-                        </button>
-                    </div>
+                    <button className="btn-print-handmade" onClick={() => window.print()}>
+                        in hóa đơn
+                    </button>
                 </div>
             </div>
         </div>

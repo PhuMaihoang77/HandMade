@@ -1,4 +1,3 @@
-/* Layout & Font */
 .handmade-order-page {
     max-width: 1100px;
     margin: 40px auto;
@@ -7,7 +6,6 @@
     background-color: #ffffff;
 }
 
-/* Nút quay lại - Bo tròn nhẹ nhàng */
 .top-nav-back {
     margin-bottom: 20px;
 }
@@ -20,7 +18,7 @@
     font-weight: 600;
     cursor: pointer;
     text-transform: lowercase;
-    border-radius: 8px; /* Bo tròn */
+    border-radius: 8px;
     color: #555;
     transition: all 0.3s ease;
 }
@@ -31,16 +29,14 @@
     border-color: #f05d23;
 }
 
-/* Card đơn hàng - Bo tròn và đổ bóng nhẹ */
 .order-detail-card {
     background: #fff;
-    border-radius: 16px; /* Bo tròn lớn cho hiện đại */
+    border-radius: 16px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     overflow: hidden;
     border: 1px solid #eee;
 }
 
-/* Header màu Cam - Bo tròn góc trên */
 .order-main-header {
     background: linear-gradient(135deg, #f05d23 0%, #ff8c5a 100%);
     color: #fff;
@@ -62,52 +58,99 @@
     opacity: 0.9;
 }
 
-/* Status Buttons - Bo tròn kiểu Pill */
 .status-badge-item {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    gap: 8px;
+    gap: 10px;
+    margin-bottom: 10px;
 }
 
 .pill-status-btn {
-    border: none;
-    padding: 6px 18px;
-    border-radius: 50px; /* Bo tròn hoàn toàn */
-    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 140px;
+    height: 32px;
+    padding: 6px 20px;
+    border-radius: 50px;
     font-size: 12px;
-    cursor: pointer;
-    transition: transform 0.2s;
+    font-weight: 700;
+    border: none;
+    white-space: nowrap;
+    transition: all 0.3s ease;
 }
 
 .pill-status-btn.unpaid {
-    background: #fff;
+    background: #ffffff;
     color: #f05d23;
+    cursor: pointer;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .pill-status-btn.unpaid:hover {
-    transform: translateY(-2px);
     background: #000;
     color: #fff;
+    transform: translateY(-2px);
 }
 
-.pill-status-btn.paid {
-    background: rgba(255, 255, 255, 0.2);
+.pill-status-btn.paid,
+.pill-status-btn.processing-style {
+    background: rgba(255,255,255,0.2);
     color: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(255,255,255,0.4);
     cursor: default;
 }
 
-.pill-white {
-    background: rgba(255, 255, 255, 0.15);
-    padding: 3px 12px;
-    border-radius: 50px;
-    font-size: 11px;
-    color: #fff;
+.pill-status-btn.canceled-style {
+    background: rgba(255,77,79,0.15);
+    color: #ffccc7;
+    border: 1px solid rgba(255,77,79,0.3);
 }
 
-/* Grid nội dung */
+.repay-trigger {
+    background: #ffffff;
+    color: #f05d23;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.repay-trigger .btn-text {
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.repay-trigger:hover {
+    background: #000;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+.repay-trigger:hover .btn-text {
+    opacity: 0;
+    transform: translateY(-25px);
+}
+
+.repay-trigger:hover::after {
+    content: "THANH TOÁN LẠI";
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    animation: slideUp 0.3s forwards;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 .order-content-grid {
     display: grid;
     grid-template-columns: 320px 1fr;
@@ -133,9 +176,10 @@
     gap: 8px;
 }
 
-.title-with-icon i { color: #f05d23; }
+.title-with-icon i {
+    color: #f05d23;
+}
 
-/* Thông tin khách hàng */
 .info-list-details .item {
     display: flex;
     flex-direction: column;
@@ -157,8 +201,11 @@
     line-height: 1.4;
 }
 
-/* Bảng sản phẩm hiện đại */
-.handmade-table { width: 100%; border-collapse: collapse; }
+.handmade-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
 .handmade-table th {
     text-align: left;
     padding: 15px;
@@ -167,22 +214,35 @@
     border-bottom: 1px solid #f0f0f0;
 }
 
-.handmade-table td { padding: 20px 15px; border-bottom: 1px solid #f9f9f9; }
+.handmade-table td {
+    padding: 20px 15px;
+    border-bottom: 1px solid #f9f9f9;
+}
 
-.prod-cell { display: flex; align-items: center; gap: 15px; }
+.prod-cell {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
 .prod-cell img {
     width: 60px;
     height: 60px;
     object-fit: cover;
-    border-radius: 12px; /* Bo tròn ảnh sản phẩm */
+    border-radius: 12px;
     border: 1px solid #eee;
 }
 
-.prod-cell span { font-weight: 600; color: #333; }
+.prod-cell span {
+    font-weight: 600;
+    color: #333;
+}
 
-.item-subtotal { color: #f05d23; font-weight: 700; }
+.item-subtotal {
+    color: #f05d23;
+    font-weight: 700;
+}
 
-/* Tổng tiền */
 .pricing-summary {
     margin-top: 30px;
     padding: 20px;
@@ -190,7 +250,13 @@
     border-radius: 12px;
 }
 
-.p-row { display: flex; justify-content: space-between; margin-bottom: 10px; color: #777; }
+.p-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    color: #777;
+}
+
 .grand-total {
     border-top: 1px solid #eee;
     padding-top: 15px;
@@ -200,7 +266,6 @@
     color: #333;
 }
 
-/* Nút In hóa đơn - Bo tròn */
 .order-footer-actions {
     padding: 30px;
     display: flex;
