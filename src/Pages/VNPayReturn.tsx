@@ -2,62 +2,84 @@ import React, { useEffect, useRef } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
 import api from '../services/api';
 import { useCart } from '../context/CartContext';
+import { useNotify } from '../components/NotificationContext';
 
 const VNPayReturn: React.FC = () => {
     const [searchParams] = useSearchParams();
     const navigate = useNavigate();
     const { refreshCart } = useCart();
-    const isProcessed = useRef(false); // Tránh React StrictMode chạy 2 lần
+    const notify = useNotify();
+    const isProcessed = useRef(false); // Tránh StrictMode chạy 2 lần
 
     useEffect(() => {
         if (isProcessed.current) return;
+        isProcessed.current = true;
 
         const handleResult = async () => {
-            const vnp_ResponseCode = searchParams.get('vnp_ResponseCode');
+            const responseCode = searchParams.get('vnp_ResponseCode');
             const orderId = searchParams.get('vnp_TxnRef');
+
+            if (!orderId) {
+                notify.error("Không tìm thấy mã đơn hàng");
+                navigate('/profile');
+                return;
+            }
 
             try {
                 const orderRes = await api.get(`/orders/${orderId}`);
                 const orderData = orderRes.data;
 
-                if (vnp_ResponseCode === '00') {
-                    // --- TRƯỜNG HỢP THÀNH CÔNG ---
-                    // A. Cập nhật trạng thái đơn hàng
-                    await api.patch(`/orders/${orderId}`, { status: 'Đã thanh toán' });
-                    // B. Thực hiện trừ giỏ hàng (Chỉ trừ khi thanh toán thành công)
+                if (responseCode === '00') {
+                    // ✅ THANH TOÁN THÀNH CÔNG
+                    await api.patch(`/orders/${orderId}`, {
+                        status: 'Đã thanh toán'
+                    });
+
+                    // Trừ giỏ hàng
                     const cartRes = await api.get(`/carts?userId=${orderData.userId}`);
                     const userCart = cartRes.data[0];
 
                     if (userCart) {
-                        let remaining = [];
-                        if (orderData.checkoutType === 'buy_now') {
-                            // Mua ngay thì tìm món đó trong giỏ để xóa (nếu có)
-                            remaining = userCart.items.filter((i: any) => i.productId !== orderData.items[0].product.id);
-                        } else {
-                            // Mua từ giỏ thì xóa theo list IDs đã lưu trong đơn hàng
-                            remaining = userCart.items.filter((i: any) => !orderData.selectedIds.includes(i.productId));
-                        }
+                        const remaining = userCart.items.filter(
+                            (i: any) =>
+                                !orderData.items.some(
+                                    (oi: any) => oi.product.id === i.productId
+                                )
+                        );
+
                         await api.patch(`/carts/${userCart.id}`, { items: remaining });
                         await refreshCart();
                     }
-                    alert("Thanh toán thành công!");
+
+                    notify.success("🎉 Thanh toán VNPay thành công!");
                 } else {
-                    // --- TRƯỜNG HỢP THẤT BẠI/HỦY ---
-                    await api.patch(`/orders/${orderId}`, { status: 'Thanh toán thất bại' });
-                    alert("Thanh toán không thành công. Bạn thử lại xem!");
+                    // ❌ THANH TOÁN THẤT BẠI / HỦY
+                    await api.patch(`/orders/${orderId}`, {
+                        status: 'Thanh toán thất bại'
+                    });
+
+                    notify.error("❌ Thanh toán không thành công. Bạn có thể thử lại.");
                 }
-            } catch (err) {
-                console.error("Lỗi xử lý kết quả VNPay:", err);
+            } catch (error) {
+                console.error("Lỗi xử lý VNPay:", error);
+                notify.error("Có lỗi xảy ra khi xác nhận thanh toán");
             } finally {
-                isProcessed.current = true;
-                navigate('/profile'); // Về trang cá nhân để xem danh sách đơn
+                // ⏳ Cho người dùng thấy toast trước khi chuyển trang
+                setTimeout(() => {
+                    navigate('/profile'); // Trang đơn hàng
+                }, 1500);
             }
         };
 
         void handleResult();
     }, []);
 
-    return <div className="loading">Đang xác nhận giao dịch...</div>;
+    return (
+        <div className="loading" style={{ textAlign: 'center', padding: '40px' }}>
+            <h3>🔄 Đang xác nhận giao dịch...</h3>
+            <p>Vui lòng không tắt trình duyệt</p>
+        </div>
+    );
 };
 
 export default VNPayReturn;
