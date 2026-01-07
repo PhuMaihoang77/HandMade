@@ -4,6 +4,8 @@ import { useProductDetail } from '../hooks/useProductDetail';
 import ProductPolicy from '../components/ProductPolicy';
 import { useCart } from '../context/CartContext';
 import { User } from '../types/model';
+import { useNotify } from '../components/NotificationContext';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 import '../Styles/productDetail.css';
 
@@ -17,7 +19,8 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ currentUser }) => {
     const { id } = useParams<{ id: string }>();
     const navigate = useNavigate();
     const { addToCart } = useCart();
-
+const notify = useNotify();
+console.log('notify:', notify);
     const { product, loading, error, reviews, addReview } = useProductDetail(id);
 
     const [rating, setRating] = useState<number>(0);
@@ -25,39 +28,48 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ currentUser }) => {
     const [comment, setComment] = useState<string>('');
 
     // Xử lý gửi đánh giá
-    const handleSubmitReview = (e: React.FormEvent) => {
-        e.preventDefault();
-        if (!currentUser) {
-            alert('Vui lòng đăng nhập để gửi đánh giá!');
-            navigate('/login', { state: { from: `/product/${id}` } });
-            return;
-        }
-        if (rating === 0 || !comment.trim()) {
-            alert('Vui lòng chọn sao và nhập nội dung.');
-            return;
-        }
+  // Gửi đánh giá
+const handleSubmitReview = (e: React.FormEvent) => {
+    e.preventDefault();
 
-        addReview({
-            userName: currentUser.username,
-            rating,
-            comment: comment.trim(),
-        });
-        
-        setRating(0);
-        setComment('');
-    };
+    if (!currentUser) {
+        notify.warning("Vui lòng đăng nhập để gửi đánh giá");
+        navigate('/login', { state: { from: `/product/${id}` } });
+        return;
+    }
 
-    // Xử lý Mua ngay
-    const handleBuyNow = () => {
-        if (product && product.inventory > 0) {
-            if (!currentUser) {
-                alert("Vui lòng đăng nhập để mua hàng!");
-                navigate('/login', { state: { from: '/checkout', buyNowItem: product } });
-                return;
-            }
-            navigate('/checkout', { state: { buyNowItem: product } });
-        }
-    };
+    if (rating === 0 || !comment.trim()) {
+        notify.info("Vui lòng chọn số sao và nhập nội dung đánh giá");
+        return;
+    }
+
+    addReview({
+        userName: currentUser.username,
+        rating,
+        comment: comment.trim(),
+    });
+
+    notify.success("Cảm ơn bạn đã đánh giá sản phẩm!");
+    setRating(0);
+    setComment('');
+};
+
+// Mua ngay
+const handleBuyNow = () => {
+    if (!product || product.inventory <= 0) {
+        notify.error("Sản phẩm hiện đã hết hàng");
+        return;
+    }
+
+    if (!currentUser) {
+        notify.warning("Vui lòng đăng nhập để mua hàng");
+        navigate('/login', { state: { from: '/checkout', buyNowItem: product } });
+        return;
+    }
+
+    navigate('/checkout', { state: { buyNowItem: product } });
+};
+
 
     if (loading) return <div className="loading-spinner">Đang tải...</div>;
     
