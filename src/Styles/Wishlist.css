@@ -1,6 +1,4 @@
-/* Wishlist.css */
 
-/* --- Container tổng --- */
 .wishlist-container {
     padding: 20px;
     max-width: 1200px;
@@ -9,7 +7,7 @@
     color: #2f3542;
 }
 
-/* Header */
+
 .wishlist-header h2 {
     font-size: 28px;
     margin-bottom: 20px;
@@ -17,7 +15,7 @@
     text-align: center;
 }
 
-/* --- Bulk actions --- */
+
 .wishlist-bulk-actions {
     display: flex;
     justify-content: space-between;
