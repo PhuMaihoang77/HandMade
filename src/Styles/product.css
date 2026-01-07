@@ -231,3 +231,70 @@
         justify-content: space-between;
     }
 }
+.product-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.product-image {
+    position: relative; /* ❗ BẮT BUỘC */
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ❤️ ICON TRÁI TIM */
+.favorite-icon {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: 38px;
+    height: 38px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 50%;
+    border: 1.5px solid rgba(211, 84, 0, 0.6); /* cam nhạt */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.25s ease;
+}
+
+.favorite-icon i {
+    font-size: 17px;
+    color: #7f8c8d; /* xám trung tính */
+    transition: color 0.2s ease;
+}
+.favorite-icon:hover {
+    border-color: #d35400;
+    box-shadow: 0 4px 12px rgba(211, 84, 0, 0.25);
+    transform: scale(1.08);
+}
+
+.favorite-icon:hover i {
+    color: #d35400;
+}
+
+.favorite-icon.active i {
+    color: #ff4d4d;
+}
+
+.favorite-icon:hover {
+    transform: scale(1.1);
+}
+
+/* 🛒 ICON GIỎ HÀNG */
+
+.add-to-cart-icon i {
+    color: #fff;
+    font-size: 16px;
+}

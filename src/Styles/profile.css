@@ -226,3 +226,51 @@
         margin-left: auto;
     }
 }
+.my-vouchers-list {
+    display: grid;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.my-voucher-item {
+    display: flex;
+    border: 1px dashed #ff4757;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff5f5;
+}
+
+.v-left {
+    background: #ff4757;
+    color: white;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    min-width: 100px;
+    border-right: 2px dotted white;
+}
+
+.v-right {
+    padding: 15px;
+    flex: 1;
+}
+
+.v-title { margin: 0 0 5px 0; color: #2f3542; }
+.v-desc { font-size: 0.85rem; color: #747d8c; margin-bottom: 10px; }
+.v-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+}
+
+.btn-use-now {
+    background: #ff4757;
+    color: white;
+    border: none;
+    padding: 5px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}

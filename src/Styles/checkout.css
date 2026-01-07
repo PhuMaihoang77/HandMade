@@ -90,14 +90,31 @@
     background-color: #fff9f6;
 }
 
-/* Phần tổng tiền */
 .checkout-total {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 0;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 20px;
     border-top: 2px dashed #eee;
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: 600;
+    color: #555;
+}
+
+.total-row.discount {
+    color: #2e7d32;
+}
+
+.total-row.final {
     margin-top: 10px;
+    font-size: 18px;
+    font-weight: 800;
+    color: #f05d23;
 }
 
 .checkout-total span:first-child { color: #888; font-weight: 600; }
@@ -154,6 +171,72 @@
     color: #ff4d4f; /* Chuyển sang đỏ khi hover */
     border-color: #ff4d4f;
 }
+/* Voucher */
+.voucher-card {
+    border: 2px dashed #f05d23;
+    background: #fffdfb;
+}
+
+.voucher-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.voucher-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 16px;
+    border-radius: 14px;
+    border: 1px solid #eee;
+    cursor: pointer;
+    transition: 0.25s;
+    background: white;
+}
+
+.voucher-item:hover {
+    border-color: #f05d23;
+    background: #fff7f2;
+}
+
+.voucher-item.active {
+    border-color: #f05d23;
+    background: linear-gradient(135deg, #fff7f2, #fff);
+    box-shadow: 0 6px 16px rgba(240,93,35,0.15);
+}
+
+.voucher-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.voucher-code {
+    font-weight: 800;
+    color: #f05d23;
+    font-size: 14px;
+}
+
+.voucher-desc {
+    font-size: 13px;
+    color: #666;
+}
+
+.voucher-right {
+    font-weight: 800;
+    font-size: 16px;
+    color: #f05d23;
+}
+.input-error {
+  border: 1px solid #ff4d4f;
+  background-color: #fff2f0;
+}
+
+.error-text {
+  color: #ff4d4f;
+  font-size: 13px;
+  margin-top: 4px;
+}
 
 /* Màn hình loading & Mobile */
 .loading {
@@ -164,7 +247,28 @@
     font-weight: 600;
 }
 
-@media (max-width: 992px) {
-    .checkout-grid { grid-template-columns: 1fr; }
-    .checkout-right { position: static; }
+@media (max-width: 768px) {
+    .checkout-container {
+        margin: 20px auto;
+        padding: 0 12px;
+    }
+
+    .checkout-card {
+        padding: 18px;
+        border-radius: 14px;
+    }
+
+    .checkout-product-item img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .btn-order-confirm {
+        font-size: 14px;
+        padding: 14px;
+    }
+
+    .btn-order-cancel {
+        padding: 14px;
+    }
 }
