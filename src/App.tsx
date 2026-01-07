@@ -29,6 +29,7 @@ import VNPayReturn from './Pages/VNPayReturn';
 import About from './Pages/About';
 import Chatbox from './Pages/Chatbox';
 import ChatWidget from './Pages/ChatWidget';
+import OrderDetail from './Pages/OrderDetail';
 
 // =======================
 // 4. CONTEXT / TYPES / STYLES
@@ -197,7 +198,11 @@ function App() {
                     } />
 
                     <Route path="/vnpay-return" element={<VNPayReturn />} />
-
+                    <Route path="/order-detail/:id" element={
+                        <MainLayout currentUser={currentUser} onLogout={handleLogout}>
+                            <OrderDetail />
+                        </MainLayout>
+                    } />
                     {/* Route 404 */}
                     <Route path="*" element={<Navigate to="/" />} />
                 </Routes>

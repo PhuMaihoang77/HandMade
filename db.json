@@ -1611,106 +1611,7 @@
       "inventory": 50
     }
   ],
-  "messages": [
-    {
-      "id": "e59a",
-      "userId": "1",
-      "content": "Chào bạn! 👋 Shop HandMade có thể giúp gì cho Bạn?",
-      "sender": "bot",
-      "createdAt": "2025-12-30T06:19:11.586Z"
-    },
-    {
-      "id": "67cd",
-      "userId": "1",
-      "content": "Chào bạn! 👋 Shop HandMade có thể giúp gì cho Bạn?",
-      "sender": "bot",
-      "createdAt": "2025-12-30T06:19:11.844Z"
-    },
-    {
-      "id": "f3dd",
-      "userId": "1",
-      "content": "tôi muốn mua giỏ sách",
-      "sender": "user",
-      "createdAt": "2025-12-30T06:19:29.441Z"
-    },
-    {
-      "id": "f3dd",
-      "userId": "1",
-      "content": "tôi muốn mua giỏ sách",
-      "sender": "user",
-      "createdAt": "2025-12-30T06:19:29.441Z"
-    },
-    {
-      "id": "6c38",
-      "userId": "1",
-      "content": "Rất tiếc, Shop chưa có mẫu giỏ sách này. Bạn tham khảo thêm các mẫu Túi & Ví handmade của Shop tại đây nhé: http://localhost:3000/products?page=1&cat=1 😊",
-      "sender": "bot",
-      "createdAt": "2025-12-30T06:19:31.508Z"
-    },
-    {
-      "id": "6c38",
-      "userId": "1",
-      "content": "Rất tiếc, Shop chưa có mẫu giỏ sách này. Bạn tham khảo thêm các mẫu Túi & Ví handmade của Shop tại đây nhé: http://localhost:3000/products?page=1&cat=1 😊",
-      "sender": "bot",
-      "createdAt": "2025-12-30T06:19:31.508Z"
-    },
-    {
-      "id": "aa7f",
-      "userId": "1",
-      "content": "vậy balo thì sao",
-      "sender": "user",
-      "createdAt": "2025-12-30T06:19:43.697Z"
-    },
-    {
-      "id": "aa7f",
-      "userId": "1",
-      "content": "vậy balo thì sao",
-      "sender": "user",
-      "createdAt": "2025-12-30T06:19:43.697Z"
-    },
-    {
-      "id": "ae7a",
-      "userId": "1",
-      "content": "Rất tiếc, Shop chưa có mẫu balo này. Bạn tham khảo thêm các mẫu Túi & Ví handmade của Shop tại đây nhé: http://localhost:3000/products?page=1&cat=1 😊\n\nTags: Túi ví handmade, túi da, ví da nam",
-      "sender": "bot",
-      "createdAt": "2025-12-30T06:19:45.757Z"
-    },
-    {
-      "id": "ae7a",
-      "userId": "1",
-      "content": "Rất tiếc, Shop chưa có mẫu balo này. Bạn tham khảo thêm các mẫu Túi & Ví handmade của Shop tại đây nhé: http://localhost:3000/products?page=1&cat=1 😊\n\nTags: Túi ví handmade, túi da, ví da nam",
-      "sender": "bot",
-      "createdAt": "2025-12-30T06:19:45.757Z"
-    },
-    {
-      "id": "220c",
-      "userId": "1",
-      "content": "cho tôi coi vài mẫu túi da",
-      "sender": "user",
-      "createdAt": "2025-12-30T06:19:58.245Z"
-    },
-    {
-      "id": "220c",
-      "userId": "1",
-      "content": "cho tôi coi vài mẫu túi da",
-      "sender": "user",
-      "createdAt": "2025-12-30T06:19:58.245Z"
-    },
-    {
-      "id": "03ca",
-      "userId": "1",
-      "content": "Bạn ạ! Shop có một số mẫu túi da handmade rất đẹp và chất lượng. \n\nBạn có thể tham khảo Túi Đeo Chéo Da Nữ Mini, giá 320.000đ: http://localhost:3000/product/3, được làm từ da thật chất lượng, thiết kế tinh tế và tinh mắt. \n\nCòn ví da nam Bifold Cổ Điển, giá 450.000đ: http://localhost:3000/product/2, cũng là một lựa chọn tuyệt vời. Túi da được chế tạo từ da cao cấp, với thiết kế cổ điển và sang trọng. \n\nBạn muốn tìm một mẫu túi da nào khác ạ?",
-      "sender": "bot",
-      "createdAt": "2025-12-30T06:20:00.394Z"
-    },
-    {
-      "id": "03ca",
-      "userId": "1",
-      "content": "Bạn ạ! Shop có một số mẫu túi da handmade rất đẹp và chất lượng. \n\nBạn có thể tham khảo Túi Đeo Chéo Da Nữ Mini, giá 320.000đ: http://localhost:3000/product/3, được làm từ da thật chất lượng, thiết kế tinh tế và tinh mắt. \n\nCòn ví da nam Bifold Cổ Điển, giá 450.000đ: http://localhost:3000/product/2, cũng là một lựa chọn tuyệt vời. Túi da được chế tạo từ da cao cấp, với thiết kế cổ điển và sang trọng. \n\nBạn muốn tìm một mẫu túi da nào khác ạ?",
-      "sender": "bot",
-      "createdAt": "2025-12-30T06:20:00.394Z"
-    }
-  ],
+  "messages": [],
   "faq": [
     {
       "id": "f_tui_vi",
@@ -1925,7 +1826,7 @@
       "userId": "1",
       "items": [],
       "totalPrice": 0,
-      "id": "eec5"
+      "id": "8d06"
     }
   ],
   "categories": [
@@ -1962,36 +1863,7 @@
       "name": "Văn phòng phẩm"
     }
   ],
-  "orders": [
-    {
-      "id": "ORD-1767075657602",
-      "userId": "1",
-      "fullName": "123",
-      "phone": "123",
-      "address": "123",
-      "date": "13:20:57 30/12/2025",
-      "items": [
-        {
-          "product": {
-            "id": "121",
-            "name": "Túi xách nữ Handmade da bò retro thời trang",
-            "price": 9000000,
-            "category": "Đồ da",
-            "categoryId": 6,
-            "imageUrl": "https://product.hstatic.net/1000260559/product/tui_xach_nu__1__acaea5fbd93844ee83531408f5d294ee_grande.jpg",
-            "description": "Độ bền da thật cao, không bong tróc, nứt gãy, không ra màu, độ đàn hồi và chịu lực tốt là những ưu điểm nổi bật giúp chất liệu này được sử dụng rộng rãi trong ngành thời trang nữ",
-            "inventory": 20
-          },
-          "quantity": 1
-        }
-      ],
-      "totalAmount": 9000000,
-      "paymentMethod": "COD",
-      "status": "Đang xử lý",
-      "checkoutType": "buy_now",
-      "selectedIds": []
-    }
-  ],
+  "orders": [],
   "policyData": [
     {
       "id": "1",
@@ -2014,7 +1886,16 @@
       "title": "Thanh toán khi nhận hàng"
     }
   ],
-  "reviews": [],
+  "reviews": [
+    {
+      "id": "19c7",
+      "productId": 121,
+      "userName": "Phu",
+      "rating": 5,
+      "comment": "qqqqư",
+      "createdAt": "13:23:20 7/1/2026"
+    }
+  ],
   "users": [
     {
       "id": "1",
