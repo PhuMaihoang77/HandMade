@@ -9,7 +9,7 @@
 
 /* === HEADER === */
 .main-header {
-    background-color: var(--color-primary);
+    /* background-color: var(--color-primary); */
     color: white;
     padding: 12px 60px;
     display: flex;
