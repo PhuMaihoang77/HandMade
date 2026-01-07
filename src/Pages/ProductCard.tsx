@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import axios from 'axios';
 import { Product, User } from '../types/model';
+import { useNotify } from '../components/NotificationContext';
+import '../Styles/product.css';
 
 interface ProductCardProps {    
     product: Product;
@@ -13,7 +15,8 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
     const navigate = useNavigate();
     const { addToCart } = useCart();
     const [isFavorite, setIsFavorite] = useState(false);
-    
+    const notify = useNotify();
+    console.log('notify:', notify);
     // Lấy thông tin user hiện tại từ localStorage để đảm bảo dữ liệu mới nhất
     const userString = localStorage.getItem('user');
     const localUser: User | null = userString ? JSON.parse(userString) : null;
@@ -31,7 +34,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         e.stopPropagation();
 
         if (!localUser) {
-            alert("Vui lòng đăng nhập để lưu sản phẩm yêu thích!");
+           notify.warning("Vui lòng đăng nhập để lưu sản phẩm yêu thích");
             return;
         }
 
@@ -55,10 +58,13 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
                 setIsFavorite(!isFavorite);
                 // Phát tín hiệu để các component khác (Profile/Wishlist) cập nhật
                 window.dispatchEvent(new Event('wishlistUpdated'));
+                 notify.success(
+                    isFavorite ? "Đã xóa khỏi yêu thích" : "Đã thêm vào yêu thích"
+                );
             }
         } catch (error) {
             console.error("Lỗi khi cập nhật wishlist:", error);
-            alert("Không thể kết nối với máy chủ.");
+             notify.error("Không thể cập nhật yêu thích");
         }
     };
 
@@ -67,9 +73,8 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         e.stopPropagation();
         if (product.inventory > 0) {
             void addToCart(product, localUser);
-            // alert(`Đã thêm ${product.name} vào giỏ hàng!`); // Bật nếu context chưa có thông báo
         } else {
-            alert("Sản phẩm đã hết hàng!");
+              notify.error("Sản phẩm đã hết hàng");
         }
     };
 
@@ -79,8 +84,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         if (product.inventory > 0) {
             navigate('/checkout', { state: { buyNowItem: product } });
         } else {
-            alert("Sản phẩm đã hết hàng!");
-        }
+ notify.error("Sản phẩm đã hết hàng");        }
     };
 
     return (
