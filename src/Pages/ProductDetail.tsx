@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useProductDetail } from '../hooks/useProductDetail';
 import ProductPolicy from '../components/ProductPolicy';
 import { useCart } from '../context/CartContext';
 import { User } from '../types/model';
+import api from '../services/api';
 
 import '../Styles/productDetail.css';
 
@@ -23,6 +24,28 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ currentUser }) => {
     const [rating, setRating] = useState<number>(0);
     const [hoverRating, setHoverRating] = useState<number>(0);
     const [comment, setComment] = useState<string>('');
+    const [hasPurchased, setHasPurchased] = useState<boolean>(false);
+
+    // Kiểm tra xem người dùng đã mua sản phẩm chưa
+    useEffect(() => {
+        const checkPurchase = async () => {
+            if (!currentUser || !product) {
+                setHasPurchased(false);
+                return;
+            }
+            try {
+                const res = await api.get(`/orders?userId=${currentUser.id}`);
+                const bought = res.data.some((order: any) =>
+                    order?.items?.some((item: any) => item?.product?.id === product.id)
+                );
+                setHasPurchased(bought);
+            } catch (err) {
+                console.error('Lỗi kiểm tra đơn hàng:', err);
+                setHasPurchased(false);
+            }
+        };
+        void checkPurchase();
+    }, [currentUser, product]);
 
     // Xử lý gửi đánh giá
     const handleSubmitReview = (e: React.FormEvent) => {
@@ -30,6 +53,10 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ currentUser }) => {
         if (!currentUser) {
             alert('Vui lòng đăng nhập để gửi đánh giá!');
             navigate('/login', { state: { from: `/product/${id}` } });
+            return;
+        }
+        if (!hasPurchased) {
+            alert('Bạn cần mua sản phẩm này trước khi đánh giá.');
             return;
         }
         if (rating === 0 || !comment.trim()) {
@@ -118,6 +145,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ currentUser }) => {
                 <h3>Đánh giá từ khách hàng ({reviews.length})</h3>
                 
                 {currentUser ? (
+                    hasPurchased ? (
                     <form className="review-form" onSubmit={handleSubmitReview}>
                         <div className="review-stars">
                             {[1, 2, 3, 4, 5].map(star => (
@@ -141,6 +169,14 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ currentUser }) => {
                         />
                         <button type="submit" className="btn-primary">Gửi đánh giá</button>
                     </form>
+                    ) : (
+                        <div className="review-login-hint">
+                            Bạn cần mua sản phẩm này trước khi đánh giá.{' '}
+                            <button className="btn-primary" onClick={() => navigate('/orders')}>
+                                Xem đơn hàng
+                            </button>
+                        </div>
+                    )
                 ) : (
                     <div className="review-login-hint">
                         Vui lòng <strong style={{cursor:'pointer', color:'#007bff'}} onClick={() => navigate('/login')}>đăng nhập</strong> để bình luận.
