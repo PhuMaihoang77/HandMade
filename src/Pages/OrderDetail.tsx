@@ -53,7 +53,7 @@ const OrderDetail: React.FC = () => {
         <div className="handmade-order-page">
             <div className="top-nav-back">
                 <button className="btn-back-square" onClick={() => navigate(-1)}>
-                    quay lại
+                    Quay lại
                 </button>
             </div>
 
