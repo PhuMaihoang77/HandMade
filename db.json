@@ -1826,48 +1826,7 @@
     {
       "userId": "1",
       "items": [],
-      "totalPrice": 0,
-      "id": "104d"
-    },
-    {
-      "id": "a30e",
-      "userId": "cbc1",
-      "items": [
-        {
-          "productId": "121",
-          "quantity": 3
-        },
-        {
-          "productId": "123",
-          "quantity": 3
-        },
-        {
-          "productId": "122",
-          "quantity": 1
-        },
-        {
-          "productId": "42",
-          "quantity": 1
-        },
-        {
-          "productId": "43",
-          "quantity": 1
-        },
-        {
-          "productId": "126",
-          "quantity": 1
-        }
-      ]
-    },
-    {
-      "id": "f27d",
-      "userId": "cbc1",
-      "items": [
-        {
-          "productId": "122",
-          "quantity": 1
-        }
-      ]
+      "totalPrice": 0
     }
   ],
   "categories": [
@@ -1927,7 +1886,16 @@
       "title": "Thanh toán khi nhận hàng"
     }
   ],
-  "reviews": [],
+  "reviews": [
+    {
+      "id": "19c7",
+      "productId": 121,
+      "userName": "Phu",
+      "rating": 5,
+      "comment": "qqqqư",
+      "createdAt": "13:23:20 7/1/2026"
+    }
+  ],
   "users": [
     {
       "id": "1",
