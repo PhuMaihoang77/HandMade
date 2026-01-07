@@ -8,7 +8,8 @@ const dbFile = path.join(__dirname, '../db.json');
 const db = {
   products: [],
   messages: [], // Sửa: Khởi tạo mảng rỗng thay vì dùng biến chưa định nghĩa
-  faq: []       // Thêm sẵn faq để bot tra cứu
+  faq: [] ,
+   vouchers: []      // Thêm sẵn faq để bot tra cứu
 };
 
 if (!fs.existsSync(mockDataDir)) {
