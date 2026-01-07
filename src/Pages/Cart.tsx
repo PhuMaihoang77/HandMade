@@ -5,6 +5,7 @@ import { getProducts } from '../services/ProductService';
 import { User, Product } from '../types/model';
 import { useCart } from '../context/CartContext';
 import '../Styles/cart.css';
+import { useNotify } from '../components/NotificationContext';
 
 interface CartProps {
     currentUser: User | null;
@@ -13,7 +14,8 @@ interface CartProps {
 const Cart: FC<CartProps> = ({ currentUser }) => {
     const navigate = useNavigate();
     const { refreshCart } = useCart();
-
+    const notify = useNotify();
+console.log('notify:', notify);
     const [cartItems, setCartItems] = useState<{ productId: number; quantity: number }[]>([]);
     const [products, setProducts] = useState<Product[]>([]);
     const [selectedItemIds, setSelectedItemIds] = useState<number[]>([]);
@@ -101,7 +103,8 @@ const Cart: FC<CartProps> = ({ currentUser }) => {
 
     const handleGoToCheckout = () => {
         if (!currentUser) {
-            alert("Vui lòng đăng nhập để thực hiện mua hàng!");
+                          notify.warning("Vui lòng đăng nhập để thực hiện mua hàng!");
+
             // Điều hướng sang login và gửi kèm trạng thái để sau khi login xong quay lại đúng Checkout
             navigate('/login', { state: { from: '/checkout', selectedIds: selectedItemIds } });
             return;
