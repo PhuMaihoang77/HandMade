@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { User } from '../types/model';
 import api from '../services/api';
+import { useNotify } from '../components/NotificationContext';
 
 interface CartContextType {
     cartCount: number;
@@ -10,9 +11,11 @@ interface CartContextType {
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
-
 export const CartProvider = ({ children, currentUser }: { children: ReactNode, currentUser: User | null }) => {
     const [cartCount, setCartCount] = useState(0);
+    const notify = useNotify();
+console.log('notify:', notify);
+
 
     const refreshCart = async () => {
         if (!currentUser) {
@@ -35,8 +38,10 @@ export const CartProvider = ({ children, currentUser }: { children: ReactNode, c
     };
 
     const addToCart = async (product: any, user: User | null) => {
-        if (!product || product.inventory <= 0) return alert("Sản phẩm đã hết hàng!");
-
+        if (!product || product.inventory <= 0) {
+              notify.warning("Sản phẩm đã hết hàng!");
+            return ;
+        }
         if (!user) {
             // --- CHƯA LOGIN: LƯU LOCALSTORAGE ---
             const localData = localStorage.getItem('guestCart');
@@ -53,7 +58,8 @@ export const CartProvider = ({ children, currentUser }: { children: ReactNode, c
 
             localStorage.setItem('guestCart', JSON.stringify(items));
             await refreshCart();
-            alert(`Đã thêm tạm "${product.name}" vào giỏ hàng!`);
+            notify.success(`Đã thêm "${product.name}" vào giỏ hàng`);
+
             return;
         }
 
@@ -76,9 +82,10 @@ export const CartProvider = ({ children, currentUser }: { children: ReactNode, c
                 await api.patch(`/carts/${userCart.id}`, { items: newItems });
             }
             await refreshCart();
-            alert(`Đã thêm "${product.name}" vào giỏ hàng!`);
+        notify.success(`Đã thêm "${product.name}" vào giỏ hàng`);
         } catch (error) {
-            alert("Không thể thêm vào giỏ hàng!");
+            notify.error("Không thể thêm vào giỏ hàng!");
+
         }
     };
 
@@ -110,7 +117,7 @@ export const CartProvider = ({ children, currentUser }: { children: ReactNode, c
             }
             localStorage.removeItem('guestCart'); // Xóa sau khi đã gộp thành công
         } catch (err) {
-            console.error("Lỗi gộp giỏ hàng:", err);
+        notify.error("Không thể thêm vào giỏ hàng!");
         }
     };
 
