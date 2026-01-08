@@ -14,7 +14,7 @@ interface ProfileProps {
 
 const Profile: React.FC<ProfileProps> = ({ currentUser, onLogout }) => {
     const navigate = useNavigate();
-    const [activeSection, setActiveSection] = useState<'info' | 'email' | 'password' | 'orders' | 'vouchers'>('info');
+    const [activeSection, setActiveSection] = useState<'info' | 'email' | 'password' | 'orders' |'games'| 'vouchers'>('info');
 
     const [emailValue, setEmailValue] = useState(currentUser?.email ?? '');
     const [emailMessage, setEmailMessage] = useState('');
@@ -110,17 +110,22 @@ const Profile: React.FC<ProfileProps> = ({ currentUser, onLogout }) => {
             <div className="profile-container">
                 {/* Menu SideBar */}
                 <div className="profile-menu">
+                  
                     <div className={`menu-item ${activeSection === 'info' ? 'active' : ''}`} onClick={() => setActiveSection('info')}>
                         <i className="fa-solid fa-user-gear"></i> Thông tin tài khoản
                     </div>
                     <div className={`menu-item ${activeSection === 'orders' ? 'active' : ''}`} onClick={() => setActiveSection('orders')}>
                         <i className="fa-solid fa-clock-rotate-left"></i> Lịch sử mua hàng
                     </div>
+                     
                     <div className={`menu-item ${activeSection === 'vouchers' ? 'active' : ''}`} onClick={() => setActiveSection('vouchers')}>
                         <i className="fa-solid fa-ticket"></i> Voucher của tôi
                     </div>
                     <Link to="/wishlist" className="menu-item" style={{ textDecoration: 'none', color: 'inherit' }}>
                         <i className="fa-solid fa-heart"></i> Sản phẩm yêu thích
+                    </Link>
+                     <Link to="/games" className="menu-item" style={{ textDecoration: 'none', color: 'inherit' }}>
+                        🎡 Vòng quay may mắn
                     </Link>
                     <div className={`menu-item ${activeSection === 'email' ? 'active' : ''}`} onClick={() => setActiveSection('email')}>
                         <i className="fa-solid fa-envelope"></i> Thay đổi email
