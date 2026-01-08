@@ -1937,8 +1937,12 @@
     {
       "userId": "1",
       "items": [],
+<<<<<<< HEAD
       "totalPrice": 0,
       "id": "6059"
+=======
+      "totalPrice": 0
+>>>>>>> 64ee455aea3f82f4e65336dcb3e3bc0610958a36
     }
   ],
   "categories": [
@@ -1998,7 +2002,16 @@
       "title": "Thanh toán khi nhận hàng"
     }
   ],
-  "reviews": [],
+  "reviews": [
+    {
+      "id": "19c7",
+      "productId": 121,
+      "userName": "Phu",
+      "rating": 5,
+      "comment": "qqqqư",
+      "createdAt": "13:23:20 7/1/2026"
+    }
+  ],
   "users": [
     {
       "id": "1",
