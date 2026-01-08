@@ -93,11 +93,14 @@ const Home: React.FC<HomeProps> = ({ currentUser }) => {
             {/* 4. PROMO BANNER: Chương trình khuyến mãi lớn (Điểm nhấn) */}
             <section className="promo-banner">
                 <div className="promo-content">
-                    <span className="promo-tag">Khuyến Mãi Đặc Biệt</span>
-                    <h2>Giảm 20% Cho Đơn Hàng Đầu Tiên</h2>
-                    <p>Nhập mã <strong>WELCOME20</strong> khi thanh toán. Áp dụng cho toàn bộ sản phẩm thủ công.</p>
-                    <button className="btn-white" onClick={() => navigate('/product')}>Săn Deal Ngay</button>
-                </div>
+    <span className="promo-tag">Ưu Đãi Trong Ngày</span>
+    <h2>Quay Vòng May Mắn Nhận Voucher</h2>
+    <p>Mỗi thành viên VIP có <strong>1 lượt quay/ngày</strong> để nhận ưu đãi độc quyền.</p>
+    <button className="btn-white" onClick={() => navigate('/games')}>
+        Quay Ngay Hôm Nay
+    </button>
+</div>
+
                 <div className="promo-image">
                     {/* Ảnh minh họa khuyến mãi */}
                     <img src="https://images.unsplash.com/photo-1606744837616-56c9a5c6a6eb?auto=format&fit=crop&q=80&w=600" alt="Promo" />
