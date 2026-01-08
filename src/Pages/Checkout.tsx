@@ -8,6 +8,8 @@ import { filterVouchersForUser } from '../untils/voucherUtils'; // Hãy đảm b
 import { generateVNPayUrl } from '../services/vnpayService';
 import DeliveryInfo from './DeliveryInfo';
 import '../Styles/checkout.css';
+import { useNotify } from '../components/NotificationContext';
+
 
 interface CheckoutProps { currentUser: User | null; }
 
@@ -15,7 +17,7 @@ const Checkout: React.FC<CheckoutProps> = ({ currentUser }) => {
     const navigate = useNavigate();
     const location = useLocation();
     const { refreshCart } = useCart();
-
+   const notify = useNotify();
     const [shippingDetails, setShippingDetails] = useState<any>(null);
     const [displayItems, setDisplayItems] = useState<any[]>([]);
     const [finalTotal, setFinalTotal] = useState(0);
@@ -199,11 +201,11 @@ const currentPayable = Math.max(finalTotal - discount, 0);
         } else {
             await updateInventoryAndVoucher();
             if (!buyNowItem) await cleanCartLocally();
-            alert("Đặt hàng thành công!");
+            notify.success("Đặt hàng thành công!");
             navigate('/order-history');
         }
     } catch (err) {
-        alert("Lỗi hệ thống!");
+        notify.warning("Lỗi hệ thống!");
     } finally {
         setLoading(false);
     }
