@@ -9,7 +9,8 @@ const db = {
   products: [],
   messages: [], // Sửa: Khởi tạo mảng rỗng thay vì dùng biến chưa định nghĩa
   faq: [] ,
-   vouchers: []      // Thêm sẵn faq để bot tra cứu
+   vouchers: []  ,
+   prizes:[]    // Thêm sẵn faq để bot tra cứu
 };
 
 if (!fs.existsSync(mockDataDir)) {
