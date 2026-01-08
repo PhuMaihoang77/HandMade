@@ -1611,7 +1611,78 @@
       "inventory": 50
     }
   ],
-  "messages": [],
+  "messages": [
+    {
+      "id": "a295",
+      "userId": "cbc1",
+      "content": "Chào bạn! 👋 Shop HandMade có thể giúp gì cho Bạn?",
+      "sender": "bot",
+      "createdAt": "2026-01-08T09:20:15.785Z"
+    },
+    {
+      "id": "857c",
+      "userId": "cbc1",
+      "content": "Chào bạn! 👋 Shop HandMade có thể giúp gì cho Bạn?",
+      "sender": "bot",
+      "createdAt": "2026-01-08T09:20:16.039Z"
+    },
+    {
+      "id": "f710",
+      "userId": "cbc1",
+      "content": "xin chào ",
+      "sender": "user",
+      "createdAt": "2026-01-08T09:20:17.935Z"
+    },
+    {
+      "id": "f710",
+      "userId": "cbc1",
+      "content": "xin chào ",
+      "sender": "user",
+      "createdAt": "2026-01-08T09:20:17.935Z"
+    },
+    {
+      "id": "3053",
+      "userId": "cbc1",
+      "content": "Xin chào bạn! 😊 Shop rất vui được phục vụ bạn. Bạn cần tìm kiếm gì hôm nay không?",
+      "sender": "bot",
+      "createdAt": "2026-01-08T09:20:19.835Z"
+    },
+    {
+      "id": "3053",
+      "userId": "cbc1",
+      "content": "Xin chào bạn! 😊 Shop rất vui được phục vụ bạn. Bạn cần tìm kiếm gì hôm nay không?",
+      "sender": "bot",
+      "createdAt": "2026-01-08T09:20:19.835Z"
+    },
+    {
+      "id": "a8b2",
+      "userId": "cbc1",
+      "content": "tôi  muôn mua ví da bò ",
+      "sender": "user",
+      "createdAt": "2026-01-08T09:20:27.103Z"
+    },
+    {
+      "id": "a8b2",
+      "userId": "cbc1",
+      "content": "tôi  muôn mua ví da bò ",
+      "sender": "user",
+      "createdAt": "2026-01-08T09:20:27.103Z"
+    },
+    {
+      "id": "b704",
+      "userId": "cbc1",
+      "content": "Rất tiếc, Shop chưa có ví da bò. Bạn tham khảo thêm các mẫu Đồ da khâu tay handmade của Shop tại đây nhé: http://localhost:3000/products?page=1&cat=1\n\nShop có những mẫu ví da độc đáo như Ví Da Nam Bifold Cổ Điển, giá 450,000đ | ID: 2. Hay bạn có muốn Shop tư vấn thêm dòng khác không ạ? 🤔",
+      "sender": "bot",
+      "createdAt": "2026-01-08T09:20:29.124Z"
+    },
+    {
+      "id": "b704",
+      "userId": "cbc1",
+      "content": "Rất tiếc, Shop chưa có ví da bò. Bạn tham khảo thêm các mẫu Đồ da khâu tay handmade của Shop tại đây nhé: http://localhost:3000/products?page=1&cat=1\n\nShop có những mẫu ví da độc đáo như Ví Da Nam Bifold Cổ Điển, giá 450,000đ | ID: 2. Hay bạn có muốn Shop tư vấn thêm dòng khác không ạ? 🤔",
+      "sender": "bot",
+      "createdAt": "2026-01-08T09:20:29.124Z"
+    }
+  ],
   "faq": [
     {
       "id": "f_tui_vi",
@@ -1822,52 +1893,52 @@
     }
   ],
   "vouchers": [],
+  "prizes": [
+    {
+      "id": "1",
+      "name": "Voucher 10k",
+      "type": "voucher",
+      "value": 10000,
+      "color": "#4F46E5",
+      "textColor": "#FFFFFF",
+      "icon": "🎫",
+      "description": "Giảm 10.000đ cho đơn hàng từ 0đ"
+    },
+    {
+      "id": "2",
+      "name": "Miễn phí vận chuyển",
+      "type": "points",
+      "color": "#7C3AED",
+      "textColor": "#FFFFFF",
+      "icon": "⭐",
+      "description": "Miễn phí vận chuyển cho đơn hàng từ 0đ"
+    },
+    {
+      "id": "3",
+      "name": "Voucher 50k",
+      "type": "voucher",
+      "value": 50000,
+      "color": "#EC4899",
+      "textColor": "#FFFFFF",
+      "icon": "🎫",
+      "description": "Giảm 50.000đ cho đơn từ 0đ"
+    },
+    {
+      "id": "4",
+      "name": "Chúc bạn may mắn lần sau",
+      "type": "none",
+      "color": "#4F46F7",
+      "textColor": "#FFFFFF",
+      "icon": "🔄",
+      "description": "Chúc bạn may mắn lần sau"
+    }
+  ],
   "carts": [
     {
       "userId": "1",
       "items": [],
       "totalPrice": 0,
-      "id": "104d"
-    },
-    {
-      "id": "a30e",
-      "userId": "cbc1",
-      "items": [
-        {
-          "productId": "121",
-          "quantity": 3
-        },
-        {
-          "productId": "123",
-          "quantity": 3
-        },
-        {
-          "productId": "122",
-          "quantity": 1
-        },
-        {
-          "productId": "42",
-          "quantity": 1
-        },
-        {
-          "productId": "43",
-          "quantity": 1
-        },
-        {
-          "productId": "126",
-          "quantity": 1
-        }
-      ]
-    },
-    {
-      "id": "f27d",
-      "userId": "cbc1",
-      "items": [
-        {
-          "productId": "122",
-          "quantity": 1
-        }
-      ]
+      "id": "6059"
     }
   ],
   "categories": [
@@ -1940,98 +2011,8 @@
       "email": "thuan11111@gmail.com",
       "password": "123456",
       "username": "Thuan",
-      "wishlist": [
-        {
-          "id": "121",
-          "name": "Túi xách nữ Handmade da bò retro thời trang",
-          "price": 9000000,
-          "category": "Đồ da",
-          "categoryId": 6,
-          "imageUrl": "https://product.hstatic.net/1000260559/product/tui_xach_nu__1__acaea5fbd93844ee83531408f5d294ee_grande.jpg",
-          "description": "Độ bền da thật cao, không bong tróc, nứt gãy, không ra màu, độ đàn hồi và chịu lực tốt là những ưu điểm nổi bật giúp chất liệu này được sử dụng rộng rãi trong ngành thời trang nữ",
-          "inventory": 20
-        },
-        {
-          "id": "122",
-          "name": "Vòng tay Handmade da thật",
-          "price": 180000,
-          "category": "Đồ da",
-          "categoryId": 6,
-          "imageUrl": "https://product.hstatic.net/1000260559/product/vong_tay_handmade_da_that__3__grande.jpg",
-          "description": "Vòng tay được làm từ da bò thật với thiết kế đơn giản mang hơi hướng cổ điển nhưng vẫn vô cùng cá tính . Vòng có nhiều phiên bản màu sắc cho bạn lựa chọn .\n\n",
-          "inventory": 20
-        },
-        {
-          "id": "123",
-          "name": "Túi xách nữ Handmade da bò retro thời trang",
-          "price": 210000,
-          "category": "Đồ da",
-          "categoryId": 6,
-          "imageUrl": "https://product.hstatic.net/1000260559/product/vi_dai_nu__3__f301f02c16b24e2c83f90e0a2058ab30_grande.jpg",
-          "description": "- Kích thước: 19.5cm x 9.5cm x 2cm\n\n- Chất liệu: Da bò thật 100%",
-          "inventory": 20
-        },
-        {
-          "id": "124",
-          "name": "Balo nữ da bò thật Handmade đẹp",
-          "price": 1400000,
-          "category": "Đồ da",
-          "categoryId": 6,
-          "imageUrl": "https://product.hstatic.net/1000260559/product/ghds_grande.jpg",
-          "description": "Balo nữ da bò thật được làm từ chất liệu da bò thật nhập khẩu nổi tiếng nhờ sự bền bỉ, chắc chắn, có độ đàn hồi cao, không bong tróc, bứt gãy, vô cùng ấn tượng và thời trang\n\n",
-          "inventory": 20
-        },
-        {
-          "id": "42",
-          "name": "Dây Chuyền Vòng Trăng Ánh Sao",
-          "price": 229000,
-          "category": "Phụ kiện",
-          "categoryId": 3,
-          "imageUrl": "https://antinh.vn/wp-content/uploads/2025/09/Day-Chuyen-Vong-Trang-Anh-Sao-800x800.jpg",
-          "description": "Dây Chuyền Vòng Trăng Ánh Sao",
-          "inventory": 20
-        },
-        {
-          "id": "41",
-          "name": "Dây Đeo Chú Lăng Nghiêm",
-          "price": 129000,
-          "category": "Phụ kiện",
-          "categoryId": 3,
-          "imageUrl": "https://antinh.vn/wp-content/uploads/2025/12/Day-Deo-Chu-Lang-Nghiem-800x800.jpg",
-          "description": "Dây Đeo Chú Lăng Nghiêm",
-          "inventory": 20
-        },
-        {
-          "id": "43",
-          "name": "Dây Chuyền Pha Lê Ánh Trăng",
-          "price": 259000,
-          "category": "Phụ kiện",
-          "categoryId": 3,
-          "imageUrl": "https://antinh.vn/wp-content/uploads/2025/09/Day-Chuyen-Pha-Le-Anh-Trang-800x800.jpg",
-          "description": "Dây Chuyền Pha Lê Ánh Trăng",
-          "inventory": 20
-        },
-        {
-          "id": "125",
-          "name": "Ví dài Handmade đơn giản mà chất",
-          "price": 320000,
-          "category": "Đồ da",
-          "categoryId": 6,
-          "imageUrl": "https://product.hstatic.net/1000260559/product/125940__6__master.jpg",
-          "description": "Ví dài Handmade đơn giản mà chất - 125940\n\n- Kích thước: 9cm x 19cm\n\n- Da bò thật 100%",
-          "inventory": 20
-        },
-        {
-          "id": "126",
-          "name": "Balo nữ da thật Handmade độc đẹp lạ",
-          "price": 430000,
-          "category": "Đồ da",
-          "categoryId": 6,
-          "imageUrl": "https://product.hstatic.net/1000260559/product/4554239993_1515578525_grande.jpg",
-          "description": "Balo nữ da thật Handmade độc - 321482\n\n- Kích thước: 29cm x 25cm x 13cm\n\n- Da bò thật 100%\n\n- Kiểu dáng: Xách tay, đeo sau lưng, đeo trước bụng\n\n- Dành cho: Nữ\n\n- Mục đích sử dụng: Đi làm, đi chơi, du lịch, dạo phố, picnic",
-          "inventory": 20
-        }
-      ]
+      "lastSpinDate": "2026-01-08T09:20:06.649Z",
+      "points": 0
     },
     {
       "id": "aae8",
@@ -2185,6 +2166,24 @@
       "status": "DISABLED",
       "startDate": "2025-01-01",
       "expiredAt": "2026-01-01"
+    },
+    {
+      "id": "VC_LUCKY_1767862646715",
+      "code": "LUCKYIOY39",
+      "title": "Voucher 10k",
+      "description": "Giảm 10.000đ cho đơn hàng từ 0đ",
+      "type": "FIXED",
+      "value": 10000,
+      "maxDiscount": 10000,
+      "minOrder": 0,
+      "target": "SPECIFIC_USER",
+      "userId": "cbc1",
+      "maxOrderCount": 0,
+      "quantity": 1,
+      "used": 0,
+      "status": "ACTIVE",
+      "startDate": "2026-01-08",
+      "expiredAt": "2026-02-08"
     }
   ]
 }
