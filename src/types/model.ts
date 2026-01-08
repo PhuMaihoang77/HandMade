@@ -19,6 +19,9 @@ export interface User {
     username: string;
     password?: string;
     wishlist?: Product[];
+    lastSpinDate?: string; // Lưu dạng ISO (YYYY-MM-DD)
+    points?: number;
+    isLoggedIn?: boolean; // Thuộc tính ảo để check trạng thái tại client
 }
 export interface CartItem {
     product: Product;
@@ -52,4 +55,14 @@ export interface Review {
     responseText: string;
     targetCategory?: string; // Có dấu ? vì không phải mục nào cũng có
     categoryId?: string;     // Có dấu ? vì không phải mục nào cũng có
+}
+export interface Prize {
+  id: number;
+  name: string;
+  type: 'points' | 'voucher' | 'discount' | 'none';
+  value?: number;
+  color: string;
+  textColor: string;
+  icon: string;
+  description: string;
 }
