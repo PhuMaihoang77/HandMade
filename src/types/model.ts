@@ -41,7 +41,7 @@ export interface PriceRange {
     label: string;
 }
 export interface Review {
-    id: number;
+    id: string;
     productId: number;
     userName: string;
     rating: number;
