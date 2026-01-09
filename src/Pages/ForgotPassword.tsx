@@ -1,54 +1,50 @@
-// src/components/ForgotPassword.tsx
-import React, { useState } from 'react';
-import { forgotPassword } from '../services/AuthService';
+import React from 'react';
+import { useForgotPassword } from '../hooks/useForgotPassword';
 import '../Styles/auth.css'; 
 
-
-// Khai báo kiểu cho Props (Đã bỏ prop 'styles')
 interface ForgotPasswordProps {
     onSwitchToLogin: () => void;
     onClose: () => void;
 }
 
-// Bỏ tham số 'styles'
-const ForgotPassword: React.FC<ForgotPasswordProps> = ({ onSwitchToLogin,onClose }) => {
-    const [email, setEmail] = useState('');
-    const [error, setError] = useState('');
-    const [message, setMessage] = useState('');
-
-    // Khai báo kiểu cho tham số sự kiện (e)
-    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        setError('');
-        setMessage('');
-
-        try {
-            await forgotPassword(email);
-            setMessage(`Yêu cầu đã được gửi. Vui lòng kiểm tra hộp thư của ${email}.`);
-            setEmail('');
-        } catch (err) {
-            setError((err as Error).message || 'Đã xảy ra lỗi trong quá trình xử lý.');
-        }
-    };
+const ForgotPassword: React.FC<ForgotPasswordProps> = ({ onSwitchToLogin, onClose }) => {
+    // Gọi logic từ Hook
+    const { 
+        email, 
+        setEmail, 
+        error, 
+        message, 
+        handleSubmit 
+    } = useForgotPassword();
 
     return (
-        // ⭐ Dùng className
         <div className="auth-container">
             <button className="auth-close-button" onClick={onClose}>
                 &times; 
             </button>
             <h2>Quên Mật khẩu</h2>
             <p>Vui lòng nhập email của bạn để nhận liên kết đặt lại mật khẩu.</p>
+            
             <form onSubmit={handleSubmit} className="auth-form">
                 {error && <p className="auth-error">{error}</p>}
                 {message && <p className="auth-message">{message}</p>}
-                <input type="email" placeholder="Email của bạn" value={email} onChange={(e) => setEmail(e.target.value)} required className="auth-input" />
+                
+                <input 
+                    type="email" 
+                    placeholder="Email của bạn" 
+                    value={email} 
+                    onChange={(e) => setEmail(e.target.value)} 
+                    required 
+                    className="auth-input" 
+                />
 
                 <button type="submit" className="auth-button">Gửi Yêu Cầu</button>
             </form>
 
             <p className="auth-switch-text">
-                <a href="#" onClick={onSwitchToLogin} className="auth-link">Quay lại Đăng nhập</a>
+                <a href="#" onClick={(e) => { e.preventDefault(); onSwitchToLogin(); }} className="auth-link">
+                    Quay lại Đăng nhập
+                </a>
             </p>
         </div>
     );
