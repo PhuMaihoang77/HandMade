@@ -84,27 +84,6 @@
     color: #fff;
 }
 
-/* Logout button */
-.logout-section {
-    margin-top: auto;
-}
-
-.btn-logout {
-    width: 100%;
-    padding: 10px 15px;
-    background-color: #ff4d4f;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 500;
-    transition: all 0.2s;
-}
-
-.btn-logout:hover {
-    background-color: #e60000;
-}
-
 /* --- RIGHT CONTENT --- */
 .profile-content {
     flex: 1;
@@ -116,6 +95,15 @@
     border-radius: 12px;
     padding: 25px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.section-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #222;
+    border-left: 4px solid #007bff;
+    padding-left: 15px;
 }
 
 /* INFO ROW */
@@ -130,102 +118,87 @@
     border-bottom: none;
 }
 
-/* --- FORM --- */
+/* --- SỬA LẠI PHẦN FORM (Email & Password) --- */
 .profile-form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
+    max-width: 500px; /* Giới hạn độ rộng form cho cân đối */
 }
 
 .form-group {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 8px;
 }
 
 .form-group label {
-    font-weight: 500;
-    color: #555;
+    font-weight: 600;
+    color: #444;
+    font-size: 0.9rem;
 }
 
 .form-group input {
-    padding: 10px 12px;
+    padding: 12px 15px;
     border-radius: 8px;
-    border: 1px solid #ccc;
-    font-size: 14px;
-    transition: border 0.2s;
+    border: 1px solid #dcdfe6;
+    font-size: 15px;
+    background-color: #fff;
+    transition: all 0.2s ease-in-out;
 }
 
 .form-group input:focus {
     outline: none;
     border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
 }
 
-/* FORM MESSAGES */
+/* Thông báo Lỗi & Thành công */
 .form-error {
-    color: #ff4d4f;
+    color: #d32f2f;
     font-size: 13px;
+    background-color: #ffebee;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border-left: 3px solid #d32f2f;
 }
 
 .form-success {
-    color: #28a745;
+    color: #2e7d32;
     font-size: 13px;
+    background-color: #e8f5e9;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border-left: 3px solid #2e7d32;
 }
 
-/* FORM ACTIONS */
-.form-actions {
-    display: flex;
-    gap: 10px;
-    margin-top: 10px;
-}
-
-.form-actions button {
-    padding: 10px 15px;
-    border-radius: 8px;
+/* Nút bấm Lưu (Submit) */
+.btn-submit {
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+    color: white;
     border: none;
+    border-radius: 8px;
+    font-weight: 600;
     cursor: pointer;
-    font-weight: 500;
+    width: fit-content;
     transition: all 0.2s;
+    box-shadow: 0 4px 6px rgba(0, 123, 255, 0.2);
 }
 
-.form-actions button[type="submit"] {
-    background-color: #007bff;
-    color: #fff;
+.btn-submit:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 123, 255, 0.3);
+    filter: brightness(1.1);
 }
 
-.form-actions button[type="submit"]:hover {
-    background-color: #0056b3;
+.btn-submit:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    box-shadow: none;
 }
 
-.form-actions button[type="button"] {
-    background-color: #f0f0f0;
-    color: #333;
-}
-
-.form-actions button[type="button"]:hover {
-    background-color: #d9d9d9;
-}
-
-/* --- RESPONSIVE --- */
-@media screen and (max-width: 900px) {
-    .profile-container {
-        flex-direction: column;
-    }
-    .profile-menu {
-        flex-direction: row;
-        width: 100%;
-        overflow-x: auto;
-        margin-bottom: 20px;
-    }
-    .menu-item {
-        flex: 1;
-        text-align: center;
-    }
-    .logout-section {
-        margin-top: 0;
-        margin-left: auto;
-    }
-}
+/* --- VOUCHER & OTHERS (Giữ nguyên) --- */
 .my-vouchers-list {
     display: grid;
     gap: 15px;
@@ -273,4 +246,30 @@
     padding: 5px 12px;
     border-radius: 4px;
     cursor: pointer;
+}
+
+/* Logout button */
+.logout-item {
+    color: #ff4d4f !important;
+}
+.logout-item:hover {
+    background-color: #fff1f0 !important;
+}
+
+/* --- RESPONSIVE --- */
+@media screen and (max-width: 900px) {
+    .profile-container {
+        flex-direction: column;
+    }
+    .profile-menu {
+        flex-direction: row;
+        width: 100%;
+        overflow-x: auto;
+        margin-bottom: 20px;
+    }
+    .menu-item {
+        flex: 1;
+        text-align: center;
+        white-space: nowrap;
+    }
 }
