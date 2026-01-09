@@ -278,7 +278,7 @@ const currentPayable = Math.max(finalTotal - discount, 0);
                                                 <span className="voucher-name">{v.title}</span>
                                             </div>
                                             <div className="voucher-value">
-                                                {v.type === 'PERCENT' ? `${v.value}%` : `₫${(v.value/1000)}k`}
+                                                {v.type === 'PERCENT' ? `${v.value}%` : `${(v.value/1000)}k`}
                                             </div>
                                         </div>
                                     ))}
@@ -287,8 +287,8 @@ const currentPayable = Math.max(finalTotal - discount, 0);
                         )}
 
                         <div className="checkout-total">
-                            <div className="total-row"><span>Tạm tính:</span><span>₫{finalTotal.toLocaleString('vi-VN')}</span></div>
-                            {discount > 0 && <div className="total-row discount"><span>Giảm giá:</span><span>-₫{discount.toLocaleString('vi-VN')}</span></div>}
+                            <div className="total-row"><span>Tạm tính:</span><span>{finalTotal.toLocaleString('vi-VN')}₫</span></div>
+                            {discount > 0 && <div className="total-row discount"><span>Giảm giá:</span><span>-{discount.toLocaleString('vi-VN')}₫</span></div>}
 <div className="total-row final">
   <span>Tổng thanh toán:</span>
   <span>{Math.max(finalTotal - discount, 0).toLocaleString('vi-VN')}₫</span>
