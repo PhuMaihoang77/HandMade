@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import '../Styles/imageMagnifier.css';
 interface Props { src: string; alt: string; }
 
 const ImageMagnifier: React.FC<Props> = ({ src, alt }) => {
