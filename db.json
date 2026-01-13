@@ -4886,33 +4886,7 @@
       "userId": "1",
       "items": [],
       "totalPrice": 0,
-      "id": "d1be"
-    },
-    {
-      "id": "2711",
-      "userId": "cbc1",
-      "items": [
-        {
-          "productId": "123",
-          "quantity": 1
-        },
-        {
-          "productId": "121",
-          "quantity": 1
-        },
-        {
-          "productId": "124",
-          "quantity": 1
-        },
-        {
-          "productId": "125",
-          "quantity": 1
-        },
-        {
-          "productId": "126",
-          "quantity": 1
-        }
-      ]
+      "id": "b115"
     }
   ],
   "categories": [
@@ -5065,7 +5039,20 @@
       "id": "1",
       "email": "phu@gmail.com",
       "password": "123456",
-      "username": "Phu"
+      "username": "Phu",
+      "wishlist": [
+        {
+          "id": "122",
+          "name": "Vòng tay Handmade da thật",
+          "price": 180000,
+          "category": "Đồ da",
+          "categoryId": 6,
+          "imageUrl": "https://product.hstatic.net/1000260559/product/vong_tay_handmade_da_that__3__grande.jpg",
+          "description": "Vòng tay được làm từ da bò thật với thiết kế đơn giản mang hơi hướng cổ điển nhưng vẫn vô cùng cá tính . Vòng có nhiều phiên bản màu sắc cho bạn lựa chọn .\n\n",
+          "inventory": 20
+        }
+      ],
+      "lastSpinDate": "2026-01-13T18:48:16.811Z"
     },
     {
       "id": "cbc1",
@@ -5229,8 +5216,8 @@
       "expiredAt": "2026-01-01"
     },
     {
-      "id": "VC_LUCKY_1768289712153",
-      "code": "LUCKYSIOLM",
+      "id": "VC_LUCKY_1768330096844",
+      "code": "LUCKYTJZSI",
       "title": "Voucher 10k",
       "description": "Giảm 10.000đ cho đơn hàng từ 0đ",
       "type": "FIXED",
@@ -5238,7 +5225,7 @@
       "maxDiscount": 10000,
       "minOrder": 0,
       "target": "SPECIFIC_USER",
-      "userId": "cbc1",
+      "userId": "1",
       "maxOrderCount": 0,
       "quantity": 1,
       "used": 0,
