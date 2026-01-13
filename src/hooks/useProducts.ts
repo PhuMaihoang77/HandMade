@@ -29,3 +29,13 @@ export const useProducts = () => {
     // Trả về dữ liệu cần thiết cho Component dùng
     return { products, loading, error };
 };
+export const getTimeRemaining = (targetDate: Date) => {
+    const total = targetDate.getTime() - new Date().getTime();
+
+    const seconds = Math.max(Math.floor((total / 1000) % 60), 0);
+    const minutes = Math.max(Math.floor((total / 1000 / 60) % 60), 0);
+    const hours = Math.max(Math.floor((total / (1000 * 60 * 60)) % 24), 0);
+    const days = Math.max(Math.floor(total / (1000 * 60 * 60 * 24)), 0);
+
+    return { total, days, hours, minutes, seconds };
+};
