@@ -23,10 +23,7 @@ export const getProductById = async (id: number): Promise<Product | null> => {
     }
 };
 
-// --- PHẦN THÊM MỚI CHO REVIEW ---
 
-// 4. Lấy reviews theo productId
-// json-server hỗ trợ filter: /reviews?productId=1
 export const getReviewsByProductId = async (productId: number): Promise<Review[]> => {
     try {
         const response = await api.get(`/reviews?productId=${productId}`);
