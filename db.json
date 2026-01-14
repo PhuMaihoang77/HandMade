@@ -2157,6 +2157,62 @@
       "content": "Bạn đang tìm kiếm một mẫu ví da handmade ạ? Shop có sản phẩm Ví Da Nam Bifold Cổ Điển với thiết kế cổ điển, được làm từ chất liệu da cao cấp. \n\nBạn có thể tham khảo sản phẩm Ví Da Nam Bifold Cổ Điển tại đây: http://localhost:3000/product/2\n\nMột ưu điểm của sản phẩm này là thiết kế cổ điển, phù hợp với phong cách thời trang hiện đại. Bạn có muốn tìm ví da với thiết kế khác hay không ạ?\n\n#TúiVí #Da #Handmade",
       "sender": "bot",
       "createdAt": "2026-01-14T06:41:12.866Z"
+    },
+    {
+      "id": "5817",
+      "userId": "cbc1",
+      "content": "xin chào ",
+      "sender": "user",
+      "createdAt": "2026-01-14T07:03:23.431Z"
+    },
+    {
+      "id": "5817",
+      "userId": "cbc1",
+      "content": "xin chào ",
+      "sender": "user",
+      "createdAt": "2026-01-14T07:03:23.431Z"
+    },
+    {
+      "id": "a7c6",
+      "userId": "cbc1",
+      "content": "Xin chào bạn! 😊\n\nShop rất vui được phục vụ bạn. Bạn có nhu cầu tìm kiếm sản phẩm gì hôm nay không?",
+      "sender": "bot",
+      "createdAt": "2026-01-14T07:03:25.537Z"
+    },
+    {
+      "id": "a7c6",
+      "userId": "cbc1",
+      "content": "Xin chào bạn! 😊\n\nShop rất vui được phục vụ bạn. Bạn có nhu cầu tìm kiếm sản phẩm gì hôm nay không?",
+      "sender": "bot",
+      "createdAt": "2026-01-14T07:03:25.537Z"
+    },
+    {
+      "id": "d26b",
+      "userId": "cbc1",
+      "content": "vòng đeo tay xem tất cả",
+      "sender": "user",
+      "createdAt": "2026-01-14T07:03:36.219Z"
+    },
+    {
+      "id": "d26b",
+      "userId": "cbc1",
+      "content": "vòng đeo tay xem tất cả",
+      "sender": "user",
+      "createdAt": "2026-01-14T07:03:36.219Z"
+    },
+    {
+      "id": "46f1",
+      "userId": "cbc1",
+      "content": "Bạn muốn tìm một chiếc vòng đeo tay handmade đẹp mắt. \n\nShop khuyên bạn nên thử xem các mẫu: Nhẫn Bạc Hoa Trà - Xem tại: http://localhost:3000/product/66 hoặc Băng Cảm Ơn Đá Màu - Xem tại: http://localhost:3000/product/67. Đây đều là những sản phẩm chất liệu cao cấp, thiết kế độc đáo, và được người tiêu dùng yêu thích. \n\nBạn muốn tìm quà tặng hay dùng cá nhân ạ? 🎁\nTags: Vòng đeo tay, Trang sức đá, Đá màu.",
+      "sender": "bot",
+      "createdAt": "2026-01-14T07:03:38.249Z"
+    },
+    {
+      "id": "46f1",
+      "userId": "cbc1",
+      "content": "Bạn muốn tìm một chiếc vòng đeo tay handmade đẹp mắt. \n\nShop khuyên bạn nên thử xem các mẫu: Nhẫn Bạc Hoa Trà - Xem tại: http://localhost:3000/product/66 hoặc Băng Cảm Ơn Đá Màu - Xem tại: http://localhost:3000/product/67. Đây đều là những sản phẩm chất liệu cao cấp, thiết kế độc đáo, và được người tiêu dùng yêu thích. \n\nBạn muốn tìm quà tặng hay dùng cá nhân ạ? 🎁\nTags: Vòng đeo tay, Trang sức đá, Đá màu.",
+      "sender": "bot",
+      "createdAt": "2026-01-14T07:03:38.249Z"
     }
   ],
   "faq": [
@@ -5328,7 +5384,7 @@
       "userId": "1",
       "items": [],
       "totalPrice": 0,
-      "id": "5cc0"
+      "id": "e0ee"
     }
   ],
   "categories": [
