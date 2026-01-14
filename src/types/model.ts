@@ -10,6 +10,7 @@ export interface Product {
     inventory: number;
     rating?: number; 
     commentCount?: number;
+    viewCount?: number;
 }
 
 // Bạn cũng nên chuyển User interface vào đây luôn
