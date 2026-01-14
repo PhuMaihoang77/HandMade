@@ -1723,6 +1723,440 @@
       "content": "Shop chào bạn một cái ôi! 😊 Khỏe là điều cần thiết, nhưng Shop nghĩ bạn cũng cần một món quà handmade để chăm sóc bản thân. Bạn có muốn tìm một món quà handmade cho mình hay tặng cho ai đó ạ?\n\nTrang sức đá, Đồ da khâu tay, Gốm sứ nghệ thuật, Túi ví vải... có sản phẩm nào đặc biệt bạn thích không?\n\nTừ khóa: handmade, quà tặng",
       "sender": "bot",
       "createdAt": "2026-01-13T07:34:36.933Z"
+    },
+    {
+      "id": "ec18",
+      "userId": "1",
+      "content": "Chào bạn! 👋 Shop HandMade có thể giúp gì cho Bạn?",
+      "sender": "bot",
+      "createdAt": "2026-01-14T05:56:23.906Z"
+    },
+    {
+      "id": "aa50",
+      "userId": "1",
+      "content": "Chào bạn! 👋 Shop HandMade có thể giúp gì cho Bạn?",
+      "sender": "bot",
+      "createdAt": "2026-01-14T05:56:24.230Z"
+    },
+    {
+      "id": "1019",
+      "userId": "cbc1",
+      "content": "adaw",
+      "sender": "user",
+      "createdAt": "2026-01-14T05:59:58.522Z"
+    },
+    {
+      "id": "1019",
+      "userId": "cbc1",
+      "content": "adaw",
+      "sender": "user",
+      "createdAt": "2026-01-14T05:59:58.522Z"
+    },
+    {
+      "id": "bbe6",
+      "userId": "cbc1",
+      "content": "Rất tiếc, Shop chưa thể trả lời câu hỏi của Bạn vì nó không liên quan đến sản phẩm của Shop. Bạn có muốn tìm hiểu thêm về các sản phẩm handmade của Shop không ạ? 🤔",
+      "sender": "bot",
+      "createdAt": "2026-01-14T06:00:00.266Z"
+    },
+    {
+      "id": "bbe6",
+      "userId": "cbc1",
+      "content": "Rất tiếc, Shop chưa thể trả lời câu hỏi của Bạn vì nó không liên quan đến sản phẩm của Shop. Bạn có muốn tìm hiểu thêm về các sản phẩm handmade của Shop không ạ? 🤔",
+      "sender": "bot",
+      "createdAt": "2026-01-14T06:00:00.266Z"
+    },
+    {
+      "id": "70ed",
+      "userId": "cbc1",
+      "content": "ví",
+      "sender": "user",
+      "createdAt": "2026-01-14T06:00:08.628Z"
+    },
+    {
+      "id": "70ed",
+      "userId": "cbc1",
+      "content": "ví",
+      "sender": "user",
+      "createdAt": "2026-01-14T06:00:08.628Z"
+    },
+    {
+      "id": "5dca",
+      "userId": "cbc1",
+      "content": "Bạn đang tìm kiếm một chiếc ví handmade ạ? Shop có nhiều mẫu ví đa dạng, phù hợp với nhiều phong cách khác nhau.\n\n- Ví Da Nam Bifold Cổ Điển | Giá: 450,000đ | ID: 2\n- Ví Da Màu Kem Nhẹ Nhàng | Giá: 399,000đ | ID: 7\n- Ví Da Đen Trơn Cao Cấp | Giá: 699,000đ | ID: 9\n\nBạn muốn tìm ví cho mục đích gì ạ? Quà tặng hay dùng cá nhân ạ? 👜 Tags: ví handmade, túi da, quà tặng độc đáo",
+      "sender": "bot",
+      "createdAt": "2026-01-14T06:00:10.738Z"
+    },
+    {
+      "id": "5dca",
+      "userId": "cbc1",
+      "content": "Bạn đang tìm kiếm một chiếc ví handmade ạ? Shop có nhiều mẫu ví đa dạng, phù hợp với nhiều phong cách khác nhau.\n\n- Ví Da Nam Bifold Cổ Điển | Giá: 450,000đ | ID: 2\n- Ví Da Màu Kem Nhẹ Nhàng | Giá: 399,000đ | ID: 7\n- Ví Da Đen Trơn Cao Cấp | Giá: 699,000đ | ID: 9\n\nBạn muốn tìm ví cho mục đích gì ạ? Quà tặng hay dùng cá nhân ạ? 👜 Tags: ví handmade, túi da, quà tặng độc đáo",
+      "sender": "bot",
+      "createdAt": "2026-01-14T06:00:10.738Z"
+    },
+    {
+      "id": "889e",
+      "userId": "cbc1",
+      "content": "ví ",
+      "sender": "user",
+      "createdAt": "2026-01-14T06:03:40.519Z"
+    },
+    {
+      "id": "889e",
+      "userId": "cbc1",
+      "content": "ví ",
+      "sender": "user",
+      "createdAt": "2026-01-14T06:03:40.519Z"
+    },
+    {
+      "id": "0688",
+      "userId": "cbc1",
+      "content": "Bạn đang tìm kiếm một chiếc ví handmade độc đáo. Shop có một số mẫu ví da đẹp mà bạn có thể tham khảo:\n\n- Ví Da Nam Bifold Cổ Điển | Giá: 450,000đ | ID: 2 (https://localhost:3000/product/2)\n- Ví Da Đen Classic | Giá: 199,000đ | ID: 6 (https://localhost:3000/product/6)\n- Ví Da Hồng Thời Trang | Giá: 899,000đ | ID: 13 (https://localhost:3000/product/13)\n\nTất cả các mẫu ví đều được làm từ chất liệu da cao cấp, thiết kế tinh tế và độc đáo. Bạn có muốn tìm một chiếc ví phù hợp với phong cách của mình ạ?\n\nTừ khóa: Ví handmade, Ví da, Túi ví",
+      "sender": "bot",
+      "createdAt": "2026-01-14T06:03:43.137Z"
+    },
+    {
+      "id": "0688",
+      "userId": "cbc1",
+      "content": "Bạn đang tìm kiếm một chiếc ví handmade độc đáo. Shop có một số mẫu ví da đẹp mà bạn có thể tham khảo:\n\n- Ví Da Nam Bifold Cổ Điển | Giá: 450,000đ | ID: 2 (https://localhost:3000/product/2)\n- Ví Da Đen Classic | Giá: 199,000đ | ID: 6 (https://localhost:3000/product/6)\n- Ví Da Hồng Thời Trang | Giá: 899,000đ | ID: 13 (https://localhost:3000/product/13)\n\nTất cả các mẫu ví đều được làm từ chất liệu da cao cấp, thiết kế tinh tế và độc đáo. Bạn có muốn tìm một chiếc ví phù hợp với phong cách của mình ạ?\n\nTừ khóa: Ví handmade, Ví da, Túi ví",
+      "sender": "bot",
+      "createdAt": "2026-01-14T06:03:43.137Z"
+    },
+    {
+      "id": "9ed2",
+      "userId": "cbc1",
+      "content": "ví nam ",
+      "sender": "user",
+      "createdAt": "2026-01-14T06:04:56.667Z"
+    },
+    {
+      "id": "9ed2",
+      "userId": "cbc1",
+      "content": "ví nam ",
+      "sender": "user",
+      "createdAt": "2026-01-14T06:04:56.667Z"
+    },
+    {
+      "id": "e9de",
+      "userId": "cbc1",
+      "content": "Bạn đang tìm kiếm ví nam handmade rồi ạ! 📦\n\nChúng tôi có 2 mẫu ví da nam đang hot hiện nay:\n\n- Ví Da Nam Bifold Cổ Điển | Giá: 450,000đ | ID: 2 (Sản phẩm này được làm từ da cao cấp, thiết kế đơn giản nhưng sang trọng)\n- Ví Da Nam Trifold Độc Đáo | Giá: 380,000đ | ID: 5 (Sản phẩm này có thiết kế độc đáo, rất phù hợp cho những người yêu thích phong cách mạnh mẽ)\n\nBạn có muốn tìm ví nam khác không ạ? 🤔",
+      "sender": "bot",
+      "createdAt": "2026-01-14T06:04:58.950Z"
+    },
+    {
+      "id": "e9de",
+      "userId": "cbc1",
+      "content": "Bạn đang tìm kiếm ví nam handmade rồi ạ! 📦\n\nChúng tôi có 2 mẫu ví da nam đang hot hiện nay:\n\n- Ví Da Nam Bifold Cổ Điển | Giá: 450,000đ | ID: 2 (Sản phẩm này được làm từ da cao cấp, thiết kế đơn giản nhưng sang trọng)\n- Ví Da Nam Trifold Độc Đáo | Giá: 380,000đ | ID: 5 (Sản phẩm này có thiết kế độc đáo, rất phù hợp cho những người yêu thích phong cách mạnh mẽ)\n\nBạn có muốn tìm ví nam khác không ạ? 🤔",
+      "sender": "bot",
+      "createdAt": "2026-01-14T06:04:58.950Z"
+    },
+    {
+      "id": "41ed",
+      "userId": "cbc1",
+      "content": "túi sách",
+      "sender": "user",
+      "createdAt": "2026-01-14T06:05:41.120Z"
+    },
+    {
+      "id": "41ed",
+      "userId": "cbc1",
+      "content": "túi sách",
+      "sender": "user",
+      "createdAt": "2026-01-14T06:05:41.120Z"
+    },
+    {
+      "id": "cf18",
+      "userId": "cbc1",
+      "content": "Bạn đang tìm kiếm một chiếc túi sách handmade độc đáo! 😊\n\nShop hiện có một số mẫu túi sách handmade thú vị, chẳng hạn như:\n\n- Túi Sách Da Nữ Cổ Điển | Giá: 499,000đ | ID: 4 (Được làm từ da cao cấp, thiết kế cổ điển và có thể đựng sách, laptop hoặc các vật dụng khác)\n- Túi Sách Vải Canvas In Chữ Vintage | Giá: 89,000đ | ID: 1 (Túi sách được làm từ vải canvas mềm mại, thiết kế in chữ vintage độc đáo và có thể đựng sách, tài liệu)\n\nBạn muốn tìm một chiếc túi sách có thiết kế đặc biệt hay có tính năng bảo mật cao ạ? 🤔\n\nTags: túi sách handmade, túi da, túi vải canvas",
+      "sender": "bot",
+      "createdAt": "2026-01-14T06:05:43.461Z"
+    },
+    {
+      "id": "cf18",
+      "userId": "cbc1",
+      "content": "Bạn đang tìm kiếm một chiếc túi sách handmade độc đáo! 😊\n\nShop hiện có một số mẫu túi sách handmade thú vị, chẳng hạn như:\n\n- Túi Sách Da Nữ Cổ Điển | Giá: 499,000đ | ID: 4 (Được làm từ da cao cấp, thiết kế cổ điển và có thể đựng sách, laptop hoặc các vật dụng khác)\n- Túi Sách Vải Canvas In Chữ Vintage | Giá: 89,000đ | ID: 1 (Túi sách được làm từ vải canvas mềm mại, thiết kế in chữ vintage độc đáo và có thể đựng sách, tài liệu)\n\nBạn muốn tìm một chiếc túi sách có thiết kế đặc biệt hay có tính năng bảo mật cao ạ? 🤔\n\nTags: túi sách handmade, túi da, túi vải canvas",
+      "sender": "bot",
+      "createdAt": "2026-01-14T06:05:43.461Z"
+    },
+    {
+      "id": "4e18",
+      "userId": "1",
+      "content": "hi",
+      "sender": "user",
+      "createdAt": "2026-01-14T06:06:15.439Z"
+    },
+    {
+      "id": "4e18",
+      "userId": "1",
+      "content": "hi",
+      "sender": "user",
+      "createdAt": "2026-01-14T06:06:15.439Z"
+    },
+    {
+      "id": "5d83",
+      "userId": "1",
+      "content": "Xin chào bạn! 😊 Shop rất vui được phục vụ bạn hôm nay. Bạn tìm kiếm gì hôm nay ạ?",
+      "sender": "bot",
+      "createdAt": "2026-01-14T06:06:17.283Z"
+    },
+    {
+      "id": "5d83",
+      "userId": "1",
+      "content": "Xin chào bạn! 😊 Shop rất vui được phục vụ bạn hôm nay. Bạn tìm kiếm gì hôm nay ạ?",
+      "sender": "bot",
+      "createdAt": "2026-01-14T06:06:17.283Z"
+    },
+    {
+      "id": "0018",
+      "userId": "1",
+      "content": "túi sách ",
+      "sender": "user",
+      "createdAt": "2026-01-14T06:06:21.000Z"
+    },
+    {
+      "id": "0018",
+      "userId": "1",
+      "content": "túi sách ",
+      "sender": "user",
+      "createdAt": "2026-01-14T06:06:21.000Z"
+    },
+    {
+      "id": "9ef4",
+      "userId": "1",
+      "content": "Bạn đang tìm kiếm một chiếc túi sách handmade độc đáo? 🎉\n\nShop đang có các mẫu túi & ví handmade rất đẹp, như ví da nam bifold cổ điển (http://localhost:3000/product/2) với thiết kế tinh tế và chất liệu da cao cấp. Hoặc bạn có thể tham khảo chiếc túi tote vải canvas in chữ vintage (http://localhost:3000/product/1) với thiết kế độc đáo và giá cả phải chăng.\n\nBạn muốn tìm một chiếc túi sách chuyên dụng hay một chiếc túi đa năng để đi học, đi làm?",
+      "sender": "bot",
+      "createdAt": "2026-01-14T06:06:23.116Z"
+    },
+    {
+      "id": "9ef4",
+      "userId": "1",
+      "content": "Bạn đang tìm kiếm một chiếc túi sách handmade độc đáo? 🎉\n\nShop đang có các mẫu túi & ví handmade rất đẹp, như ví da nam bifold cổ điển (http://localhost:3000/product/2) với thiết kế tinh tế và chất liệu da cao cấp. Hoặc bạn có thể tham khảo chiếc túi tote vải canvas in chữ vintage (http://localhost:3000/product/1) với thiết kế độc đáo và giá cả phải chăng.\n\nBạn muốn tìm một chiếc túi sách chuyên dụng hay một chiếc túi đa năng để đi học, đi làm?",
+      "sender": "bot",
+      "createdAt": "2026-01-14T06:06:23.116Z"
+    },
+    {
+      "id": "6fde",
+      "userId": "1",
+      "content": "ví nam",
+      "sender": "user",
+      "createdAt": "2026-01-14T06:08:05.285Z"
+    },
+    {
+      "id": "6fde",
+      "userId": "1",
+      "content": "ví nam",
+      "sender": "user",
+      "createdAt": "2026-01-14T06:08:05.285Z"
+    },
+    {
+      "id": "b015",
+      "userId": "1",
+      "content": "Bạn muốn tìm ví nam handmade. Shop có một số mẫu ví da nam độc đáo và chất lượng sau:\n\n- Ví Da Nam Bifold Cổ Điển: Thiết kế truyền thống, chất liệu da cao cấp, vừa tay và thoải mái khi sử dụng. Xem tại: http://localhost:3000/product/2\n- Ví Da Nam Trifold Đẹp: Thiết kế hiện đại, tích hợp chức năng nhiều ngăn, giúp bạn sắp xếp và bảo quản đồ đạc một cách khoa học. Xem tại: http://localhost:3000/product/4\n\nBạn muốn tìm ví nam theo phong cách nào ạ? Ví dụ: cổ điển, hiện đại, màu sắc cụ thể...",
+      "sender": "bot",
+      "createdAt": "2026-01-14T06:08:07.249Z"
+    },
+    {
+      "id": "b015",
+      "userId": "1",
+      "content": "Bạn muốn tìm ví nam handmade. Shop có một số mẫu ví da nam độc đáo và chất lượng sau:\n\n- Ví Da Nam Bifold Cổ Điển: Thiết kế truyền thống, chất liệu da cao cấp, vừa tay và thoải mái khi sử dụng. Xem tại: http://localhost:3000/product/2\n- Ví Da Nam Trifold Đẹp: Thiết kế hiện đại, tích hợp chức năng nhiều ngăn, giúp bạn sắp xếp và bảo quản đồ đạc một cách khoa học. Xem tại: http://localhost:3000/product/4\n\nBạn muốn tìm ví nam theo phong cách nào ạ? Ví dụ: cổ điển, hiện đại, màu sắc cụ thể...",
+      "sender": "bot",
+      "createdAt": "2026-01-14T06:08:07.249Z"
+    },
+    {
+      "id": "61cb",
+      "userId": "1",
+      "content": "cho tôi ví da",
+      "sender": "user",
+      "createdAt": "2026-01-14T06:08:35.587Z"
+    },
+    {
+      "id": "61cb",
+      "userId": "1",
+      "content": "cho tôi ví da",
+      "sender": "user",
+      "createdAt": "2026-01-14T06:08:35.587Z"
+    },
+    {
+      "id": "79ee",
+      "userId": "1",
+      "content": "Bạn đang tìm cho mình một chiếc ví da handmade! Shop có bán ví da và chúng rất được yêu thích. \n\n- Ví Da Nam Bifold Cổ Điển: Một chiếc ví da nam chất lượng cao với thiết kế cổ điển, được làm từ da cao cấp và có ngăn đựng tiền và thẻ. Xem tại: http://localhost:3000/product/2\n- Ví Da Nữ Clutch Cỡ Nhỏ: Một chiếc ví da nữ nhỏ gọn, thích hợp để đựng tiền và thẻ, được làm từ da mềm và mịn. Xem tại: http://localhost:3000/product/4\n\nBạn muốn ví da để làm gì ạ?",
+      "sender": "bot",
+      "createdAt": "2026-01-14T06:08:37.839Z"
+    },
+    {
+      "id": "79ee",
+      "userId": "1",
+      "content": "Bạn đang tìm cho mình một chiếc ví da handmade! Shop có bán ví da và chúng rất được yêu thích. \n\n- Ví Da Nam Bifold Cổ Điển: Một chiếc ví da nam chất lượng cao với thiết kế cổ điển, được làm từ da cao cấp và có ngăn đựng tiền và thẻ. Xem tại: http://localhost:3000/product/2\n- Ví Da Nữ Clutch Cỡ Nhỏ: Một chiếc ví da nữ nhỏ gọn, thích hợp để đựng tiền và thẻ, được làm từ da mềm và mịn. Xem tại: http://localhost:3000/product/4\n\nBạn muốn ví da để làm gì ạ?",
+      "sender": "bot",
+      "createdAt": "2026-01-14T06:08:37.839Z"
+    },
+    {
+      "id": "94a5",
+      "userId": "1",
+      "content": "túi",
+      "sender": "user",
+      "createdAt": "2026-01-14T06:08:54.526Z"
+    },
+    {
+      "id": "94a5",
+      "userId": "1",
+      "content": "túi",
+      "sender": "user",
+      "createdAt": "2026-01-14T06:08:54.526Z"
+    },
+    {
+      "id": "6027",
+      "userId": "1",
+      "content": "Bạn đang tìm kiếm một chiếc túi handmade độc đáo và chất lượng, đúng không? 🎁\n\nShop có hai mẫu túi mà bạn có thể tham khảo:\n\n- **Túi Tote Vải Canvas In Chữ Vintage**: Một chiếc túi tote handmade từ vải canvas với thiết kế độc đáo và chữ in nổi bật. Túi này rất phù hợp cho những người thích phong cách vintage và muốn mang theo một món đồ độc đáo. Xem tại: http://localhost:3000/product/1\n- **Túi Đeo Chéo Da Nữ Mini**: Một chiếc túi nhỏ nhắn handmade từ da nữ với thiết kế tinh tế và sang trọng. Túi này rất phù hợp cho những người muốn mang theo một món đồ nhỏ gọn và tiện dụng. Xem tại: http://localhost:3000/product/3\n\nBạn muốn tìm quà tặng hay dùng cá nhân ạ? \n\nTags: Túi handmade, túi độc đáo, túi chất lượng.",
+      "sender": "bot",
+      "createdAt": "2026-01-14T06:08:56.849Z"
+    },
+    {
+      "id": "6027",
+      "userId": "1",
+      "content": "Bạn đang tìm kiếm một chiếc túi handmade độc đáo và chất lượng, đúng không? 🎁\n\nShop có hai mẫu túi mà bạn có thể tham khảo:\n\n- **Túi Tote Vải Canvas In Chữ Vintage**: Một chiếc túi tote handmade từ vải canvas với thiết kế độc đáo và chữ in nổi bật. Túi này rất phù hợp cho những người thích phong cách vintage và muốn mang theo một món đồ độc đáo. Xem tại: http://localhost:3000/product/1\n- **Túi Đeo Chéo Da Nữ Mini**: Một chiếc túi nhỏ nhắn handmade từ da nữ với thiết kế tinh tế và sang trọng. Túi này rất phù hợp cho những người muốn mang theo một món đồ nhỏ gọn và tiện dụng. Xem tại: http://localhost:3000/product/3\n\nBạn muốn tìm quà tặng hay dùng cá nhân ạ? \n\nTags: Túi handmade, túi độc đáo, túi chất lượng.",
+      "sender": "bot",
+      "createdAt": "2026-01-14T06:08:56.849Z"
+    },
+    {
+      "id": "6b2c",
+      "userId": "cbc1",
+      "content": "vòng tya",
+      "sender": "user",
+      "createdAt": "2026-01-14T06:11:26.097Z"
+    },
+    {
+      "id": "6b2c",
+      "userId": "cbc1",
+      "content": "vòng tya",
+      "sender": "user",
+      "createdAt": "2026-01-14T06:11:26.097Z"
+    },
+    {
+      "id": "2654",
+      "userId": "cbc1",
+      "content": "Rất tiếc, Shop chưa có mẫu vòng tay này. Bạn tham khảo thêm các mẫu Trang sức handmade của Shop tại đây nhé: http://localhost:3000/products?page=1&cat=5",
+      "sender": "bot",
+      "createdAt": "2026-01-14T06:11:27.830Z"
+    },
+    {
+      "id": "2654",
+      "userId": "cbc1",
+      "content": "Rất tiếc, Shop chưa có mẫu vòng tay này. Bạn tham khảo thêm các mẫu Trang sức handmade của Shop tại đây nhé: http://localhost:3000/products?page=1&cat=5",
+      "sender": "bot",
+      "createdAt": "2026-01-14T06:11:27.830Z"
+    },
+    {
+      "id": "471c",
+      "userId": "cbc1",
+      "content": "cho tôi  các sản phẩm đồ da",
+      "sender": "user",
+      "createdAt": "2026-01-14T06:12:04.678Z"
+    },
+    {
+      "id": "471c",
+      "userId": "cbc1",
+      "content": "cho tôi  các sản phẩm đồ da",
+      "sender": "user",
+      "createdAt": "2026-01-14T06:12:04.678Z"
+    },
+    {
+      "id": "67cd",
+      "userId": "cbc1",
+      "content": " Shop! Bạn đang tìm kiếm các sản phẩm đồ da handmade của Shop ạ? 🛍️\n\nChúng tôi có 2 sản phẩm đồ da khâu tay rất đẹp và chất lượng cao:\n\n- **Túi xách nữ Handmade da bò retro thời trang**: Túi được làm từ da bò chất lượng cao, thiết kế thời trang và hiện đại. Xem tại: http://localhost:3000/product/121\n- **Vòng tay Handmade da thật**: Vòng tay được làm từ da thật, thiết kế đơn giản và tinh tế. Xem tại: http://localhost:3000/product/122\n\nCả 2 sản phẩm đều được làm thủ công với sự chăm chút và yêu cầu cao. Bạn muốn tìm quà tặng hay dùng cá nhân ạ? #ĐồDa #Handmade #TúiXách",
+      "sender": "bot",
+      "createdAt": "2026-01-14T06:12:07.038Z"
+    },
+    {
+      "id": "67cd",
+      "userId": "cbc1",
+      "content": " Shop! Bạn đang tìm kiếm các sản phẩm đồ da handmade của Shop ạ? 🛍️\n\nChúng tôi có 2 sản phẩm đồ da khâu tay rất đẹp và chất lượng cao:\n\n- **Túi xách nữ Handmade da bò retro thời trang**: Túi được làm từ da bò chất lượng cao, thiết kế thời trang và hiện đại. Xem tại: http://localhost:3000/product/121\n- **Vòng tay Handmade da thật**: Vòng tay được làm từ da thật, thiết kế đơn giản và tinh tế. Xem tại: http://localhost:3000/product/122\n\nCả 2 sản phẩm đều được làm thủ công với sự chăm chút và yêu cầu cao. Bạn muốn tìm quà tặng hay dùng cá nhân ạ? #ĐồDa #Handmade #TúiXách",
+      "sender": "bot",
+      "createdAt": "2026-01-14T06:12:07.038Z"
+    },
+    {
+      "id": "ec6a",
+      "userId": "cbc1",
+      "content": "đă",
+      "sender": "user",
+      "createdAt": "2026-01-14T06:36:56.847Z"
+    },
+    {
+      "id": "ec6a",
+      "userId": "cbc1",
+      "content": "đă",
+      "sender": "user",
+      "createdAt": "2026-01-14T06:36:56.847Z"
+    },
+    {
+      "id": "14b9",
+      "userId": "cbc1",
+      "content": "Rất tiếc, hiện Shop chưa có mẫu đó rồi ạ. Bạn tham khảo thêm các dòng sản phẩm handmade của Shop tại đây nhé:\n\n- Trang sức: http://localhost:3000/products?page=1&cat=1\n- Gốm sứ: http://localhost:3000/products?page=1&cat=2\n- Đồ da: http://localhost:3000/products?page=1&cat=3\n- Túi & Ví: http://localhost:3000/products?page=1&cat=4",
+      "sender": "bot",
+      "createdAt": "2026-01-14T06:36:58.944Z"
+    },
+    {
+      "id": "14b9",
+      "userId": "cbc1",
+      "content": "Rất tiếc, hiện Shop chưa có mẫu đó rồi ạ. Bạn tham khảo thêm các dòng sản phẩm handmade của Shop tại đây nhé:\n\n- Trang sức: http://localhost:3000/products?page=1&cat=1\n- Gốm sứ: http://localhost:3000/products?page=1&cat=2\n- Đồ da: http://localhost:3000/products?page=1&cat=3\n- Túi & Ví: http://localhost:3000/products?page=1&cat=4",
+      "sender": "bot",
+      "createdAt": "2026-01-14T06:36:58.944Z"
+    },
+    {
+      "id": "ea65",
+      "userId": "cbc1",
+      "content": "ví ",
+      "sender": "user",
+      "createdAt": "2026-01-14T06:41:07.336Z"
+    },
+    {
+      "id": "ea65",
+      "userId": "cbc1",
+      "content": "ví ",
+      "sender": "user",
+      "createdAt": "2026-01-14T06:41:07.336Z"
+    },
+    {
+      "id": "4188",
+      "userId": "cbc1",
+      "content": "Bạn đang tìm một chiếc ví handmade ạ? 🤗\n\nShop có một số mẫu ví da rất đẹp và chất lượng. Ví dụ như Ví Da Đen Basic | Giá: 299,000đ | ID: 19 hoặc Ví Da Hồng Nhạt Nữ Tính | Giá: 399,000đ | ID: 20. Mỗi chiếc ví đều được làm thủ công với chất liệu da tốt và thiết kế tinh tế.\n\nBạn muốn tìm ví cho mục đích nào ạ?",
+      "sender": "bot",
+      "createdAt": "2026-01-14T06:41:09.566Z"
+    },
+    {
+      "id": "4188",
+      "userId": "cbc1",
+      "content": "Bạn đang tìm một chiếc ví handmade ạ? 🤗\n\nShop có một số mẫu ví da rất đẹp và chất lượng. Ví dụ như Ví Da Đen Basic | Giá: 299,000đ | ID: 19 hoặc Ví Da Hồng Nhạt Nữ Tính | Giá: 399,000đ | ID: 20. Mỗi chiếc ví đều được làm thủ công với chất liệu da tốt và thiết kế tinh tế.\n\nBạn muốn tìm ví cho mục đích nào ạ?",
+      "sender": "bot",
+      "createdAt": "2026-01-14T06:41:09.566Z"
+    },
+    {
+      "id": "c9b1",
+      "userId": "cbc1",
+      "content": "ví dai ",
+      "sender": "user",
+      "createdAt": "2026-01-14T06:41:10.943Z"
+    },
+    {
+      "id": "c9b1",
+      "userId": "cbc1",
+      "content": "ví dai ",
+      "sender": "user",
+      "createdAt": "2026-01-14T06:41:10.943Z"
+    },
+    {
+      "id": "30b4",
+      "userId": "cbc1",
+      "content": "Bạn đang tìm kiếm một mẫu ví da handmade ạ? Shop có sản phẩm Ví Da Nam Bifold Cổ Điển với thiết kế cổ điển, được làm từ chất liệu da cao cấp. \n\nBạn có thể tham khảo sản phẩm Ví Da Nam Bifold Cổ Điển tại đây: http://localhost:3000/product/2\n\nMột ưu điểm của sản phẩm này là thiết kế cổ điển, phù hợp với phong cách thời trang hiện đại. Bạn có muốn tìm ví da với thiết kế khác hay không ạ?\n\n#TúiVí #Da #Handmade",
+      "sender": "bot",
+      "createdAt": "2026-01-14T06:41:12.866Z"
+    },
+    {
+      "id": "30b4",
+      "userId": "cbc1",
+      "content": "Bạn đang tìm kiếm một mẫu ví da handmade ạ? Shop có sản phẩm Ví Da Nam Bifold Cổ Điển với thiết kế cổ điển, được làm từ chất liệu da cao cấp. \n\nBạn có thể tham khảo sản phẩm Ví Da Nam Bifold Cổ Điển tại đây: http://localhost:3000/product/2\n\nMột ưu điểm của sản phẩm này là thiết kế cổ điển, phù hợp với phong cách thời trang hiện đại. Bạn có muốn tìm ví da với thiết kế khác hay không ạ?\n\n#TúiVí #Da #Handmade",
+      "sender": "bot",
+      "createdAt": "2026-01-14T06:41:12.866Z"
     }
   ],
   "faq": [
@@ -4879,6 +5313,14 @@
       "rating": 3,
       "comment": "123",
       "createdAt": "14:14:06 09/01/2026"
+    },
+    {
+      "id": "135d",
+      "productId": 123,
+      "userName": "Phu",
+      "rating": 5,
+      "comment": "sản phẩm tốt",
+      "createdAt": "11:49:10 14/01/2026"
     }
   ],
   "carts": [
@@ -4886,7 +5328,7 @@
       "userId": "1",
       "items": [],
       "totalPrice": 0,
-      "id": "b115"
+      "id": "5cc0"
     }
   ],
   "categories": [
@@ -5010,6 +5452,151 @@
       "paymentMethod": "COD",
       "status": "Thanh toán khi nhận hàng",
       "date": "12:39:10 10/1/2026"
+    },
+    {
+      "id": "ORD-1768366133770",
+      "userId": "1",
+      "fullName": "t",
+      "phone": "0987654321",
+      "address": "adw, Xã Hiệp Lực, Huyện Ninh Giang, Tỉnh Hải Dương",
+      "items": [
+        {
+          "product": {
+            "id": "123",
+            "name": "Túi xách nữ Handmade da bò retro thời trang",
+            "price": 210000,
+            "category": "Đồ da",
+            "categoryId": 6,
+            "imageUrl": "https://product.hstatic.net/1000260559/product/vi_dai_nu__3__f301f02c16b24e2c83f90e0a2058ab30_grande.jpg",
+            "description": "- Kích thước: 19.5cm x 9.5cm x 2cm\n\n- Chất liệu: Da bò thật 100%",
+            "inventory": 20
+          },
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 180000,
+      "discountAmount": 30000,
+      "payableAmount": 180000,
+      "voucherCode": "SHIPFREE30",
+      "paymentMethod": "COD",
+      "status": "Thanh toán khi nhận hàng",
+      "date": "11:48:53 14/1/2026"
+    },
+    {
+      "id": "ORD-1768366194301",
+      "userId": "1",
+      "fullName": "t",
+      "phone": "0943224412",
+      "address": "ttt, Xã An Nhân, Huyện Vĩnh Tường, Tỉnh Vĩnh Phúc",
+      "items": [
+        {
+          "product": {
+            "id": "123",
+            "name": "Túi xách nữ Handmade da bò retro thời trang",
+            "price": 210000,
+            "category": "Đồ da",
+            "categoryId": 6,
+            "imageUrl": "https://product.hstatic.net/1000260559/product/vi_dai_nu__3__f301f02c16b24e2c83f90e0a2058ab30_grande.jpg",
+            "description": "- Kích thước: 19.5cm x 9.5cm x 2cm\n\n- Chất liệu: Da bò thật 100%",
+            "inventory": 19
+          },
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 180000,
+      "discountAmount": 30000,
+      "payableAmount": 180000,
+      "voucherCode": "SHIPFREE30",
+      "paymentMethod": "COD",
+      "status": "Thanh toán khi nhận hàng",
+      "date": "11:49:54 14/1/2026"
+    },
+    {
+      "id": "ORD-1768366707670",
+      "userId": "1",
+      "fullName": "t",
+      "phone": "0987654321",
+      "address": "rr, Xã Hiệp Lực, Huyện Ninh Giang, Tỉnh Hải Dương",
+      "items": [
+        {
+          "product": {
+            "id": "122",
+            "name": "Vòng tay Handmade da thật",
+            "price": 180000,
+            "category": "Đồ da",
+            "categoryId": 6,
+            "imageUrl": "https://product.hstatic.net/1000260559/product/vong_tay_handmade_da_that__3__grande.jpg",
+            "description": "Vòng tay được làm từ da bò thật với thiết kế đơn giản mang hơi hướng cổ điển nhưng vẫn vô cùng cá tính . Vòng có nhiều phiên bản màu sắc cho bạn lựa chọn .\n\n",
+            "inventory": 20
+          },
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 150000,
+      "discountAmount": 30000,
+      "payableAmount": 150000,
+      "voucherCode": "SHIPFREE30",
+      "paymentMethod": "COD",
+      "status": "Thanh toán khi nhận hàng",
+      "date": "11:58:27 14/1/2026"
+    },
+    {
+      "id": "ORD-1768366746131",
+      "userId": "1",
+      "fullName": "t",
+      "phone": "0987654321",
+      "address": "tt, Xã Đông Cứu, Huyện Gia Bình, Tỉnh Bắc Ninh",
+      "items": [
+        {
+          "product": {
+            "id": "121",
+            "name": "Túi xách nữ Handmade da bò retro thời trang",
+            "price": 9000000,
+            "category": "Đồ da",
+            "categoryId": 6,
+            "imageUrl": "https://product.hstatic.net/1000260559/product/tui_xach_nu__1__acaea5fbd93844ee83531408f5d294ee_grande.jpg",
+            "description": "Độ bền da thật cao, không bong tróc, nứt gãy, không ra màu, độ đàn hồi và chịu lực tốt là những ưu điểm nổi bật giúp chất liệu này được sử dụng rộng rãi trong ngành thời trang nữ",
+            "inventory": 20
+          },
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 8970000,
+      "discountAmount": 30000,
+      "payableAmount": 8970000,
+      "voucherCode": "SHIPFREE30",
+      "paymentMethod": "COD",
+      "status": "Thanh toán khi nhận hàng",
+      "date": "11:59:06 14/1/2026"
+    },
+    {
+      "id": "ORD-1768367573371",
+      "userId": "1",
+      "fullName": "t",
+      "phone": "0123456789",
+      "address": "rrr, Xã Lâm Thao, Huyện Lương Tài, Tỉnh Bắc Ninh",
+      "items": [
+        {
+          "product": {
+            "id": "125",
+            "name": "Ví dài Handmade đơn giản mà chất",
+            "price": 320000,
+            "category": "Đồ da",
+            "categoryId": 6,
+            "imageUrl": "https://product.hstatic.net/1000260559/product/125940__6__master.jpg",
+            "description": "Ví dài Handmade đơn giản mà chất - 125940\n\n- Kích thước: 9cm x 19cm\n\n- Da bò thật 100%",
+            "inventory": 20
+          },
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 290000,
+      "discountAmount": 30000,
+      "payableAmount": 290000,
+      "voucherCode": "SHIPFREE30",
+      "paymentMethod": "COD",
+      "status": "Thanh toán khi nhận hàng",
+      "date": "12:12:53 14/1/2026"
     }
   ],
   "policyData": [
@@ -5050,6 +5637,36 @@
           "imageUrl": "https://product.hstatic.net/1000260559/product/vong_tay_handmade_da_that__3__grande.jpg",
           "description": "Vòng tay được làm từ da bò thật với thiết kế đơn giản mang hơi hướng cổ điển nhưng vẫn vô cùng cá tính . Vòng có nhiều phiên bản màu sắc cho bạn lựa chọn .\n\n",
           "inventory": 20
+        },
+        {
+          "id": "129",
+          "name": "Thắt lưng da bò khóa cài tiện lợi",
+          "price": 350000,
+          "category": "Đồ da",
+          "categoryId": 6,
+          "imageUrl": "https://product.hstatic.net/1000260559/product/that-lung-da-bo-khoa-cai-tien-loi-4290845__4__20ac7092dca74e0b9227728cbd4882c2_master.jpg",
+          "description": "Thiết kế đơn giản, khóa cài tiện dụng. Chất liệu da bò thật mềm mại, dẻo dai, phong cách thanh lịch.",
+          "inventory": 20
+        },
+        {
+          "id": "128",
+          "name": "Thắt lưng da Cá Sấu mặt chữ Z bản 3,8",
+          "price": 1200000,
+          "category": "Đồ da",
+          "categoryId": 6,
+          "imageUrl": "https://product.hstatic.net/1000260559/product/that_lung_da_ca_sau_mat_chu_z_ban_3_8_-_2837072__4__1f077a541f9142388345e45c6e4e2005_master.jpg",
+          "description": "Chất liệu da cá sấu thật 100%, mặt khóa chữ Z tạo điểm nhấn cá tính, bản rộng 3.8cm phù hợp nhiều loại trang phục.",
+          "inventory": 20
+        },
+        {
+          "id": "127",
+          "name": "Thắt lưng da Cá sấu bản 3,4cm khóa tự động",
+          "price": 1100000,
+          "category": "Đồ da",
+          "categoryId": 6,
+          "imageUrl": "https://product.hstatic.net/1000260559/product/that-lung-da-ca-sau-ban-3-4cm-khoa-tu-dong-nau-4409716__1__2e12ac4497dd41b19dfd58fe6fb04e7d_master.jpg",
+          "description": "Thắt lưng da cá sấu cao cấp, bản 3.4cm sang trọng với khóa tự động hiện đại, bền bỉ theo thời gian.",
+          "inventory": 20
         }
       ],
       "lastSpinDate": "2026-01-13T18:48:16.811Z"
@@ -5059,14 +5676,27 @@
       "email": "thuan11111@gmail.com",
       "password": "123456",
       "username": "Thuan",
-      "lastSpinDate": "2026-01-13T07:35:12.100Z"
+      "lastSpinDate": "2026-01-14T06:18:15.695Z",
+      "wishlist": [
+        {
+          "id": "38",
+          "name": " Gấu Bông Búp Bê Khủng Long Gấu Bông Nhập Khẩu Mẫu Hot",
+          "price": 99000,
+          "category": "Trang trí nhà cửa",
+          "categoryId": 2,
+          "imageUrl": "https://cdn.hstatic.net/products/1000203256/730c3b4b44ee4c0b9129b9bc17fade6d_32e978449fe04074a46aab223e4c908f_1024x1024.jpg",
+          "description": "Gấu Bông Búp Bê Khủng Long Gấu Bông Nhập Khẩu Mẫu Hot",
+          "inventory": 24
+        }
+      ]
     },
     {
       "id": "aae8",
       "email": "thoai@gmail.com",
       "password": "123456",
       "username": "thoai",
-      "lastSpinDate": "2026-01-10T05:39:34.325Z"
+      "lastSpinDate": "2026-01-14T06:15:40.351Z",
+      "points": 0
     }
   ],
   "voucher": [
@@ -5214,24 +5844,6 @@
       "status": "DISABLED",
       "startDate": "2025-01-01",
       "expiredAt": "2026-01-01"
-    },
-    {
-      "id": "VC_LUCKY_1768330096844",
-      "code": "LUCKYTJZSI",
-      "title": "Voucher 10k",
-      "description": "Giảm 10.000đ cho đơn hàng từ 0đ",
-      "type": "FIXED",
-      "value": 10000,
-      "maxDiscount": 10000,
-      "minOrder": 0,
-      "target": "SPECIFIC_USER",
-      "userId": "1",
-      "maxOrderCount": 0,
-      "quantity": 1,
-      "used": 0,
-      "status": "ACTIVE",
-      "startDate": "2026-01-13",
-      "expiredAt": "2026-02-13"
     }
   ]
 }
