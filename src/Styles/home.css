@@ -269,6 +269,7 @@
 }
 
 .hero-banner p {
+    color: #ffd700;
     font-size: 1.25rem;
     margin-bottom: 40px;
     opacity: 0.95;
@@ -933,7 +934,7 @@ strong {
 
 /* Countdown Tết */
 .countdown-tet {
-    margin-top: 50px;
+    margin-left: 120px;
     padding: 25px;
     background: rgba(0,0,0,0.2);
     border-radius: 20px;
@@ -1043,7 +1044,7 @@ strong {
 }
 
 .tet-traditions::before {
-    content: "TẾT BÍNH NGỌ 2025";
+    content: "XUÂN BÍNH NGỌ 2026";
     position: absolute;
     top: 50%;
     left: 50%;
