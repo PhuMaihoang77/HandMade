@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import ChatBox from "./Chatbox";
 import { User } from "../types/model";
-import '../Styles/chatWidget.css';
-import '../Styles/chatbox.css';
-
+import "../Styles/chatWidget.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 interface ChatWidgetProps {
   currentUser: User | null;
@@ -20,8 +19,9 @@ const ChatWidget: React.FC<ChatWidgetProps> = ({ currentUser }) => {
         onClick={() => setOpen((prev) => !prev)}
         title="Chat với AI hỗ trợ"
       >
-        💬
-        <span className="chat-pulse"></span>
+        <span className="chat-pulse">
+          <i className="fa-regular fa-message"></i>
+        </span>
       </div>
 
       {/* 🟢 Hộp chat */}
