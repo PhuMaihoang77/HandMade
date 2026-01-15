@@ -2,6 +2,7 @@ import { useState, useCallback, useMemo, useEffect } from 'react';
 import axios from 'axios';
 import { Prize, User } from '../types/model';
 import { useNotify } from '../components/NotificationContext';
+import api from '../services/api';
 
 export const useLuckyWheel = (currentUser: User | null) => {
   const [prizes, setPrizes] = useState<Prize[]>([]);
@@ -14,7 +15,7 @@ export const useLuckyWheel = (currentUser: User | null) => {
   const [canSpin, setCanSpin] = useState(false);
 const notify = useNotify();
   useEffect(() => {
-    axios.get('http://localhost:3000/prizes')
+    api.get('/prizes')
       .then(res => {
         setPrizes(Array.isArray(res.data) ? res.data : res.data.prizes);
         setLoading(false);
@@ -73,7 +74,7 @@ const notify = useNotify();
     expiredDate.setMonth(now.getMonth() + 1); // Voucher có hạn 1 tháng
 
     // 1. Cập nhật ngày quay của User để khóa lượt quay
-    await axios.patch(`http://localhost:3000/users/${currentUser.id}`, {
+    await api.patch(`/users/${currentUser.id}`, {
       lastSpinDate: now.toISOString()
     });
 
@@ -100,14 +101,14 @@ const notify = useNotify();
         expiredAt: expiredDate.toISOString().split('T')[0]
       };
 
-      await axios.post('http://localhost:3000/voucher', newVoucher);
+      await api.post('/voucher', newVoucher);
       notify.success("Đã lưu voucher độc quyền cho user!");
     }
 
     // 3. Nếu trúng Points (Xu/Điểm)
     if (selectedPrize.type === 'points') {
       const currentPoints = (currentUser as any).points || 0;
-      await axios.patch(`http://localhost:3000/users/${currentUser.id}`, {
+      await api.patch(`/users/${currentUser.id}`, {
         points: currentPoints + (selectedPrize.value || 0)
       });
     }

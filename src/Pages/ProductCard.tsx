@@ -5,6 +5,8 @@ import axios from 'axios';
 import { Product, User } from '../types/model';
 import { useNotify } from '../components/NotificationContext';
 import '../Styles/product.css';
+import api from '../services/api';
+
 
 interface ProductCardProps {    
     product: Product;
@@ -48,7 +50,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         }
 
         try {
-            const response = await axios.patch(`http://localhost:3000/users/${localUser.id}`, {
+            const response = await api.patch(`users/${localUser.id}`, {
                 wishlist: updatedWishlist
             });
 

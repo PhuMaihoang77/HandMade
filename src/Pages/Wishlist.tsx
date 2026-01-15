@@ -82,7 +82,7 @@ const Wishlist: React.FC = () => {
             {toast.show && (
                 <div className="toast-box">
                     {React.createElement((toast.type === 'success' ? FaCheckCircle : FaInfoCircle) as any, { 
-                        color: toast.type === 'success' ? '#2ed573' : '#eccc68', size: 20 
+                        color: toast.type === 'success' ? '#2ed573' : '#eccc68', size: 20, 
                     })}
                     <span>{toast.msg}</span>
                 </div>

@@ -2157,6 +2157,34 @@
       "content": "Bạn đang tìm kiếm một mẫu ví da handmade ạ? Shop có sản phẩm Ví Da Nam Bifold Cổ Điển với thiết kế cổ điển, được làm từ chất liệu da cao cấp. \n\nBạn có thể tham khảo sản phẩm Ví Da Nam Bifold Cổ Điển tại đây: http://localhost:3000/product/2\n\nMột ưu điểm của sản phẩm này là thiết kế cổ điển, phù hợp với phong cách thời trang hiện đại. Bạn có muốn tìm ví da với thiết kế khác hay không ạ?\n\n#TúiVí #Da #Handmade",
       "sender": "bot",
       "createdAt": "2026-01-14T06:41:12.866Z"
+    },
+    {
+      "id": "d22d",
+      "userId": "cbc1",
+      "content": "túi da",
+      "sender": "user",
+      "createdAt": "2026-01-15T08:40:32.224Z"
+    },
+    {
+      "id": "d22d",
+      "userId": "cbc1",
+      "content": "túi da",
+      "sender": "user",
+      "createdAt": "2026-01-15T08:40:32.224Z"
+    },
+    {
+      "id": "21e4",
+      "userId": "cbc1",
+      "content": "Bạn đang tìm kiếm một chiếc túi da handmade độc đáo! 🎁\n\nShop hiện có một số mẫu túi da khá hay mà bạn có thể tham khảo:\n\n- Ví Da Nam Bifold Cổ Điển: Một mẫu ví da nam cổ điển, thiết kế tinh tế và chất liệu da mềm mịn. Xem tại: http://localhost:3000/product/2\n- Túi Đeo Chéo Da Nữ Mini: Một chiếc túi da nữ mini xinh xắn, thiết kế độc đáo và chất liệu da cao cấp. Xem tại: http://localhost:3000/product/3\n\nTất cả các sản phẩm của Shop đều được làm bằng chất liệu da tự nhiên, đảm bảo độ bền và sự thoải mái khi sử dụng.\n\nBạn muốn tìm một chiếc túi da để sử dụng hàng ngày hay như một món quà tặng? 🤔\n\nTags: Túi da, Ví da, Handmade, Túi và ví",
+      "sender": "bot",
+      "createdAt": "2026-01-15T08:40:34.203Z"
+    },
+    {
+      "id": "21e4",
+      "userId": "cbc1",
+      "content": "Bạn đang tìm kiếm một chiếc túi da handmade độc đáo! 🎁\n\nShop hiện có một số mẫu túi da khá hay mà bạn có thể tham khảo:\n\n- Ví Da Nam Bifold Cổ Điển: Một mẫu ví da nam cổ điển, thiết kế tinh tế và chất liệu da mềm mịn. Xem tại: http://localhost:3000/product/2\n- Túi Đeo Chéo Da Nữ Mini: Một chiếc túi da nữ mini xinh xắn, thiết kế độc đáo và chất liệu da cao cấp. Xem tại: http://localhost:3000/product/3\n\nTất cả các sản phẩm của Shop đều được làm bằng chất liệu da tự nhiên, đảm bảo độ bền và sự thoải mái khi sử dụng.\n\nBạn muốn tìm một chiếc túi da để sử dụng hàng ngày hay như một món quà tặng? 🤔\n\nTags: Túi da, Ví da, Handmade, Túi và ví",
+      "sender": "bot",
+      "createdAt": "2026-01-15T08:40:34.203Z"
     }
   ],
   "faq": [
@@ -5328,7 +5356,33 @@
       "userId": "1",
       "items": [],
       "totalPrice": 0,
-      "id": "5cc0"
+      "id": "6982"
+    },
+    {
+      "id": "6411",
+      "userId": "cbc1",
+      "items": [
+        {
+          "productId": "126",
+          "quantity": 2
+        },
+        {
+          "productId": "125",
+          "quantity": 1
+        },
+        {
+          "productId": "124",
+          "quantity": 2
+        },
+        {
+          "productId": "128",
+          "quantity": 1
+        },
+        {
+          "productId": "176",
+          "quantity": 1
+        }
+      ]
     }
   ],
   "categories": [
@@ -5597,6 +5651,48 @@
       "paymentMethod": "COD",
       "status": "Thanh toán khi nhận hàng",
       "date": "12:12:53 14/1/2026"
+    },
+    {
+      "id": "ORD-1768466510346",
+      "userId": "cbc1",
+      "fullName": "THuan",
+      "phone": "0987654321",
+      "address": "rttt, Xã Tiên Động, Huyện Tứ Kỳ, Tỉnh Bình Định",
+      "items": [
+        {
+          "product": {
+            "id": "122",
+            "name": "Vòng tay Handmade da thật",
+            "price": 180000,
+            "category": "Đồ da",
+            "categoryId": 6,
+            "imageUrl": "https://product.hstatic.net/1000260559/product/vong_tay_handmade_da_that__3__grande.jpg",
+            "description": "Vòng tay được làm từ da bò thật với thiết kế đơn giản mang hơi hướng cổ điển nhưng vẫn vô cùng cá tính . Vòng có nhiều phiên bản màu sắc cho bạn lựa chọn .\n\n",
+            "inventory": 20
+          },
+          "quantity": 1
+        },
+        {
+          "product": {
+            "id": "123",
+            "name": "Túi xách nữ Handmade da bò retro thời trang",
+            "price": 210000,
+            "category": "Đồ da",
+            "categoryId": 6,
+            "imageUrl": "https://product.hstatic.net/1000260559/product/vi_dai_nu__3__f301f02c16b24e2c83f90e0a2058ab30_grande.jpg",
+            "description": "- Kích thước: 19.5cm x 9.5cm x 2cm\n\n- Chất liệu: Da bò thật 100%",
+            "inventory": 20
+          },
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 351000,
+      "discountAmount": 39000,
+      "payableAmount": 351000,
+      "voucherCode": "NEW10",
+      "paymentMethod": "COD",
+      "status": "Thanh toán khi nhận hàng",
+      "date": "15:41:50 15/1/2026"
     }
   ],
   "policyData": [
@@ -5676,7 +5772,7 @@
       "email": "thuan11111@gmail.com",
       "password": "123456",
       "username": "Thuan",
-      "lastSpinDate": "2026-01-14T06:18:15.695Z",
+      "lastSpinDate": "2026-01-15T08:47:26.103Z",
       "wishlist": [
         {
           "id": "38",
@@ -5687,6 +5783,46 @@
           "imageUrl": "https://cdn.hstatic.net/products/1000203256/730c3b4b44ee4c0b9129b9bc17fade6d_32e978449fe04074a46aab223e4c908f_1024x1024.jpg",
           "description": "Gấu Bông Búp Bê Khủng Long Gấu Bông Nhập Khẩu Mẫu Hot",
           "inventory": 24
+        },
+        {
+          "id": "121",
+          "name": "Túi xách nữ Handmade da bò retro thời trang",
+          "price": 9000000,
+          "category": "Đồ da",
+          "categoryId": 6,
+          "imageUrl": "https://product.hstatic.net/1000260559/product/tui_xach_nu__1__acaea5fbd93844ee83531408f5d294ee_grande.jpg",
+          "description": "Độ bền da thật cao, không bong tróc, nứt gãy, không ra màu, độ đàn hồi và chịu lực tốt là những ưu điểm nổi bật giúp chất liệu này được sử dụng rộng rãi trong ngành thời trang nữ",
+          "inventory": 20
+        },
+        {
+          "id": "122",
+          "name": "Vòng tay Handmade da thật",
+          "price": 180000,
+          "category": "Đồ da",
+          "categoryId": 6,
+          "imageUrl": "https://product.hstatic.net/1000260559/product/vong_tay_handmade_da_that__3__grande.jpg",
+          "description": "Vòng tay được làm từ da bò thật với thiết kế đơn giản mang hơi hướng cổ điển nhưng vẫn vô cùng cá tính . Vòng có nhiều phiên bản màu sắc cho bạn lựa chọn .\n\n",
+          "inventory": 20
+        },
+        {
+          "id": "123",
+          "name": "Túi xách nữ Handmade da bò retro thời trang",
+          "price": 210000,
+          "category": "Đồ da",
+          "categoryId": 6,
+          "imageUrl": "https://product.hstatic.net/1000260559/product/vi_dai_nu__3__f301f02c16b24e2c83f90e0a2058ab30_grande.jpg",
+          "description": "- Kích thước: 19.5cm x 9.5cm x 2cm\n\n- Chất liệu: Da bò thật 100%",
+          "inventory": 20
+        },
+        {
+          "id": "126",
+          "name": "Balo nữ da thật Handmade độc đẹp lạ",
+          "price": 430000,
+          "category": "Đồ da",
+          "categoryId": 6,
+          "imageUrl": "https://product.hstatic.net/1000260559/product/4554239993_1515578525_grande.jpg",
+          "description": "Balo nữ da thật Handmade độc - 321482\n\n- Kích thước: 29cm x 25cm x 13cm\n\n- Da bò thật 100%\n\n- Kiểu dáng: Xách tay, đeo sau lưng, đeo trước bụng\n\n- Dành cho: Nữ\n\n- Mục đích sử dụng: Đi làm, đi chơi, du lịch, dạo phố, picnic",
+          "inventory": 20
         }
       ]
     },

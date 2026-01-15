@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { Product, User } from '../types/model';
 import { useCart } from '../context/CartContext';
+import api from '../services/api';
 
 export const useWishlist = () => {
     const navigate = useNavigate();
@@ -33,7 +34,7 @@ export const useWishlist = () => {
     const syncDatabase = async (newList: Product[]) => {
         if (!currentUser) return;
         try {
-            await axios.patch(`http://localhost:5000/users/${currentUser.id}`, { wishlist: newList });
+            await api.patch(`/users/${currentUser.id}`, { wishlist: newList });
             const updatedUser = { ...currentUser, wishlist: newList };
             localStorage.setItem('user', JSON.stringify(updatedUser));
             setWishlist(newList);
