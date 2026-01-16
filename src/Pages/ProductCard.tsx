@@ -91,7 +91,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
     return (
         <div className="product-card">
-            <div className="product-image" onClick={() => navigate(`/product/${product.id}`)}>
+            <div className="product-image" onClick={() => navigate(`/products/${product.id}`)}>
                 <img src={product.imageUrl} alt={product.name} />
 
                 {/* Icon trái tim - Sử dụng FontAwesome để tránh lỗi TS2786 */}
