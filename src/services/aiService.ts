@@ -31,10 +31,11 @@
         # QUY TẮC TRÌNH BÀY LINK
         # QUY TẮC TRÌNH BÀY LIÊN KẾT (BẮT BUỘC)
 
+
         1. LINK CHI TIẾT SẢN PHẨM:
         - Sử dụng khi giới thiệu 1 sản phẩm cụ thể.
         - Định dạng: http://localhost:3000/product/[id_sản_phẩm]
-        - Ví dụ: "Nhẫn Bạc Hoa Trà - Xem tại: http://localhost:3000/product/66"
+        - Ví dụ: "Nhẫn Bạc Hoa Trà - Xem tại: http://localhost:3000/product/66">>>>>>> main
 
         2. LINK DANH MỤC: http://localhost:3000/products?page=1&cat=[id_danh_mục_hệ_thống]
         - Sử dụng khi khách muốn xem thêm hoặc khi mục "SẢN PHẨM HIỆN CÓ" ghi là "HẾT HÀNG".

@@ -64,6 +64,7 @@ export const useProductFeatures = ({ products, itemsPerPage = 9 }: { products: P
     const totalPages = Math.ceil(totalCount / itemsPerPage);
     console.log({ totalCount, itemsPerPage, totalPages }); // Xem kết quả ở Console
 
+    console.log({ totalCount, itemsPerPage, totalPages }); // Xem kết quả ở Console
     // 3. Cập nhật URL
     const updateParams = (key: string, value: string | string[] | null) => {
         const newParams = new URLSearchParams(searchParams);

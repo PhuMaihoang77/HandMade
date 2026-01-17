@@ -60,7 +60,10 @@ const OrderHistory: React.FC<OrderHistoryProps> = ({ currentUser }) => {
                                 <td className="order-id-cell">#{order.id.split('-')[1] || order.id}</td>
                                 <td>{order.date}</td>
                                 <td><span className={`pay-tag ${order.paymentMethod.toLowerCase()}`}>{order.paymentMethod}</span></td>
-                                <td className="price-cell">{order.totalAmount.toLocaleString('vi-VN')}vnđ</td>
+
+                                <td className="price-cell">₫{order.totalAmount.toLocaleString('vi-VN')}</td>
+
+
                                 <td>
                                         <span className={`status-badge ${order.status === 'Chờ thanh toán' ? 'pending' : 'completed'}`}>
                                             {order.status}
