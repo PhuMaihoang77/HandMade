@@ -61,7 +61,7 @@ const Wishlist: React.FC = () => {
                                     <h4>{item.name}</h4>
                                     <p className="card-price">{item.price.toLocaleString()} VNĐ</p>
                                     <div className="card-btns">
-                                        <button className="btn-ui btn-ui-view" onClick={() => navigate(`/product/${item.id}`)}>Chi tiết</button>
+                                        <button className="btn-ui btn-ui-view" onClick={() => navigate(`/products/${item.id}`)}>Chi tiết</button>
                                         <button className="btn-ui btn-ui-buy" onClick={() => { addToCart(item, currentUser); triggerNotification("Đã thêm vào giỏ hàng!"); }}>
                                             + Giỏ hàng
                                         </button>
@@ -82,7 +82,7 @@ const Wishlist: React.FC = () => {
             {toast.show && (
                 <div className="toast-box">
                     {React.createElement((toast.type === 'success' ? FaCheckCircle : FaInfoCircle) as any, { 
-                        color: toast.type === 'success' ? '#2ed573' : '#eccc68', size: 20 
+                        color: toast.type === 'success' ? '#2ed573' : '#eccc68', size: 20, 
                     })}
                     <span>{toast.msg}</span>
                 </div>

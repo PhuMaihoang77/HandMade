@@ -62,6 +62,7 @@ export const useProductFeatures = ({ products, itemsPerPage = 9 }: { products: P
 
     const totalCount = filteredProducts.length;
     const totalPages = Math.ceil(totalCount / itemsPerPage);
+    console.log({ totalCount, itemsPerPage, totalPages }); // Xem kết quả ở Console
 
     console.log({ totalCount, itemsPerPage, totalPages }); // Xem kết quả ở Console
     // 3. Cập nhật URL

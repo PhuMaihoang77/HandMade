@@ -198,5 +198,195 @@
     "imageUrl": "https://cdn-images.kiotviet.vn/2025/09/01/thuycrystal/57dfe48ea17b4d658518335d4fe4278a.jpg",
     "description": "Hoa tai pha lê dài mix 4470M10, pendant 6690M27",
     "inventory": 20
+  },
+  {
+    "id": 81,
+    "name": "Hoa tai pha lê ngắn hạt tròn 5003M10",
+    "price": 185000,
+    "category": "Trang sức",
+    "categoryId": 4,
+    "imageUrl": "https://cdn-images.kiotviet.vn/2025/09/01/thuycrystal/1d76e60d16634519a1a73d8dfcbdf390.jpg",
+    "description": "Hoa tai pha lê ngắn hạt tròn 5003M10",
+    "inventory": 20
+  },
+  {
+    "id": 82,
+    "name": "Hoa tai pha lê dài mix 4470M10, pendant 5650M20 - Đôi",
+    "price": 185000,
+    "category": "Trang sức",
+    "categoryId": 4,
+    "imageUrl": "https://cdn-images.kiotviet.vn/2025/09/01/thuycrystal/066ba85c3735444b9096b31f9e7df62e.jpg",
+    "description": "Hoa tai pha lê dài mix 4470M10, pendant 5650M20 - Đôi",
+    "inventory": 20
+  },
+  {
+    "id": 83,
+    "name": "Hoa tai Hàn Quốc T16E ",
+    "price": 245000,
+    "category": "Trang sức",
+    "categoryId": 4,
+    "imageUrl": " https://cdn-images.kiotviet.vn/thuycrystal/2b2344db4f104157b3536853a9c479a4.jpg",
+    "description": " Hoa tai Hàn Quốc T16E",
+    "inventory": 20
+  },
+  {
+    "id": 84,
+    "name": "Hoa tai Hàn Quốc 85E ",
+    "price": 355000,
+    "category": "Trang sức",
+    "categoryId": 4,
+    "imageUrl": "https://cdn2-retail-images.kiotviet.vn/thuycrystal/028983ccac5346b38d202c4fd37e94f1.jpg ",
+    "description": " Hoa tai Hàn Quốc 85E",
+    "inventory": 20
+  },
+  {
+    "id": 85,
+    "name": " Hoa tai Hàn Quốc 739E",
+    "price": 295000,
+    "category": "Trang sức",
+    "categoryId": 4,
+    "imageUrl": "https://cdn-images.kiotviet.vn/thuycrystal/9cbf8f72024a46d1b72a1105f218c8b0.jpg",
+    "description": " Hoa tai Hàn Quốc 739E",
+    "inventory": 20
+  },
+  {
+    "id": 86,
+    "name": " Hoa tai Hàn Quốc 715E",
+    "price": 755000,
+    "category": "Trang sức",
+    "categoryId": 4,
+    "imageUrl": " https://cdn-images.kiotviet.vn/thuycrystal/f1efe68949994a48ada839a28cc4b5d9.jpg",
+    "description": "Hoa tai Hàn Quốc 715E ",
+    "inventory": 20
+  },
+  {
+    "id": 87,
+    "name": " Hoa tai Hàn Quốc 69E",
+    "price": 287000,
+    "category": "Trang sức",
+    "categoryId": 4,
+    "imageUrl": " https://cdn2-retail-images.kiotviet.vn/thuycrystal/8b92f78e285946f4bcd8f87a42db15a3.jpg",
+    "description": " Hoa tai Hàn Quốc 69E",
+    "inventory": 20
+  },
+  {
+    "id": 88,
+    "name": " ",
+    "price": 982000,
+    "category": "Trang sức",
+    "categoryId": 4,
+    "imageUrl": " ",
+    "description": " ",
+    "inventory": 20
+  },
+  {
+    "id": 89,
+    "name": "Hoa tai Hàn Quốc 690E ",
+    "price": 123000,
+    "category": "Trang sức",
+    "categoryId": 4,
+    "imageUrl": " https://cdn-images.kiotviet.vn/thuycrystal/5b8ab8ce73be48f38b6026defdb3dd97.jpg",
+    "description": " Hoa tai Hàn Quốc 690E",
+    "inventory": 20
+  },
+  {
+    "id": 90,
+    "name": "Hoa tai Hàn Quốc 648E ",
+    "price": 485000,
+    "category": "Trang sức",
+    "categoryId": 4,
+    "imageUrl": "https://cdn-images.kiotviet.vn/thuycrystal/80254c176a9f42dcbfd801264c7206f1.jpg ",
+    "description": "Hoa tai Hàn Quốc 648E ",
+    "inventory": 20
+  },
+  {
+    "id": 91,
+    "name": " Hoa tai Hàn Quốc 5EC - Cái",
+    "price": 189000,
+    "category": "Trang sức",
+    "categoryId": 4,
+    "imageUrl": "https://cdn2-retail-images.kiotviet.vn/thuycrystal/e62aac2598ea4af7825edc39a0dd40b3.jpg ",
+    "description": "Hoa tai Hàn Quốc 5EC - Cái ",
+    "inventory": 20
+  },
+  {
+    "id": 92,
+    "name": "Hoa tai Hàn Quốc 56EC ",
+    "price": 279000,
+    "category": "Trang sức",
+    "categoryId": 4,
+    "imageUrl": "https://cdn-images.kiotviet.vn/thuycrystal/4de5374b9a36451e900cb98cea3be968.jpg ",
+    "description": "Hoa tai Hàn Quốc 56EC ",
+    "inventory": 20
+  },
+  {
+    "id": 93,
+    "name": " Hoa tai Hàn Quốc 539E",
+    "price": 189000,
+    "category": "Trang sức",
+    "categoryId": 4,
+    "imageUrl": "https://cdn-images.kiotviet.vn/thuycrystal/2b7a4295c27a4e60899c0361c4fd2f0e.jpg ",
+    "description": " Hoa tai Hàn Quốc 539E",
+    "inventory": 20
+  },
+  {
+    "id": 94,
+    "name": " ",
+    "price": 985000,
+    "category": "Trang sức",
+    "categoryId": 4,
+    "imageUrl": " ",
+    "description": " ",
+    "inventory": 20
+  },
+  {
+    "id": 95,
+    "name": " Hoa tai Hàn Quốc 508E",
+    "price": 1295000,
+    "category": "Trang sức",
+    "categoryId": 4,
+    "imageUrl": "https://cdn-images.kiotviet.vn/thuycrystal/4545ee6d14da446e9ba59b84b2a9a927.jpg ",
+    "description": " Hoa tai Hàn Quốc 508E",
+    "inventory": 20
+  },
+  {
+    "id": 96,
+    "name": " Hoa tai Hàn Quốc 446E",
+    "price": 875000,
+    "category": "Trang sức",
+    "categoryId": 4,
+    "imageUrl": " https://cdn-images.kiotviet.vn/thuycrystal/852ec72a05114f27ba7ff45f83749900.jpg",
+    "description": " Hoa tai Hàn Quốc 446E",
+    "inventory": 20
+  },
+  {
+    "id": 97,
+    "name": "Hoa tai Hàn Quốc 432E ",
+    "price": 1185000,
+    "category": "Trang sức",
+    "categoryId": 4,
+    "imageUrl": "https://cdn-images.kiotviet.vn/thuycrystal/9445a390ae4e4df7829e3ffee13b980d.jpg ",
+    "description": " Hoa tai Hàn Quốc 432E",
+    "inventory": 20
+  },
+  {
+    "id": 98,
+    "name": " Hoa tai Hàn Quốc 466E",
+    "price": 285000,
+    "category": "Trang sức",
+    "categoryId": 4,
+    "imageUrl": "https://cdn-images.kiotviet.vn/thuycrystal/3d42d66917414ac28392efcd74feb64f.jpg ",
+    "description": "Hoa tai Hàn Quốc 466E ",
+    "inventory": 20
+  },
+  {
+    "id": 99,
+    "name": " Hoa tai Hàn Quốc 470E",
+    "price": 149000,
+    "category": "Trang sức",
+    "categoryId": 4,
+    "imageUrl": "https://cdn-images.kiotviet.vn/thuycrystal/c02b717336684e83b38984af1c275c5b.jpg ",
+    "description": "Hoa tai Hàn Quốc 470E ",
+    "inventory": 20
   }
 ]

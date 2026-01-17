@@ -63,6 +63,7 @@ const OrderHistory: React.FC<OrderHistoryProps> = ({ currentUser }) => {
 
                                 <td className="price-cell">₫{order.totalAmount.toLocaleString('vi-VN')}</td>
 
+
                                 <td>
                                         <span className={`status-badge ${order.status === 'Chờ thanh toán' ? 'pending' : 'completed'}`}>
                                             {order.status}

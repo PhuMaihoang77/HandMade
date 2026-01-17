@@ -6,9 +6,9 @@ import categories from '../mock-data/categories.json';
 
 import ProductSidebar from '../Pages/ProductSidebar';
 import ProductGrid from '../Pages/ProductGrid';
+
 import '../Styles/product.css';
 import '../Styles/layout.css';
-
 
 const Product: React.FC<{ currentUser: any }> = ({ currentUser }) => {
     const [searchParams, setSearchParams] = useSearchParams();
