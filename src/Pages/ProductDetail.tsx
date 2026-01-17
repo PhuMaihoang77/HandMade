@@ -7,6 +7,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import '../Styles/productDetail.css';
 import ImageMagnifier from "../components/ImangeMagnifier";
 
+
 interface ProductDetailProps {
     currentUser: User | null;
     onLogout: () => void;
@@ -43,8 +44,10 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ currentUser }) => {
             <div className="product-detail">
                 {/* BÊN TRÁI: ẢNH */}
                 <div className="product-detail-image-wrapper">
-                    <ImageMagnifier src={product.imageUrl} alt={product.name} />
+
+                    <img className="product-detail-image" src={product.imageUrl} alt={product.name} />
                 </div>
+
                 {/* BÊN PHẢI: THÔNG TIN */}
                 <div className="product-detail-info">
                     <h2 className="product-title">{product.name}</h2>

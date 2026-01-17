@@ -151,7 +151,8 @@ console.log('notify:', notify);
                                     <div className="item-name">{p.name}</div>
                                 </div>
                                 <div className="col-category"><span className="category-tag">{p.category}</span></div>
-                                <div className="col-unit-price">{p.price.toLocaleString('vi-VN')}VNĐ</div>
+
+                                <div className="col-unit-price">₫{p.price.toLocaleString('vi-VN')}</div>
                                 <div className="col-quantity">
                                     <div className="quantity-controls">
                                         <button onClick={() => handleDecrease(p.id as number, item.quantity)}>-</button>
@@ -159,7 +160,8 @@ console.log('notify:', notify);
                                         <button onClick={() => handleIncrease(p.id as number, item.quantity)}>+</button>
                                     </div>
                                 </div>
-                                <div className="col-amount highlight">{(p.price * item.quantity).toLocaleString('vi-VN')}VNĐ</div>
+
+                                <div className="col-amount highlight">₫{(p.price * item.quantity).toLocaleString('vi-VN')}</div>
                                 <div className="col-action">
                                     <button className="delete-btn" onClick={() => handleDelete(p.id as number)}>Xóa</button>
                                 </div>
@@ -182,7 +184,9 @@ console.log('notify:', notify);
 
                 <div className="footer-right">
                     <div className="cart-summary">
-                        Tổng thanh toán ({selectedItemIds.length} sản phẩm): <span className="total-price">{totalSelectedPrice.toLocaleString('vi-VN')}VNĐ</span>
+
+                        Tổng thanh toán ({selectedItemIds.length} sản phẩm): <span className="total-price">₫{totalSelectedPrice.toLocaleString('vi-VN')}</span>
+
                     </div>
                     <button
                         className="checkout-button"

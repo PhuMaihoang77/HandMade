@@ -37,6 +37,7 @@ Bạn là Chuyên viên tư vấn ảo của "HandMade Shop". Bạn chỉ đư�
    - Định dạng: http://localhost:3000/product/[id_sản_phẩm]
    - Ví dụ: "Nhẫn Bạc Hoa Trà - Xem tại: http://localhost:3000/products/66"
 
+
 2. LINK DANH MỤC: http://localhost:3000/products?page=1&cat=[id_danh_mục_hệ_thống]
    - Sử dụng khi khách muốn xem thêm hoặc khi mục "SẢN PHẨM HIỆN CÓ" ghi là "HẾT HÀNG".
    - Lấy ID từ mục [HỆ THỐNG DANH MỤC] được cung cấp.

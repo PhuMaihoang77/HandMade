@@ -31,9 +31,11 @@ const Footer: React.FC = () => {
         <div className="footer-section">
           <h3>Hỗ trợ</h3>
           <ul>
+
             <li><a href="/about">Chính sách đổi trả</a></li>
             <li><a href="/about">Chính sách bảo mật</a></li>
             <li><a href="/about">Hướng dẫn mua hàng</a></li>
+
           </ul>
         </div>
 

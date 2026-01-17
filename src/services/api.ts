@@ -15,7 +15,9 @@ api.interceptors.response.use(
     (response) => response,
     (error) => {
         if (error.message === "Network Error") {
+
             console.error("Không kết nối được json-server!");
+
         }
         return Promise.reject(error);
     }
