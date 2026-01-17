@@ -1001,6 +1001,196 @@
       "inventory": 20
     },
     {
+      "id": "81",
+      "name": "Hoa tai pha lê ngắn hạt tròn 5003M10",
+      "price": 185000,
+      "category": "Trang sức",
+      "categoryId": 4,
+      "imageUrl": "https://cdn-images.kiotviet.vn/2025/09/01/thuycrystal/1d76e60d16634519a1a73d8dfcbdf390.jpg",
+      "description": "Hoa tai pha lê ngắn hạt tròn 5003M10",
+      "inventory": 20
+    },
+    {
+      "id": "82",
+      "name": "Hoa tai pha lê dài mix 4470M10, pendant 5650M20 - Đôi",
+      "price": 185000,
+      "category": "Trang sức",
+      "categoryId": 4,
+      "imageUrl": "https://cdn-images.kiotviet.vn/2025/09/01/thuycrystal/066ba85c3735444b9096b31f9e7df62e.jpg",
+      "description": "Hoa tai pha lê dài mix 4470M10, pendant 5650M20 - Đôi",
+      "inventory": 20
+    },
+    {
+      "id": "83",
+      "name": "Hoa tai Hàn Quốc T16E ",
+      "price": 245000,
+      "category": "Trang sức",
+      "categoryId": 4,
+      "imageUrl": " https://cdn-images.kiotviet.vn/thuycrystal/2b2344db4f104157b3536853a9c479a4.jpg",
+      "description": " Hoa tai Hàn Quốc T16E",
+      "inventory": 20
+    },
+    {
+      "id": "84",
+      "name": "Hoa tai Hàn Quốc 85E ",
+      "price": 355000,
+      "category": "Trang sức",
+      "categoryId": 4,
+      "imageUrl": "https://cdn2-retail-images.kiotviet.vn/thuycrystal/028983ccac5346b38d202c4fd37e94f1.jpg ",
+      "description": " Hoa tai Hàn Quốc 85E",
+      "inventory": 20
+    },
+    {
+      "id": "85",
+      "name": " Hoa tai Hàn Quốc 739E",
+      "price": 295000,
+      "category": "Trang sức",
+      "categoryId": 4,
+      "imageUrl": "https://cdn-images.kiotviet.vn/thuycrystal/9cbf8f72024a46d1b72a1105f218c8b0.jpg",
+      "description": " Hoa tai Hàn Quốc 739E",
+      "inventory": 20
+    },
+    {
+      "id": "86",
+      "name": " Hoa tai Hàn Quốc 715E",
+      "price": 755000,
+      "category": "Trang sức",
+      "categoryId": 4,
+      "imageUrl": " https://cdn-images.kiotviet.vn/thuycrystal/f1efe68949994a48ada839a28cc4b5d9.jpg",
+      "description": "Hoa tai Hàn Quốc 715E ",
+      "inventory": 20
+    },
+    {
+      "id": "87",
+      "name": " Hoa tai Hàn Quốc 69E",
+      "price": 287000,
+      "category": "Trang sức",
+      "categoryId": 4,
+      "imageUrl": " https://cdn2-retail-images.kiotviet.vn/thuycrystal/8b92f78e285946f4bcd8f87a42db15a3.jpg",
+      "description": " Hoa tai Hàn Quốc 69E",
+      "inventory": 20
+    },
+    {
+      "id": "88",
+      "name": " ",
+      "price": 982000,
+      "category": "Trang sức",
+      "categoryId": 4,
+      "imageUrl": " ",
+      "description": " ",
+      "inventory": 20
+    },
+    {
+      "id": "89",
+      "name": "Hoa tai Hàn Quốc 690E ",
+      "price": 123000,
+      "category": "Trang sức",
+      "categoryId": 4,
+      "imageUrl": " https://cdn-images.kiotviet.vn/thuycrystal/5b8ab8ce73be48f38b6026defdb3dd97.jpg",
+      "description": " Hoa tai Hàn Quốc 690E",
+      "inventory": 20
+    },
+    {
+      "id": "90",
+      "name": "Hoa tai Hàn Quốc 648E ",
+      "price": 485000,
+      "category": "Trang sức",
+      "categoryId": 4,
+      "imageUrl": "https://cdn-images.kiotviet.vn/thuycrystal/80254c176a9f42dcbfd801264c7206f1.jpg ",
+      "description": "Hoa tai Hàn Quốc 648E ",
+      "inventory": 20
+    },
+    {
+      "id": "91",
+      "name": " Hoa tai Hàn Quốc 5EC - Cái",
+      "price": 189000,
+      "category": "Trang sức",
+      "categoryId": 4,
+      "imageUrl": "https://cdn2-retail-images.kiotviet.vn/thuycrystal/e62aac2598ea4af7825edc39a0dd40b3.jpg ",
+      "description": "Hoa tai Hàn Quốc 5EC - Cái ",
+      "inventory": 20
+    },
+    {
+      "id": "92",
+      "name": "Hoa tai Hàn Quốc 56EC ",
+      "price": 279000,
+      "category": "Trang sức",
+      "categoryId": 4,
+      "imageUrl": "https://cdn-images.kiotviet.vn/thuycrystal/4de5374b9a36451e900cb98cea3be968.jpg ",
+      "description": "Hoa tai Hàn Quốc 56EC ",
+      "inventory": 20
+    },
+    {
+      "id": "93",
+      "name": " Hoa tai Hàn Quốc 539E",
+      "price": 189000,
+      "category": "Trang sức",
+      "categoryId": 4,
+      "imageUrl": "https://cdn-images.kiotviet.vn/thuycrystal/2b7a4295c27a4e60899c0361c4fd2f0e.jpg ",
+      "description": " Hoa tai Hàn Quốc 539E",
+      "inventory": 20
+    },
+    {
+      "id": "94",
+      "name": " ",
+      "price": 985000,
+      "category": "Trang sức",
+      "categoryId": 4,
+      "imageUrl": " ",
+      "description": " ",
+      "inventory": 20
+    },
+    {
+      "id": "95",
+      "name": " Hoa tai Hàn Quốc 508E",
+      "price": 1295000,
+      "category": "Trang sức",
+      "categoryId": 4,
+      "imageUrl": "https://cdn-images.kiotviet.vn/thuycrystal/4545ee6d14da446e9ba59b84b2a9a927.jpg ",
+      "description": " Hoa tai Hàn Quốc 508E",
+      "inventory": 20
+    },
+    {
+      "id": "96",
+      "name": " Hoa tai Hàn Quốc 446E",
+      "price": 875000,
+      "category": "Trang sức",
+      "categoryId": 4,
+      "imageUrl": " https://cdn-images.kiotviet.vn/thuycrystal/852ec72a05114f27ba7ff45f83749900.jpg",
+      "description": " Hoa tai Hàn Quốc 446E",
+      "inventory": 20
+    },
+    {
+      "id": "97",
+      "name": "Hoa tai Hàn Quốc 432E ",
+      "price": 1185000,
+      "category": "Trang sức",
+      "categoryId": 4,
+      "imageUrl": "https://cdn-images.kiotviet.vn/thuycrystal/9445a390ae4e4df7829e3ffee13b980d.jpg ",
+      "description": " Hoa tai Hàn Quốc 432E",
+      "inventory": 20
+    },
+    {
+      "id": "98",
+      "name": " Hoa tai Hàn Quốc 466E",
+      "price": 285000,
+      "category": "Trang sức",
+      "categoryId": 4,
+      "imageUrl": "https://cdn-images.kiotviet.vn/thuycrystal/3d42d66917414ac28392efcd74feb64f.jpg ",
+      "description": "Hoa tai Hàn Quốc 466E ",
+      "inventory": 20
+    },
+    {
+      "id": "99",
+      "name": " Hoa tai Hàn Quốc 470E",
+      "price": 149000,
+      "category": "Trang sức",
+      "categoryId": 4,
+      "imageUrl": "https://cdn-images.kiotviet.vn/thuycrystal/c02b717336684e83b38984af1c275c5b.jpg ",
+      "description": "Hoa tai Hàn Quốc 470E ",
+      "inventory": 20
+    },
+    {
       "id": "20",
       "name": "Đèn Bàn Hình Vầng Trăng Phản Quang Halo Bowl Độc Đáo",
       "price": 2256000,
@@ -1609,6 +1799,206 @@
       "imageUrl": "https://bizweb.dktcdn.net/thumb/compact/100/061/358/products/sticker-meet-you-1.jpg?v=1688743516060",
       "description": "Sticker chữ Meet You - Set 04 tờ",
       "inventory": 50
+    },
+    {
+      "id": "181",
+      "name": "TRANH TRANG TRÍ “VỎ SÒ HUYẾT” TO63",
+      "price": 299000,
+      "category": "Văn phòng phẩm",
+      "categoryId": 8,
+      "imageUrl": "https://voocbien.com/wp-content/uploads/2024/10/DSC3871.jpg",
+      "description": "TRANH TRANG TRÍ “VỎ SÒ HUYẾT” TO63",
+      "inventory": 50
+    },
+    {
+      "id": "182",
+      "name": "Thuyền buồm vỏ ốc lớn TB18",
+      "price": 699000,
+      "category": "Văn phòng phẩm",
+      "categoryId": 8,
+      "imageUrl": "https://voocbien.com/wp-content/uploads/2016/02/thuyen-buom-vo-oc-lon-tb18-2-2.jpg",
+      "description": "Thuyền buồm vỏ ốc lớn TB18",
+      "inventory": 50
+    },
+    {
+      "id": "183",
+      "name": "Thuyền buồm vỏ ốc lớn TB14",
+      "price": 1499000,
+      "category": "Văn phòng phẩm",
+      "categoryId": 8,
+      "imageUrl": "https://voocbien.com/wp-content/uploads/2016/01/thuyen-buom-vo-oc-lon-tb14-3.jpg",
+      "description": "Thuyền buồm vỏ ốc lớn TB14",
+      "inventory": 50
+    },
+    {
+      "id": "184",
+      "name": "Thuyền buồm vỏ ốc lớn TB13",
+      "price": 1299000,
+      "category": "Văn phòng phẩm",
+      "categoryId": 8,
+      "imageUrl": "https://voocbien.com/wp-content/uploads/2016/01/thuyen-buom-vo-oc-lon-tb13-6.jpg",
+      "description": "Thuyền buồm vỏ ốc lớn TB13",
+      "inventory": 50
+    },
+    {
+      "id": "185",
+      "name": "Thuyền buồm vỏ ốc lớn TB12",
+      "price": 799000,
+      "category": "Văn phòng phẩm",
+      "categoryId": 8,
+      "imageUrl": "https://voocbien.com/wp-content/uploads/2016/01/thuyen-buom-vo-oc-lon-tb12-5.jpg",
+      "description": "Thuyền buồm vỏ ốc lớn TB12",
+      "inventory": 50
+    },
+    {
+      "id": "186",
+      "name": "Thuyền buồm vỏ ốc nhỏ TB09_T",
+      "price": 479000,
+      "category": "Văn phòng phẩm",
+      "categoryId": 8,
+      "imageUrl": "https://voocbien.com/wp-content/uploads/2018/11/DSC1385.jpg",
+      "description": "Thuyền buồm vỏ ốc nhỏ TB09_T",
+      "inventory": 50
+    },
+    {
+      "id": "187",
+      "name": "Thuyền buồm nhí bàu ngư đỏ TB30",
+      "price": 389000,
+      "category": "Văn phòng phẩm",
+      "categoryId": 8,
+      "imageUrl": "https://voocbien.com/wp-content/uploads/2018/10/thuyen-buom-nhi-bau-ngu-do-tb29-3.jpg",
+      "description": "Thuyền buồm nhí bàu ngư đỏ TB30",
+      "inventory": 50
+    },
+    {
+      "id": "188",
+      "name": "Thuyền buồm vỏ ốc nhỏ TB20",
+      "price": 699000,
+      "category": "Văn phòng phẩm",
+      "categoryId": 8,
+      "imageUrl": "https://voocbien.com/wp-content/uploads/2016/09/thuyen-buom-vo-oc-nho-tb20-3.jpg",
+      "description": "Thuyền buồm vỏ ốc nhỏ TB20",
+      "inventory": 50
+    },
+    {
+      "id": "189",
+      "name": "Thuyền buồm vỏ ốc nhỏ TB19",
+      "price": 14799000,
+      "category": "Văn phòng phẩm",
+      "categoryId": 8,
+      "imageUrl": "https://voocbien.com/wp-content/uploads/2016/06/thuyen-buom-vo-oc-nho-tb19-2.jpg",
+      "description": "Thuyền buồm vỏ ốc nhỏ TB19",
+      "inventory": 50
+    },
+    {
+      "id": "190",
+      "name": "Thuyền buồm vỏ ốc nhỏ TB79",
+      "price": 14799000,
+      "category": "Văn phòng phẩm",
+      "categoryId": 8,
+      "imageUrl": "https://voocbien.com/wp-content/uploads/2016/01/thuyen-buom-vo-oc-lon-tb14-3.jpg",
+      "description": "Thuyền buồm vỏ ốc nhỏ TB79",
+      "inventory": 50
+    },
+    {
+      "id": "191",
+      "name": "Thuyền buồm vỏ ốc trung TB10",
+      "price": 999000,
+      "category": "Văn phòng phẩm",
+      "categoryId": 8,
+      "imageUrl": "https://voocbien.com/wp-content/uploads/2015/08/DSC1343.jpg",
+      "description": "Thuyền buồm vỏ ốc trung TB10",
+      "inventory": 50
+    },
+    {
+      "id": "192",
+      "name": "Thuyền buồm vỏ ốc trung TB11_T",
+      "price": 299000,
+      "category": "Văn phòng phẩm",
+      "categoryId": 8,
+      "imageUrl": "https://voocbien.com/wp-content/uploads/2016/02/thuyen-buom-vo-oc-trung-tb11_t-6.jpg",
+      "description": "Thuyền buồm vỏ ốc trung TB11_T",
+      "inventory": 50
+    },
+    {
+      "id": "193",
+      "name": "Thuyền buồm vỏ ốc trung TB11_N",
+      "price": 399000,
+      "category": "Văn phòng phẩm",
+      "categoryId": 8,
+      "imageUrl": "https://voocbien.com/wp-content/uploads/2016/01/thuyen-buom-vo-oc-trung-tb11-2.jpg",
+      "description": "Thuyền buồm vỏ ốc trung TB11_N",
+      "inventory": 50
+    },
+    {
+      "id": "194",
+      "name": "Thuyền buồm vỏ sò ốc lớn TB29 ",
+      "price": 399000,
+      "category": "Văn phòng phẩm",
+      "categoryId": 8,
+      "imageUrl": "https://voocbien.com/wp-content/uploads/2017/09/thuyen-buom-vo-so-oc-lon-tb29-5.jpg",
+      "description": "Thuyền buồm vỏ sò ốc lớn TB29",
+      "inventory": 50
+    },
+    {
+      "id": "195",
+      "name": "Thuyền buồm vỏ ốc trung TB24",
+      "price": 299000,
+      "category": "Văn phòng phẩm",
+      "categoryId": 8,
+      "imageUrl": "https://voocbien.com/wp-content/uploads/2017/03/thuyen-buom-vo-oc-trung-tb24-07.jpg",
+      "description": "Thuyền buồm vỏ ốc trung TB24",
+      "inventory": 50
+    },
+    {
+      "id": "196",
+      "name": "Thuyền buồm vỏ ốc trung TB22",
+      "price": 699000,
+      "category": "Văn phòng phẩm",
+      "categoryId": 8,
+      "imageUrl": "https://voocbien.com/wp-content/uploads/2017/03/DSC1372.jpg",
+      "description": "Thuyền buồm vỏ ốc trung TB22",
+      "inventory": 50
+    },
+    {
+      "id": "197",
+      "name": "Thuyền buồm vỏ ốc trung TB23",
+      "price": 479000,
+      "category": "Văn phòng phẩm",
+      "categoryId": 8,
+      "imageUrl": "https://voocbien.com/wp-content/uploads/2017/03/DSC1359.jpg",
+      "description": "Thuyền buồm vỏ ốc trung TB23",
+      "inventory": 50
+    },
+    {
+      "id": "198",
+      "name": "THUYỀN BUỒM VỎ ỐC TRUNG TB08",
+      "price": 899000,
+      "category": "Văn phòng phẩm",
+      "categoryId": 8,
+      "imageUrl": "https://voocbien.com/wp-content/uploads/2015/09/thuyen-buom-vo-oc-tb08-4.jpg",
+      "description": "THUYỀN BUỒM VỎ ỐC TRUNG TB08",
+      "inventory": 50
+    },
+    {
+      "id": "199",
+      "name": "THUYỀN BUỒM VỎ ỐC TRUNG TB05",
+      "price": 459000,
+      "category": "Văn phòng phẩm",
+      "categoryId": 8,
+      "imageUrl": "https://voocbien.com/wp-content/uploads/2015/08/thuyen-buom-vo-oc-tb05-6.jpg",
+      "description": "THUYỀN BUỒM VỎ ỐC TRUNG TB05",
+      "inventory": 50
+    },
+    {
+      "id": "200",
+      "name": "Thuyền buồm vỏ ốc nhỏ TB03_T",
+      "price": 499000,
+      "category": "Văn phòng phẩm",
+      "categoryId": 8,
+      "imageUrl": "https://voocbien.com/wp-content/uploads/2016/01/thuyen-buom-vo-oc-nho-tb03_t-3.jpg",
+      "description": "Thuyền buồm vỏ ốc nhỏ TB03_T",
+      "inventory": 50
     }
   ],
   "messages": [
@@ -2159,6 +2549,7 @@
       "createdAt": "2026-01-14T06:41:12.866Z"
     },
     {
+
       "id": "5817",
       "userId": "cbc1",
       "content": "xin chào ",
@@ -2213,6 +2604,7 @@
       "content": "Bạn muốn tìm một chiếc vòng đeo tay handmade đẹp mắt. \n\nShop khuyên bạn nên thử xem các mẫu: Nhẫn Bạc Hoa Trà - Xem tại: http://localhost:3000/product/66 hoặc Băng Cảm Ơn Đá Màu - Xem tại: http://localhost:3000/product/67. Đây đều là những sản phẩm chất liệu cao cấp, thiết kế độc đáo, và được người tiêu dùng yêu thích. \n\nBạn muốn tìm quà tặng hay dùng cá nhân ạ? 🎁\nTags: Vòng đeo tay, Trang sức đá, Đá màu.",
       "sender": "bot",
       "createdAt": "2026-01-14T07:03:38.249Z"
+
     }
   ],
   "faq": [
@@ -5384,7 +5776,25 @@
       "userId": "1",
       "items": [],
       "totalPrice": 0,
-      "id": "e0ee"
+      "id": "9a24"
+    },
+    {
+      "id": "3bff",
+      "userId": "cbc1",
+      "items": [
+        {
+          "productId": "122",
+          "quantity": 2
+        },
+        {
+          "productId": "123",
+          "quantity": 1
+        },
+        {
+          "productId": "121",
+          "quantity": 1
+        }
+      ]
     }
   ],
   "categories": [
@@ -5653,6 +6063,48 @@
       "paymentMethod": "COD",
       "status": "Thanh toán khi nhận hàng",
       "date": "12:12:53 14/1/2026"
+    },
+    {
+      "id": "ORD-1768466510346",
+      "userId": "cbc1",
+      "fullName": "THuan",
+      "phone": "0987654321",
+      "address": "rttt, Xã Tiên Động, Huyện Tứ Kỳ, Tỉnh Bình Định",
+      "items": [
+        {
+          "product": {
+            "id": "122",
+            "name": "Vòng tay Handmade da thật",
+            "price": 180000,
+            "category": "Đồ da",
+            "categoryId": 6,
+            "imageUrl": "https://product.hstatic.net/1000260559/product/vong_tay_handmade_da_that__3__grande.jpg",
+            "description": "Vòng tay được làm từ da bò thật với thiết kế đơn giản mang hơi hướng cổ điển nhưng vẫn vô cùng cá tính . Vòng có nhiều phiên bản màu sắc cho bạn lựa chọn .\n\n",
+            "inventory": 20
+          },
+          "quantity": 1
+        },
+        {
+          "product": {
+            "id": "123",
+            "name": "Túi xách nữ Handmade da bò retro thời trang",
+            "price": 210000,
+            "category": "Đồ da",
+            "categoryId": 6,
+            "imageUrl": "https://product.hstatic.net/1000260559/product/vi_dai_nu__3__f301f02c16b24e2c83f90e0a2058ab30_grande.jpg",
+            "description": "- Kích thước: 19.5cm x 9.5cm x 2cm\n\n- Chất liệu: Da bò thật 100%",
+            "inventory": 20
+          },
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 351000,
+      "discountAmount": 39000,
+      "payableAmount": 351000,
+      "voucherCode": "NEW10",
+      "paymentMethod": "COD",
+      "status": "Thanh toán khi nhận hàng",
+      "date": "15:41:50 15/1/2026"
     }
   ],
   "policyData": [
@@ -5732,17 +6184,37 @@
       "email": "thuan11111@gmail.com",
       "password": "123456",
       "username": "Thuan",
-      "lastSpinDate": "2026-01-14T06:18:15.695Z",
+      "lastSpinDate": "2026-01-15T08:47:26.103Z",
       "wishlist": [
         {
-          "id": "38",
-          "name": " Gấu Bông Búp Bê Khủng Long Gấu Bông Nhập Khẩu Mẫu Hot",
-          "price": 99000,
-          "category": "Trang trí nhà cửa",
-          "categoryId": 2,
-          "imageUrl": "https://cdn.hstatic.net/products/1000203256/730c3b4b44ee4c0b9129b9bc17fade6d_32e978449fe04074a46aab223e4c908f_1024x1024.jpg",
-          "description": "Gấu Bông Búp Bê Khủng Long Gấu Bông Nhập Khẩu Mẫu Hot",
-          "inventory": 24
+          "id": "121",
+          "name": "Túi xách nữ Handmade da bò retro thời trang",
+          "price": 9000000,
+          "category": "Đồ da",
+          "categoryId": 6,
+          "imageUrl": "https://product.hstatic.net/1000260559/product/tui_xach_nu__1__acaea5fbd93844ee83531408f5d294ee_grande.jpg",
+          "description": "Độ bền da thật cao, không bong tróc, nứt gãy, không ra màu, độ đàn hồi và chịu lực tốt là những ưu điểm nổi bật giúp chất liệu này được sử dụng rộng rãi trong ngành thời trang nữ",
+          "inventory": 20
+        },
+        {
+          "id": "122",
+          "name": "Vòng tay Handmade da thật",
+          "price": 180000,
+          "category": "Đồ da",
+          "categoryId": 6,
+          "imageUrl": "https://product.hstatic.net/1000260559/product/vong_tay_handmade_da_that__3__grande.jpg",
+          "description": "Vòng tay được làm từ da bò thật với thiết kế đơn giản mang hơi hướng cổ điển nhưng vẫn vô cùng cá tính . Vòng có nhiều phiên bản màu sắc cho bạn lựa chọn .\n\n",
+          "inventory": 20
+        },
+        {
+          "id": "123",
+          "name": "Túi xách nữ Handmade da bò retro thời trang",
+          "price": 210000,
+          "category": "Đồ da",
+          "categoryId": 6,
+          "imageUrl": "https://product.hstatic.net/1000260559/product/vi_dai_nu__3__f301f02c16b24e2c83f90e0a2058ab30_grande.jpg",
+          "description": "- Kích thước: 19.5cm x 9.5cm x 2cm\n\n- Chất liệu: Da bò thật 100%",
+          "inventory": 20
         }
       ]
     },

@@ -198,5 +198,205 @@
     "imageUrl": "https://bizweb.dktcdn.net/thumb/compact/100/061/358/products/sticker-meet-you-1.jpg?v=1688743516060",
     "description": "Sticker chữ Meet You - Set 04 tờ",
     "inventory": 50
+  },
+  {
+    "id": 181,
+    "name": "TRANH TRANG TRÍ “VỎ SÒ HUYẾT” TO63",
+    "price": 299000,
+    "category": "Văn phòng phẩm",
+    "categoryId": 8,
+    "imageUrl": "https://voocbien.com/wp-content/uploads/2024/10/DSC3871.jpg",
+    "description": "TRANH TRANG TRÍ “VỎ SÒ HUYẾT” TO63",
+    "inventory": 50
+  },
+  {
+    "id": 182,
+    "name": "Thuyền buồm vỏ ốc lớn TB18",
+    "price": 699000,
+    "category": "Văn phòng phẩm",
+    "categoryId": 8,
+    "imageUrl": "https://voocbien.com/wp-content/uploads/2016/02/thuyen-buom-vo-oc-lon-tb18-2-2.jpg",
+    "description": "Thuyền buồm vỏ ốc lớn TB18",
+    "inventory": 50
+  },
+  {
+    "id": 183,
+    "name": "Thuyền buồm vỏ ốc lớn TB14",
+    "price": 1499000,
+    "category": "Văn phòng phẩm",
+    "categoryId": 8,
+    "imageUrl": "https://voocbien.com/wp-content/uploads/2016/01/thuyen-buom-vo-oc-lon-tb14-3.jpg",
+    "description": "Thuyền buồm vỏ ốc lớn TB14",
+    "inventory": 50
+  },
+  {
+    "id": 184,
+    "name": "Thuyền buồm vỏ ốc lớn TB13",
+    "price": 1299000,
+    "category": "Văn phòng phẩm",
+    "categoryId": 8,
+    "imageUrl": "https://voocbien.com/wp-content/uploads/2016/01/thuyen-buom-vo-oc-lon-tb13-6.jpg",
+    "description": "Thuyền buồm vỏ ốc lớn TB13",
+    "inventory": 50
+  },
+  {
+    "id": 185,
+    "name": "Thuyền buồm vỏ ốc lớn TB12",
+    "price": 799000,
+    "category": "Văn phòng phẩm",
+    "categoryId": 8,
+    "imageUrl": "https://voocbien.com/wp-content/uploads/2016/01/thuyen-buom-vo-oc-lon-tb12-5.jpg",
+    "description": "Thuyền buồm vỏ ốc lớn TB12",
+    "inventory": 50
+  },
+  {
+    "id": 186,
+    "name": "Thuyền buồm vỏ ốc nhỏ TB09_T",
+    "price": 479000,
+    "category": "Văn phòng phẩm",
+    "categoryId": 8,
+    "imageUrl": "https://voocbien.com/wp-content/uploads/2018/11/DSC1385.jpg",
+    "description": "Thuyền buồm vỏ ốc nhỏ TB09_T",
+    "inventory": 50
+  },
+  {
+    "id": 187,
+    "name": "Thuyền buồm nhí bàu ngư đỏ TB30",
+    "price": 389000,
+    "category": "Văn phòng phẩm",
+    "categoryId": 8,
+    "imageUrl": "https://voocbien.com/wp-content/uploads/2018/10/thuyen-buom-nhi-bau-ngu-do-tb29-3.jpg",
+    "description": "Thuyền buồm nhí bàu ngư đỏ TB30",
+    "inventory": 50
+  },
+  {
+    "id": 188,
+    "name": "Thuyền buồm vỏ ốc nhỏ TB20",
+    "price": 699000,
+    "category": "Văn phòng phẩm",
+    "categoryId": 8,
+    "imageUrl": "https://voocbien.com/wp-content/uploads/2016/09/thuyen-buom-vo-oc-nho-tb20-3.jpg",
+    "description": "Thuyền buồm vỏ ốc nhỏ TB20",
+    "inventory": 50
+  },
+  {
+    "id": 189,
+    "name": "Thuyền buồm vỏ ốc nhỏ TB19",
+    "price": 14799000,
+    "category": "Văn phòng phẩm",
+    "categoryId": 8,
+    "imageUrl": "https://voocbien.com/wp-content/uploads/2016/06/thuyen-buom-vo-oc-nho-tb19-2.jpg",
+    "description": "Thuyền buồm vỏ ốc nhỏ TB19",
+    "inventory": 50
+  },
+  {
+    "id": 190,
+    "name": "Thuyền buồm vỏ ốc nhỏ TB79",
+    "price": 14799000,
+    "category": "Văn phòng phẩm",
+    "categoryId": 8,
+    "imageUrl": "https://voocbien.com/wp-content/uploads/2016/01/thuyen-buom-vo-oc-lon-tb14-3.jpg",
+    "description": "Thuyền buồm vỏ ốc nhỏ TB79",
+    "inventory": 50
+  },
+  {
+    "id": 191,
+    "name": "Thuyền buồm vỏ ốc trung TB10",
+    "price": 999000,
+    "category": "Văn phòng phẩm",
+    "categoryId": 8,
+    "imageUrl": "https://voocbien.com/wp-content/uploads/2015/08/DSC1343.jpg",
+    "description": "Thuyền buồm vỏ ốc trung TB10",
+    "inventory": 50
+  },
+  {
+    "id": 192,
+    "name": "Thuyền buồm vỏ ốc trung TB11_T",
+    "price": 299000,
+    "category": "Văn phòng phẩm",
+    "categoryId": 8,
+    "imageUrl": "https://voocbien.com/wp-content/uploads/2016/02/thuyen-buom-vo-oc-trung-tb11_t-6.jpg",
+    "description": "Thuyền buồm vỏ ốc trung TB11_T",
+    "inventory": 50
+  },
+  {
+    "id": 193,
+    "name": "Thuyền buồm vỏ ốc trung TB11_N",
+    "price": 399000,
+    "category": "Văn phòng phẩm",
+    "categoryId": 8,
+    "imageUrl": "https://voocbien.com/wp-content/uploads/2016/01/thuyen-buom-vo-oc-trung-tb11-2.jpg",
+    "description": "Thuyền buồm vỏ ốc trung TB11_N",
+    "inventory": 50
+  },
+  {
+    "id": 194,
+    "name": "Thuyền buồm vỏ sò ốc lớn TB29 ",
+    "price": 399000,
+    "category": "Văn phòng phẩm",
+    "categoryId": 8,
+    "imageUrl": "https://voocbien.com/wp-content/uploads/2017/09/thuyen-buom-vo-so-oc-lon-tb29-5.jpg",
+    "description": "Thuyền buồm vỏ sò ốc lớn TB29",
+    "inventory": 50
+  },
+  {
+    "id": 195,
+    "name": "Thuyền buồm vỏ ốc trung TB24",
+    "price": 299000,
+    "category": "Văn phòng phẩm",
+    "categoryId": 8,
+    "imageUrl": "https://voocbien.com/wp-content/uploads/2017/03/thuyen-buom-vo-oc-trung-tb24-07.jpg",
+    "description": "Thuyền buồm vỏ ốc trung TB24",
+    "inventory": 50
+  },
+  {
+    "id": 196,
+    "name": "Thuyền buồm vỏ ốc trung TB22",
+    "price": 699000,
+    "category": "Văn phòng phẩm",
+    "categoryId": 8,
+    "imageUrl": "https://voocbien.com/wp-content/uploads/2017/03/DSC1372.jpg",
+    "description": "Thuyền buồm vỏ ốc trung TB22",
+    "inventory": 50
+  },
+  {
+    "id": 197,
+    "name": "Thuyền buồm vỏ ốc trung TB23",
+    "price": 479000,
+    "category": "Văn phòng phẩm",
+    "categoryId": 8,
+    "imageUrl": "https://voocbien.com/wp-content/uploads/2017/03/DSC1359.jpg",
+    "description": "Thuyền buồm vỏ ốc trung TB23",
+    "inventory": 50
+  },
+  {
+    "id": 198,
+    "name": "THUYỀN BUỒM VỎ ỐC TRUNG TB08",
+    "price": 899000,
+    "category": "Văn phòng phẩm",
+    "categoryId": 8,
+    "imageUrl": "https://voocbien.com/wp-content/uploads/2015/09/thuyen-buom-vo-oc-tb08-4.jpg",
+    "description": "THUYỀN BUỒM VỎ ỐC TRUNG TB08",
+    "inventory": 50
+  },
+  {
+    "id": 199,
+    "name": "THUYỀN BUỒM VỎ ỐC TRUNG TB05",
+    "price": 459000,
+    "category": "Văn phòng phẩm",
+    "categoryId": 8,
+    "imageUrl": "https://voocbien.com/wp-content/uploads/2015/08/thuyen-buom-vo-oc-tb05-6.jpg",
+    "description": "THUYỀN BUỒM VỎ ỐC TRUNG TB05",
+    "inventory": 50
+  },
+  {
+    "id": 200,
+    "name": "Thuyền buồm vỏ ốc nhỏ TB03_T",
+    "price": 499000,
+    "category": "Văn phòng phẩm",
+    "categoryId": 8,
+    "imageUrl": "https://voocbien.com/wp-content/uploads/2016/01/thuyen-buom-vo-oc-nho-tb03_t-3.jpg",
+    "description": "Thuyền buồm vỏ ốc nhỏ TB03_T",
+    "inventory": 50
   }
 ]

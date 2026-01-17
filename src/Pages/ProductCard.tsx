@@ -5,6 +5,8 @@ import axios from 'axios';
 import { Product, User } from '../types/model';
 import { useNotify } from '../components/NotificationContext';
 import '../Styles/product.css';
+import api from '../services/api';
+
 
 interface ProductCardProps {    
     product: Product;
@@ -48,7 +50,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         }
 
         try {
-            const response = await axios.patch(`http://localhost:3000/users/${localUser.id}`, {
+            const response = await api.patch(`users/${localUser.id}`, {
                 wishlist: updatedWishlist
             });
 
@@ -89,7 +91,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
     return (
         <div className="product-card">
-            <div className="product-image" onClick={() => navigate(`/product/${product.id}`)}>
+            <div className="product-image" onClick={() => navigate(`/products/${product.id}`)}>
                 <img src={product.imageUrl} alt={product.name} />
 
                 {/* Icon trái tim - Sử dụng FontAwesome để tránh lỗi TS2786 */}
